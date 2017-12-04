@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171204131630) do
+ActiveRecord::Schema.define(version: 20171204135920) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,30 @@ ActiveRecord::Schema.define(version: 20171204131630) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "trips", force: :cascade do |t|
+    t.integer "host_id"
+    t.integer "tourist_id"
+    t.string "title"
+    t.text "comment"
+    t.boolean "solo", default: false
+    t.boolean "family", default: false
+    t.boolean "couple", default: false
+    t.boolean "friends", default: false
+    t.boolean "sight_seeing_adventurer", default: false
+    t.boolean "art_lover", default: false
+    t.boolean "serial_shopper", default: false
+    t.boolean "nature_lover", default: false
+    t.boolean "food_addict", default: false
+    t.boolean "sport_lover", default: false
+    t.boolean "history_passionate", default: false
+    t.boolean "tech_fan", default: false
+    t.boolean "relaxed", default: false
+    t.boolean "city_wanderer", default: false
+    t.datetime "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -56,4 +80,18 @@ ActiveRecord::Schema.define(version: 20171204131630) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "visits", force: :cascade do |t|
+    t.bigint "trip_id"
+    t.bigint "activity_id"
+    t.text "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["activity_id"], name: "index_visits_on_activity_id"
+    t.index ["trip_id"], name: "index_visits_on_trip_id"
+  end
+
+  add_foreign_key "trips", "users", column: "host_id"
+  add_foreign_key "trips", "users", column: "tourist_id"
+  add_foreign_key "visits", "activities"
+  add_foreign_key "visits", "trips"
 end
