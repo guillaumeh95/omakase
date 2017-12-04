@@ -10,10 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171204130439) do
+ActiveRecord::Schema.define(version: 20171204131630) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "activities", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.string "photo"
+    t.boolean "family"
+    t.boolean "couple"
+    t.boolean "friends"
+    t.boolean "solo"
+    t.boolean "sight_seeing_adventurer"
+    t.boolean "art_lover"
+    t.boolean "serial_shopper"
+    t.boolean "food_addict"
+    t.boolean "sport_lover"
+    t.boolean "history_passionate"
+    t.boolean "tech_fan"
+    t.boolean "nature_lover"
+    t.boolean "relaxed"
+    t.boolean "city_wanderer"
+    t.boolean "to_book"
+    t.string "website"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
