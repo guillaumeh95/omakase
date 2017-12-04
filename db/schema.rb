@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171204135920) do
+ActiveRecord::Schema.define(version: 20171204140547) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,21 +19,21 @@ ActiveRecord::Schema.define(version: 20171204135920) do
     t.string "name"
     t.string "address"
     t.string "photo"
-    t.boolean "family"
-    t.boolean "couple"
-    t.boolean "friends"
-    t.boolean "solo"
-    t.boolean "sight_seeing_adventurer"
-    t.boolean "art_lover"
-    t.boolean "serial_shopper"
-    t.boolean "food_addict"
-    t.boolean "sport_lover"
-    t.boolean "history_passionate"
-    t.boolean "tech_fan"
-    t.boolean "nature_lover"
-    t.boolean "relaxed"
-    t.boolean "city_wanderer"
-    t.boolean "to_book"
+    t.boolean "family", default: false
+    t.boolean "couple", default: false
+    t.boolean "friends", default: false
+    t.boolean "solo", default: false
+    t.boolean "sight_seeing_adventurer", default: false
+    t.boolean "art_lover", default: false
+    t.boolean "serial_shopper", default: false
+    t.boolean "food_addict", default: false
+    t.boolean "sport_lover", default: false
+    t.boolean "history_passionate", default: false
+    t.boolean "tech_fan", default: false
+    t.boolean "nature_lover", default: false
+    t.boolean "relaxed", default: false
+    t.boolean "city_wanderer", default: false
+    t.boolean "to_book", default: false
     t.string "website"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -76,6 +76,8 @@ ActiveRecord::Schema.define(version: 20171204135920) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
