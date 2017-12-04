@@ -5,9 +5,8 @@ class Activity < ApplicationRecord
 
   #Validations
   validates :name, presence: true, uniqueness: true
-  validates :address, presence: true,
+  validates :address, presence: true
   validates :photo, presence: true
-  validates :to_book, presence: true
-  validates :website, allow_blank: true
+  validates :to_book, inclusion: { in: [ true, false ] }
   # 1 out of 4 is true and others false "family" "couple", "friends", "solo"
 end
