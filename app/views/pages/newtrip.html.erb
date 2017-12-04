@@ -1,0 +1,22 @@
+<%= simple_form_for [@trip] do |trip| %>
+  <%= f.input :knows_city, label: 'Knows Paris?', :collection => [0, 1, 2, 3, 4, 5], prompt: "Select a level" %>
+  <%= f.input :budget, label: 'Budget', :collection => [0, 1, 2, 3, 4, 5], prompt: "Select a budget" %>
+  <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
+
+  <%= f.input :family , :as => :radio_buttons, collection: [['Family', true]], label:"" , :disabled => true %>
+  <%= f.input :couple , :as => :radio_buttons, collection: [['Couple', true]], label:"" , :disabled => true %>
+  <%= f.input :friends , :as => :radio_buttons, collection: [['Friends', true]], label:"" , :disabled => true %>
+  <%= f.input :solo , :as => :radio_buttons, collection: [['Solo', true]], label:"" , :disabled => true %>
+
+  <%= f.input :sight_seeing_adventurer , :as => :radio_buttons, collection: [['Sight Seeing Adventurer', true]], label:"" , :disabled => true %>
+  <%= f.input :art_lover , :as => :radio_buttons, collection: [['Art Lover', true]], label:"" , :disabled => true %>
+  <%= f.input :serial_shopper , :as => :radio_buttons, collection: [['Serial Shopper', true]], label:"" , :disabled => true %>
+  <%= f.input :nature_lover , :as => :radio_buttons, collection: [['Nature Lover', true]], label:"" , :disabled => true %>
+  <%= f.input :food_addict , :as => :radio_buttons, collection: [['Food Addict', true]], label:"" , :disabled => true %>
+  <%= f.input :sport_lover , :as => :radio_buttons, collection: [['Sport Lover', true]], label:"" , :disabled => true %>
+  <%= f.input :history_passionate , :as => :radio_buttons, collection: [['History Passionate', true]], label:"" , :disabled => true %>
+  <%= f.input :tech_fan , :as => :radio_buttons, collection: [['Tech Fan', true]], label:"" , :disabled => true %>
+  <%= f.input :relaxed , :as => :radio_buttons, collection: [['Relaxed', true]], label:"" , :disabled => true %>
+  <%= f.input :city_wanderer , :as => :radio_buttons, collection: [['City Wanderer', true]], label:"" , :disabled => true %>
+  <%= f.submit "Submit profile", class: "btn-secondary" %>
+<% end %>
