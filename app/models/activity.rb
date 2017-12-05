@@ -1,4 +1,6 @@
 class Activity < ApplicationRecord
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
   #Associations
   has_many :visits
   has_many :trips, through: :visits
@@ -8,5 +10,6 @@ class Activity < ApplicationRecord
   validates :address, presence: true
   validates :photo, presence: true
   validates :to_book, inclusion: { in: [ true, false ] }
-  # 1 out of 4 is true and others false "family" "couple", "friends", "solo"
+  validates :budget, inclusion: { in: [1, 2, 3, 4, 5] }, allow_blank: true
+  validates :knows_the_city, inclusion: { in: [1, 2, 3, 4, 5] }, allow_blank: true
 end
