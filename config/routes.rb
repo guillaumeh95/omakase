@@ -7,4 +7,10 @@ Rails.application.routes.draw do
     resources :visits, only: [:create, :destroy]
   end
   resources :activities, only: [:index, :show, :create, :update, :destroy]
+
+  resources :users, only: [:dashboard] do
+    member do
+      get 'dashboard', to: "users#dashboard"
+    end
+  end
 end
