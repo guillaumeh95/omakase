@@ -9,5 +9,6 @@ public/assets
 
 # Ignore application configuration
 /config/application.yml
-node_modules/
-public/packs/
+/public/packs
+/public/packs-test
+/node_modules
