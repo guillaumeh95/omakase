@@ -1,12 +1,17 @@
-.main-container{
+body{
   background: linear-gradient(to bottom right, $light, rgba(0,0,0,0));
-  margin-bottom: 0px;
 }
 
 .icons-container {
   background-color: white;
   margin: 5% auto;
+  padding: 300px;
 }
+
+#foot {
+  width: 10%;
+}
+
 
 .icons {
   display: flex;
@@ -16,14 +21,6 @@
   width: 100%;
   color: rgba(0,0,0,0.3);
   margin-top: 5%;
-  padding: 60px;
-}
-
-.icons .fa {
-  color: $red;
-  text-decoration: none;
-  font-size: 24px;
-  padding: 0px 10px;
 }
 
 .icons .fa:hover {
