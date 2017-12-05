@@ -37,6 +37,9 @@ ActiveRecord::Schema.define(version: 20171205114629) do
     t.string "website"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
+    t.string "title"
   end
 
   create_table "trips", force: :cascade do |t|
