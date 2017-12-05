@@ -13,4 +13,15 @@ class Trip < ApplicationRecord
   validates :budget, inclusion: { in: [1, 2, 3, 4, 5] }, allow_blank: true
   validates :knows_the_city, inclusion: { in: [1, 2, 3, 4, 5] }, allow_blank: true
   # validates :tourist_id, uniqueness: { scope: :host_id } # Prevent creating a trip for self
+
+  def filters
+    true_filters = []
+    filters = [:sight_seeing_adventurer, :art_lover, :serial_shopper, :nature_lover, :food_addict, :sport_lover, :history_passionate, :tech_fan, :relaxed, :city_wanderer]
+    filters.each do |filter|
+      if self.send(filter)
+        true_filters << filter
+      end
+    end
+  return true_filters
+  end
 end

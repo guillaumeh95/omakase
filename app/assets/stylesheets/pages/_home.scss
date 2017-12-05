@@ -1,1 +1,55 @@
-// Specific CSS for your home-page
+.main-container{
+  background: linear-gradient(to bottom right, $light, rgba(0,0,0,0));
+  margin-bottom: 0px;
+}
+
+.icons-container {
+  background-color: white;
+  margin: 5% auto;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  max-height: 30px;
+  width: 100%;
+  color: rgba(0,0,0,0.3);
+  margin-top: 5%;
+  padding: 60px;
+}
+
+.icons .fa {
+  color: $red;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
+}
+
+.icons .fa:hover {
+  color: $blue;
+}
+
+.step-container {
+  margin-bottom: 20px;
+}
+
+.steps {
+  text-align: center;
+}
+
+#number {
+  width: 3%;
+}
+
+.steps-images {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 6% auto;
+}
+
+#stepim {
+  width: 20%;
+}
+
