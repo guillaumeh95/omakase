@@ -33,6 +33,7 @@
   width: 100%;
   z-index: 2;
   transition: all 2s ease;
+  cursor: pointer;
   &:hover {
     background: linear-gradient(-225deg, rgba(0, 0, 0, 0.5) 0%, rgba(30,30,30,0.5) 50%);
   }
@@ -56,12 +57,18 @@
   text-align: center;
   position: sticky !important;
   height: 50vh;
+  top: 80px;
+  h3 {
+    font-size: 25px;
+    margin: 0;
+    padding: 10px 15px;
+  }
 }
 .trip-activities {
   display: flex;
   flex-basis: 33.33%;
 }
-.trip-title {
+.trip-title, .trip-title-large {
   position: absolute;
   top: 10px;
   left: 10px;
@@ -73,15 +80,8 @@
   z-index: 4;
 }
 .trip-title-large {
-  position: absolute;
-  top: 10px;
-  left: 10px;
   font-size: 40px;
-  padding: 0 5px;
-  margin: 0;
-  color: $white;
   opacity: 0.8;
-  z-index: 4;
 }
 .trip-photo {
   width: 100%;
@@ -105,4 +105,8 @@
 }
 .fade-card {
   transition: all 0.5s ease;
+}
+.no-trip {
+  margin: auto auto;
+  padding: 20px;
 }

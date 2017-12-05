@@ -7,12 +7,12 @@
       <ul class="nav nav-tabs nav-justified" role="tablist">
         <li class="nav-item">
           <a class="nav-link active" data-toggle="tab" href="#created-trips" role="tab">
-            <i class="fa fa-paper-plane" aria-hidden="true"></i> Created Trips (<%= @trips_host.count %>)
+            <i class="fa fa-paper-plane" aria-hidden="true"></i> Sent Trips (<%= @trips_host.count %>)
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" data-toggle="tab" href="#received-trips" role="tab">
-            <i class="fa fa-globe" aria-hidden="true"></i> Received Trips (<%= @trips_tourist.count %>)
+            <i class="fa fa-globe" aria-hidden="true"></i> My Trips (<%= @trips_tourist.count %>)
           </a>
         </li>
       </ul>
@@ -22,19 +22,31 @@
         <!-- CREATED TRIPS -->
         <div class="tab-pane fade in active" id="created-trips" role="tabpanel">
           <div class="card-container">
-            <% @trips_host.each do |trip| %>
-              <%= render "shared/card", trip: trip %>
+            <% if @trips_host.count.zero? %>
+              <div class="no-trip">No created trips yet</div>
+            <% else %>
+              <% @trips_host.each do |trip| %>
+                <%= render "shared/card", trip: trip %>
+              <% end %>
             <% end %>
           </div>
         </div>
 
         <!-- RECEIVED TRIPS -->
         <div class="tab-pane fade" id="received-trips" role="tabpanel">
-          <% @trips_tourist.each do |trip| %>
-            <%= trip.title %>
-          <% end %>
+          <div class="card-container">
+            <% if @trips_tourist.count.zero? %>
+              <div class="no-trip">You don't have any trips</div>
+            <% else %>
+              <% @trips_tourist.each do |trip| %>
+                <%= render "shared/card", trip: trip %>
+              <% end %>
+            <% end %>
+          </div>
         </div>
+
       </div>
+
     </div>
 
     <!-- RIGHT PART OF DASHBOARD -->
@@ -42,7 +54,7 @@
     <div class="right-dash">
       <div class="main-content">
         <h3>Welcome <%= @user.first_name %>,</h3>
-        <%= link_to "Create Trip", new_trip_path, class: "btn btn-primary" %>
+        <%= link_to "New Trip", new_trip_path, class: "btn btn-primary" %>
         <p> <%= Time.now.strftime("%b %d, %Y") %></p>
       </div>
     </div>
