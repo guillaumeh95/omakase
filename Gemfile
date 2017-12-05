@@ -18,6 +18,7 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+gem 'bootstrap-slider-rails'
 
 group :development, :test do
   gem 'pry-byebug'

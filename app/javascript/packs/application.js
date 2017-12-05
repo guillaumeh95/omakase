@@ -9,6 +9,10 @@
 
 import 'bootstrap';
 import "../plugins/flatpickr";
+<<<<<<< HEAD
+import {initSliders} from "../components/slider";
+initSliders();
+
 
 const cards = document.querySelectorAll(".card.full-card");
 
@@ -35,3 +39,4 @@ if (cards) {
     });
   });
 }
+
