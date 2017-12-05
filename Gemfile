@@ -10,6 +10,7 @@ gem 'rails', '5.1.4'
 gem 'redis'
 gem "geocoder"
 gem 'figaro'
+gem "pundit"
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
