@@ -1,0 +1,92 @@
+.card-container {
+  overflow-y: scroll;
+  color: black;
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+}
+.card {
+  overflow: hidden!important;
+  display: flex;
+  height: 250px;
+  background-size: cover !important;
+  background-position: center;
+  position: relative;
+  border-radius: 3px;
+  font-style: $body-font;
+  min-width: 210px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  &:hover {
+    .wrapper {
+      height: 100%;
+      .card-more-description {
+        color: white;
+      }
+    }
+  }
+}
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  &:hover {
+    background: linear-gradient(-225deg, rgba(0, 0, 0, 0.5) 0%, rgba(30,30,30,0.5) 50%);
+  }
+}
+.dashboard-container {
+  margin: 10px 30px;
+}
+.dashboard {
+  display: flex;
+}
+.left-dash, .right-dash {
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  padding: 20px 30px;
+  margin: 20px;
+  justify-content: space-around;
+}
+.right-dash {
+  flex: 0 0 300px;
+  text-align: center;
+  position: sticky !important;
+}
+.trip-activities {
+  display: flex;
+  flex-basis: 33.33%;
+}
+.trip-title {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  h3 {
+    font-size: 30px;
+    padding: 0 5px;
+    margin: 0;
+    color: $white;
+    opacity: 0.7
+  }
+}
+.trip-photo {
+  width: 100%;
+}
+.trip-actions {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  z-index: 3;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  a {
+    margin: 0 10px;
+    color: $white;
+    opacity: 0.7;
+  }
+  a:hover {
+    opacity: 1;
+  }
+}

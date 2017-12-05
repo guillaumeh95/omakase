@@ -1,6 +1,6 @@
 puts 'Cleaning database...'
-User.destroy_all
 Trip.destroy_all
+User.destroy_all
 
 puts 'Creating users...'
 alexia = User.create(first_name: "Alexia", last_name: "Le Tarnec", email: "alexia@gmail.com", password: "azertyuiop")
@@ -46,9 +46,20 @@ Trip.create(trips_attributes)
 
 puts 'Creating visits...'
 visit_one = Visit.new
+visit_two = Visit.new
+visit_three = Visit.new
+
 visit_one.trip = Trip.first
+visit_two.trip = Trip.first
+visit_three.trip = Trip.first
+
 visit_one.activity = Activity.first
+visit_two.activity = Activity.last
+visit_three.activity = Activity.all[1]
+
 visit_one.save
+visit_two.save
+visit_three.save
 
 puts 'Finished seed!'
 

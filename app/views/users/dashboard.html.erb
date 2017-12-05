@@ -1,0 +1,51 @@
+<div class="dashboard-container">
+  <div class="dashboard">
+
+    <!-- LEFT PART OF DASHBOARD -->
+    <div class="left-dash">
+      <!-- Tabs -->
+      <ul class="nav nav-tabs nav-justified" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#created-trips" role="tab">
+            <i class="fa fa-paper-plane" aria-hidden="true"></i> Created Trips (<%= @trips_host.count %>)
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#received-trips" role="tab">
+            <i class="fa fa-globe" aria-hidden="true"></i> Received Trips (<%= @trips_tourist.count %>)
+          </a>
+        </li>
+      </ul>
+
+      <div class="tab-content">
+
+        <!-- CREATED TRIPS -->
+        <div class="tab-pane active" id="created-trips" role="tabpanel">
+          <div class="card-container">
+            <% @trips_host.each do |trip| %>
+              <%= render "shared/card", trip: trip %>
+            <% end %>
+          </div>
+        </div>
+
+        <!-- RECEIVED TRIPS -->
+        <div class="tab-pane" id="received-trips" role="tabpanel">
+          <% @trips_tourist.each do |trip| %>
+            <%= trip.title %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT PART OF DASHBOARD -->
+
+    <div class="right-dash">
+      <div class="main-content">
+        <h3>Welcome <%= @user.first_name %>,</h3>
+        <%= link_to "Create Trip", new_trip_path, class: "btn btn-primary" %>
+        <p> <%= Time.now.strftime("%b %d, %Y") %></p>
+      </div>
+    </div>
+
+  </div>
+</div>
