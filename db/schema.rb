@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171205114629) do
+ActiveRecord::Schema.define(version: 20171205132158) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,10 +47,6 @@ ActiveRecord::Schema.define(version: 20171205114629) do
     t.integer "tourist_id"
     t.string "title"
     t.text "comment"
-    t.boolean "solo", default: false
-    t.boolean "family", default: false
-    t.boolean "couple", default: false
-    t.boolean "friends", default: false
     t.boolean "sight_seeing_adventurer", default: false
     t.boolean "art_lover", default: false
     t.boolean "serial_shopper", default: false
@@ -66,6 +62,7 @@ ActiveRecord::Schema.define(version: 20171205114629) do
     t.datetime "updated_at", null: false
     t.integer "budget", default: 3
     t.integer "knows_the_city", default: 1
+    t.string "status"
   end
 
   create_table "users", force: :cascade do |t|
