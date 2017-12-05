@@ -6,8 +6,11 @@ class TripsController < ApplicationController
 
   def create
     @trip = Trip.new(trip_params)
+    @trip.host = current_user
+    @trip.title = "blabla"
+    raise
     if @trip.save
-      redirect_to edit_trip(@trip)
+      redirect_to edit_trip_path(@trip)
     else
       render :new
     end
@@ -17,9 +20,6 @@ class TripsController < ApplicationController
   end
 
   def edit
-    @trip.knows_the_city = ""
-    @trip.budget = ""
-    @trip.status = "checked_status"
     if checked.length == 3
       @profile_one = "form_checked_one"
       @profile_two = "form_checked_two"
@@ -62,13 +62,13 @@ class TripsController < ApplicationController
   private
   def trip_params
 
-    params.require(:trip).permit(:date, :status, :sight_seeing_adventurer, :art_lover, :serial_shopper, :nature_lover, :food_addict, :sport_lover, :history_passionate, :tech_fan, :relaxed, :city_wanderer )
+    params.require(:trip).permit(:date, :status, :sight_seeing_adventurer, :art_lover, :serial_shopper, :nature_lover, :food_addict, :sport_lover, :history_passionate, :tech_fan, :relaxed, :city_wanderer, :budget, :knows_the_city)
 
   #rajouter le budget, knows city
   end
 
   def find_trip
-    @trip = Trip.where(params[:id])
+    @trip = Trip.find(params[:id])
   end
 end
 
