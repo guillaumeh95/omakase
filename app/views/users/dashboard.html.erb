@@ -20,7 +20,7 @@
       <div class="tab-content">
 
         <!-- CREATED TRIPS -->
-        <div class="tab-pane active" id="created-trips" role="tabpanel">
+        <div class="tab-pane fade in active" id="created-trips" role="tabpanel">
           <div class="card-container">
             <% @trips_host.each do |trip| %>
               <%= render "shared/card", trip: trip %>
@@ -29,7 +29,7 @@
         </div>
 
         <!-- RECEIVED TRIPS -->
-        <div class="tab-pane" id="received-trips" role="tabpanel">
+        <div class="tab-pane fade" id="received-trips" role="tabpanel">
           <% @trips_tourist.each do |trip| %>
             <%= trip.title %>
           <% end %>

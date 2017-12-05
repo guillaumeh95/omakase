@@ -16,22 +16,23 @@
   font-style: $body-font;
   min-width: 210px;
   box-shadow: 0 0 10px rgba(0,0,0,0.4);
-  &:hover {
-    .wrapper {
-      height: 100%;
-      .card-more-description {
-        color: white;
-      }
-    }
+  margin: 20px;
+  &:first-child {
+    margin-top: 40px;
+  }
+  &:last-child {
+    margin-bottom: 40px;
   }
 }
 .card-link {
+  background: linear-gradient(-225deg, rgba(0, 0, 0, 0.2) 0%, rgba(30,30,30,0.2) 50%);
   position: absolute;
   top: 0;
   bottom: 0;
   right: 0;
   width: 100%;
   z-index: 2;
+  transition: all 2s ease;
   &:hover {
     background: linear-gradient(-225deg, rgba(0, 0, 0, 0.5) 0%, rgba(30,30,30,0.5) 50%);
   }
@@ -46,6 +47,7 @@
   background: white;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   padding: 20px 30px;
+  padding-bottom: 0;
   margin: 20px;
   justify-content: space-around;
 }
@@ -53,6 +55,7 @@
   flex: 0 0 300px;
   text-align: center;
   position: sticky !important;
+  height: 50vh;
 }
 .trip-activities {
   display: flex;
@@ -62,13 +65,23 @@
   position: absolute;
   top: 10px;
   left: 10px;
-  h3 {
-    font-size: 30px;
-    padding: 0 5px;
-    margin: 0;
-    color: $white;
-    opacity: 0.7
-  }
+  font-size: 30px;
+  padding: 0 5px;
+  margin: 0;
+  color: $white;
+  opacity: 0.7;
+  z-index: 4;
+}
+.trip-title-large {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 40px;
+  padding: 0 5px;
+  margin: 0;
+  color: $white;
+  opacity: 0.8;
+  z-index: 4;
 }
 .trip-photo {
   width: 100%;
@@ -89,4 +102,7 @@
   a:hover {
     opacity: 1;
   }
+}
+.fade-card {
+  transition: all 0.5s ease;
 }

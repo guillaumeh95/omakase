@@ -1,7 +1,5 @@
 <div class="card full-card">
-  <div class="trip-title">
-    <h3><%= trip.title %></h3>
-  </div>
+    <h3 class="trip-title"><%= trip.title %></h3>
   <div class="trip-activities">
     <% trip.visits.each do |visit| %>
       <%= image_tag visit.activity.photo, class: "trip-photo" %>
