@@ -1,7 +1,6 @@
 puts 'Cleaning database...'
-Trip.destroy_all
 User.destroy_all
-
+Trip.destroy_all
 
 puts 'Creating users...'
 alexia = User.create(first_name: "Alexia", last_name: "Le Tarnec", email: "alexia@gmail.com", password: "azertyuiop")
@@ -32,7 +31,25 @@ activities_attributes = [
     photo: "https://media-cdn.tripadvisor.com/media/photo-s/00/12/6d/03/the-view-from-the-top.jpg",
   }
 ]
-
 Activity.create(activities_attributes)
 
-puts 'Finished creating activities!'
+puts 'Creating trips...'
+trips_attributes = [
+  {
+    title: "John in Paris",
+    date: DateTime.parse("09/01/2017 00:00"),
+    host_id: User.first.id,
+    tourist_id: User.last.id
+  }
+]
+Trip.create(trips_attributes)
+
+puts 'Creating visits...'
+visit_one = Visit.new
+visit_one.trip = Trip.first
+visit_one.activity = Activity.first
+visit_one.save
+
+puts 'Finished seed!'
+
+
