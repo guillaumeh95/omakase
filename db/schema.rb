@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(version: 20171205132158) do
     t.float "latitude"
     t.float "longitude"
     t.string "title"
+    t.integer "budget"
+    t.integer "knows_the_city"
   end
 
   create_table "trips", force: :cascade do |t|
@@ -60,8 +62,8 @@ ActiveRecord::Schema.define(version: 20171205132158) do
     t.datetime "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "budget", default: 3
-    t.integer "knows_the_city", default: 1
+    t.integer "budget"
+    t.integer "knows_the_city"
     t.string "status"
   end
 
