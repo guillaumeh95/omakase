@@ -1,0 +1,52 @@
+#card-activities-all-title {
+  display: flex;
+}
+
+.card-activities-title {
+  width: 33%;
+  background-color: $white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#card-activities-all {
+  display: flex;
+  height: 600px;
+}
+.card-activities-filtered {
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+  overflow: auto;
+}
+.card-activity-unit {
+  display: flex;
+  flex: 1 0 100px;
+  width: auto;
+  background-size: cover!important;
+  background-position: center;
+  align-items: center;
+}
+.one {
+  border: solid 2px $dark-rose;
+}
+.two {
+  border: solid 2px $yellow;
+}
+.three {
+  border: solid 2px $purple;
+}
+.card-activity-description {
+  color: white;
+  h2 {
+    margin: 0;
+    margin-bottom: 6px;
+    font-size: 18px;
+  }
+  p {
+    margin: 0;
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: 200;
+  }
+}
