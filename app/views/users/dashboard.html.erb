@@ -5,8 +5,8 @@
     <div class="left-dash">
       <!-- Tabs -->
       <ul class="nav nav-tabs nav-justified" role="tablist">
-        <li class="nav-item">
-          <a class="nav-link active" data-toggle="tab" href="#created-trips" role="tab">
+        <li class="nav-item active">
+          <a class="nav-link" data-toggle="tab" href="#created-trips" role="tab">
             <i class="fa fa-paper-plane" aria-hidden="true"></i> Sent Trips (<%= @trips_host.count %>)
           </a>
         </li>
@@ -23,9 +23,14 @@
         <div class="tab-pane fade in active" id="created-trips" role="tabpanel">
           <div class="card-container">
             <% if @trips_host.count.zero? %>
-              <div class="no-trip">No created trips yet</div>
+              <div class="no-trip">You have not created any trips yet</div>
             <% else %>
-              <% @trips_host.each do |trip| %>
+              <h6 class="incoming-trip-card">Incoming Trips (<%= @trips_host_incoming.count %>)</h6>
+                <% @trips_host_incoming.each do |trip| %>
+                  <%= render "shared/card", trip: trip %>
+                <% end %>
+              <h6 class="incoming-trip-card">Past Trips (<%= @trips_host_past.count %>)</h6>
+              <% @trips_host_past.each do |trip| %>
                 <%= render "shared/card", trip: trip %>
               <% end %>
             <% end %>
@@ -54,10 +59,13 @@
     <div class="right-dash">
       <div class="main-content">
         <h3>Welcome <%= @user.first_name %>,</h3>
-        <%= link_to "New Trip", new_trip_path, class: "btn btn-primary" %>
-        <p> <%= Time.now.strftime("%b %d, %Y") %></p>
+        <%= image_tag 'https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAxnAAAAJDVkY2Y3OGJkLTQ1OWEtNGZhZS1hMWU2LTNiNjU3MTVhNjIwMA.jpg', class:"dashboard-photo" %>
+        <p class="time-now"> <%= Time.now.strftime("%b %d, %Y") %></p>
+        <%= link_to '<i class="fa fa-plus" aria-hidden="true"></i> New Trip'.html_safe, new_trip_path, class: "btn btn-primary" %>
       </div>
     </div>
 
   </div>
 </div>
+
+

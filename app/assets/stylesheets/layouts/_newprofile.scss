@@ -86,7 +86,9 @@
   text-align: center;
   cursor: pointer;
 }
-
+.hidden {
+  display: none;
+}
 .datepicker {
   width: 400px;
 }

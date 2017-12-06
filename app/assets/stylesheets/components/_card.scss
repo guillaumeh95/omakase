@@ -12,11 +12,10 @@
   background-size: cover !important;
   background-position: center;
   position: relative;
-  border-radius: 3px;
   font-style: $body-font;
   min-width: 210px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.4);
   margin: 20px;
+  border: 3px solid black;
   &:first-child {
     margin-top: 40px;
   }
@@ -25,7 +24,7 @@
   }
 }
 .card-link {
-  background: linear-gradient(-225deg, rgba(0, 0, 0, 0.2) 0%, rgba(30,30,30,0.2) 50%);
+  background: linear-gradient(-225deg, rgba(0, 0, 0, 0.5) 0%, rgba(30,30,30,0.5) 50%);
   position: absolute;
   top: 0;
   bottom: 0;
@@ -34,9 +33,6 @@
   z-index: 2;
   transition: all 2s ease;
   cursor: pointer;
-  &:hover {
-    background: linear-gradient(-225deg, rgba(0, 0, 0, 0.5) 0%, rgba(30,30,30,0.5) 50%);
-  }
 }
 .dashboard-container {
   margin: 10px 30px;
@@ -68,36 +64,59 @@
   display: flex;
   flex-basis: 33.33%;
 }
-.trip-title, .trip-title-large {
+.trip-title, {
   position: absolute;
-  top: 10px;
-  left: 10px;
-  font-size: 30px;
-  padding: 0 5px;
-  margin: 0;
-  color: $white;
-  opacity: 0.7;
+  width: 100%;
+  text-align: center;
+  top: 40%;
+  font-size: 40px;
+}
+.trip-details, .trip-title, .trip-title-large, .trip-sent-status, .trip-date {
   z-index: 4;
+  opacity: 0.9;
+  margin: 0;
+  padding: 0;
+  color: $white;
 }
 .trip-title-large {
-  font-size: 40px;
-  opacity: 0.8;
+  position: absolute;
+  font-size: 30px;
+  width: 100%;
+  text-align: left;
+  top: 10px;
+  left: 10px;
 }
 .trip-photo {
   width: 100%;
+  object-fit: cover;
+}
+.trip-date {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
 }
 .trip-actions {
   display: flex;
   justify-content: space-between;
   text-align: center;
-  z-index: 3;
   position: absolute;
   bottom: 10px;
   right: 10px;
   a {
     margin: 0 10px;
     color: $white;
-    opacity: 0.7;
+    opacity: 0.9;
+  }
+  a:hover {
+    opacity: 1;
+  }
+}
+.trip-sent-status {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  a {
+    text-decoration: none;
   }
   a:hover {
     opacity: 1;
@@ -109,4 +128,29 @@
 .no-trip {
   margin: auto auto;
   padding: 20px;
+}
+.status-red {
+  color: $red;
+}
+.status-green {
+  color: $green;
+}
+.incoming-trip-card {
+  text-align: center;
+  font-size: 25px;
+  color: $dark-rose;
+  margin: 0 20px;
+}
+.nav-tabs-justified, .nav-tabs.nav-justified {
+  margin-bottom: 20px;
+}
+.nav-tabs-justified > .active > a, .nav-tabs.nav-justified > .active > a, .nav-tabs-justified > .active > a:hover, .nav-tabs.nav-justified > .active > a:hover, .nav-tabs-justified > .active > a:focus, .nav-tabs.nav-justified > .active > a:focus {
+  background-color: $dark-rose;
+  color: $white;
+  opacity: 1 !important;
+}
+.nav-tabs-justified > li > a, .nav-tabs.nav-justified > li > a {
+  background-color: $dark-rose;
+  color: $white;
+  opacity: 0.5;
 }
