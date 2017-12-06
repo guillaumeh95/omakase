@@ -9,6 +9,7 @@
 
 import 'bootstrap';
 import "../plugins/flatpickr";
+import "../components/trip_form";
 
 import {initSliders} from "../components/slider";
 initSliders();
