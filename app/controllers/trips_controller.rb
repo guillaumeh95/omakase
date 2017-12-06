@@ -28,9 +28,9 @@ class TripsController < ApplicationController
       @activities = @activities.where(budget: @trip.budget)
     end
 
-    # if @trip.status.present?
-    #   @activities = @activities.where(status: @trip.status)
-    # end
+    if @trip.status.present?
+      @activities = @activities.where(@trip.status => true)
+    end
 
     @activities_one = @activities.where(@trip.filters[0] => true)
     @activities_two = @activities.where(@trip.filters[1] => true)

@@ -1,12 +1,30 @@
 <h4> Hello</h4>
 <% @activities_one.each do |activity| %>
-  <%= activity.title %>
+    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= activity.photo %>');">
+      <div class="activity-description">
+        <h2><%= activity.title %></h2>
+        <p><%= activity.name %></p>
+        <p><%= activity.address %></p>
+      </div>
+    </div>
 <% end %>
 
 <% @activities_two.each do |activity| %>
-  <%= activity.title %>
+  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= activity.photo %>');">
+      <div class="activity-description">
+        <h2><%= activity.title %></h2>
+        <p><%= activity.name %></p>
+        <p><%= activity.address %></p>
+      </div>
+    </div>
 <% end %>
 
 <% @activities_three.each do |activity| %>
-  <%= activity.title %>
+  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= activity.photo %>');">
+      <div class="activity-description">
+        <h2><%= activity.title %></h2>
+        <p><%= activity.name %></p>
+        <p><%= activity.address %></p>
+      </div>
+    </div>
 <% end %>
