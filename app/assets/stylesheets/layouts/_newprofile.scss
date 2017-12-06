@@ -1,11 +1,93 @@
 .container {
-  max-width: 900px;
+  max-width: 800px;
 }
 
-.checkboxes {
+.container p {
+  font-weight: 500;
+}
+
+.form-post {
+  background: white;
+  margin-top: 50px;
+  padding: 20px;
+  border-radius: 5px;
+  h1 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+    color: #666666;
+    margin-bottom: 50px;
+    margin-top: 0px;
+  }
+}
+
+.form-control {
+  background: white !important;
+}
+
+.form-group {
+  width: 400px;
+}
+
+.control-label {
+  font-weight: 500 !important;
+  font-size: 15px;
+}
+
+.slider {
+
+  width: 400px !important;
+  background-color: white !important;
+  }
+
+.slider-selection {
+  background: $yellow;
+}
+
+.slider-handle {
+  background: $dark-rose;
+}
+ .description-checkboxes, .status-checkboxes {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-right: 20px;
+}
+
+.select-description, .select-status {
+  background: $yellow;
+  padding: 25px;
+  min-width: 300px;
+  border-radius: 5px;
+  opacity: 0.8;
+  flex: 0 0 47%;
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 20px;
+  &:hover {
+  color: white;
+  opacity: 1;
+  cursor: pointer;
+  }
+  &.active {
+  background: $dark-rose;
+  color: white;
+  opacity: 1;
+  }
+}
+
+.radio {
   display: inline-block;
+  background: $yellow;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  opacity: 0.8;
+  text-align: center;
+  cursor: pointer;
 }
 
-.hidden {
-    display: none;
+.datepicker {
+  width: 400px;
 }
+
