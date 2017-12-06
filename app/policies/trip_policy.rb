@@ -1,15 +1,14 @@
 class TripPolicy < ApplicationPolicy
-
   def new?
-    return true
+    is_user_the_owner_or_admin?
   end
 
   def show?
-    return true
+    is_user_the_owner_or_admin?
   end
 
   def create?
-    return true
+    is_user_the_owner_or_admin?
   end
 
   def edit?
