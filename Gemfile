@@ -10,6 +10,7 @@ gem 'rails', '5.1.4'
 gem 'redis'
 gem "geocoder"
 gem 'figaro'
+gem "pundit"
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
@@ -18,6 +19,7 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+gem 'bootstrap-slider-rails'
 
 group :development, :test do
   gem 'pry-byebug'

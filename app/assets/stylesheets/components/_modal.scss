@@ -1,0 +1,19 @@
+.activities {
+  padding: 100px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.first-activity img, .second-activity img, .third-activity img {
+  flex: 0 0 33.33%;
+  width: 80%;
+}
+
+.first-activity {
+  align-self: flex-start;
+}
+.second-activity {
+  align-self: center;
+}
+.third-activity {
+  align-self: flex-end;
+}

@@ -1,23 +1,26 @@
-<%= simple_form_for [@trip] do |f| %>
-  <%= f.input :title, placeholder: "give a title to your trip" %>
-  <%= f.input :knows_the_city, label: 'Knows Paris?', :collection => [1, 2, 3, 4, 5], prompt: "Select a level" %>
-  <%= f.input :budget, label: 'Budget', :collection => [1, 2, 3, 4, 5], prompt: "Select a budget" %>
-  <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
-  <%= f.input :status, collection: ["solo", "family", "couple", "friends"], prompt: "Select a status" %>
-  <h3> Your friend is...</h3>
-  <input type="checkbox"  name="trip[sight_seeing_adventurer]" value="true" onclick="addClassCheck(this)"/> Sight Seeing Adventurer <br>
-  <input type="checkbox"  name="trip[art_lover]" value="true" onclick="addClassCheck(this)"/> an Art Lover <br>
-  <input type="checkbox"  name="trip[serial_shopper]" value="true" onclick="addClassCheck(this)"/> a Serial Shopper <br>
-  <input type="checkbox"  name="trip[nature_lover]" value="true" onclick="addClassCheck(this)"/> a Nature Lover <br>
-  <input type="checkbox"  name="trip[food_addict]" value="true" onclick="addClassCheck(this)"/> a Food Addict <br>
-  <input type="checkbox"  name="trip[sport_lover]" value="true" onclick="addClassCheck(this)"/> a Sport Lover <br>
-  <input type="checkbox"  name="trip[history_passionate]" value="true" onclick="addClassCheck(this)"/> a History Passionate <br>
-  <input type="checkbox"  name="trip[tech_fan]" value="true" onclick="addClassCheck(this)"/> a Tech fan <br>
-  <input type="checkbox"  name="trip[relaxed]" value="true" onclick="addClassCheck(this)"/> Relaxed <br>
-  <input type="checkbox"  name="trip[city_wanderer]" value="true" onclick="addClassCheck(this)"/> a city wanderer <br>
-  <%= f.submit "Submit profile", class: "btn-secondary" %>
-<% end %>
-
+<div class="container">
+  <%= simple_form_for [@trip] do |f| %>
+    <%= f.input :title, placeholder: "Give a title to your trip" %>
+    <%= f.input :knows_the_city, label: 'How well does your friend know the city?', input_html: {class: "sliderknowledge"} %>
+    <%= f.input :budget, label: 'Budget. ',input_html: {class: "sliderbudget"} %>
+    <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
+    <%= f.input :status, :as => :radio_buttons, collection: ["solo", "family", "couple", "friends"], prompt: "Select a status" %>
+    <h3> Your friend is...</h3>
+    <div class="checkboxes">
+      <input type="checkbox" class="hidden" name="trip[sight_seeing_adventurer]" value="true" onclick="addClassCheck(this)"/> Sight Seeing Adventurer <br>
+      <input type="checkbox" class="hidden" name="trip[art_lover]" value="true" onclick="addClassCheck(this)"/> an Art Lover <br>
+      <input type="checkbox" class="hidden" name="trip[serial_shopper]" value="true" onclick="addClassCheck(this)"/> a Serial Shopper <br>
+      <input type="checkbox" class="hidden" name="trip[nature_lover]" value="true" onclick="addClassCheck(this)"/> a Nature Lover <br>
+      <input type="checkbox" class="hidden" name="trip[food_addict]" value="true" onclick="addClassCheck(this)"/> a Food Addict <br>
+      <input type="checkbox" class="hidden" name="trip[sport_lover]" value="true" onclick="addClassCheck(this)"/> a Sport Lover <br>
+      <input type="checkbox" class="hidden" name="trip[history_passionate]" value="true" onclick="addClassCheck(this)"/> a History Passionate <br>
+      <input type="checkbox" class="hidden" name="trip[tech_fan]" value="true" onclick="addClassCheck(this)"/> a Tech fan <br>
+      <input type="checkbox" class="hidden" name="trip[relaxed]" value="true" onclick="addClassCheck(this)"/> Relaxed <br>
+      <input type="checkbox" class="hidden" name="trip[city_wanderer]" value="true" onclick="addClassCheck(this)"/> a city wanderer <br>
+    </div>
+    <%= f.submit "Submit profile", class: "btn-secondary" %>
+  <% end %>
+</div>
 
 <script type="text/javascript">
 function addClassCheck(element){
@@ -38,6 +41,5 @@ function addClassCheck(element){
 
 }
 </script>
-
 
 
