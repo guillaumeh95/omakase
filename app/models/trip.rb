@@ -1,4 +1,5 @@
 class Trip < ApplicationRecord
+
   #Associations
   belongs_to :host, class_name: 'User'
   # belongs_to :tourist, class_name: 'User'
@@ -23,5 +24,9 @@ class Trip < ApplicationRecord
       end
     end
   return true_filters
+  end
+
+  def selected_profiles
+    %w[sight_seeing_adventurer art_lover serial_shopper nature_lover food_addict sport_lover history_passionate tech_fan relaxed city_wanderer].select! {|profile| send(profile) == true }
   end
 end

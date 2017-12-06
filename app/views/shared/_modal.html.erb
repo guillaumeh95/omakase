@@ -3,23 +3,56 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title"><%= trip.title %></h4>
+        <h4 class="modal-title text-center"><%= trip.title %></h4>
       </div>
       <div class="modal-body">
-        <div class="activities">
-          <div class="first-activity">
-            <% first_activity = trip.visits[0].activity %>
-            <%= image_tag first_activity.photo, class:"trip-photo" %>
+        <div class="trip date text-center"><%= trip.date.strftime('%A %B %e, %Y') %></div>
+        <div class="trip-info">
+          <div class="trip-summary">
+            <h6 class="text-center">Summary</h6>
+            <div class="trip-host">Created by <i class="fa fa-user" aria-hidden="true"></i> <%= trip.host.first_name %> <%= trip.host.last_name %></div>
+            <div class="trip-tourist">For <i class="fa fa-user" aria-hidden="true"></i> <%= User.find(trip.tourist_id).first_name %> <%= User.find(trip.tourist_id).last_name %></div>
+            <div class="trip-profile">
+              Profiles <i class="fa fa-address-card" aria-hidden="true"></i>
+              <% trip.selected_profiles.each do |profile| %>
+                <%= profile.gsub('_', " ").split.map(&:capitalize).join(' ') %>
+              <% end %>
+            </div>
+            <div class="trip-budget">
+              Budget <i class="fa fa-eur" aria-hidden="true"></i>
+              <%= trip.budget %></div>
+            <div class="trip-knows-the-city">
+              Knows The City <i class="fa fa-eye" aria-hidden="true"></i>
+              <%= trip.knows_the_city %></div>
+            <div class="trip-status">Status <i class="fa fa-users" aria-hidden="true"></i> <%= trip.status %></div>
           </div>
-          <div class="second-activity">
-            <% second_activity = trip.visits[1].activity %>
-            <%= image_tag second_activity.photo, class:"trip-photo" %>
-          </div>
-          <div class="third-activity">
-            <% third_activity = trip.visits[2].activity %>
-            <%= image_tag third_activity.photo, class:"trip-photo" %>
+          <div class="trip-comments">
+            <h6 class="text-center">Comment</h6>
+              <i class="fa fa-comment" aria-hidden="true"></i>
+              <%= trip.comment %>
           </div>
         </div>
+          <div class="trip-photos">
+            <div class="first-activity">
+              <% first_activity = trip.visits[0].activity %>
+              <%= image_tag first_activity.photo, class:"trip-photo" %>
+              <div class="trip-name"><%= first_activity.name %></div>
+              <div class="trip-title"><%= first_activity.title %></div>
+            </div>
+            <div class="second-activity">
+              <% second_activity = trip.visits[1].activity %>
+              <%= image_tag second_activity.photo, class:"trip-photo" %>
+              <div class="trip-name"><%= second_activity.name %></div>
+              <div class="trip-title-modal"><%= second_activity.title %></div>
+            </div>
+            <div class="third-activity">
+              <% third_activity = trip.visits[2].activity %>
+              <%= image_tag third_activity.photo, class:"trip-photo" %>
+              <div class="trip-name"><%= third_activity.name %></div>
+              <div class="trip-title-modal"><%= third_activity.title %></div>
+            </div>
+          </div>
+        <div class="trip-map"></div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
