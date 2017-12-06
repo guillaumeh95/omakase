@@ -1,11 +1,19 @@
 .container {
   max-width: 900px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .checkboxes {
   display: inline-block;
 }
 
-.hidden {
-    display: none;
+.budget-slider {
+
+}
+
+.slider .slider-horizontal {
+  margin-left: 20px !important;
+  width: 300px !important;
+
 }
