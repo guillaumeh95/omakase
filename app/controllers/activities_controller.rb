@@ -1,6 +1,6 @@
 class ActivitiesController < ApplicationController
   def index
-    @activities = Activity.all
+    @activities = policy_scope(Activity)
   end
 
   def show

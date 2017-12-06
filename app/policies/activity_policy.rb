@@ -1,15 +1,16 @@
 class ActivityPolicy < ApplicationPolicy
-
-  def index?
-    return true
+  class Scope < Scope
+    def resolve
+      scope.all
+    end
   end
 
   def show?
-    return true
+    is_user_the_owner_or_admin?
   end
 
   def create?
-    return true
+    is_user_the_owner_or_admin?
   end
 
   def update?

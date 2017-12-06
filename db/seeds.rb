@@ -399,6 +399,10 @@ trips_attributes = [
     title: "John in Paris",
     date: DateTime.parse("09/01/2017 00:00"),
     host_id: User.first.id,
+    tourist_id: User.last.id,
+    art_lover: true,
+    food_addict: true,
+    status: "solo"
     tourist_id: User.last.id
   },
   {
