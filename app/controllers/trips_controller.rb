@@ -18,34 +18,23 @@ class TripsController < ApplicationController
   end
 
   def edit
-    @trip.knows_the_city = ""
-    @trip.budget = ""
-    @trip.status = "checked_status"
-    if checked.length == 3
-      @profile_one = "form_checked_one"
-      @profile_two = "form_checked_two"
-      @profile_three = "form_checked_three"
-    elsif checked.length == 2
-      @profile_one = "form_checked_one"
-      @profile_two = "form_checked_two"
-      @profile_three = "form_checked_two" || "form_checked_one"
-    elsif checked.length == 1
-      @profile_one = "form_checked_one"
-      @profile_two = "form_checked_one"
-      @profile_three = "form_checked_one" || "city_wanderer" || "sight_seeing_adventurer"
+    if @trip.knows_the_city.present?
+      @activities = Activity.where(knows_the_city: @trip.knows_the_city)
+    else
+      @activities = Activity.all
     end
 
-    @activities = Activity.where((@profile_one || @profile_two || @profile_three) && @trip.knows_the_city && @trip.budget && @trip.status)
+    if @trip.budget.present?
+      @activities = @activities.where(budget: @trip.budget)
+    end
 
-    # @activities_one = Activity.where(@profile_one && @trip.status && @trip.knows_the_city && @trip.budget)
-    # @activity_one = "checked_activity"
-    # @visit_one = Visit.new(activity: @activity_one, trip: @trip)
-    # @activities_two = Activity.where(@profile_two && @trip.status && @trip.knows_the_city && @trip.budget)
-    # @activity_two = "checked_activity"
-    # @visit_two = Visit.new(activity: @activity_two, trip: @trip)
-    # @activities_three = Activity.where(@profile_three && @trip.status && @trip.knows_the_city && @trip.budget)
-    # @activity_three = "checked_activity"
-    # @visit_three = Visit.new(activity: @activity_three, trip: @trip)
+    if @trip.status.present?
+      @activities = @activities.where(@trip.status => true)
+    end
+
+    @activities_one = @activities.where(@trip.filters[0] => true)
+    @activities_two = @activities.where(@trip.filters[1] => true)
+    @activities_three = @activities.where(@trip.filters[2] => true)
   end
 
   def update
@@ -54,7 +43,6 @@ class TripsController < ApplicationController
     else
       render :edit
     end
-
   end
 
   def destroy
@@ -62,7 +50,6 @@ class TripsController < ApplicationController
 
   private
   def trip_params
-
     params.require(:trip).permit(:title, :date, :status, :sight_seeing_adventurer, :art_lover, :serial_shopper, :nature_lover, :food_addict, :sport_lover, :history_passionate, :tech_fan, :relaxed, :city_wanderer, :budget, :knows_the_city )
 
   #rajouter le budget, knows city
