@@ -12,11 +12,10 @@
   background-size: cover !important;
   background-position: center;
   position: relative;
-  border-radius: 3px;
   font-style: $body-font;
   min-width: 210px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.4);
   margin: 20px;
+  border: 3px solid black;
   &:first-child {
     margin-top: 40px;
   }

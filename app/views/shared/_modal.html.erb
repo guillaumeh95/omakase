@@ -6,33 +6,44 @@
         <h4 class="modal-title text-center"><%= trip.title %></h4>
       </div>
       <div class="modal-body">
-        <div class="trip date text-center"><%= trip.date.strftime('%A %B %e, %Y') %></div>
+        <div class="trip date text-center"><p><%= trip.date.strftime('%A %B %e, %Y') %></p></div>
         <div class="trip-info">
           <div class="trip-summary">
             <h6 class="text-center">Summary</h6>
-            <div class="trip-host">Created by <i class="fa fa-user" aria-hidden="true"></i> <%= trip.host.first_name %> <%= trip.host.last_name %></div>
-            <div class="trip-tourist">For <i class="fa fa-user" aria-hidden="true"></i> <%= User.find(trip.tourist_id).first_name %> <%= User.find(trip.tourist_id).last_name %></div>
+            <div class="trip-host"><p>Created by <i class="fa fa-user" aria-hidden="true"></i> <%= trip.host.first_name %> <%= trip.host.last_name %></p></div>
+            <div class="trip-tourist"><p>For <i class="fa fa-user" aria-hidden="true"></i> <%= User.find(trip.tourist_id).first_name %> <%= User.find(trip.tourist_id).last_name %></p></div>
             <div class="trip-profile">
-              Profiles <i class="fa fa-address-card" aria-hidden="true"></i>
-              <% trip.selected_profiles.each do |profile| %>
-                <%= profile.gsub('_', " ").split.map(&:capitalize).join(' ') %>
-              <% end %>
+              <p>
+                Profiles <i class="fa fa-address-card" aria-hidden="true"></i>
+                <% trip.selected_profiles.each do |profile| %>
+                  <%= profile.gsub('_', " ").split.map(&:capitalize).join(' ') %>
+                <% end %>
+              </p>
             </div>
             <div class="trip-budget">
-              Budget <i class="fa fa-eur" aria-hidden="true"></i>
-              <%= trip.budget %></div>
+              <p>
+                Budget <i class="fa fa-eur" aria-hidden="true"></i>
+                <%= trip.budget %>
+              </p>
+            </div>
             <div class="trip-knows-the-city">
-              Knows The City <i class="fa fa-eye" aria-hidden="true"></i>
-              <%= trip.knows_the_city %></div>
-            <div class="trip-status">Status <i class="fa fa-users" aria-hidden="true"></i> <%= trip.status %></div>
+              <p>
+                Knows The City <i class="fa fa-eye" aria-hidden="true"></i>
+                <%= trip.knows_the_city %></p>
+            </div>
+            <div class="trip-status">
+              <p>Status <i class="fa fa-users" aria-hidden="true"></i> <%= trip.status %></p>
+            </div>
           </div>
           <div class="trip-comments">
             <h6 class="text-center">Comment</h6>
-              <i class="fa fa-comment" aria-hidden="true"></i>
-              <%= trip.comment %>
+              <p>
+                <i class="fa fa-comment" aria-hidden="true"></i>
+                <%= trip.comment %>
+              </p>
           </div>
         </div>
-          <div class="trip-photos">
+          <div class="trip-photos text-center">
             <div class="first-activity">
               <% first_activity = trip.visits[0].activity %>
               <%= image_tag first_activity.photo, class:"trip-photo" %>
@@ -52,7 +63,7 @@
               <div class="trip-title-modal"><%= third_activity.title %></div>
             </div>
           </div>
-        <div class="trip-map"></div>
+        <div class="trip-map">ADD MAP</div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

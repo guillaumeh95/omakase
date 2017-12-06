@@ -8,13 +8,19 @@
 }
 .trip-comment {
   flex: 0 0 50%;
+  text-align:justify;
 }
 .trip-photos {
   padding: 0;
   display: flex;
   justify-content: space-between;
 }
-
+.first-activity, .second-activity, .third-activity {
+  img {
+    object-fit: cover;
+    height: 200px;
+  }
+}
 .first-activity {
   flex: 0 0 33.33%;
 }
