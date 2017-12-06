@@ -9,7 +9,7 @@
 
 import 'bootstrap';
 import "../plugins/flatpickr";
-<<<<<<< HEAD
+
 import {initSliders} from "../components/slider";
 initSliders();
 
