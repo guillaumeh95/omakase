@@ -1,11 +1,9 @@
 // Import Google fonts
-@import url(href="https://fonts.googleapis.com/css?family=Cormorant+Infant|Cormorant+SC:700|Cormorant+Garamond:600|Encode+Sans+Condensed");
-
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i|Work+Sans:100,200,300,400,500,600,700,800,900');
 
 // Define fonts for body and headers
-$body-font:"Encode+Sans+Condensed", "sans-serif";
-$headers-font: "Cormorant SC", "serif";
-// $headers-font: "Cormorant Garamond", "serif";
+$body-font:"Work Sans", "sans-serif";
+$headers-font: "Source Sans Pro", "sans-serif";
 
 
 // To use a font file (.woff) uncomment following lines
