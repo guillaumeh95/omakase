@@ -402,7 +402,7 @@ trips_attributes = [
     tourist_id: User.last.id,
     art_lover: true,
     food_addict: true,
-    status: "solo"
+    status: "solo",
     tourist_id: User.last.id
   },
   {
