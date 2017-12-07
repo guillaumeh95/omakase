@@ -1,3 +1,5 @@
+// Sliders of new trip form
+
 import $ from "jquery";
 import "bootstrap-slider";
 
