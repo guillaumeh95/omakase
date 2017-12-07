@@ -5,7 +5,6 @@ class TripsController < ApplicationController
   end
 
   def create
-    raise
     @trip = Trip.new(trip_params)
     @trip.host = current_user
     if @trip.save
