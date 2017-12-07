@@ -49,18 +49,20 @@
     position: absolute;
     content:'';
     display: inline-block;
-    background: rgba(59,173,227,1);
-    background: linear-gradient(45deg, rgba(253, 207, 72,1) 51%, rgba(249, 91, 115,1) 100%);
+    background: rgba(249, 91, 115,1);
+    background: linear-gradient(-500deg,rgba(249, 91, 115,1) 50%, rgba(253, 207, 71,1) 54%);
     height: 50px;
     width: 372px;
     z-index: -1;
     transform: translateX(-280px);
     transition: transform 400ms ease-in;
+    color: white !important;
   }
 
   &:hover {
     &:after {
       transform: translateX(-200px);
+      color: white !important;
     }
   }
   span {
