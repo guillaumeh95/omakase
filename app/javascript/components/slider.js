@@ -15,7 +15,9 @@ $('.sliderknowledge').slider({
     max: 5,
     steps: 4,
     value: 3,
-    orientation: 'horizontal'
+    orientation: 'horizontal',
+    ticks: [1, 2, 3, 4, 5],
+    ticks_labels: ['Very Poor', 'Poor', 'Irrelevant', 'Rich', 'Very Rich']
     });
 
 };
