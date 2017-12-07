@@ -8,7 +8,7 @@
       </div>
         <% if @activity_one %>
           <div id= "activities-one-filtered" class="card-activities-filtered stretch">
-            <%= render "shared/card_activities", activity: activity %>
+            <%= render "shared/card_activities", activity: @activity_one %>
         <% else %>
           <div id= "activities-one-filtered" class="card-activities-filtered">
             <% @activities_one.each do |activity| %>
@@ -25,12 +25,12 @@
         </div>
         <% if @activity_two %>
           <div id= "activities-two-filtered" class="card-activities-filtered stretch">
-            <%= render "shared/card_activities", activity: activity %>
+            <%= render "shared/card_activities", activity: @activity_two %>
           </div>
         <% else %>
           <div id= "activities-two-filtered" class="card-activities-filtered">
             <% @activities_two.each do |activity| %>
-              <%= render "shared/card_activities", activity: activity, trip: @trip %>
+              <%= render "shared/card_activities", activity: activity %>
             <% end %>
           </div>
         <% end %>
@@ -42,7 +42,7 @@
           </div>
           <% if @activity_three %>
             <div id= "activities-three-filtered" class="card-activities-filtered stretch">
-              <%= render "shared/card_activities", activity: activity %>
+              <%= render "shared/card_activities", activity: @activity_three %>
             </div>
           <% else %>
             <div id= "activities-three-filtered" class="card-activities-filtered">
