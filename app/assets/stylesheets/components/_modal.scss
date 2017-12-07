@@ -1,19 +1,32 @@
-.activities {
-  padding: 100px 0;
+.trip-info {
   display: flex;
   justify-content: space-between;
 }
-.first-activity img, .second-activity img, .third-activity img {
-  flex: 0 0 33.33%;
-  width: 80%;
+.trip-summary {
+  color: black;
+  flex: 0 0 50%;
 }
-
+.trip-comment {
+  flex: 0 0 50%;
+  text-align:justify;
+}
+.trip-photos {
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+.first-activity, .second-activity, .third-activity {
+  img {
+    object-fit: cover;
+    height: 200px;
+  }
+}
 .first-activity {
-  align-self: flex-start;
+  flex: 0 0 33.33%;
 }
 .second-activity {
-  align-self: center;
+  flex: 0 0 33.33%;
 }
 .third-activity {
-  align-self: flex-end;
+  flex: 0 0 33.33%;
 }

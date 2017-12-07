@@ -18,14 +18,13 @@
   z-index: 9999;
 }
 
-
 /* Logo */
 .navbar-wagon-brand img {
   height: 35px;
 }
 
 /* Right section */
-.navbar-wagon-right {
+.navbar-wagon-right, .navbar-wagon-left {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -38,11 +37,14 @@
 }
 
 /* Navbar link */
-.navbar-wagon-link {
+.navbar-wagon-link, .navbar-wagon-greet {
   color: black;
-  font-size: 14px;
+  font-size: 16px;
+}
+.navbar-wagon-greet{
+  padding: 0 20px;
 }
 .navbar-wagon-link:hover {
-  color: $red;
+  color: $dark-rose;
   text-decoration: none;
 }
