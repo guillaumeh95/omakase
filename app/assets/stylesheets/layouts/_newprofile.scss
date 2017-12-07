@@ -17,7 +17,7 @@
     font-size: 25px;
     color: #666666;
     margin-bottom: 50px;
-    margin-top: 0px;
+    margin-top: 0px
   }
 }
 
@@ -45,7 +45,7 @@
 }
 
 .slider-handle {
-  background: $dark-rose;
+  background: $dark-pink;
 }
  .description-checkboxes, .status-checkboxes {
   display: flex;
@@ -70,7 +70,7 @@
   cursor: pointer;
   }
   &.active {
-  background: $dark-rose;
+  background: $dark-pink;
   color: white;
   opacity: 1;
   }
