@@ -1,14 +1,6 @@
 class Users::InvitationsController < Devise::InvitationsController
   devise_for :users, :controllers => { :invitations => 'users/invitations' }
 
-  def update
-    if some_condition
-      redirect_to root_path
-    else
-      super
-    end
-  end
-
   protected
 
   def configure_permitted_parameters

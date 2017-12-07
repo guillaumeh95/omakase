@@ -23,6 +23,7 @@
 
 .form-control {
   background: white !important;
+  width: 85.5% !important;
 }
 
 .form-group {
@@ -36,7 +37,7 @@
 
 .slider {
 
-  width: 400px !important;
+  width: 85.5% !important;
   background-color: white !important;
   }
 
@@ -52,6 +53,7 @@
   justify-content: space-between;
   flex-wrap: wrap;
   margin-right: 20px;
+  margin-right: 0;
 }
 
 .select-description, .select-status {
@@ -92,3 +94,13 @@
 .datepicker {
   width: 400px;
 }
+// .name-user-flex {
+//   display: flex;
+//   justify-content: space-around;
+// }
+// .first-name-user-flex {
+//   flex: 0 0 47%;
+// }
+// .last-name-user-flex {
+//   flex: 0 0 47%;
+// }

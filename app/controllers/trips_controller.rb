@@ -11,11 +11,13 @@ class TripsController < ApplicationController
 
     # Assign tourist_id to new trip depending on existence of user
     if User.find_by(email: params[:trip][:tourist_email])
-      @trip.tourist_id = User.find_by(email: params[:trip][:tourist_email]).id
+      user = User.find_by(email: params[:trip][:tourist_email])
+      assign_tourist(user)
     else
       user = User.invite!(user_params)
-      @trip.tourist_id = user.id
+      assign_tourist(user)
     end
+
     if @trip.save
       redirect_to edit_trip_path(@trip)
     else
@@ -69,6 +71,14 @@ class TripsController < ApplicationController
 
   def find_trip
     @trip = Trip.find(params[:id])
+  end
+
+  # Method assigning tourist_first_name tourist_last_name and tourist_email to Trip
+  def assign_tourist(user)
+    @trip.tourist_id = user.id
+    @trip.tourist_first_name = user.first_name
+    @trip.tourist_last_name = user.last_name
+    @trip.tourist_email = user.email
   end
 end
 
