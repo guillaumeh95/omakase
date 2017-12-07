@@ -10,6 +10,7 @@
 import 'bootstrap';
 import "../plugins/flatpickr";
 import "../components/trip_form";
+import "../components/activities";
 
 import {initSliders} from "../components/slider";
 initSliders();
@@ -40,14 +41,4 @@ if (cards) {
 }
 
 
-const activities = document.querySelectorAll(".card-activity-unit")
-
-if (activities) {
-  activities.forEach((activity) => {
-    activity.addEventListener("click", (event) => {
-      const activityId = event.currentTarget.dataset.activityId
-      console.log(activityId)
-    })
-  })
-}
 

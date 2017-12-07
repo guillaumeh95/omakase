@@ -1,22 +1,26 @@
-#card-activities-all-title {
+.activities-container {
+  margin: 20px 40px 20px 40px;
+}
+
+.card-activities-all {
   display: flex;
 }
 
-.card-activities-title {
+.card-activities-filtered-with-title {
+  display: flex;
+  flex-direction: column;
   width: 33%;
-  background-color: $white;
+  height: 500px;
+}
+
+.card-activities-title {
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
-#card-activities-all {
-  display: flex;
-  height: 600px;
-}
 .card-activities-filtered {
   display: flex;
   flex-direction: column;
-  width: 33%;
   overflow: auto;
 }
 .card-activity-unit {
@@ -28,7 +32,7 @@
   align-items: center;
 }
 .one {
-  border: solid 2px $dark-rose;
+  border: solid 2px $dark-pink;
 }
 .two {
   border: solid 2px $yellow;
@@ -38,6 +42,7 @@
 }
 .card-activity-description {
   color: white;
+  padding-left: 6px;
   h2 {
     margin: 0;
     margin-bottom: 6px;
@@ -49,4 +54,30 @@
     font-size: 14px;
     font-weight: 200;
   }
+}
+
+.card-clicked {
+  display: flex;
+  align-items: stretch;
+  height: 100%;
+}
+
+.card-alone {
+  display: flex;
+  width: 100%;
+  background-size: cover!important;
+  background-position: center;
+  align-items: center;
+}
+
+.pink-bg {
+  background-color: $dark-pink;
+}
+
+.yellow-bg {
+  background-color: $yellow;
+}
+
+.purple-bg {
+  background-color: $purple;
 }
