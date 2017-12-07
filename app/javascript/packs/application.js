@@ -11,8 +11,18 @@ import 'bootstrap';
 import "../plugins/flatpickr";
 import "../components/trip_form";
 
+import {mapDisplay} from "./map";
+
+
+
 import {initSliders} from "../components/slider";
 initSliders();
+
+const openmodal = document.getElementById("ouverture_modal")
+openmodal.addEventListener ("mouseover", (event) => {
+  console.log("Hey");
+  mapDisplay();
+});
 
 
 const cards = document.querySelectorAll(".card.full-card");

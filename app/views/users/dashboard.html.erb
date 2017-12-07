@@ -1,3 +1,5 @@
+<%= render 'shared/navbar_dashboard' %>
+
 <div class="dashboard-container">
   <div class="dashboard">
 
@@ -52,25 +54,14 @@
 
       </div>
 
-    </div>
-
-    <!-- RIGHT PART OF DASHBOARD -->
-
-    <div class="right-dash">
-      <div class="main-content">
-        <h3>Welcome <%= @user.first_name %>,</h3>
-        <%= image_tag 'https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAxnAAAAJDVkY2Y3OGJkLTQ1OWEtNGZhZS1hMWU2LTNiNjU3MTVhNjIwMA.jpg', class:"dashboard-photo" %>
-        <p class="time-now"> <%= Time.now.strftime("%b %d, %Y") %></p>
-        <%= link_to '<i class="fa fa-plus fa-fw" aria-hidden="true"></i> New Trip'.html_safe, new_trip_path, class: "btn btn-primary" %>
+      <div class="btn-new-trip">
+        <%= link_to '<i class="fa fa-plus fa-fw" aria-hidden="true"></i> New Trip'.html_safe, new_trip_path, class: "btn btn-new" %>
       </div>
+
     </div>
+
 
   </div>
 </div>
 
-<div
-  id="map"
-  style="width: 100%;
-  height: 600px;"
-  data-markers="<%= @markers.to_json %>"
-></div>
+

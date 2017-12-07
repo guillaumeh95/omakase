@@ -1,32 +1,108 @@
+.modal{
+  background-color: rgba(236, 49, 89, 0.3);
+}
+.modal-header {
+  border-bottom: 2px solid $dark-pink;
+}
+
+.modal-body{
+  margin: 0 20px;
+}
+
 .trip-info {
   display: flex;
   justify-content: space-between;
 }
 .trip-summary {
   color: black;
-  flex: 0 0 50%;
+  flex: 0 0 40%;
+  border: 2px solid $dark-pink;
+  padding: 10px 30px;
 }
-.trip-comment {
-  flex: 0 0 50%;
+.trip-comments {
+  flex: 0 0 58%;
   text-align:justify;
+  border: 2px solid $dark-pink;
+  padding: 10px 30px;
 }
 .trip-photos {
   padding: 0;
   display: flex;
   justify-content: space-between;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
+
 .first-activity, .second-activity, .third-activity {
   img {
     object-fit: cover;
     height: 200px;
   }
 }
+
+.trip-photos h5 {
+  font-size: 12px;
+  color: white;
+}
+
+.trip-photos h6 {
+  font-size: 16px;
+  color: white;
+}
+
 .first-activity {
   flex: 0 0 33.33%;
+  position: relative;
 }
+
+.first-activity h6 {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+}
+
+.first-activity h5 {
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+}
+
 .second-activity {
   flex: 0 0 33.33%;
+  position: relative;
 }
+
+.second-activity h6 {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+}
+
+.second-activity h5 {
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+}
+
 .third-activity {
   flex: 0 0 33.33%;
+  position: relative;
+
+}
+
+.third-activity h6 {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+}
+
+.third-activity h5 {
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+}
+
+.map {
+  border: 2px solid $dark-pink;
+  padding: 10px;
 }
