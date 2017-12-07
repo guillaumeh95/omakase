@@ -1,18 +1,17 @@
-.banner {
-  color: black;
-  height: 120vh;
-  //background-size: 100%;
-  display: flex;
-  align-items: center;
-  background-size: 50%;
-  background-repeat: no-repeat;
-  background-position: right bottom;
-}
 
+.banner {
+  color: white;
+  text-align: center;
+  height: calc(100vh - 55px);
+  background-size: cover !important;
+  display: flex;
+  align-items: left;
+  justify-content: left;
+}
 
 .banner-home{
   text-align:left;
-  margin: 20%;
+  margin: 10%;
   margin-top: 15%;
 }
 

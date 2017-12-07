@@ -1,36 +1,43 @@
+<%= render 'shared/navbar' %>
 <div class="container">
-
   <div class="form-post">
-    <%= simple_form_for [@trip] do |f| %>
-      <%= f.input :title, label: "Give a title to your trip", placeholder: "Ector's trip" %>
-      <%= f.input :knows_the_city, label: "Indicate your friend's knowledge of the city", input_html: {class: "sliderknowledge"} %>
-      <%= f.input :budget, label: "Indicate your friend's budget", input_html: {class: "sliderbudget"} %>
-      <%= f.input :date, label: "Select a date", as: :string, required: false, input_html: {class: "datepicker"}, placeholder: "December 22, 2017"%>
+<h3> Let's define your friend's profile !</h3>
+<h6> Be as precise as possible so we can provide you with the most suited activities! </h6>
+    <div class=form-first-part>
+      <%= simple_form_for [@trip] do |f| %>
+        <%= f.input :title, label: "Give a title to your trip:", placeholder: "Ector's trip" %>
+        <%= f.input :knows_the_city, label: "Indicate your friend's knowledge of the city:", input_html: {class: "sliderknowledge"} %>
+        <%= f.input :budget, label: "Indicate your friend's budget:", input_html: {class: "sliderbudget"} %>
+        <%= f.input :date, label: "Select a date:", as: :string, required: false, input_html: {class: "datepicker"}, placeholder: "December 22, 2017"%>
+    </div>
+      <p> Select whether your friend is coming on his own or with company:</p>
       <div class="status-checkboxes">
         <div class="select-status">
-          <i class="fa fa-camera-retro" aria-hidden="true"></i> <br>
+          <i class="fa fa-male" aria-hidden="true"></i><br>
           Solo
         <%= f.input :status, as: :hidden, input_html: { value:"solo", disabled:true } %>
         </div>
         <div class="select-status">
-          <i class="fa fa-paint-brush" aria-hidden="true"></i> <br>
+          <i class="fa fa-male" aria-hidden="true"></i><i class="fa fa-child" aria-hidden="true"></i><i class="fa fa-child" aria-hidden="true"></i> <br>
           Family
         <%= f.input :status, as: :hidden, input_html: { value:"family", disabled:true } %>
         </div>
+
         <div class="select-status">
-          <i class="fa fa-shopping-bag" aria-hidden="true"></i> <br>
+          <i class="fa fa-heart" aria-hidden="true"></i> <br>
           Couple
         <%= f.input :status, as: :hidden, input_html: { value:"couple", disabled:true } %>
         </div>
+
         <div class="select-status">
-          <i class="fa fa-leaf" aria-hidden="true"></i> <br>
+          <i class="fa fa-users" aria-hidden="true"></i> <br>
           Friends
         <%= f.input :status, as: :hidden, input_html: { value:"friends", disabled:true } %>
         </div>
       </div>
 
 
-      <p> Choose 3 profiles to describe your friend</p>
+      <p> Choose 3 profiles to describe your friend:</p>
       <div class="description-checkboxes">
         <div class="select-description" id="sight_seeing_adventurer">
           <i class="fa fa-camera-retro" aria-hidden="true"></i> <br>

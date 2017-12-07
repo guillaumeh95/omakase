@@ -15,7 +15,7 @@ $('.sliderknowledge').slider({
     max: 5,
     steps: 4,
     value: 3,
-    orientation: 'horizontal'
+    orientation: 'horizontal',
     });
 
 };

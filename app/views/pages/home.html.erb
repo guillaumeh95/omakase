@@ -1,19 +1,9 @@
-
-<div class="main-container">
+<div class="main-container" style="background-image: linear-gradient(-225deg, rgba(0,20,20,0.6) 0%, rgba(0,36,61,0.6) 50%),url('<%= image_path "background.jpg" %>');">
+  <%= render "shared/navbar" %>
   <%= render "shared/banner" %>
-  <div class="icons-container">
-    <div class="icons">
-      <%= image_tag "foot1.png", {class: "img-circle", id: "foot"}%>
-      <%= image_tag "foot1.png", {class: "img-circle", id: "foot"}%>
-      <%= image_tag "foot1.png", {class: "img-circle", id: "foot"}%>
-      <%= image_tag "foot1.png", {class: "img-circle", id: "foot"}%>
-      <%= image_tag "foot1.png", {class: "img-circle", id: "foot"}%>
-      <%= image_tag "foot1.png", {class: "img-circle", id: "foot"}%>
-      <%= image_tag "foot1.png", {class: "img-circle", id: "foot"}%>
-    </div>
-  </div>
+
   <div class="steps">
-    <p>Your only a minute away from sending your map!</p>
+    <p>You are only a minute away from sending your map!</p>
       <div class="step-container">
         <div class="icons">
           <%= image_tag "one.svg", {class: "img-circle", id: "number"}%>
