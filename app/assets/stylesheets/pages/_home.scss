@@ -8,7 +8,6 @@
   width: 10%;
 }
 
-
 .icons {
   display: flex;
   align-items: center;
@@ -25,10 +24,20 @@
 
 .step-container {
   margin-bottom: 20px;
+  background: $dark-pink;
+
 }
 
 .steps {
+  background: $dark-pink;
   text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  height: 80vh;
+}
+
+.steps h4 {
+  color: white;
 }
 
 #number {

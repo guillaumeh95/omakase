@@ -1,3 +1,6 @@
+body {
+  background: $purple;
+}
 .container {
   max-width: 800px;
 }
@@ -5,12 +8,12 @@
 .container p {
   font-weight: 500;
 }
-
 .form-post {
+  margin-top: 30px;
   background: white;
-  margin-top: 50px;
   padding: 20px;
-  border-radius: 5px;
+  padding-top: 5px;
+  border-radius: 3px;
   h1 {
     text-align: center;
     font-weight: bold;
@@ -20,7 +23,14 @@
     margin-top: 0px
   }
 }
-
+.simple_form, .new_trip {
+  display: block;
+  width: 400px;
+  margin-top: 40px;
+  margin-bottom: 50px;
+  margin-right: auto;
+  margin-left: auto;
+}
 .form-control {
   background: white !important;
 }
@@ -35,7 +45,6 @@
 }
 
 .slider {
-
   width: 400px !important;
   background-color: white !important;
   }
@@ -47,20 +56,44 @@
 .slider-handle {
   background: $dark-pink;
 }
+.tooltip-main {
+ display: none !important;
+}
  .description-checkboxes, .status-checkboxes {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin-right: 20px;
 }
 
-.select-description, .select-status {
+.select-description  {
   background: $yellow;
   padding: 25px;
   min-width: 300px;
   border-radius: 5px;
   opacity: 0.8;
-  flex: 0 0 47%;
+  flex: 0 0 48%;
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 20px;
+  &:hover {
+  color: white;
+  opacity: 1;
+  cursor: pointer;
+  }
+  &.active {
+  background: $dark-pink;
+  color: white;
+  opacity: 1;
+  }
+}
+
+.select-status {
+  background: $yellow;
+  padding: 15px;
+  width: 100px;
+  border-radius: 5px;
+  opacity: 0.8;
+  flex: 0 0 22%;
   text-align: center;
   cursor: pointer;
   margin-bottom: 20px;

@@ -1,27 +1,32 @@
+
 .banner {
-  color: black;
-  height: 120vh;
-  //background-size: 100%;
+  color: white;
+  text-align: center;
+  height: calc(100vh - 55px);
+  background-size: cover !important;
   display: flex;
-  align-items: center;
-  background-size: 50%;
-  background-repeat: no-repeat;
-  background-position: right bottom;
+  align-items: left;
+  justify-content: left;
 }
 
-
 .banner-home{
-  text-align:left;
-  margin: 20%;
+  margin: 10%;
   margin-top: 15%;
 }
 
+.banner-description {
+  width: 550px;
+  text-align: left;
+  margin-top: -30px;
+  margin-left: 130px;
+}
+
 .banner h1 {
-  font-size: 52px;
-  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
-  color: black;
-  opacity: 0.8;
-  text-align:left;
+  font-size: 56px;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
+  color: $dark-pink;
+  font-weight: 450;
+  font-family: 'Monoton', cursive;
 }
 
 .banner h2 {
@@ -32,11 +37,10 @@
 }
 
 .banner h3 {
-  font-size: 25px;
-  font-weight: 200;
-  color: rgb(255, 255, 255);
-  opacity: 0.6;
+  font-size: 19px;
+  font-weight: 450;
   margin-bottom: 30px;
+  color: white;
 }
 
 .enter {
