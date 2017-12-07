@@ -1,30 +1,43 @@
 <h4> Hello</h4>
-<% @activities_one.each do |activity| %>
-    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= activity.photo %>');">
-      <div class="activity-description">
-        <h2><%= activity.title %></h2>
-        <p><%= activity.name %></p>
-        <p><%= activity.address %></p>
-      </div>
+<div id="card-activities-all-title">
+  <% @trip.filters.each do |filter| %>
+    <div class="card-activities-title text-center">
+      <%= "Choose a #{filter.split("_").map(&:capitalize).join(' ')} activity" %>
     </div>
-<% end %>
+  <% end %>
+</div>
 
-<% @activities_two.each do |activity| %>
-  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= activity.photo %>');">
-      <div class="activity-description">
-        <h2><%= activity.title %></h2>
-        <p><%= activity.name %></p>
-        <p><%= activity.address %></p>
-      </div>
-    </div>
-<% end %>
+<div id="card-activities-all">
+  <div class="card-activities-filtered">
+    <% @activities_one.each do |activity| %>
+        <div class="card-activity-unit one" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('<%= activity.photo %>');" data-activity-id='<%= activity.id %>'>
+          <div class="card-activity-description" >
+            <h2><%= activity.title %></h2>
+            <p><%= activity.name %></p>
+          </div>
+        </div>
+    <% end %>
+  </div>
 
-<% @activities_three.each do |activity| %>
-  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= activity.photo %>');">
-      <div class="activity-description">
-        <h2><%= activity.title %></h2>
-        <p><%= activity.name %></p>
-        <p><%= activity.address %></p>
+  <div class="card-activities-filtered">
+    <% @activities_two.each do |activity| %>
+      <div class="card-activity-unit two" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= activity.photo %>');" data-activity-id='<%= activity.id %>'>
+          <div class="card-activity-description">
+            <h2><%= activity.title %></h2>
+            <p><%= activity.name %></p>
+          </div>
       </div>
-    </div>
-<% end %>
+    <% end %>
+  </div>
+
+  <div class="card-activities-filtered">
+    <% @activities_three.each do |activity| %>
+      <div class="card-activity-unit three" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= activity.photo %>');" data-activity-id='<%= activity.id %>'>
+          <div class="card-activity-description">
+            <h2><%= activity.title %></h2>
+            <p><%= activity.name %></p>
+          </div>
+        </div>
+    <% end %>
+  </div>
+</div>

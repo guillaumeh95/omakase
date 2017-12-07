@@ -17,7 +17,7 @@ class Trip < ApplicationRecord
 
   def filters
     true_filters = []
-    filters = [:sight_seeing_adventurer, :art_lover, :serial_shopper, :nature_lover, :food_addict, :sport_lover, :history_passionate, :tech_fan, :relaxed, :city_wanderer]
+    filters = ["sight_seeing_adventurer", "art_lover", "serial_shopper", "nature_lover", "food_addict", "sport_lover", "history_passionate", "tech_fan", "relaxed", "city_wanderer"]
     filters.each do |filter|
       if self.send(filter)
         true_filters << filter
