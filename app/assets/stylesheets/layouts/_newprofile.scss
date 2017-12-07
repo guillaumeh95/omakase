@@ -38,28 +38,32 @@ body {
 .form-group {
   width: 112%;
 }
-
 .control-label {
   font-weight: 500 !important;
   font-size: 15px;
 }
-
 .slider {
   width: 80% !important;
   background-color: white !important;
   }
 
-.slider-selection {
+.slider-selection.tick-slider-selection {
   background: $yellow;
 }
-
 .slider-handle {
   background: $dark-pink;
 }
+.slider-tick-label-container {
+}
 .slider-tick-label {
   font-size: 10px;
+  padding-right: 5px;
+  padding-left: 5px;
 }
-
+.slider-tick.round.in-selection, .slider-tick.round {
+  background: $yellow;
+  display: none;
+}
 .tooltip-main {
  display: none !important;
 }
@@ -131,6 +135,4 @@ body {
   width: 100% !important;
   margin: 0;
 }
-.slider-handle .min-slider-handle .round {
-  display: hidden;
-}
+
