@@ -9,6 +9,8 @@ function initSliders() {
     steps: 4,
     value: 3,
     orientation: 'horizontal',
+    ticks: [1, 2, 3, 4, 5],
+    ticks_labels: ['Poor', 'Average', 'Not Sure', 'Rich', 'Very Rich']
   });
 $('.sliderknowledge').slider({
     min: 1,
@@ -16,6 +18,8 @@ $('.sliderknowledge').slider({
     steps: 4,
     value: 3,
     orientation: 'horizontal',
+    ticks: [1, 2, 3, 4, 5],
+    ticks_labels: ['Not At All', 'Little', 'Not Sure', 'Good', 'Well']
     });
 
 };

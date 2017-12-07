@@ -4,7 +4,6 @@ body {
 .container {
   max-width: 800px;
 }
-
 .container p {
   font-weight: 500;
 }
@@ -25,36 +24,45 @@ body {
 }
 .simple_form, .new_trip {
   display: block;
-  width: 400px;
+  width: 92% !important;
   margin-top: 40px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   margin-right: auto;
   margin-left: auto;
 }
 .form-control {
   background: white !important;
+  width: 80% !important;
 }
 
 .form-group {
-  width: 400px;
+  width: 112%;
 }
-
 .control-label {
   font-weight: 500 !important;
   font-size: 15px;
 }
-
 .slider {
-  width: 400px !important;
+  width: 80% !important;
   background-color: white !important;
   }
 
-.slider-selection {
+.slider-selection.tick-slider-selection {
   background: $yellow;
 }
-
 .slider-handle {
   background: $dark-pink;
+}
+.slider-tick-label-container {
+}
+.slider-tick-label {
+  font-size: 10px;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+.slider-tick.round.in-selection, .slider-tick.round {
+  background: $yellow;
+  display: none;
 }
 .tooltip-main {
  display: none !important;
@@ -63,8 +71,8 @@ body {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  margin-right: 0;
 }
-
 .select-description  {
   background: $yellow;
   padding: 25px;
@@ -86,7 +94,6 @@ body {
   opacity: 1;
   }
 }
-
 .select-status {
   background: $yellow;
   padding: 15px;
@@ -108,7 +115,6 @@ body {
   opacity: 1;
   }
 }
-
 .radio {
   display: inline-block;
   background: $yellow;
@@ -125,3 +131,8 @@ body {
 .datepicker {
   width: 400px;
 }
+.trip-title-flex {
+  width: 100% !important;
+  margin: 0;
+}
+

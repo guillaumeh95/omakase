@@ -1,16 +1,47 @@
 <%= render 'shared/navbar' %>
 <div class="container">
   <div class="form-post">
-<h3> Let's define your friend's profile !</h3>
-<h6> Be as precise as possible so we can provide you with the most suited activities! </h6>
-    <div class=form-first-part>
-      <%= simple_form_for [@trip] do |f| %>
-        <%= f.input :title, label: "Give a title to your trip:", placeholder: "Ector's trip" %>
-        <%= f.input :knows_the_city, label: "Indicate your friend's knowledge of the city:", input_html: {class: "sliderknowledge"} %>
-        <%= f.input :budget, label: "Indicate your friend's budget:", input_html: {class: "sliderbudget"} %>
-        <%= f.input :date, label: "Select a date:", as: :string, required: false, input_html: {class: "datepicker"}, placeholder: "December 22, 2017"%>
-    </div>
-      <p> Select whether your friend is coming on his own or with company:</p>
+    <h3> Let's define your friend's profile !</h3>
+    <h6> Be as precise as possible so we can provide you with the most suited activities </h6>
+    <%= simple_form_for [@trip] do |f| %>
+      <div class="row">
+        <div class="col-xs-6">
+          <div class="form-group">
+            <%= f.input :tourist_first_name, label: "Enter your friend's first name", placeholder: "Hector", class:"form-inline"%>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div class="form-group">
+            <%= f.input :tourist_last_name, label: "Enter your friend's last name", placeholder: "Louvot", class:"form-inline"%>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6">
+          <div class="form-group">
+            <%= f.input :tourist_email, label: "Enter your friend's email", placeholder: "hector.louvot@gmail.com" %>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div class="form-group">
+            <%= f.input :date, label: "Pick a date", as: :string, required: false, input_html: {class: "datepicker"}, placeholder: "December 22, 2017"%>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6">
+          <div class="form-group">
+            <%= f.input :knows_the_city, label: "Indicate your friend's knowledge of the city", input_html: {class: "sliderknowledge"} %>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div class="form-group">
+            <%= f.input :budget, label: "Indicate your friend's budget", input_html: {class: "sliderbudget"} %>
+          </div>
+        </div>
+      </div>
+
+      <p> Select whether your friend is coming on his own or with company</p>
       <div class="status-checkboxes">
         <div class="select-status">
           <i class="fa fa-male" aria-hidden="true"></i><br>
@@ -36,8 +67,7 @@
         </div>
       </div>
 
-
-      <p> Choose 3 profiles to describe your friend:</p>
+      <p> Choose 3 profiles to describe your friend</p>
       <div class="description-checkboxes">
         <div class="select-description" id="sight_seeing_adventurer">
           <i class="fa fa-camera-retro" aria-hidden="true"></i> <br>
@@ -88,6 +118,13 @@
           <i class="fa fa-eye" aria-hidden="true"></i> <br>
           City Wanderer
         <%= f.input :city_wanderer, as: :hidden %>
+        </div>
+      </div>
+      <div class="row trip-title-flex">
+        <div class="col-xs-6 col-xs-offset-3">
+          <div class="form-group">
+            <%= f.input :title, label: "Give a title to your trip", placeholder: "Hector's Trip To Paris" %>
+          </div>
         </div>
       </div>
       <%= f.submit "Submit Profile", id: "submit-trip", class: "btn btn-primary", disabled: true %>
