@@ -7,12 +7,12 @@
       <ul class="nav nav-tabs nav-justified" role="tablist">
         <li class="nav-item active">
           <a class="nav-link" data-toggle="tab" href="#created-trips" role="tab">
-            <i class="fa fa-paper-plane" aria-hidden="true"></i> Sent Trips (<%= @trips_host.count %>)
+            <i class="fa fa-paper-plane fa-fw" aria-hidden="true"></i> Sent Trips (<%= @trips_host.count %>)
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" data-toggle="tab" href="#received-trips" role="tab">
-            <i class="fa fa-globe" aria-hidden="true"></i> My Trips (<%= @trips_tourist.count %>)
+            <i class="fa fa-globe fa-fw" aria-hidden="true"></i> My Trips (<%= @trips_tourist.count %>)
           </a>
         </li>
       </ul>
@@ -61,7 +61,7 @@
         <h3>Welcome <%= @user.first_name %>,</h3>
         <%= image_tag 'https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAxnAAAAJDVkY2Y3OGJkLTQ1OWEtNGZhZS1hMWU2LTNiNjU3MTVhNjIwMA.jpg', class:"dashboard-photo" %>
         <p class="time-now"> <%= Time.now.strftime("%b %d, %Y") %></p>
-        <%= link_to '<i class="fa fa-plus" aria-hidden="true"></i> New Trip'.html_safe, new_trip_path, class: "btn btn-primary" %>
+        <%= link_to '<i class="fa fa-plus fa-fw" aria-hidden="true"></i> New Trip'.html_safe, new_trip_path, class: "btn btn-primary" %>
       </div>
     </div>
 
