@@ -1,3 +1,5 @@
+// Dashboard cards change style when card is hovered
+
 const cards = document.querySelectorAll(".card.full-card");
 
 if (cards) {
