@@ -32,9 +32,21 @@ class TripsController < ApplicationController
       @activities = @activities.where(@trip.status => true)
     end
 
-    @activities_one = @activities.where(@trip.filters[0] => true)
-    @activities_two = @activities.where(@trip.filters[1] => true)
-    @activities_three = @activities.where(@trip.filters[2] => true)
+    count = @trip.visits.count
+    if count == 0
+      @activities_one = @activities.where(@trip.filters[0] => true)
+    elsif count == 1
+      @activity_one = @trip.visits.find_by(activity: { @trip.filters[0] => true })&.activity
+      @activities_two = @activities.where(@trip.filters[1] => true)
+    elsif count == 2
+      @activity_one = @trip.visits.find_by(activity: { @trip.filters[0] => true })&.activity
+      @activity_two = @trip.visits.find_by(activity: { @trip.filters[1] => true })&.activity
+      @activities_three = @activities.where(@trip.filters[2] => true)
+    elsif count == 3
+      @activity_one = @trip.visits.find_by(activity: { @trip.filters[0] => true })&.activity
+      @activity_two = @trip.visits.find_by(activity: { @trip.filters[1] => true })&.activity
+      @activity_three = @trip.visits.find_by(activity: { @trip.filters[2] => true })&.activity
+    end
   end
 
   def update

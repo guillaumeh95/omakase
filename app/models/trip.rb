@@ -16,14 +16,8 @@ class Trip < ApplicationRecord
   # validates :tourist_id, uniqueness: { scope: :host_id } # Prevent creating a trip for self
 
   def filters
-    true_filters = []
-    filters = ["sight_seeing_adventurer", "art_lover", "serial_shopper", "nature_lover", "food_addict", "sport_lover", "history_passionate", "tech_fan", "relaxed", "city_wanderer"]
-    filters.each do |filter|
-      if self.send(filter)
-        true_filters << filter
-      end
-    end
-  return true_filters
+    filters = %w(sight_seeing_adventurer art_lover serial_shopper nature_lover food_addict sport_lover history_passionate tech_fan relaxed city_wanderer)
+    return filters.select { |filter| self.send(filter) }
   end
 
   def selected_profiles

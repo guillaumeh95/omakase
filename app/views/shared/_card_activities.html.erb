@@ -1,0 +1,13 @@
+<div class="card-activity-unit one" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('<%= activity.photo %>');" data-activity-id='<%= activity.id %>'>
+  <%= link_to "", trip_visits_path(trip, activity_id: activity.id), class:"absolute-link", method:"post" %>
+  <div class="card-activity-description" >
+    <h2><%= activity.title %></h2>
+    <p><%= activity.name %></p>
+    <div class="card-activity-description-full hidden">
+      <p><%= activity.address %></p>
+      <p><%= "€" %></p>
+      <p><%= "Original" %></p>
+      <p><%= link_to "Website", activity.website %></p>
+    </div>
+  </div>
+</div>

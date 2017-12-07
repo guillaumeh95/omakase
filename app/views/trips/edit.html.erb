@@ -1,87 +1,58 @@
 <div class="activities-container">
+
   <div class="card-activities-all">
+
     <div id="activities-one" class="card-activities-filtered-with-title">
       <div class="card-activities-title text-center pink-bg">
         <%= "Choose a #{@trip.filters[0].split("_").map(&:capitalize).join(' ')} activity" %>
       </div>
-      <div id= "activities-one-filtered" class="card-activities-filtered">
-        <% @activities_one.each do |activity| %>
-            <div class="card-activity-unit one" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('<%= activity.photo %>');" data-activity-id='<%= activity.id %>'>
-              <div class="card-activity-description" >
-                <h2><%= activity.title %></h2>
-                <p><%= activity.name %></p>
-              </div>
-            </div>
+        <% if @activity_one %>
+          <div id= "activities-one-filtered" class="card-activities-filtered stretch">
+            <%= render "shared/card_activities", activity: activity %>
+        <% else %>
+          <div id= "activities-one-filtered" class="card-activities-filtered">
+            <% @activities_one.each do |activity| %>
+              <%= render "shared/card_activities", activity: activity, trip: @trip %>
+            <% end %>
         <% end %>
-      </div>
-      <div id="activities-one-clicked" class="card-clicked one hidden">
-        <div class= "card-alone" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('<%= @activities_one.last.photo %>');" data-activity-id='<%= @activities_one.last.id %>'>
-          <div class="card-activity-description" >
-            <h2><%= @activities_one.last.title %></h2>
-            <p><%= @activities_one.last.name %></p>
-            <p><%= @activities_one.last.address %></p>
-            <p><%= "€" %></p>
-            <p><%= "Original" %></p>
-            <p><%= link_to "Website", @activities_one.last.website %></p>
           </div>
-        </div>
-      </div>
     </div>
 
-    <div id="activities-two" class="card-activities-filtered-with-title hidden">
-      <div class="card-activities-title text-center yellow-bg">
-        <%= "Choose a #{@trip.filters[1].split("_").map(&:capitalize).join(' ')} activity" %>
-      </div>
-      <div id= "activities-two-filtered" class="card-activities-filtered">
-        <% @activities_two.each do |activity| %>
-          <div class="card-activity-unit two" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= activity.photo %>');" data-activity-id='<%= activity.id %>'>
-              <div class="card-activity-description">
-                <h2><%= activity.title %></h2>
-                <p><%= activity.name %></p>
-              </div>
+    <% if @activity_one %>
+      <div id="activities-two" class="card-activities-filtered-with-title">
+        <div class="card-activities-title text-center yellow-bg">
+          <%= "Choose a #{@trip.filters[1].split("_").map(&:capitalize).join(' ')} activity" %>
+        </div>
+        <% if @activity_two %>
+          <div id= "activities-two-filtered" class="card-activities-filtered stretch">
+            <%= render "shared/card_activities", activity: activity %>
+          </div>
+        <% else %>
+          <div id= "activities-two-filtered" class="card-activities-filtered">
+            <% @activities_two.each do |activity| %>
+              <%= render "shared/card_activities", activity: activity, trip: @trip %>
+            <% end %>
           </div>
         <% end %>
       </div>
-      <div id="activities-two-clicked" class="card-clicked two hidden">
-        <div class= "card-alone" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('<%= @activities_two.last.photo %>');" data-activity-id='<%= @activities_two.last.id %>'>
-          <div class="card-activity-description" >
-            <h2><%= @activities_two.last.title %></h2>
-            <p><%= @activities_two.last.name %></p>
-            <p><%= @activities_two.last.address %></p>
-            <p><%= "€" %></p>
-            <p><%= "Original" %></p>
-            <p><%= link_to "Website", @activities_two.last.website %></p>
+      <% if @activity_two %>
+        <div id="activities-three" class="card-activities-filtered-with-title">
+          <div class="card-activities-title text-center purple-bg">
+            <%= "Choose a #{@trip.filters[2].split("_").map(&:capitalize).join(' ')} activity" %>
           </div>
-        </div>
-      </div>
-    </div>
-
-    <div id="activities-three" class="card-activities-filtered-with-title hidden">
-      <div class="card-activities-title text-center purple-bg">
-        <%= "Choose a #{@trip.filters[2].split("_").map(&:capitalize).join(' ')} activity" %>
-      </div>
-      <div id="activities-three-filtered" class="card-activities-filtered">
-        <% @activities_three.each do |activity| %>
-          <div class="card-activity-unit three" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= activity.photo %>');" data-activity-id='<%= activity.id %>'>
-              <div class="card-activity-description">
-                <h2><%= activity.title %></h2>
-                <p><%= activity.name %></p>
-              </div>
+          <% if @activity_three %>
+            <div id= "activities-three-filtered" class="card-activities-filtered stretch">
+              <%= render "shared/card_activities", activity: activity %>
             </div>
-        <% end %>
-      </div>
-      <div id="activity-three-clicked" class="card-clicked three hidden">
-        <div class= "card-alone" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('<%= @activities_three.first.photo %>');" data-activity-id='<%= @activities_three.first.id %>'>
-          <div class="card-activity-description" >
-            <h2><%= @activities_three.first.title %></h2>
-            <p><%= @activities_three.first.name %></p>
-            <p><%= @activities_three.first.address %></p>
-            <p><%= "€" %></p>
-            <p><%= "Original" %></p>
-            <p><%= link_to "Website", @activities_three.first.website %></p>
-          </div>
+          <% else %>
+            <div id= "activities-three-filtered" class="card-activities-filtered">
+              <% @activities_three.each do |activity| %>
+                <%= render "shared/card_activities", activity: activity, trip: @trip %>
+              <% end %>
+            </div>
+          <% end %>
         </div>
-      </div>
-    </div>
+      <% end %>
+    <% end %>
   </div>
 </div>
