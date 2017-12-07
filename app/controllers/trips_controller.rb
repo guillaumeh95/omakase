@@ -16,7 +16,6 @@ class TripsController < ApplicationController
       user = User.invite!(user_params)
       @trip.tourist_id = user.id
     end
-
     if @trip.save
       redirect_to edit_trip_path(@trip)
     else
