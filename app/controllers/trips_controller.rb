@@ -26,43 +26,45 @@ class TripsController < ApplicationController
     end
   end
 
-  def show
-  end
-
   def edit
     # Filter activities by knows_the_city
-    if @trip.knows_the_city.present?
-      @activities = Activity.where(knows_the_city: @trip.knows_the_city)
-    else
-      @activities = Activity.all
-    end
-
+    @activities = Activity.where(knows_the_city: @trip.knows_the_city)
     # Filter activities by budget
-    if @trip.budget.present?
-      @activities = @activities.where(budget: @trip.budget)
-    end
-
+    @activities = @activities.where(budget: @trip.budget)
     # Filter activities by status
-    if @trip.status.present?
-      @activities = @activities.where(@trip.status => true)
-    end
+    @activities = @activities.where(@trip.status => true)
 
-    # Select adequate list of activities for each of the three lists of activities
-    @activities_one = @activities.where(@trip.filters[0] => true)
-    @activities_two = @activities.where(@trip.filters[1] => true)
-    @activities_three = @activities.where(@trip.filters[2] => true)
+    count = @trip.visits.count
+    if count == 0
+      @activities_one = @activities.where(@trip.filters[0] => true)
+    elsif count == 1
+      # @activity_one = @trip.visits.find_by(activity: { @trip.filters[0] => true }).activity
+      @activity_one = @trip.visits[0].activity
+      @activities_two = @activities.where(@trip.filters[1] => true)
+    elsif count == 2
+      # @activity_one = @trip.visits.find_by(activity: { @trip.filters[0] => true }).activity
+      # @activity_two = @trip.visits.find_by(activity: { @trip.filters[1] => true }).activity
+      @activity_one = @trip.visits[0].activity
+      @activity_two = @trip.visits[1].activity
+      @activities_three = @activities.where(@trip.filters[2] => true)
+    elsif count == 3
+      # @activity_one = @trip.visits.find_by(activity: { @trip.filters[0] => true }).activity
+      # @activity_two = @trip.visits.find_by(activity: { @trip.filters[1] => true }).activity
+      # @activity_three = @trip.visits.find_by(activity: { @trip.filters[0] => true }).activity
+      @activity_one = @trip.visits[0].activity
+      @activity_two = @trip.visits[1].activity
+      @activity_three = @trip.visits[2].activity
+    end
   end
 
   def update
-    if @trip.save
-      redirect_to trip_path(@trip)
-    else
-      render :edit
-    end
+    @trip.save
+    redirect_to dashboard_user_path(current_user)
   end
 
   def destroy
   end
+
 
   private
 

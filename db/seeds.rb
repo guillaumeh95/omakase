@@ -416,7 +416,8 @@ trips_attributes = [
     host_id: User.first.id,
     tourist_id: User.all[2].id,
     tourist_first_name: User.first.first_name,
-    tourist_email: User.first.email
+    tourist_email: User.first.email,
+    status: "family"
   }
 ]
 Trip.create!(trips_attributes)
