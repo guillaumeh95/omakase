@@ -414,6 +414,7 @@ trips_attributes = [
     title: "Mike in Paris",
     date: DateTime.parse("09/01/2018 00:00"),
     host_id: User.first.id,
+    status: "solo",
     tourist_id: User.all[2].id,
     tourist_first_name: User.first.first_name,
     tourist_email: User.first.email,
