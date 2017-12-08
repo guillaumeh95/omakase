@@ -14,7 +14,7 @@
   justify-content: space-between;
   margin-right: 20%;
   margin-left: 20%;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid white;
   z-index: 9999;
 }
 
@@ -38,8 +38,9 @@
 
 /* Navbar link */
 .navbar-wagon-link, .navbar-wagon-greet {
-  color: black;
+  color: white;
   font-size: 16px;
+  font-weight: 450;
 }
 .navbar-wagon-greet{
   padding: 0 20px;

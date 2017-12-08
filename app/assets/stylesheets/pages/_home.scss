@@ -1,33 +1,31 @@
-.icons-container {
-  background-color: white;
-  margin: 5% auto;
-  padding: 300px;
-}
-
-#foot {
-  width: 10%;
-}
-
-
-.icons {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  max-height: 30px;
-  width: 100%;
-  color: rgba(0,0,0,0.3);
-  margin-top: 5%;
-}
-
-.icons .fa:hover {
-  color: $blue;
-}
-
 .step-container {
   margin-bottom: 20px;
+  background: $dark-pink;
+  color: white;
+  display: flex;
+
+}
+.step-description {
+  flex: 0 0 30%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
 }
 
+.step-description p {
+  text-align: center;
+  font-size: 16px;
+}
 .steps {
+  background: $dark-pink;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  height: 60vh;
+}
+
+.steps h3 {
+  color: white;
+  font-size: 22px;
   text-align: center;
 }
 
@@ -35,14 +33,10 @@
   width: 3%;
 }
 
-.steps-images {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  margin: 6% auto;
-}
-
 #stepim {
-  width: 20%;
+  width: 400px;
 }
-
+.img-home {
+  border-radius: 5px;
+  height: 250px;
+}

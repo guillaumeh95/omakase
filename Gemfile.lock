@@ -59,6 +59,9 @@ GEM
       railties (>= 4.1.0, < 5.2)
       responders
       warden (~> 1.2.3)
+    devise_invitable (1.7.2)
+      actionmailer (>= 4.1.0)
+      devise (>= 4.0.0)
     erubi (1.7.0)
     execjs (2.7.0)
     ffi (1.9.18)
@@ -195,6 +198,7 @@ DEPENDENCIES
   bootstrap-sass
   bootstrap-slider-rails
   devise
+  devise_invitable (~> 1.7.0)
   figaro
   font-awesome-sass
   geocoder
