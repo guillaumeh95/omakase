@@ -3,11 +3,13 @@
   <div class="card-activity-description" >
     <h2><%= activity.title %></h2>
     <p><%= activity.name %></p>
-    <div class="card-activity-description-full hidden">
-      <p><%= activity.address %></p>
-      <p><%= "€" %></p>
-      <p><%= "Original" %></p>
-      <p><%= link_to "Website", activity.website %></p>
-    </div>
+    <% if clicked %>
+      <div class="card-activity-description-full">
+        <p><%= activity.address %></p>
+        <p><%= "€" %></p>
+        <p><%= "Original" %></p>
+        <p><%= link_to "Website", activity.website %></p>
+      </div>
+    <% end %>
   </div>
 </div>

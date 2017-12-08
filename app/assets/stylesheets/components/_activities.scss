@@ -1,16 +1,17 @@
 .activities-container {
-  margin: 20px 40px 20px 40px;
+  margin: 10px 40px 10px 40px;
+  padding: 20px;
 }
 
-.card-activities-all {
+#card-activities-all {
   display: flex;
+  height: calc(100vh - 200px);
 }
 
 .card-activities-filtered-with-title {
   display: flex;
   flex-direction: column;
-  width: 33%;
-  height: calc(100vh - 90px);
+  width: 33.33%;
 }
 
 .card-activities-title {
@@ -69,7 +70,12 @@
   }
 }
 
-
+.card-activity-description-full .a {
+  // font-weight: bold;
+  // &:hover {
+  //   color: $white;
+  // }
+}
 
 .pink-bg {
   background-color: $dark-pink;
@@ -81,4 +87,14 @@
 
 .purple-bg {
   background-color: $purple;
+}
+
+.submit-edit-trip {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 20px;
+}
+
+.last-btn {
+  margin-left: 10px;
 }

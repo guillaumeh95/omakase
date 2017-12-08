@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 ruby '2.3.5'
 
 gem 'devise'
+gem 'devise_invitable', '~> 1.7.0' # Allow users to send invitation when creating a trip
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'pg'

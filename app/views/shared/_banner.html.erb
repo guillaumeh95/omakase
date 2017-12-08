@@ -1,11 +1,13 @@
-<div class="banner" style="background-image: url('<%= image_path "iph.png" %>')">
+<div class="banner">
   <div class="banner-home">
-    <h1>Omakaze</h1>
-    <p>Plan a day in Paris for your friend</p>
-      <div class="enter">
-           <div class="enter">
-          <%= link_to "Create a trip", new_trip_path, class: "btn-home" %>
-          </div>
+    <div class="banner-description">
+    <h1> OMAKASE</h1>
+    <h3>Planning the best day in Paris for your friend is just a few clicks away</h3>
+    </div>
+    <div class="enter">
+      <div class="button-pulse">
+        <%= link_to "Create a trip", new_trip_path, class: "button" %>
       </div>
+    </div>
   </div>
 </div>

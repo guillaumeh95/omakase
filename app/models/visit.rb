@@ -1,8 +1,8 @@
 class Visit < ApplicationRecord
-  #Associations
+  # Associations
   belongs_to :trip
   belongs_to :activity
 
-  #Validations
+  # Validations
   validates :activity, uniqueness: { scope: :trip }
 end

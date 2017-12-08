@@ -1,12 +1,24 @@
 class TripsController < ApplicationController
   before_action :find_trip, only: [:show, :edit, :update, :destroy]
+
   def new
     @trip = Trip.new
   end
 
   def create
+    # Instanciate new trip with all the trip params including host
     @trip = Trip.new(trip_params)
     @trip.host = current_user
+
+    # Assign corresponding tourist_id to new trip depending on existence of user in database
+    if User.find_by(email: params[:trip][:tourist_email]) # User already exists
+      user = User.find_by(email: params[:trip][:tourist_email]) # Get existing user
+      assign_tourist(user)
+    else # New user
+      user = User.invite!(user_params) # Instantiate new user and sends invitation by mail
+      assign_tourist(user)
+    end
+
     if @trip.save
       redirect_to edit_trip_path(@trip)
     else
@@ -14,23 +26,13 @@ class TripsController < ApplicationController
     end
   end
 
-  def show
-  end
-
   def edit
-    if @trip.knows_the_city.present?
-      @activities = Activity.where(knows_the_city: @trip.knows_the_city)
-    else
-      @activities = Activity.all
-    end
-
-    if @trip.budget.present?
-      @activities = @activities.where(budget: @trip.budget)
-    end
-
-    if @trip.status.present?
-      @activities = @activities.where(@trip.status => true)
-    end
+    # Filter activities by knows_the_city
+    @activities = Activity.where(knows_the_city: @trip.knows_the_city)
+    # Filter activities by budget
+    @activities = @activities.where(budget: @trip.budget)
+    # Filter activities by status
+    @activities = @activities.where(@trip.status => true)
 
     count = @trip.visits.count
     if count == 0
@@ -56,25 +58,36 @@ class TripsController < ApplicationController
   end
 
   def update
-    if @trip.save
-      redirect_to trip_path(@trip)
-    else
-      render :edit
-    end
+    @trip.save
+    redirect_to dashboard_user_path(current_user)
   end
 
   def destroy
   end
 
+
   private
+
   def trip_params
     params.require(:trip).permit(:title, :date, :status, :sight_seeing_adventurer, :art_lover, :serial_shopper, :nature_lover, :food_addict, :sport_lover, :history_passionate, :tech_fan, :relaxed, :city_wanderer, :budget, :knows_the_city )
-
-  #rajouter le budget, knows city
   end
 
+  # Hash containing all tourist information
+  def user_params
+    { first_name: params[:trip][:tourist_first_name], last_name: params[:trip][:tourist_last_name], email: params[:trip][:tourist_email]}
+  end
+
+  # Find a trip by id
   def find_trip
     @trip = Trip.find(params[:id])
+  end
+
+  # Assign tourist details to Trip
+  def assign_tourist(user)
+    @trip.tourist_id = user.id
+    @trip.tourist_first_name = user.first_name
+    @trip.tourist_last_name = user.last_name
+    @trip.tourist_email = user.email
   end
 end
 

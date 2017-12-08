@@ -1,0 +1,3 @@
+
+const editForm = document.getElementById("card-activities-all")
+editForm.innerHTML = <%= j render "trips/activities", activities_one: @activities_one, activities_two: @activities_two, activities_three: @activities_three, activity_one: @activity_one, activity_two: @activity_two, activity_three: @activities_three %>

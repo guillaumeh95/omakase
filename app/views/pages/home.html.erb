@@ -1,31 +1,22 @@
-
-<div class="main-container">
+<div class="main-container" style="background-image: linear-gradient(-220deg, rgba(115, 85, 96, 0.7) 0%, rgba(242, 186, 194,0.4) 50%),url('<%= image_path "background.jpg" %>');">
+  <%= render "shared/navbar" %>
   <%= render "shared/banner" %>
-  <div class="icons-container">
-    <div class="icons">
-      <%= image_tag "foot1.png", {class: "img-circle", id: "foot"}%>
-      <%= image_tag "foot1.png", {class: "img-circle", id: "foot"}%>
-      <%= image_tag "foot1.png", {class: "img-circle", id: "foot"}%>
-      <%= image_tag "foot1.png", {class: "img-circle", id: "foot"}%>
-      <%= image_tag "foot1.png", {class: "img-circle", id: "foot"}%>
-      <%= image_tag "foot1.png", {class: "img-circle", id: "foot"}%>
-      <%= image_tag "foot1.png", {class: "img-circle", id: "foot"}%>
+
+  <div class="steps">
+    <h3>You are about to send the perfect daytrip to your friend!</h3>
+    <div class="step-container">
+      <div class="step-description">
+        <p> 1. Describe your friend</p>
+        <%= image_tag "edit_profile.png", {class: "img-home", id: "stepim"}%>
+      </div>
+      <div class="step-description">
+        <p> 2. Choose the best activities</p>
+        <%= image_tag "edit_trip.png", {class: "img-home", id: "stepim"} %>
+      </div>
+      <div class="step-description">
+        <p> 3. Edit and send the trip</p>
+        <%= image_tag "dashboard.png", {class: "img-home", id: "stepim"} %>
+      </div>
     </div>
   </div>
-  <div class="steps">
-    <p>Your only a minute away from sending your map!</p>
-      <div class="step-container">
-        <div class="icons">
-          <%= image_tag "one.svg", {class: "img-circle", id: "number"}%>
-          <%= image_tag "two.svg", {class: "img-circle", id: "number"}%>
-          <%= image_tag "three.svg", {class: "img-circle", id: "number"}%>
-        </div>
-        <div class="steps-images">
-          <%= image_tag "tel.png", {class: "img-circle", id: "stepim"} %>
-          <%= image_tag "tel.png", {class: "img-circle", id: "stepim"} %>
-          <%= image_tag "tel.png", {class: "img-circle", id: "stepim"} %>
-        </div>
-      </div>
-  </div>
-
 </div>
