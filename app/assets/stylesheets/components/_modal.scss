@@ -1,8 +1,9 @@
 .modal{
-  background-color: rgba(0, 0, 0, 0.3);
+  //background-color: rgba(0, 0, 0, 0.3);
 }
 .modal-header {
   border-bottom: 2px solid $dark-pink;
+  color : $dark-pink;
 }
 
 .modal-content {
@@ -11,25 +12,28 @@
 
 .modal-body{
   margin: 0 20px;
+  color : $dark-pink;
 }
 
 .trip-info {
   display: flex;
   justify-content: space-between;
+  color : $dark-pink;
 }
 .trip-summary {
-  color: black;
+  color: $dark-pink;
   flex: 0 0 40%;
   border: 2px solid $dark-pink;
   padding: 10px 30px;
-  background-color: white;
+  //background-color: white;
 }
 .trip-comments {
   flex: 0 0 58%;
   text-align:justify;
   border: 2px solid $dark-pink;
   padding: 10px 30px;
-  background-color: white;
+  color : $dark-pink;
+  //background-color: white;
 }
 .trip-photos {
   padding: 0;
@@ -91,7 +95,6 @@
 .third-activity {
   flex: 0 0 33.33%;
   position: relative;
-
 }
 
 .third-activity h6 {
@@ -109,5 +112,9 @@
 .map {
   border: 2px solid $dark-pink;
   padding: 10px;
-  background-color: white;
+  //background-color: white;
+}
+
+.btn-modal {
+
 }
