@@ -12,8 +12,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-right: 20%;
-  margin-left: 20%;
+  margin-right: 15%;
+  margin-left: 15%;
   border-bottom: 1px solid white;
   z-index: 9999;
 }
@@ -46,7 +46,7 @@
   padding: 0 20px;
 }
 .navbar-wagon-link:hover {
-  color: $dark-pink;
+  color: white;
   text-decoration: none;
 }
 
