@@ -417,9 +417,9 @@ visit_one.trip = Trip.first
 visit_two.trip = Trip.first
 visit_three.trip = Trip.first
 
-visit_one.activity = Activity.all[1]
-visit_two.activity = Activity.all[3]
-visit_three.activity = Activity.all[5]
+visit_one.activity = Activity.all[4]
+visit_two.activity = Activity.all[7]
+visit_three.activity = Activity.all[8]
 
 visit_one.save!
 visit_two.save!
@@ -433,9 +433,9 @@ visit_one_bis.trip = Trip.last
 visit_two_bis.trip = Trip.last
 visit_three_bis.trip = Trip.last
 
-visit_one_bis.activity = Activity.all[2]
-visit_two_bis.activity = Activity.all[4]
-visit_three_bis.activity = Activity.all[3]
+visit_one_bis.activity = Activity.all[12]
+visit_two_bis.activity = Activity.all[1]
+visit_three_bis.activity = Activity.all[9]
 
 visit_one_bis.save!
 visit_two_bis.save!
