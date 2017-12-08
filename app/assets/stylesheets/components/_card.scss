@@ -15,7 +15,7 @@
   font-style: $body-font;
   min-width: 210px;
   margin: 20px;
-  border-radius: 2px;
+  border-radius: $border-radius-base;
   border: 2px solid $dark-pink;
   &:first-child {
     margin-top: 40px;
@@ -45,7 +45,7 @@
 }
 .left-dash, .right-dash {
   background: white;
-  border-radius: 2px;
+  border-radius: $border-radius-base;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   padding: 20px 30px;
   padding-bottom: 0;
