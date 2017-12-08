@@ -21,9 +21,11 @@ initSliders();
 
 // Modal hovering titile displays map
 const openmodal = document.getElementById("ouverture_modal")
-openmodal.addEventListener ("mouseover", (event) => {
-  mapDisplay();
-});
+if (openmodal) {
+  openmodal.addEventListener ("mouseover", (event) => {
+    mapDisplay();
+  });
+}
 
 // Alerts disappearing automatically
 if (document.querySelector(".alert")) {
