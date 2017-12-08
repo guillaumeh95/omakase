@@ -4,6 +4,8 @@
   display: flex;
   flex-wrap: wrap;
   flex: 1;
+  flex-direction: column;
+  margin-bottom: 10px;
 }
 .card {
   overflow: hidden!important;
