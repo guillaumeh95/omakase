@@ -9,9 +9,9 @@ class VisitsController < ApplicationController
       format.html { redirect_to edit_trip_path(@trip) }
       format.js do
         # define all the instance variables needed in `create.js.erb`
-        @activity_one = @visit.activities[0]
-        @activity_two = @visit.activities[1]
-        @activity_three = @visit.activities[2]
+        @activity_one = @trip.visits[0].activity
+        @activity_two = @trip.visits[1].activity
+        @activity_three = @trip.visits[2].activity
         @activities = Activity.where(knows_the_city: @trip.knows_the_city)
         @activities = @activities.where(budget: @trip.budget)
         @activities = @activities.where(@trip.status => true)

@@ -6,15 +6,21 @@
 
 }
 .step-description {
-  flex: 0 0 30%;
+  flex: 0 0 28%;
   align-items: center;
-  justify-content: space-between;
-  padding: 12px;
+  justify-content: space-around;
+  background: white;                          /* White background */
+  padding: 5px;                              /* Internal space */
+  border-radius: 4px;                         /* Small radius */
+  box-shadow: 1px 1px 3px rgba(250, 250, 250, 0.3); /* Subtle shadow */
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-left: 10px;
 }
 
 .step-description p {
   text-align: center;
   font-size: 16px;
+  color: $dark-pink;
 }
 .steps {
   background: $dark-pink;
@@ -40,3 +46,4 @@
   border-radius: 5px;
   height: 250px;
 }
+

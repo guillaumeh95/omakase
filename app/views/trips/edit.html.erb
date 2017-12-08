@@ -6,11 +6,11 @@
   </div>
   <div class="submit-edit-trip">
     <span>
-      <%= link_to "Save & send later", trip_path(@trip), class:"button", method:"patch" %>
+      <%= link_to "Save & send later", trip_path(@trip), class:"btn-primary", method:"patch" %>
     </span>
     <span>
       <% if @activity_three %>
-        <%= link_to "Go!", trip_path(@trip), class:"button last-btn", method:"patch" %>
+        <%= link_to "Go!", trip_path(@trip), class:"btn-primary last-btn", method:"patch" %>
       <% end %>
     </span>
   </div>

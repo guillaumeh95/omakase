@@ -11,10 +11,17 @@ import 'bootstrap';
 import "../plugins/flatpickr";
 import "../components/trip_form";
 import "../components/activities";
+import {mapDisplay} from "./map";
 import "../components/cards_dashboard";
 import {initSliders} from "../components/slider";
-initSliders();
 import { setAlertsTimeouts } from '../components/alert';
+
+initSliders();
+
+const openmodal = document.getElementById("ouverture_modal")
+openmodal.addEventListener ("mouseover", (event) => {
+  mapDisplay();
+});
 
 // Alerts disappearing automatically
 if (document.querySelector(".alert")) {
