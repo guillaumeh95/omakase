@@ -14,7 +14,7 @@
             <div class="trip-tourist"><p><i class="fa fa-user" aria-hidden="true"></i> For <%= User.find(trip.tourist_id).first_name %> <%= User.find(trip.tourist_id).last_name %></p></div>
             <div class="trip-profile">
               <p><i class="fa fa-address-card" aria-hidden="true"></i>
-                Profiles : <% trip.selected_profiles.each do |profile| %>
+                Profiles : <% trip.filters.each do |profile| %>
                   <%= profile.gsub('_', " ").split.map(&:capitalize).join(' ') %>
                 <% end %>
               </p>

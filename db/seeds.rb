@@ -4,10 +4,10 @@ User.destroy_all
 Activity.destroy_all
 
 puts 'Creating users...'
-alexia = User.create(first_name: "Alexia", last_name: "Le Tarnec", email: "alexia@gmail.com", password: "azertyuiop")
-guillaume = User.create(first_name: "Guillaume", last_name: "Hercot", email: "guillaume@gmail.com", password: "azertyuiop")
-julie = User.create(first_name: "Julie", last_name: "Simon", email: "julie@gmail.com", password: "azertyuiop")
-mathilde = User.create(first_name: "Mathilde", last_name: "Ganancia", email: "mathilde@gmail.com", password: "azertyuiop")
+alexia = User.create!(first_name: "Alexia", last_name: "Le Tarnec", email: "alexia@gmail.com", password: "azertyuiop")
+guillaume = User.create!(first_name: "Guillaume", last_name: "Hercot", email: "guillaume@gmail.com", password: "azertyuiop")
+julie = User.create!(first_name: "Julie", last_name: "Simon", email: "julie@gmail.com", password: "azertyuiop")
+mathilde = User.create!(first_name: "Mathilde", last_name: "Ganancia", email: "mathilde@gmail.com", password: "azertyuiop")
 
 puts 'Creating activities...'
 activities_attributes = [
@@ -408,15 +408,15 @@ trips_attributes = [
     food_addict: true,
     status: "solo",
     tourist_first_name: User.last.first_name,
-    tourist_email: User.last.email,
+    tourist_email: User.last.email
   },
   {
     title: "Mike in Paris",
     date: DateTime.parse("09/01/2018 00:00"),
     host_id: User.first.id,
+    tourist_id: User.all[2].id,
     tourist_first_name: User.first.first_name,
-    tourist_email: User.first.email,
-    tourist_id: User.all[2].id
+    tourist_email: User.first.email
   }
 ]
 Trip.create!(trips_attributes)

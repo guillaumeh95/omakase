@@ -1,11 +1,13 @@
 class Activity < ApplicationRecord
+  # Geocoding
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
-  #Associations
+
+  # Associations
   has_many :visits
   has_many :trips, through: :visits
 
-  #Validations
+  # Validations
   validates :name, presence: true, uniqueness: true
   validates :address, presence: true
   validates :photo, presence: true
