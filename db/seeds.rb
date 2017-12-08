@@ -388,12 +388,11 @@ activities_attributes = [
     couple: true,
     friends: true,
     to_book: true,
-    relaxed: true,
+    sport_lover: true,
     budget: 3,
     knows_the_city: 3,
     website: "https://www.paris.fr/services-et-infos-pratiques/sports-et-loisirs/ou-faire-du-sport/le-sport-en-plein-air-2016#les-bases-nautiques_6",
   },
-
 ]
 Activity.create(activities_attributes)
 
