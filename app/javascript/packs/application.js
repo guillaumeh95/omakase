@@ -10,6 +10,7 @@
 import 'bootstrap';
 import "../plugins/flatpickr";
 import "../components/trip_form";
+import "../components/activities";
 import {mapDisplay} from "./map";
 import "../components/cards_dashboard";
 import {initSliders} from "../components/slider";
