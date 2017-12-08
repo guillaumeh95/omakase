@@ -54,3 +54,4 @@ statusBoxes.forEach((statusBox) => {
     }
   });
 });
+

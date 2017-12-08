@@ -3,18 +3,19 @@
   background: $dark-pink;
   color: white;
   display: flex;
-
+  margin-left: 30px;
 }
 .step-description {
-  flex: 0 0 28%;
-  align-items: center;
+  max-width: 380px;
+  display: inline-block;
   justify-content: space-around;
   background: white;                          /* White background */
-  padding: 5px;                              /* Internal space */
+  padding: 10px;                              /* Internal space */
   border-radius: 4px;                         /* Small radius */
   box-shadow: 1px 1px 3px rgba(250, 250, 250, 0.3); /* Subtle shadow */
   border: 1px solid rgba(0, 0, 0, 0.1);
-  margin-left: 10px;
+  margin-left: 15px;
+  margin-right: 12px;
 }
 
 .step-description p {
@@ -27,6 +28,10 @@
   padding-top: 20px;
   padding-bottom: 20px;
   height: 60vh;
+}
+
+.main-container {
+  height: 100vh;
 }
 
 .steps h3 {
@@ -44,6 +49,7 @@
 }
 .img-home {
   border-radius: 5px;
-  height: 250px;
+  height: 220px;
+  max-width: 360px;
 }
 
