@@ -4,10 +4,10 @@ User.destroy_all
 Activity.destroy_all
 
 puts 'Creating users...'
-alexia = User.create(first_name: "Alexia", last_name: "Le Tarnec", email: "alexia@gmail.com", password: "azertyuiop")
-guillaume = User.create(first_name: "Guillaume", last_name: "Hercot", email: "guillaume@gmail.com", password: "azertyuiop")
-julie = User.create(first_name: "Julie", last_name: "Simon", email: "julie@gmail.com", password: "azertyuiop")
-mathilde = User.create(first_name: "Mathilde", last_name: "Ganancia", email: "mathilde@gmail.com", password: "azertyuiop")
+alexia = User.create!(first_name: "Alexia", last_name: "Le Tarnec", email: "alexia@gmail.com", password: "azertyuiop")
+guillaume = User.create!(first_name: "Guillaume", last_name: "Hercot", email: "guillaume@gmail.com", password: "azertyuiop")
+julie = User.create!(first_name: "Julie", last_name: "Simon", email: "julie@gmail.com", password: "azertyuiop")
+mathilde = User.create!(first_name: "Mathilde", last_name: "Ganancia", email: "mathilde@gmail.com", password: "azertyuiop")
 
 puts 'Creating activities...'
 activities_attributes = [
@@ -415,15 +415,19 @@ trips_attributes = [
     art_lover: true,
     food_addict: true,
     status: "solo",
+    tourist_first_name: User.last.first_name,
+    tourist_email: User.last.email
   },
   {
     title: "Mike in Paris",
     date: DateTime.parse("09/01/2018 00:00"),
     host_id: User.first.id,
-    tourist_id: User.all[2].id
+    tourist_id: User.all[2].id,
+    tourist_first_name: User.first.first_name,
+    tourist_email: User.first.email,
   }
 ]
-Trip.create(trips_attributes)
+Trip.create!(trips_attributes)
 
 puts 'Creating visits...'
 visit_one = Visit.new
@@ -438,9 +442,9 @@ visit_one.activity = Activity.all[1]
 visit_two.activity = Activity.all[3]
 visit_three.activity = Activity.all[5]
 
-visit_one.save
-visit_two.save
-visit_three.save
+visit_one.save!
+visit_two.save!
+visit_three.save!
 
 visit_one_bis = Visit.new
 visit_two_bis = Visit.new
@@ -454,9 +458,9 @@ visit_one_bis.activity = Activity.all[2]
 visit_two_bis.activity = Activity.all[4]
 visit_three_bis.activity = Activity.all[3]
 
-visit_one_bis.save
-visit_two_bis.save
-visit_three_bis.save
+visit_one_bis.save!
+visit_two_bis.save!
+visit_three_bis.save!
 
 
 puts 'Finished seed!'

@@ -15,7 +15,7 @@
             <div class="trip-profile">
               <p>
                 Profiles <i class="fa fa-address-card" aria-hidden="true"></i>
-                <% trip.selected_profiles.each do |profile| %>
+                <% trip.filters.each do |profile| %>
                   <%= profile.gsub('_', " ").split.map(&:capitalize).join(' ') %>
                 <% end %>
               </p>
