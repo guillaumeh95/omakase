@@ -36,34 +36,35 @@
   cursor: pointer;
 }
 .dashboard-container {
-  margin: 10px 30px;
+  margin: 10px 10px;
 }
 .dashboard {
   display: flex;
   max-width: 930px;
-  margin-left: 11.6%;
+
 }
-.left-dash, .right-dash {
+.dash {
   background: white;
+  text-align: center;
   border-radius: 2px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   padding: 20px 30px;
   padding-bottom: 0;
   margin: 20px;
+  flex: 1;
   justify-content: space-around;
 }
-.right-dash {
-  flex: 0 0 300px;
-  text-align: center;
-  position: sticky !important;
-  height: 50vh;
-  top: 80px;
-  h3 {
-    font-size: 25px;
-    margin: 0;
-    padding: 10px 15px;
-  }
-}
+// .right-dash {
+//   flex: 0 0 300px;
+//   position: sticky !important;
+//   height: 50vh;
+//   top: 80px;
+//   h3 {
+//     font-size: 25px;
+//     margin: 0;
+//     padding: 10px 15px;
+//   }
+// }
 .trip-activities {
   display: flex;
   flex-basis: 33.33%;
