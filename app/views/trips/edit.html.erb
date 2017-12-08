@@ -1,44 +1,17 @@
-<%= render 'shared/navbar' %>
-<h4> Hello</h4>
-<div id="card-activities-all-title">
-  <% @trip.filters.each do |filter| %>
-    <div class="card-activities-title text-center">
-      <%= "Choose a #{filter.split("_").map(&:capitalize).join(' ')} activity" %>
-    </div>
-  <% end %>
-</div>
+<%= render "shared/navbar" %>
 
-<div id="card-activities-all">
-  <div class="card-activities-filtered">
-    <% @activities_one.each do |activity| %>
-        <div class="card-activity-unit one" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('<%= activity.photo %>');" data-activity-id='<%= activity.id %>'>
-          <div class="card-activity-description" >
-            <h2><%= activity.title %></h2>
-            <p><%= activity.name %></p>
-          </div>
-        </div>
-    <% end %>
+<div class="activities-container">
+  <div id="card-activities-all">
+    <%= render "trips/activities", trip: @trip, activities_one: @activities_one, activities_two: @activities_two, activities_three: @activities_three, activity_one: @activity_one, activity_two: @activity_two, activity_three: @activity_three %>
   </div>
-
-  <div class="card-activities-filtered">
-    <% @activities_two.each do |activity| %>
-      <div class="card-activity-unit two" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= activity.photo %>');" data-activity-id='<%= activity.id %>'>
-          <div class="card-activity-description">
-            <h2><%= activity.title %></h2>
-            <p><%= activity.name %></p>
-          </div>
-      </div>
-    <% end %>
-  </div>
-
-  <div class="card-activities-filtered">
-    <% @activities_three.each do |activity| %>
-      <div class="card-activity-unit three" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= activity.photo %>');" data-activity-id='<%= activity.id %>'>
-          <div class="card-activity-description">
-            <h2><%= activity.title %></h2>
-            <p><%= activity.name %></p>
-          </div>
-        </div>
-    <% end %>
+  <div class="submit-edit-trip">
+    <span>
+      <%= link_to "Save & send later", trip_path(@trip), class:"btn-primary", method:"patch" %>
+    </span>
+    <span>
+      <% if @activity_three %>
+        <%= link_to "Go!", trip_path(@trip), class:"btn-primary last-btn", method:"patch" %>
+      <% end %>
+    </span>
   </div>
 </div>
