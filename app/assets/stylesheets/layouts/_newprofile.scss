@@ -1,8 +1,5 @@
-body {
-  background: $purple;
-}
 .container {
-  max-width: 800px;
+  max-width: 900px;
 }
 .container p {
   font-weight: 500;
@@ -19,7 +16,7 @@ body {
     font-size: 25px;
     color: #666666;
     margin-bottom: 50px;
-    margin-top: 0px
+    margin-top: 0px;
   }
 }
 .simple_form, .new_trip {
@@ -136,3 +133,11 @@ body {
   margin: 0;
 }
 
+.row {
+  padding-bottom: 30px;
+}
+
+#submit-trip {
+  position: relative;
+  right: -636px;
+}

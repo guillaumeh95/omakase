@@ -7,12 +7,12 @@
       <div class="row">
         <div class="col-xs-6">
           <div class="form-group">
-            <%= f.input :tourist_first_name, label: "Enter your friend's first name", placeholder: "Hector", class:"form-inline"%>
+            <%= f.input :tourist_first_name, label: "Give your friend's first name", placeholder: "Hector", class:"form-inline"%>
           </div>
         </div>
         <div class="col-xs-6">
           <div class="form-group">
-            <%= f.input :tourist_last_name, label: "Enter your friend's last name", placeholder: "Louvot", class:"form-inline"%>
+            <%= f.input :tourist_last_name, label: "Give your friend's last name", placeholder: "Louvot", class:"form-inline"%>
           </div>
         </div>
       </div>
@@ -29,12 +29,14 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-xs-6">
+        <div class="col-xs-12">
           <div class="form-group">
             <%= f.input :knows_the_city, label: "Indicate your friend's knowledge of the city", input_html: {class: "sliderknowledge"} %>
           </div>
         </div>
-        <div class="col-xs-6">
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
           <div class="form-group">
             <%= f.input :budget, label: "Indicate your friend's budget", input_html: {class: "sliderbudget"} %>
           </div>
@@ -123,11 +125,11 @@
       <div class="row trip-title-flex">
         <div class="col-xs-6 col-xs-offset-3">
           <div class="form-group">
-            <%= f.input :title, label: "Give a title to your trip", placeholder: "Hector's Trip To Paris" %>
+            <%= f.input :title, label: "Finally, give a title to your trip", placeholder: "Hector's Trip To Paris" %>
           </div>
         </div>
       </div>
-      <%= f.submit "Submit Profile", id: "submit-trip", class: "btn btn-primary", disabled: true %>
+      <%= f.submit "Choose activities", id: "submit-trip", class: "btn btn-primary", disabled: true %>
     <% end %>
   </div>
 </div>
