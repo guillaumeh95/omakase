@@ -24,8 +24,9 @@
         <div class="tab-pane fade" id="created-trips" role="tabpanel">
           <div class="card-container">
             <% if @trips_host.count.zero? %>
+              <div class="no-trip">You have not created any trips yet</div>
               <div class="btn-new-trip">
-                <%= link_to '<i class="fa fa-plus fa-fw" aria-hidden="true"></i> Create a new trip'.html_safe, new_trip_path, class: "btn btn-new btn-home" %>
+                <%= link_to '<i class="fa fa-plus fa-fw" aria-hidden="true"></i> Create First Trip'.html_safe, new_trip_path, class: "btn btn-new btn-home" %>
               </div>
             <% else %>
               <h6 class="incoming-trip-card">Incoming Trips (<%= @trips_host_incoming.count %>)</h6>

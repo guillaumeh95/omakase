@@ -11,7 +11,7 @@
   justify-content: space-around;
   background: white;                          /* White background */
   padding: 10px;                              /* Internal space */
-  border-radius: 4px;                         /* Small radius */
+  border-radius: $border-radius-base;                         /* Small radius */
   box-shadow: 1px 1px 3px rgba(250, 250, 250, 0.3); /* Subtle shadow */
   border: 1px solid rgba(0, 0, 0, 0.1);
   margin-left: 15px;
@@ -32,6 +32,7 @@
 
 .main-container {
   height: 100vh;
+  background-size: cover !important;
 }
 
 .steps h3 {
@@ -48,7 +49,7 @@
   width: 400px;
 }
 .img-home {
-  border-radius: 5px;
+  border-radius: $border-radius-base;
   height: 220px;
   max-width: 360px;
 }

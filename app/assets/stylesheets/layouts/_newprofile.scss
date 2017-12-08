@@ -10,7 +10,7 @@
   background: white;
   padding: 20px;
   padding-top: 5px;
-  border-radius: 3px;
+  border-radius: $border-radius-base;
   h1 {
     text-align: center;
     font-weight: bold;
@@ -75,7 +75,7 @@
   background: $yellow;
   padding: 25px;
   min-width: 300px;
-  border-radius: 5px;
+  border-radius: $border-radius-base;
   opacity: 0.8;
   flex: 0 0 48%;
   text-align: center;
@@ -96,7 +96,7 @@
   background: $yellow;
   padding: 15px;
   width: 100px;
-  border-radius: 5px;
+  border-radius: $border-radius-base;
   opacity: 0.8;
   flex: 0 0 22%;
   text-align: center;
@@ -118,7 +118,7 @@
   background: $yellow;
   margin: 10px;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: $border-radius-base;
   opacity: 0.8;
   text-align: center;
   cursor: pointer;
