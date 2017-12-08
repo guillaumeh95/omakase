@@ -16,8 +16,10 @@ import "../components/cards_dashboard";
 import {initSliders} from "../components/slider";
 import { setAlertsTimeouts } from '../components/alert';
 
+// Sliders of new trip creation
 initSliders();
 
+// Modal hovering titile displays map
 const openmodal = document.getElementById("ouverture_modal")
 openmodal.addEventListener ("mouseover", (event) => {
   mapDisplay();

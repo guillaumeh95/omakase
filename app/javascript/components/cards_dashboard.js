@@ -1,5 +1,4 @@
 // Dashboard cards change style when card is hovered
-
 const cards = document.querySelectorAll(".card.full-card");
 
 if (cards) {
@@ -22,16 +21,4 @@ if (cards) {
       title.classList.add('trip-title', 'fade-card');
     });
   });
-}
-
-
-const activities = document.querySelectorAll(".card-activity-unit")
-
-if (activities) {
-  activities.forEach((activity) => {
-    activity.addEventListener("click", (event) => {
-      const activityId = event.currentTarget.dataset.activityId
-      console.log(activityId)
-    })
-  })
 }
