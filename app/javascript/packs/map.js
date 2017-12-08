@@ -15,152 +15,150 @@ function mapDisplay(){
       map.fitLatLngBounds(markers);
     }
   }
+
+  const styles = [
+    {
+        "featureType": "all",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.text",
+        "stylers": [
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#000000"
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.text.stroke",
+        "stylers": [
+            {
+                "color": "#ffffff"
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.icon",
+        "stylers": [
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative.neighborhood",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#eaf1ff"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#ffffff"
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "weight": 1
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "weight": 0.8
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "transit",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    }
+  ];
+
+  map.addStyle({
+    styles: styles,
+    mapTypeId: 'map_style'
+  });
+  map.setStyle('map_style');
+
+
 }
 
 export { mapDisplay };
-
-
-// const styles = [
-//     {
-//         "featureType": "all",
-//         "elementType": "labels",
-//         "stylers": [
-//             {
-//                 "visibility": "off"
-//             }
-//         ]
-//     },
-//     {
-//         "featureType": "all",
-//         "elementType": "labels.text",
-//         "stylers": [
-//             {
-//                 "visibility": "on"
-//             }
-//         ]
-//     },
-//     {
-//         "featureType": "all",
-//         "elementType": "labels.text.fill",
-//         "stylers": [
-//             {
-//                 "color": "#000000"
-//             }
-//         ]
-//     },
-//     {
-//         "featureType": "all",
-//         "elementType": "labels.text.stroke",
-//         "stylers": [
-//             {
-//                 "color": "#ffffff"
-//             }
-//         ]
-//     },
-//     {
-//         "featureType": "all",
-//         "elementType": "labels.icon",
-//         "stylers": [
-//             {
-//                 "visibility": "on"
-//             }
-//         ]
-//     },
-//     {
-//         "featureType": "administrative",
-//         "elementType": "all",
-//         "stylers": [
-//             {
-//                 "visibility": "off"
-//             }
-//         ]
-//     },
-//     {
-//         "featureType": "administrative.neighborhood",
-//         "elementType": "geometry.fill",
-//         "stylers": [
-//             {
-//                 "color": "#eaf1ff"
-//             }
-//         ]
-//     },
-//     {
-//         "featureType": "landscape",
-//         "elementType": "all",
-//         "stylers": [
-//             {
-//                 "color": "#ffffff"
-//             }
-//         ]
-//     },
-//     {
-//         "featureType": "poi",
-//         "elementType": "all",
-//         "stylers": [
-//             {
-//                 "visibility": "off"
-//             }
-//         ]
-//     },
-//     {
-//         "featureType": "road",
-//         "elementType": "geometry.fill",
-//         "stylers": [
-//             {
-//                 "color": "#000000"
-//             },
-//             {
-//                 "weight": 1
-//             }
-//         ]
-//     },
-//     {
-//         "featureType": "road",
-//         "elementType": "geometry.stroke",
-//         "stylers": [
-//             {
-//                 "color": "#000000"
-//             },
-//             {
-//                 "weight": 0.8
-//             }
-//         ]
-//     },
-//     {
-//         "featureType": "road",
-//         "elementType": "labels",
-//         "stylers": [
-//             {
-//                 "visibility": "on"
-//             }
-//         ]
-//     },
-//     {
-//         "featureType": "transit",
-//         "elementType": "all",
-//         "stylers": [
-//             {
-//                 "visibility": "off"
-//             }
-//         ]
-//     },
-//     {
-//         "featureType": "water",
-//         "elementType": "all",
-//         "stylers": [
-//             {
-//                 "visibility": "off"
-//             }
-//         ]
-//     }
-// ];
-
-// map.addStyle({
-//   styles: styles,
-//   mapTypeId: 'map_style'
-// });
-// map.setStyle('map_style');
-
-
-
 

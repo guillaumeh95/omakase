@@ -13,15 +13,15 @@ import "../components/trip_form";
 import {mapDisplay} from "./map";
 import "../components/cards_dashboard";
 import {initSliders} from "../components/slider";
+
 initSliders();
+
 import { setAlertsTimeouts } from '../components/alert';
 
 const openmodal = document.getElementById("ouverture_modal")
 openmodal.addEventListener ("mouseover", (event) => {
-  console.log("Hey");
   mapDisplay();
 });
-
 
 const cards = document.querySelectorAll(".card.full-card");
 
@@ -34,7 +34,6 @@ if (cards) {
       const title = event.currentTarget.querySelector(".trip-title");
       title.classList.remove('trip-title');
       title.classList.add('trip-title-large', 'fade-card');
-
     });
     card.addEventListener("mouseleave", (event) => {
       const target = event.currentTarget.querySelector(".trip-details");
@@ -47,20 +46,18 @@ if (cards) {
   });
 }
 
-
-const activities = document.querySelectorAll(".card-activity-unit")
+const activities = document.querySelectorAll(".card-activity-unit");
 
 if (activities) {
   activities.forEach((activity) => {
     activity.addEventListener("click", (event) => {
       const activityId = event.currentTarget.dataset.activityId
       console.log(activityId)
-    })
-  })
+    });
+  });
+}
 
 // Alerts disappearing automatically
 if (document.querySelector(".alert")) {
   setAlertsTimeouts();
-
 }
-
