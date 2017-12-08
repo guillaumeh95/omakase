@@ -2,18 +2,18 @@
 <div class="dashboard-container">
   <div class="dashboard">
 
-    <!-- LEFT PART OF DASHBOARD -->
+    <!-- CENTER PART OF DASHBOARD -->
     <div class="left-dash">
       <!-- Tabs -->
       <ul class="nav nav-tabs nav-justified" role="tablist">
-        <li class="nav-item active">
-          <a class="nav-link" data-toggle="tab" href="#created-trips" role="tab">
-            <i class="fa fa-paper-plane fa-fw" aria-hidden="true"></i> Sent Trips (<%= @trips_host.count %>)
-          </a>
-        </li>
         <li class="nav-item">
           <a class="nav-link" data-toggle="tab" href="#received-trips" role="tab">
             <i class="fa fa-globe fa-fw" aria-hidden="true"></i> My Trips (<%= @trips_tourist.count %>)
+          </a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" data-toggle="tab" href="#created-trips" role="tab">
+            <i class="fa fa-paper-plane fa-fw" aria-hidden="true"></i> Sent Trips (<%= @trips_host.count %>)
           </a>
         </li>
       </ul>
@@ -53,17 +53,10 @@
 
       </div>
 
-    </div>
-
-    <!-- RIGHT PART OF DASHBOARD -->
-
-    <div class="right-dash">
-      <div class="main-content">
-        <h3>Welcome <%= @user.first_name %>,</h3>
-        <%= cl_image_tag current_user.photo, class:"dashboard-photo" %>
-        <p class="time-now"> <%= Time.now.strftime("%b %d, %Y") %></p>
-        <%= link_to '<i class="fa fa-plus fa-fw" aria-hidden="true"></i> New Trip'.html_safe, new_trip_path, class: "btn btn-primary" %>
+      <div class="btn-new-trip">
+        <%= link_to '<i class="fa fa-plus fa-fw" aria-hidden="true"></i> New Trip'.html_safe, new_trip_path, class: "btn btn-new btn-home" %>
       </div>
+
     </div>
 
   </div>
