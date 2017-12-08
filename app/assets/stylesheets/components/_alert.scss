@@ -4,12 +4,20 @@
 
 .alert {
   margin: 0;
+  height: 40px;
+  padding-bottom: 5px;
   text-align: center;
-  color: white;
+  border-style: none;
+  color: $dark-pink;
 }
 .alert-info {
-  background: $green;
+  background: white;
 }
 .alert-warning {
   background: $red;
+  margin: 0;
+  height: 40px;
+  padding-bottom: 5px;
+  text-align: center;
+  border-style: none;
 }
