@@ -1,6 +1,8 @@
 .activities-container {
-  margin: 10px 40px 10px 40px;
-  padding: 20px;
+  margin: 30px 15%;
+  padding: 20px 50px;
+  background-color: $white;
+  border-radius: $border-radius-base;
 }
 
 #card-activities-all {
@@ -91,8 +93,9 @@
 
 .submit-edit-trip {
   display: flex;
-  justify-content: flex-end;
-  padding-top: 20px;
+  justify-content: space-between;
+  padding-top: 30px;
+  padding-bottom: 9px;
 }
 
 .last-btn {

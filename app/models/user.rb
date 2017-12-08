@@ -20,7 +20,7 @@ class User < ApplicationRecord
 
   def add_photo
     user = self
-    user.remote_photo_url = "http://res.cloudinary.com/dna8puisr/image/upload/v1512727383/initial_avatar_user_iknoj4.png"
+    user.remote_photo_url = "http://res.cloudinary.com/dna8puisr/image/upload/v1512743339/default_avatar_qa3u1k.png"
     user.save
   end
 end
