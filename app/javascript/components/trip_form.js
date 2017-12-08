@@ -32,7 +32,6 @@ descriptionBoxes.forEach((descriptionBox) => {
   });
 });
 
-
 const statusBoxes = document.querySelectorAll('.select-status');
 // Parcourir les checkboxes
 statusBoxes.forEach((statusBox) => {
