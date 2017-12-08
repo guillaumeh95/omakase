@@ -1,0 +1,100 @@
+.activities-container {
+  margin: 10px 40px 10px 40px;
+  padding: 20px;
+}
+
+#card-activities-all {
+  display: flex;
+  height: calc(100vh - 200px);
+}
+
+.card-activities-filtered-with-title {
+  display: flex;
+  flex-direction: column;
+  width: 33.33%;
+}
+
+.card-activities-title {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.card-activities-filtered {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.stretch {
+  height: 100%;
+  align-items: stretch;
+}
+
+.card-activity-unit {
+  position: relative;
+  display: flex;
+  flex: 1 0 100px;
+  width: auto;
+  background-size: cover!important;
+  background-position: center;
+  align-items: center;
+}
+
+.absolute-link {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+}
+
+.one {
+  border: solid 2px $dark-pink;
+}
+.two {
+  border: solid 2px $yellow;
+}
+.three {
+  border: solid 2px $purple;
+}
+.card-activity-description {
+  color: white;
+  padding-left: 6px;
+  h2 {
+    margin: 0;
+    margin-bottom: 6px;
+    font-size: 18px;
+  }
+  p {
+    margin: 0;
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: 200;
+  }
+}
+
+.card-activity-description-full .a {
+  // font-weight: bold;
+  // &:hover {
+  //   color: $white;
+  // }
+}
+
+.pink-bg {
+  background-color: $dark-pink;
+}
+
+.yellow-bg {
+  background-color: $yellow;
+}
+
+.purple-bg {
+  background-color: $purple;
+}
+
+.submit-edit-trip {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 20px;
+}
+
+.last-btn {
+  margin-left: 10px;
+}

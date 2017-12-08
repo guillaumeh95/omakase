@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :trips, only: [:show, :new, :create, :edit, :update, :destroy] do
+  resources :trips, only: [:new, :create, :edit, :update, :destroy] do
     resources :visits, only: [:create, :destroy]
   end
 

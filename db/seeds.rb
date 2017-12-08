@@ -415,9 +415,11 @@ trips_attributes = [
     date: DateTime.parse("09/01/2018 00:00"),
     status: "family",
     host_id: User.first.id,
+    status: "solo",
     tourist_id: User.all[2].id,
     tourist_first_name: User.first.first_name,
-    tourist_email: User.first.email
+    tourist_email: User.first.email,
+    status: "family"
   }
 ]
 Trip.create!(trips_attributes)
