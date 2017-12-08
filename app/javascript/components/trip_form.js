@@ -55,8 +55,7 @@ statusBoxes.forEach((statusBox) => {
   });
 });
   const activeBoxes = document.querySelectorAll('.select-status.active');
-  const descriptionBoxes = document.querySelectorAll('.select-description');
-  // parcourir les checkboxes
+    // parcourir les checkboxes
   descriptionBoxes.forEach((descriptionBox) => {
     // écouter le click sur chacune d'entre elles
     descriptionBox.addEventListener('click', (event) => {
