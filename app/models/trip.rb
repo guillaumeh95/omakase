@@ -1,4 +1,8 @@
 class Trip < ApplicationRecord
+  # Define variables associating key and value
+  BUDGET = { 1 => "Poor", 2 => "Average", 3 => "Not Sure", 4 => "Rich", 5 => "Very Rich" }
+  KNOWS_THE_CITY = { 1 => "Not At All", 2 => "Little", 3 => "Not Sure", 4 => "Good", 5 => "Well" }
+
   # Associations
   belongs_to :host, class_name: 'User'
   has_many :visits, dependent: :destroy

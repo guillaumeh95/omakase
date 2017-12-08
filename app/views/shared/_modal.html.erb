@@ -22,12 +22,12 @@
             <div class="trip-budget">
               <p>
                 <i class="fa fa-eur" aria-hidden="true"></i>
-                Budget <%= trip.budget %>
+                Budget <%= Trip::BUDGET[trip.budget] %>
               </p>
             </div>
             <div class="trip-knows-the-city">
               <p><i class="fa fa-eye" aria-hidden="true"></i>
-                Knows The City <%= trip.knows_the_city %>
+                Knows The City <%= Trip::KNOWS_THE_CITY[trip.knows_the_city] %>
               </p>
             </div>
             <div class="trip-status">
@@ -36,9 +36,11 @@
           </div>
           <div class="trip-comments">
             <h6 class="text-center"><i class="fa fa-comment" aria-hidden="true"></i> Comment</h6>
-              <p>
-                <%= trip.comment %>
-              </p>
+            <% if trip.comment %>
+              <p><%= trip.comment %></p>
+            <% else %>
+              <p class="no-comment-italic-light">No Comments Left</p>
+            <% end %>
           </div>
         </div>
           <div class="trip-photos text-center">
