@@ -1,0 +1,71 @@
+
+<%= image_tag "one.svg", {class: "draggable drag-drop", id:"yes-drop1"}%>
+<%= image_tag "two.svg", {class: "draggable drag-drop", id:"yes-drop2"}%>
+<%= image_tag "three.svg", {class: "draggable drag-drop", id:"yes-drop3"}%>
+
+<!-- <div id="no-drop" class="draggable drag-drop"> #no-drop </div>
+<div id="yes-drop1" class="draggable drag-drop"> #yes-drop </div>
+<div id="yes-drop1" class="draggable drag-drop"> #yes-drop </div> -->
+
+<!--   <div class="dropzone1" id="outer-dropzone">
+    #dropzone1
+  </div>
+
+ -->
+<div class="edit-container">
+    <h4>Main container</h4>
+
+  <div id="card-activities-all-title">
+    <% @trip.filters.each do |filter| %>
+      <div class="card-activities-title text-center">
+        <%= "Choose a #{filter.split("_").join(" ").capitalize} activity" %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="card-activities-all dropzone" id="outer-dropzone">
+
+    <div class="card-activities-filtered dropzone1" id="outer-dropzone1">
+      <% @activities_one.each do |activity| %>
+          <div class="card-activity-unit" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('<%= activity.photo %>');" data-activity='<%= activity.id %>'>
+            <div class="card-activity-description" >
+              <h2><%= activity.title %></h2>
+              <p><%= activity.name %></p>
+            </div>
+          </div>
+      <% end %>
+    </div>
+
+    <div class="card-activities-filtered dropzone2" id="outer-dropzone2">
+      <% @activities_two.each do |activity| %>
+        <div class="card-activity-unit" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= activity.photo %>');">
+            <div class="card-activity-description">
+              <h2><%= activity.title %></h2>
+              <p><%= activity.name %></p>
+            </div>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="card-activities-filtered dropzone3" id="outer-dropzone3">
+      <% @activities_three.each do |activity| %>
+        <div class="card-activity-unit" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= activity.photo %>');">
+            <div class="card-activity-description">
+              <h2><%= activity.title %></h2>
+              <p><%= activity.name %></p>
+            </div>
+          </div>
+      <% end %>
+    </div>
+  </div>
+
+</div>
+
+
+<div
+  id="map"
+  style="width: 100%;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+></div>
+
