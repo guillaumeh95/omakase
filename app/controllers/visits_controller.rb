@@ -8,7 +8,7 @@ class VisitsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to edit_trip_path(@trip) }
       format.js do
-        # define all the instance variables needed in `create.js.erb`
+        # Define all the instance variables needed in `create.js.erb`
         @activity_one = @trip.visits[0].activity
         @activity_two = @trip.visits[1].activity
         @activity_three = @trip.visits[2].activity
@@ -22,10 +22,7 @@ class VisitsController < ApplicationController
     end
   end
 
-  # def destroy
-  # end
-
-  # private
+  private
 
   def find_trip
     @trip = Trip.find(params[:trip_id])

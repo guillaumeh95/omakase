@@ -20,6 +20,19 @@
 
       <div class="tab-content">
 
+        <!-- RECEIVED TRIPS -->
+        <div class="tab-pane fade in active" id="received-trips" role="tabpanel">
+          <div class="card-container">
+            <% if @trips_tourist.count.zero? %>
+              <div class="no-trip">You don't have any trips</div>
+            <% else %>
+              <% @trips_tourist.each do |trip| %>
+                <%= render "shared/card", trip: trip %>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+
         <!-- CREATED TRIPS -->
         <div class="tab-pane fade" id="created-trips" role="tabpanel">
           <div class="card-container">
@@ -35,19 +48,6 @@
                 <% end %>
               <h6 class="incoming-trip-card">Past Trips (<%= @trips_host_past.count %>)</h6>
               <% @trips_host_past.each do |trip| %>
-                <%= render "shared/card", trip: trip %>
-              <% end %>
-            <% end %>
-          </div>
-        </div>
-
-        <!-- RECEIVED TRIPS -->
-        <div class="tab-pane fade in active" id="received-trips" role="tabpanel">
-          <div class="card-container">
-            <% if @trips_tourist.count.zero? %>
-              <div class="no-trip">You don't have any trips</div>
-            <% else %>
-              <% @trips_tourist.each do |trip| %>
                 <%= render "shared/card", trip: trip %>
               <% end %>
             <% end %>
