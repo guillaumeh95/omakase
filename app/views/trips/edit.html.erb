@@ -1,7 +1,7 @@
 <%= render "shared/navbar" %>
 
 <div class="activities-container">
-  <div id="card-activities-all dropzone" id="outer-dropzone"">
+  <div id="card-activities-all">
     <%= render "trips/activities", trip: @trip, activities_one: @activities_one, activities_two: @activities_two, activities_three: @activities_three, activity_one: @activity_one, activity_two: @activity_two, activity_three: @activity_three %>
   </div>
 
@@ -11,19 +11,19 @@
     <div class="add-container">
       <div class="add-item">
         <% if @activity_one %>
-        <%= image_tag "icons/comment.svg", {class: "plus-comment draggable drag-drop", id:"yes-drop"} %>
+        <%= image_tag "icons/comment.svg", {class: "plus-comment"} %>
         <p> Add a comment</p>
         <% end %>
       </div>
       <div class="add-item">
         <% if @activity_three %>
-        <%= image_tag "icons/snack.svg", {class: "plus-snack draggable drag-drop", id:"yes-drop"}%>
+        <%= image_tag "icons/snack.svg", {class: "plus-snacks"}%>
         <p> Add a snack place</p>
         <% end %>
       </div>
       <div class="add-item">
         <% if @activity_three %>
-        <%= image_tag "icons/tea.svg",{class: "plus-snack draggable drag-drop", id:"yes-drop"} %>
+        <%= image_tag "icons/tea.svg", {class: "plus-snacks"} %>
         <p> Add a coffe place</p>
         <% end %>
       </div>
@@ -39,5 +39,4 @@
       </span>
     </div>
   </div>
-
 </div>
