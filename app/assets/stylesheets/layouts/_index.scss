@@ -4,5 +4,6 @@
 // @import "profile";
 // @import "map";
 body {
-  background: $dark-pink;
+  background: linear-gradient(-140deg, rgba(217, 223, 255, 100), rgba(69, 0, 249,100));
+  height: 200vh;
 }

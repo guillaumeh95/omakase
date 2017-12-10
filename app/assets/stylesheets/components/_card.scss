@@ -18,7 +18,7 @@
   min-width: 210px;
   margin: 20px;
   border-radius: $border-radius-base;
-  border: 2px solid $dark-pink;
+  border: 3px solid $yellow;
   &:first-child {
     margin-top: 40px;
   }
@@ -27,7 +27,7 @@
   }
 }
 .card-link {
-  background: linear-gradient(-225deg, rgba(0, 0, 0, 0.5) 0%, rgba(30,30,30,0.5) 50%);
+  background: linear-gradient(-225deg, rgba(0, 0, 0, 0.8) 0%, rgba(30,30,30,0.6) 50%);
   position: absolute;
   top: 0;
   bottom: 0;
@@ -37,24 +37,8 @@
   transition: all 2s ease;
   cursor: pointer;
 }
-.dashboard-container {
-  margin: 20px 20px;
-}
-.dashboard {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-.dash {
-  background: white;
-  border-radius: $border-radius-base;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  padding: 20px 30px;
-  padding-bottom: 0;
-  margin: 20px;
-  flex: 1;
-  justify-content: space-around;
-}
+
+
 // .right-dash {
 //   flex: 0 0 300px;
 //   position: sticky !important;
@@ -82,7 +66,7 @@
   opacity: 0.9;
   margin: 0;
   padding: 0;
-  color: $white;
+  color: $yellow;
 }
 .trip-title-large {
   position: absolute;
@@ -110,7 +94,7 @@
   right: 10px;
   a {
     margin: 0 10px;
-    color: $white;
+    color: $yellow;
     opacity: 0.9;
   }
   a:hover {
@@ -141,24 +125,5 @@
 .status-green {
   color: $green;
 }
-.incoming-trip-card {
-  text-align: center;
-  font-size: 25px;
-  color: $dark-pink;
-  margin: 0 20px;
-}
-.nav-tabs-justified, .nav-tabs.nav-justified {
-  margin: 0 20px 20px 20px;
-  width: auto;
-}
-.nav-tabs-justified > .active > a, .nav-tabs.nav-justified > .active > a, .nav-tabs-justified > .active > a:hover, .nav-tabs.nav-justified > .active > a:hover, .nav-tabs-justified > .active > a:focus, .nav-tabs.nav-justified > .active > a:focus {
-  background-color: $dark-pink;
-  color: $white;
-  opacity: 1 !important;
-}
-.nav-tabs-justified > li > a, .nav-tabs.nav-justified > li > a {
-  background-color: $dark-pink;
-  color: $white;
-  opacity: 0.5;
-}
+
 

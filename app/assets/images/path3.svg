@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="996px" height="1318px" viewBox="0 0 996 1318" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Rectangle 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="75.6233919%" y1="-10.8142985%" x2="31.7606475%" y2="103.492207%" id="linearGradient-1">
+            <stop stop-color="#CBB440" offset="0%"></stop>
+            <stop stop-color="#DDBA81" offset="35.762025%"></stop>
+            <stop stop-color="#F4FEE2" offset="85.574733%"></stop>
+            <stop stop-color="#FFFCEF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" fill="url(#linearGradient-1)">
+            <path d="M-543.652706,774.788251 C-64.9853444,736.694363 294.170534,664.992835 533.814927,559.683666 C785.782412,448.959247 536.31999,292.998235 771.601006,192.873459 C928.455018,126.123609 840.011242,52.8818697 506.26968,-26.8517585 L633.025959,-26.8517585 C950.549547,37.1346343 1049.29462,128.389368 929.261174,246.912443 C749.211008,424.697055 1114.09528,432.21608 883.963438,698.399677 C780.748473,817.783986 486.892738,1030.88185 2.39623164,1337.69328 L-543.652706,774.788251 Z" id="Rectangle-2" transform="translate(217.500491, 655.420762) rotate(2.000000) translate(-217.500491, -655.420762) "></path>
+        </g>
+    </g>
+</svg>

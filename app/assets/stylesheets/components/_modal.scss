@@ -1,40 +1,86 @@
 .modal{
-  //background-color: rgba(0, 0, 0, 0.3);
+  // background-color: rgba(161, 108, 6, 0.4);
+  color : $yellow;
 }
 .modal-header {
-  border-bottom: 2px solid $dark-pink;
-  color : $dark-pink;
+  border-bottom: 2px solid yellow;
 }
 
+.modal-title {
+  margin: 25px;
+  font-size: 39px;
+}
+.modal-date {
+  font-weight: lighter;
+}
 .modal-content {
- // background-color: #EC3159;
+  background-color: rgba(187, 174, 255, 0.60);
+  border: 2px solid $yellow;
 }
 
 .modal-body{
   margin: 0 20px;
-  color : $dark-pink;
 }
 
-.trip-info {
-  display: flex;
-  justify-content: space-between;
-  color : $dark-pink;
+.modal-footer {
+  padding : 35px;
+  border-top: none;
+}
+
+.trip-comments {
+  text-align:justify;
+  border: 2px solid $yellow;
+  padding: 10px 30px;
+  //background-color: white;
 }
 .trip-summary {
-  color: $dark-pink;
-  flex: 0 0 40%;
-  border: 2px solid $dark-pink;
-  padding: 10px 30px;
+  padding: 10px 10px;
+  width: 100%;
+  border-bottom: 2px solid $yellow;
   //background-color: white;
 }
-.trip-comments {
-  flex: 0 0 58%;
-  text-align:justify;
-  border: 2px solid $dark-pink;
+.trip-host {
+  border-bottom: 2px solid $yellow;
   padding: 10px 30px;
-  color : $dark-pink;
-  //background-color: white;
+  text-align: center;
 }
+
+.trip-details {
+  padding: 10px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.trip-profiles{
+  display: inline-block;
+  padding: 10px;
+}
+
+.trip-infos{
+  display: inline-block;
+  align-items: center;
+}
+
+.trip-icons {
+  height: 50px;
+  display: inline-block;
+  align-items: center;
+}
+
+.trip-details p{
+  color: transparent;
+  text-align: center;
+  padding-top: 10px;
+  width: 100px;
+}
+
+.trip-details:hover p {
+  color : $yellow;
+  font-weight: 100;
+  cursor: hand;
+}
+
 .trip-photos {
   padding: 0;
   display: flex;
@@ -61,6 +107,7 @@
 .first-activity {
   flex: 0 0 33.33%;
   position: relative;
+
 }
 
 .first-activity h6 {
@@ -110,14 +157,15 @@
 }
 
 .map {
-  border: 2px solid $dark-pink;
-  padding: 10px;
+  margin-top: 2%;
+  //border: 2px solid $yellow;
   //background-color: white;
 }
 
 .btn-modal {
   text-align: left;
-  margin: 2%;
+  margin-top: 2%;
+  margin-bottom: 2%;
   text-decoration: none;
 }
 .no-comment-italic-light {

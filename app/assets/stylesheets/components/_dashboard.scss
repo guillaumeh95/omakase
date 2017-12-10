@@ -1,8 +1,51 @@
+.dashboard-container {
+  margin: 20px 20px;
+}
+.dashboard {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.dash {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: $border-radius-base;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  margin: 20px;
+  flex: 1;
+  justify-content: space-around;
+}
 
 .left-dash {
   // height: 400px;
   margin-right: 1.5%;
   margin-left: 1.5%;
+}
+.nav {
+  background: rgba(255, 255, 255, 0.5);
+  width: 100%;
+}
+
+.nav-tabs-justified, .nav-tabs.nav-justified {
+  width: auto;
+}
+.nav-tabs-justified > .active > a, .nav-tabs.nav-justified > .active > a, .nav-tabs-justified > .active > a:hover, .nav-tabs.nav-justified > .active > a:hover, .nav-tabs-justified > .active > a:focus, .nav-tabs.nav-justified > .active > a:focus {
+  background: rgba(255, 255, 255, 0.8);
+  color: black;
+  padding: 30px;
+}
+
+.nav-tabs-justified > li > a, .nav-tabs.nav-justified > li > a {
+  color: black;
+  padding: 30px;
+
+}
+
+.incoming-trip-card {
+  text-align: center;
+  font-size: 18px;
+  color: $yellow;
+  margin: 20px;
 }
 
 .time-now {
