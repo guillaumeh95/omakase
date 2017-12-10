@@ -6,7 +6,7 @@ class TripsController < ApplicationController
   end
 
   def create
-    # Instanciate new trip with all the trip params including host
+    # Instanciate new trip with all the trip params (including host)
     @trip = Trip.new(trip_params)
     @trip.host = current_user
 
@@ -64,7 +64,6 @@ class TripsController < ApplicationController
 
   def destroy
   end
-
 
   private
 

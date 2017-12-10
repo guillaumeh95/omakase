@@ -19,18 +19,7 @@ class Trip < ApplicationRecord
   validates :tourist_first_name, presence: true
   validates :tourist_email, presence: true
 
-  # Select profiles of a trip
-  # def filters
-  #   true_filters = []
-  #   profiles = %w[sight_seeing_adventurer art_lover serial_shopper nature_lover food_addict sport_lover history_passionate tech_fan relaxed city_wanderer]
-  #   profiles.each do |profile|
-  #     if self.send(profile)
-  #       true_filters << profile
-  #     end
-  #   end
-  #   return true_filters
-  # end
-
+  # Picks the profiles that are true
   def filters
     # Call model column on self (metadata since element in array is a string, not a variable hence we use send) <=> self.send(profile) == true
     %w[sight_seeing_adventurer art_lover serial_shopper nature_lover food_addict sport_lover history_passionate tech_fan relaxed city_wanderer].select! {|profile| send(profile) == true }

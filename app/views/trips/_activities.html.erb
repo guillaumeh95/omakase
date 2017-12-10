@@ -1,6 +1,6 @@
 <div id="activities-one" class="card-activities-filtered-with-title">
   <div class="card-activities-title text-center pink-bg">
-    <%= "Choose a #{trip.filters[0].split("_").map(&:capitalize).join(' ')} activity" %>
+    <%= "Choose a #{capitalize_each_word(trip.filters[0].gsub('_', " "))} activity" %>
   </div>
   <% if activity_one %>
     <div id= "activities-one-filtered" class="card-activities-filtered stretch">
@@ -18,7 +18,7 @@
 <% if activity_one %>
   <div id="activities-two" class="card-activities-filtered-with-title">
     <div class="card-activities-title text-center yellow-bg">
-      <%= "Choose a #{trip.filters[1].split("_").map(&:capitalize).join(' ')} activity" %>
+      <%= "Choose a #{capitalize_each_word(trip.filters[1].gsub('_', " "))} activity" %>
     </div>
     <% if activity_two %>
       <div id= "activities-two-filtered" class="card-activities-filtered stretch">
@@ -35,7 +35,7 @@
   <% if activity_two %>
     <div id="activities-three" class="card-activities-filtered-with-title">
       <div class="card-activities-title text-center purple-bg">
-        <%= "Choose a #{trip.filters[2].split("_").map(&:capitalize).join(' ')} activity" %>
+        <%= "Choose a #{capitalize_each_word(trip.filters[2].gsub('_', " "))} activity" %>
       </div>
       <% if activity_three %>
         <div id= "activities-three-filtered" class="card-activities-filtered stretch">

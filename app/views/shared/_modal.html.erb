@@ -15,7 +15,7 @@
             <div class="trip-profile">
               <p><i class="fa fa-address-card" aria-hidden="true"></i>
                 Profiles: <% trip.filters.each do |profile| %>
-                  <%= profile.gsub('_', " ").split.map(&:capitalize).join(' ') %>
+                  <%= capitalize_each_word(profile.gsub('_', " ")) %>
                 <% end %>
               </p>
             </div>
