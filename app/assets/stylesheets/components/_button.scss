@@ -1,9 +1,9 @@
 .btn-home {
-  color: $yellow;
+  color: $red;
   padding: 10px;
   padding-left: 30px;
   padding-right: 30px;
-  border: 3px solid $yellow;
+  border: 3px solid $red;
   text-decoration: none !important;
   transition: background 0.3s ease;
   background: rgba(250, 250, 250, 0.2);
@@ -18,11 +18,11 @@
 }
 
 .btn-small {
-  color: $yellow;
+  color: $red;
   padding: 10px;
   padding-left: 22px;
   padding-right: 22px;
-  border: 2px solid $yellow;
+  border: 2px solid $red;
   text-decoration: none !important;
   transition: background 0.3s ease;
   background: rgba(250, 250, 250, 0.2);
@@ -39,56 +39,59 @@
 }
 
 .btn-primary {
-  background: $dark-pink;
+  background: $red;
   border-radius: $border-radius-base;
   color: white;
   padding: 10px;
 }
 
-button{
-  background:$dark-pink;
+.btn-homepage {
+  background:$red;
   color:white;
   text-decoration: none !important;
   border:none;
   position:relative;
   left: 57%;
-  height:55px;
+  height:80px;
   font-size:18px;
-  padding:0 2em;
+  padding: 17px;
+  padding-right: 30px;
+   padding-left: 30px;
+   border-radius: 2px;
   cursor:pointer;
   transition:800ms ease all;
   outline:none;
 }
 
-button a {
+.btn-homepage a {
   color: white;
   text-decoration: none !important;
 }
 
-button:hover a {
-  color: $dark-pink;
+.btn-homepage:hover a {
+  color: $red;
   text-decoration: none !important;
 }
-button:hover{
+.btn-homepage:hover {
   background: rgba(250,250,250,0.6);
 }
-button:before,button:after{
+.btn-homepage:before, .btn-homepage:after {
   content:'';
   position:absolute;
   top:0;
   right:0;
   height:2px;
   width:0;
-  background: $dark-pink;
+  background: $red;
   transition:400ms ease all;
 }
-button:after{
+.btn-homepage:after {
   right:inherit;
   top:inherit;
   left:0;
   bottom:0;
 }
-button:hover:before,button:hover:after{
+.btn-homepage:hover:before,.btn-homepage:hover:after {
   width:100%;
   transition:800ms ease all;
 }
