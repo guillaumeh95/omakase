@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="195px" height="181px" viewBox="0 0 195 181" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Misc-icons-iconstore-04</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-464.000000, -1151.000000)">
+            <g id="Misc-icons-iconstore-04" transform="translate(466.000000, 1153.000000)">
+                <polygon id="Shape" fill="#FAFB5D" fill-rule="nonzero" points="128 36.7697069 128 177 62 140.233654 62 0"></polygon>
+                <path d="M62,0 L128,37" id="Shape" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M128,177 L62,140" id="Shape" stroke="#000000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                <polygon id="Shape" stroke="#030303" stroke-width="4" fill="#CBB440" stroke-linecap="round" stroke-linejoin="round" points="62 140.233654 0 177 0 36.7697069 62 0 62 80.939913"></polygon>
+                <polygon id="Shape" stroke="#030303" stroke-width="4" fill="#B2A383" stroke-linecap="round" stroke-linejoin="round" points="127 36.7697069 191 0 191 140.233654 127 177"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

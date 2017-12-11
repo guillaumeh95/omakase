@@ -5,8 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta property="og:title" content="Omakase - Plan the best day trip for your friend">
     <meta property="og:description" content="Omakase is the best web application for Parisians who want to plan a beautiful day in Paris for their visiting friends.">
-    <meta property="og:site_name" content="Omakase"/>
-    <title>Omakase</title>
+    <meta property="og:site_name" content="Omakase">
+    <meta property="og:type" >
+    <meta property="og:url" >
+    <meta property="og:name" >
+
+    <title> Omakase - Plan the best day trip for your friend</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
@@ -17,7 +21,7 @@
     <%= render 'shared/flashes' %>
     <%= yield %>
     <%= javascript_include_tag "application" %>
-    <%= javascript_include_tag "https://maps.google.com/maps/api/js?key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
     <%= javascript_pack_tag "map" %>
     <%= javascript_pack_tag "application" %>
 

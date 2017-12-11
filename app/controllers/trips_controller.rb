@@ -26,6 +26,10 @@ class TripsController < ApplicationController
     end
   end
 
+  def show
+
+  end
+
   def edit
     setup_activities # find me in app/controllers/application_controller.rb :)
   end
