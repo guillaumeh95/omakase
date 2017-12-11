@@ -23,6 +23,8 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'bootstrap-slider-rails'
 gem 'postmark-rails'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 
 group :development, :test do
   gem 'pry-byebug'

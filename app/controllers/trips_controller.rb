@@ -1,6 +1,15 @@
 class TripsController < ApplicationController
   before_action :find_trip, only: [:show, :edit, :update, :destroy]
 
+  def show
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "file_name"   # Excluding ".pdf" extension.
+      end
+    end
+  end
+
   def new
     @trip = Trip.new
   end
@@ -24,10 +33,6 @@ class TripsController < ApplicationController
     else
       render :new
     end
-  end
-
-  def show
-
   end
 
   def edit
