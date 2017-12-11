@@ -63,6 +63,8 @@ class TripsController < ApplicationController
   end
 
   def destroy
+    @trip.destroy
+    redirect_to dashboard_user_path(current_user)
   end
 
   private
