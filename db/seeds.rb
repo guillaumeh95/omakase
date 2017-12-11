@@ -347,7 +347,6 @@ activities_attributes = [
     knows_the_city: 3,
     website: "https://www.paris.fr/services-et-infos-pratiques/sports-et-loisirs/ou-faire-du-sport/le-sport-en-plein-air-2016#les-bases-nautiques_6",
   },
-<<<<<<< HEAD
     {
     title:"Shopping at the Galeries Lafayette",
     name: "Galeries Lafayette",
@@ -1601,9 +1600,6 @@ activities_attributes = [
   knows_the_city: 3,
   website: "http://centre.taichichuan.free.fr/",
 },
-
-=======
->>>>>>> master
 ]
 Activity.create(activities_attributes)
 
