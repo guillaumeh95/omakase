@@ -46,7 +46,7 @@
   //background-color: white;
 }
 .trip-host {
-  border-bottom: 2px solid $yellow;
+  color : $yellow;
   padding: 10px 30px;
   text-align: center;
 }
@@ -94,19 +94,28 @@
   padding-top: 15px;
   padding-bottom: 15px;
 }
-
-.first-activity, .second-activity, .third-activity {
+.modal-activities {
+  display: flex;
+}
+.modal-activity {
+  flex: 0 0 33.33%;
+  position: relative;
+  color: white;
   img {
     object-fit: cover;
     height: 200px;
   }
   h5 {
     font-size: 12px;
-    color: white;
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
   }
   h6 {
-   font-size: 16px;
-    color: white;
+    font-size: 16px;
+    position: absolute;
+    top: 5px;
+    left: 10px;
   }
 }
 
@@ -161,7 +170,6 @@
   bottom: 5px;
   left: 10px;
 }
-
 .map {
   margin-top: 2%;
   //border: 2px solid $yellow;

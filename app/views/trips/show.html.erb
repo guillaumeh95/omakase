@@ -11,27 +11,21 @@
             <% end %>
           </div>
         </div>
-          <div class="trip-photos text-center">
-            <div class="first-activity">
-              <% first_activity = @trip.visits[0].activity %>
-              <%= image_tag first_activity.photo, class:"trip-photo" %>
-              <div class="trip-name"><h5><%= first_activity.name %></h5></div>
-              <div class="trip-title-show"><h6><%= first_activity.title %></h6></div>
-            </div>
-            <div class="second-activity">
-              <% second_activity = @trip.visits[1].activity %>
-              <%= image_tag second_activity.photo, class:"trip-photo" %>
-              <div class="trip-name"><h5><%= second_activity.name %></h5></div>
-              <div class="trip-title-show"><h6><%= second_activity.title %></h6></div>
-            </div>
-            <div class="third-activity">
-              <% third_activity = @trip.visits[2].activity %>
-              <%= image_tag third_activity.photo, class:"trip-photo" %>
-              <div class="trip-name"><h5><%= third_activity.name %></h5></div>
-              <div class="trip-title-show"><h6><%= third_activity.title %></h6></div>
-            </div>
-          </div>
 
+        <div class="trip-photos text-center">
+          <% markers = [] %> <!-- Initialize the variable markers outside the each -->
+          <div class="modal-activities">
+            <% @trip.visits.each do |visit| %>
+              <% activity = visit.activity %>
+              <div class="modal-activity">
+                <%= image_tag activity.photo, class:"trip-photo" %>
+                <div class="trip-name"><h5><%= activity.name %></h5></div>
+                <div class="trip-title-modal"><h6><%= activity.title %></h6></div>
+              </div>
+              <% markers << { lat: activity.latitude, lng: activity.longitude } %>
+            <% end %>
+          </div>
+        </div>
 
           <div class="map">
             <div id="floating-panel">
@@ -44,32 +38,11 @@
               </select>
             </div>
 
-            <div class="trip-map" id="ouverture_show" ></div>
-              <!--  markers for googlemap to be refactored  -->
-              <% markers = [
-                {
-                  lat: @trip.visits[0].activity.latitude,
-                  lng: @trip.visits[0].activity.longitude,
-                                    # icon: "http://res.cloudinary.com/djlkudqpv/image/upload/c_scale,h_30,q_100,r_0,w_30/v1512062487/logo_gcdlo3.png",
-                  # marker1 = @trip.visits[0],
-                  infoWindow: { content: render_to_string(partial: "map_box", locals: { trip: trip })},
-                },
-                {
-                  lat: @trip.visits[1].activity.latitude,
-                  lng: @trip.visits[1].activity.longitude,
-                },
-                {
-                  lat: @trip.visits[2].activity.latitude,
-                  lng: @trip.visits[2].activity.longitude,
-                }
-              ] %>
-                <div
-                id="map"
-                style="width: 100%;
-                height: 600px;"
-                data-markers="<%= markers.to_json %>"
-                ></div>
+            <div class="trip-map" id="ouverture_modal" ></div>
+
+            <div id="map" style="width: 100%; height: 600px;" data-markers="<%= markers.to_json %>"></div>
           </div>
+
 
           <div class="trip-summary">
             <div class="trip-host"><p> This map was created by <%= @trip.host.first_name %> <%= @trip.host.last_name %> for <%= User.find(@trip.tourist_id).first_name %> <%= User.find(@trip.tourist_id).last_name %></p></div>

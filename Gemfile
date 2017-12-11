@@ -22,6 +22,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'bootstrap-slider-rails'
+gem 'postmark-rails'
 
 group :development, :test do
   gem 'pry-byebug'

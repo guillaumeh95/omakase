@@ -1,58 +1,121 @@
 import GMaps from 'gmaps/gmaps.js';
 
-function mapDisplay(){
-  const mapElement = document.getElementById('map');
+function initMap(){
+    const mapElement = document.getElementById('map');
   // if (mapElement) { // don't try to build a map if there's no div#map to inject in
-    const map = new GMaps({ el: '#map', lat: 0, lng: 0 });
+
     const markers = JSON.parse(mapElement.dataset.markers);
-    map.addMarkers(markers);
+    const directionsDisplay = new google.maps.DirectionsRenderer;
+    const directionsService = new google.maps.DirectionsService;
+    const directionsDisplay2 = new google.maps.DirectionsRenderer;
+    const directionsService2 = new google.maps.DirectionsService;
+    const map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 14,
+          center: {lat: markers[0].lat, lng: markers[0].lng}
+        });
+    directionsDisplay.setMap(map);
+    directionsDisplay2.setMap(map);
+
+    console.log(map);
+
+
 
     if (markers.length === 0) {
-      map.setZoom(2);
-    } else if (markers.length === 1) {
-      let center = map.setCenter(markers[0].lat, markers[0].lng);
-      map.setZoom(14);
-      let mapTypeId = map.MapTypeId.ROADMAP;
-      let directionsDisplay = map.DirectionsRenderer();
-      let directionsService = map.DirectionsService();
-      let geocoder = map.Geocoder();
-
-      directionsDisplay.setMap(map);
+      // map.setZoom(2);
+      console.log("premier if");
+    } else if (markers.length > 1) {
+      console.log("deuxieme if");
+      // let center = map.setCenter(markers[0].lat, markers[0].lng);
+      // map.setZoom(14);
 
       calculateAndDisplayRoute(directionsService, directionsDisplay);
+      calculateAndDisplayRoute2(directionsService2, directionsDisplay2);
       document.getElementById('mode').addEventListener('change', function() {
-      calculateAndDisplayRoute(directionsService, directionsDisplay);
+        calculateAndDisplayRoute(directionsService, directionsDisplay);
+        calculateAndDisplayRoute2(directionsService2, directionsDisplay2);
       });
-
-    } else {
-      map.fitLatLngBounds(markers);
     }
 
-//////
-  function calculateAndDisplayRoute(directionsService, directionsDisplay) {
-
-    let depart = markers[0];
-    let arrivee = markers[1];
-  /*test si les variables sont bien initialisés*/
-  if (depart && arrivee)
-  {
-  /*mode de transport*/
-    const choixMode = document.getElementById('mode').value;
-    const request = {
-        origin: depart,
-        destination:arrivee,
-        travelMode: map.DirectionsTravelMode[choixMode]
-    };
-  /*appel à l'API pour tracer l'itinéraire*/
-    directionsService.route(request, function(response, status) {
-    directionsDisplay.setDirections(response);
-    });
-  }
+     else {
+      map.fitLatLngBounds(markers);
+      console.log("else");
+    }
 
 }
 
+    function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+     const mapElement = document.getElementById('map');
+     console.log("1");
 
-//     const styles = [
+     const markers = JSON.parse(mapElement.dataset.markers);
+
+    const selectedMode = document.getElementById('mode').value;
+    directionsService.route({
+      origin: {lat: markers[0].lat, lng: markers[0].lng},  // Haight.
+      destination: {lat: markers[1].lat, lng: markers[1].lng},  // Ocean Beach.
+      // Note that Javascript allows us to access the constant
+      // using square brackets and a string value as its
+      // "property."
+      travelMode: google.maps.TravelMode[selectedMode]
+    }, function(response, status) {
+      if (status == 'OK') {
+        directionsDisplay.setDirections(response);
+      } else {
+        window.alert('Directions request failed due to ' + status);
+      }
+    });
+  }
+
+    function calculateAndDisplayRoute2(directionsService2, directionsDisplay2) {
+     const mapElement = document.getElementById('map');
+     console.log("2");
+
+     const markers = JSON.parse(mapElement.dataset.markers);
+
+    const selectedMode = document.getElementById('mode').value;
+    directionsService2.route({
+      origin: {lat: markers[1].lat, lng: markers[1].lng},  // Haight.
+      destination: {lat: markers[2].lat, lng: markers[2].lng},  // Ocean Beach.
+      // Note that Javascript allows us to access the constant
+      // using square brackets and a string value as its
+      // "property."
+      travelMode: google.maps.TravelMode[selectedMode]
+    }, function(response, status) {
+      if (status == 'OK') {
+        directionsDisplay2.setDirections(response);
+      } else {
+        window.alert('Directions request failed due to ' + status);
+      }
+    });
+  }
+
+export { initMap };
+
+//   function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+//     const mapElement = document.getElementById('map');
+//     console.log("hey");
+//     const markers = JSON.parse(mapElement.dataset.markers);
+//     let depart = markers[0];
+//     console.log(depart);
+//     let arrivee = markers[1];
+//   /*test si les variables sont bien initialisés*/
+//   if (depart && arrivee)
+//   {
+//   // mode de transport
+//     const choixMode = document.getElementById('mode').value;
+//     const request = {
+//         origin: depart,
+//         destination:arrivee,
+//         travelMode: map.DirectionsTravelMode[choixMode]
+//     };
+//   /*appel à l'API pour tracer l'itinéraire*/
+//     directionsService.route(request, function(response, status) {
+//     directionsDisplay.setDirections(response);
+//     });
+//   }
+// }
+
+// [
 //     {
 //         "featureType": "all",
 //         "elementType": "labels",
@@ -187,15 +250,14 @@ function mapDisplay(){
 //     }
 //   ];
 
-//   map.addStyle({
-//     styles: styles,
-//     mapTypeId: 'map_style'
-//   });
-//   map.setStyle('map_style');
+  // map.addStyle({
+  //   styles: styles,
+  //   mapTypeId: 'map_style'
+  // });
+  // map.setStyle('map_style');
 
-}
 
 //// GET THE ROUTES AND DIRECTIONS
 
 
-export { mapDisplay };
+

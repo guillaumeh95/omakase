@@ -10,8 +10,8 @@
 import 'bootstrap';
 import "../plugins/flatpickr";
 import "../components/trip_form";
-import "../components/activities";
-import {mapDisplay} from "./map";
+import {addDeleteLink} from "../components/activities";
+import {initMap} from "./map";
 import "../components/cards_dashboard";
 import {initSliders} from "../components/slider";
 import { setAlertsTimeouts } from '../components/alert';
@@ -20,7 +20,7 @@ import { setAlertsTimeouts } from '../components/alert';
 initSliders();
 
 //map display
-mapDisplay();
+initMap();
 
 
 
@@ -36,3 +36,5 @@ mapDisplay();
 if (document.querySelector(".alert")) {
   setAlertsTimeouts();
 }
+
+addDeleteLink();
