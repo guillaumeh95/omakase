@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   resources :trips, only: [:show, :new, :create, :edit, :update, :destroy] do
     member do
-      get 'send_trip', to: "trips#send_trip"
+      get 'send_email', to: "trips#send_email"
     end
     resources :visits, only: [:create, :destroy]
   end

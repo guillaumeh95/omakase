@@ -2,7 +2,7 @@ import GMaps from 'gmaps/gmaps.js';
 
 function initMap(){
     const mapElement = document.getElementById('map');
-  // if (mapElement) { // don't try to build a map if there's no div#map to inject in
+  //if (mapElement) { // don't try to build a map if there's no div#map to inject in
 
     const markers = JSON.parse(mapElement.dataset.markers);
     const directionsDisplay = new google.maps.DirectionsRenderer;
@@ -40,7 +40,7 @@ function initMap(){
       map.fitLatLngBounds(markers);
       console.log("else");
     }
-
+  //}
 }
 
     function calculateAndDisplayRoute(directionsService, directionsDisplay) {

@@ -1,6 +1,5 @@
-<h1>Trip#send_trip</h1>
-
-<p>Hi,</p>
+<p>Hi <%= @trip.tourist_first_name %>,</p>
+<p>You just received a new trip from <%= @trip.host.first_name %>.</p>
+<p><%= link_to "Download your trip in PDF!", trip_url(@trip, format: :pdf) %></p>
 <br>
-<p>You just received a new trip from <%= @trip.tourist_first_name %></p>
-<p><%= link_to "Download your PDF!", trip_url(@trip, format: :pdf) %></p>
+<p>The Omakaze Team</p>

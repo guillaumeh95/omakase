@@ -1,11 +1,12 @@
 class TripsController < ApplicationController
-  before_action :find_trip, only: [:show, :edit, :update, :destroy]
+  before_action :find_trip, only: [:show, :edit, :update, :destroy, :send_email]
 
   def show
     respond_to do |format|
       format.html
       format.pdf do
-        render pdf: "file_name"   # Excluding ".pdf" extension.
+        render    pdf:        "file_name",   # Excluding ".pdf" extension.
+                  layout:     'pdf.html.erb'
       end
     end
   end
@@ -50,7 +51,12 @@ class TripsController < ApplicationController
     redirect_to dashboard_user_path(current_user)
   end
 
-
+  def send_email
+    TripMailer.send_trip(@trip).deliver_now # Deliver mail
+    @trip.sent = true # Set sent value to true
+    @trip.save
+    redirect_to dashboard_user_path(current_user)
+  end
 
   private
 
