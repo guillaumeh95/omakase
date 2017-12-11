@@ -11,9 +11,9 @@
         <div class="trip-sent-status">
           <% if trip.visits.count == 3 %>
             <% if trip.sent %>
-              <%= link_to '<i class="fa fa-send status-green" aria-hidden="true"></i> Send Again'.html_safe, send_email_trip_path(trip), class: "white" %>
+              <%= link_to '<i class="fa fa-send status-green" aria-hidden="true"></i> Send Again'.html_safe, send_trip_path(trip), class: "white" %>
             <% else %>
-              <%= link_to '<i class="fa fa-send status-red" aria-hidden="true"></i> Send Now!'.html_safe, send_email_trip_path(trip), class: "white" %>
+              <%= link_to '<i class="fa fa-send status-red" aria-hidden="true"></i> Send Now!'.html_safe, send_trip_path(trip), class: "white" %>
             <% end %>
           <% else %>
             <%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i> Finish Editing Trip'.html_safe, edit_trip_path(trip) %>
@@ -32,5 +32,5 @@
       </div>
     </div>
 
-  <%= link_to "See", trip_path(trip), class: "card-link btn-small" %>
+  <%= link_to "", trip_path(trip), class: "card-link btn-small" %>
 </div>

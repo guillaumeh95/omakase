@@ -50,6 +50,8 @@ class TripsController < ApplicationController
     redirect_to dashboard_user_path(current_user)
   end
 
+
+
   private
 
   def trip_params
