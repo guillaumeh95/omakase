@@ -1,13 +1,15 @@
 .activities-container {
   margin: 30px 15%;
-  padding: 20px 50px;
+  padding: 30px;
   background-color: $white;
   border-radius: $border-radius-base;
+  border: 2px solid $dark-pink;
 }
 
 #card-activities-all {
   display: flex;
-  height: calc(100vh - 200px);
+  height: calc(100vh - 250px);
+  color: $white;
 }
 
 .card-activities-filtered-with-title {
@@ -19,12 +21,17 @@
 .card-activities-title {
   padding-top: 10px;
   padding-bottom: 10px;
+  background-color: $dark-pink;
 }
 
 .card-activities-filtered {
   display: flex;
   flex-direction: column;
   overflow: auto;
+  .fa {
+    font-size: 28px;
+    color: $dark-pink;
+  }
 }
 
 .stretch {
@@ -33,6 +40,7 @@
 }
 
 .card-activity-unit {
+  box-sizing: border-box;
   position: relative;
   display: flex;
   flex: 1 0 100px;
@@ -40,6 +48,7 @@
   background-size: cover!important;
   background-position: center;
   align-items: center;
+  border: 2px solid $dark-pink;
 }
 
 .absolute-link {
@@ -63,7 +72,6 @@
   border: solid 2px $purple;
 }
 .card-activity-description {
-  color: white;
   padding-left: 6px;
   h2 {
     margin: 0;
@@ -74,7 +82,7 @@
     margin: 0;
     margin-bottom: 6px;
     font-size: 14px;
-    font-weight: 200;
+    font-weight: 300;
   }
 }
 
@@ -85,25 +93,13 @@
   // }
 }
 
-.pink-bg {
-  background-color: $dark-pink;
-}
-
-.yellow-bg {
-  background-color: $yellow;
-}
-
-.purple-bg {
-  background-color: $purple;
-}
-
 .submit-edit-trip {
   display: flex;
   justify-content: space-between;
   padding-top: 30px;
-  padding-bottom: 9px;
 }
 
-.last-btn {
+#last-btn {
   margin-left: 10px;
+  display: none;
 }

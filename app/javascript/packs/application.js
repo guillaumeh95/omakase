@@ -32,4 +32,4 @@ if (document.querySelector(".alert")) {
   setAlertsTimeouts();
 }
 
-addDeleteLink();
+// addDeleteLink();

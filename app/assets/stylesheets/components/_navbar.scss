@@ -14,7 +14,7 @@
   justify-content: space-between;
   margin-right: 15%;
   margin-left: 15%;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid $white;
   z-index: 9999;
 }
 
@@ -38,7 +38,7 @@
 
 /* Navbar link */
 .navbar-wagon-link, .navbar-wagon-greet {
-  color: white;
+  color: $white;
   font-size: 16px;
   font-weight: 450;
 }
@@ -46,7 +46,7 @@
   padding: 0 20px;
 }
 .navbar-wagon-link:hover {
-  color: white;
+  color: $dark-pink;
   text-decoration: none;
 }
 

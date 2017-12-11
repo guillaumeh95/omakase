@@ -27,37 +27,11 @@ class TripsController < ApplicationController
   end
 
   def edit
-    # Filter activities by knows_the_city
-    @activities = Activity.where("knows_the_city <= ?", @trip.knows_the_city)
-    # Filter activities by budget
-    @activities = @activities.where("budget <= ?", @trip.budget)
-    # Filter activities by status
-    @activities = @activities.where(@trip.status => true)
-
-    count = @trip.visits.count
-    if count == 0
-      @activities_one = @activities.where(@trip.filters[0] => true)
-    elsif count == 1
-      # @activity_one = @trip.visits.find_by(activity: { @trip.filters[0] => true }).activity
-      @activity_one = @trip.visits[0].activity
-      @activities_two = @activities.where(@trip.filters[1] => true)
-    elsif count == 2
-      # @activity_one = @trip.visits.find_by(activity: { @trip.filters[0] => true }).activity
-      # @activity_two = @trip.visits.find_by(activity: { @trip.filters[1] => true }).activity
-      @activity_one = @trip.visits[0].activity
-      @activity_two = @trip.visits[1].activity
-      @activities_three = @activities.where(@trip.filters[2] => true)
-    elsif count == 3
-      # @activity_one = @trip.visits.find_by(activity: { @trip.filters[0] => true }).activity
-      # @activity_two = @trip.visits.find_by(activity: { @trip.filters[1] => true }).activity
-      # @activity_three = @trip.visits.find_by(activity: { @trip.filters[0] => true }).activity
-      @activity_one = @trip.visits[0].activity
-      @activity_two = @trip.visits[1].activity
-      @activity_three = @trip.visits[2].activity
-    end
+    setup_activities # find me in app/controllers/application_controller.rb :)
   end
 
   def update
+    # @trip.comment = params[:trip][:comment]
     @trip.save
     redirect_to dashboard_user_path(current_user)
   end
@@ -70,7 +44,7 @@ class TripsController < ApplicationController
   private
 
   def trip_params
-    params.require(:trip).permit(:title, :date, :status, :sight_seeing_adventurer, :art_lover, :serial_shopper, :nature_lover, :food_addict, :sport_lover, :history_passionate, :tech_fan, :relaxed, :city_wanderer, :budget, :knows_the_city )
+    params.require(:trip).permit(:comment, :title, :date, :status, :sight_seeing_adventurer, :art_lover, :serial_shopper, :nature_lover, :food_addict, :sport_lover, :history_passionate, :tech_fan, :relaxed, :city_wanderer, :budget, :knows_the_city )
   end
 
   # Hash containing all tourist information
