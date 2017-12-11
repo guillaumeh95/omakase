@@ -6,7 +6,7 @@ class TripsController < ApplicationController
       format.html
       format.pdf do
         render  pdf:      @trip.tourist_first_name + "_trip_to_paris",   # Excluding ".pdf" extension.
-                layout:   'pdf.html.erb',   # Use different layout
+                layout:   'pdf.html.erb'   # Use different layout
       end
     end
   end
