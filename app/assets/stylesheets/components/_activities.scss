@@ -21,7 +21,7 @@
 }
 
 .add-item:hover p{
-  color: $yellow;
+  color: $red;
   font-weight: 100;
   cursor: hand;
 }
@@ -50,17 +50,19 @@
 }
 
 .activities-container {
-  margin: 30px 15%;
-  padding: 30px;
+  margin: 20px 10%;
+  padding: 20px;
+  height: 580px;
   background-color: $white;
   border-radius: $border-radius-base;
-  border: 2px solid $dark-pink;
+  border: 2px solid $red;
 }
 
 #card-activities-all {
   display: flex;
-  height: calc(100vh - 250px);
+  height: calc(100vh - 200px);
   color: $white;
+  border-radius: 2px;
 }
 
 .card-activities-filtered-with-title {
@@ -72,7 +74,7 @@
 .card-activities-title {
   padding-top: 10px;
   padding-bottom: 10px;
-  background-color: $dark-pink;
+  background-color: $red;
 }
 
 .card-activities-filtered {
@@ -81,7 +83,7 @@
   overflow: auto;
   .fa {
     font-size: 28px;
-    color: $dark-pink;
+    color: $red;
   }
 }
 
@@ -99,7 +101,7 @@
   background-size: cover!important;
   background-position: center;
   align-items: center;
-  border: 2px solid $dark-pink;
+  border: 4px solid $red;
 }
 
 .absolute-link {
@@ -113,15 +115,6 @@
   top: 5px; right: 5px;
 }
 
-.one {
-  border: solid 2px $dark-pink;
-}
-.two {
-  border: solid 2px $yellow;
-}
-.three {
-  border: solid 2px $purple;
-}
 .card-activity-description {
   padding-left: 6px;
   h2 {

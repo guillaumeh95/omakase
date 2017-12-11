@@ -45,10 +45,16 @@
   padding: 10px;
 }
 
+.btn-primary:hover {
+  background: $red !important;
+  color: white;
+  text-decoration: none !important;
+}
+
 .btn-secondary {
   background: $white;
   border-radius: $border-radius-base;
-  color: $dark-pink;
+  color: $red;
   padding: 10px;
 }
 
