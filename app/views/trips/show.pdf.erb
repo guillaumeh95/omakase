@@ -1,80 +1,78 @@
-<h1>Test</h1>
- <div class="show-content">
-      <div class="show-header">
-        <h4 class="show-title text-center" id="ouverture_show"><%= @trip.title %></h4>
-        <h5 class="show-date text-center" ><%= @trip.date.strftime('%A %B %e, %Y') %></h5>
-          <div class="trip-comments">
-            <h6 class="text-center"><i class="fa fa-comment" aria-hidden="true"></i> Comment</h6>
-            <% if @trip.comment %>
-              <p><%= @trip.comment %></p>
-            <% else %>
-              <p class="no-comment-italic-light">No Comments Left</p>
-            <% end %>
-          </div>
+<div class="show-content">
+  <div class="show-header">
+    <h4 class="show-title text-center" id="ouverture_show"><%= @trip.title %></h4>
+    <h5 class="show-date text-center" ><%= @trip.date.strftime('%A %B %e, %Y') %></h5>
+    <div class="trip-comments">
+      <h6 class="text-center"><i class="fa fa-comment" aria-hidden="true"></i> Comment</h6>
+      <% if @trip.comment %>
+        <p><%= @trip.comment %></p>
+      <% else %>
+        <p class="no-comment-italic-light">No Comments Left</p>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="trip-photos text-center">
+    <% markers = [] %> <!-- Initialize the variable markers outside the each -->
+    <div class="modal-activities">
+      <% @trip.visits.each do |visit| %>
+        <% activity = visit.activity %>
+        <div class="modal-activity">
+          <%= image_tag activity.photo, class:"trip-photo" %>
+          <div class="trip-name"><h5><%= activity.name %></h5></div>
+          <div class="trip-title-modal"><h6><%= activity.title %></h6></div>
         </div>
+        <% markers << { lat: activity.latitude, lng: activity.longitude } %>
+      <% end %>
+    </div>
+  </div>
 
-        <div class="trip-photos text-center">
-          <% markers = [] %> <!-- Initialize the variable markers outside the each -->
-          <div class="modal-activities">
-            <% @trip.visits.each do |visit| %>
-              <% activity = visit.activity %>
-              <div class="modal-activity">
-                <%= image_tag activity.photo, class:"trip-photo" %>
-                <div class="trip-name"><h5><%= activity.name %></h5></div>
-                <div class="trip-title-modal"><h6><%= activity.title %></h6></div>
-              </div>
-              <% markers << { lat: activity.latitude, lng: activity.longitude } %>
-            <% end %>
+  <div class="map">
+    <div id="floating-panel">
+      <b>Mode of Travel: </b>
+      <select id="mode">
+        <option value="DRIVING">Driving</option>
+        <option value="WALKING">Walking</option>
+        <option value="BICYCLING">Bicycling</option>
+        <option value="TRANSIT">Transit</option>
+      </select>
+    </div>
+
+    <div class="trip-map" id="ouverture_modal" ></div>
+
+    <div id="map" style="width: 100%; height: 600px;" data-markers="<%= markers.to_json %>"></div>
+  </div>
+
+
+  <div class="trip-summary">
+    <div class="trip-host"><p> This map was created by <%= @trip.host.first_name %> <%= @trip.host.last_name %> for <%= User.find(@trip.tourist_id).first_name %> <%= User.find(@trip.tourist_id).last_name %></p></div>
+    <div class="trip-details">
+        <% @trip.filters.each do |profile| %>
+          <div class="trip-profiles">
+          <%= image_tag "icons/history.png", {class: "trip-icons"}%>
+          <p><%= profile.gsub('_', " ").split.map(&:capitalize).join(' ') %></p>
           </div>
-        </div>
+        <% end %>
+      <div class="trip-infos">
+        <%= image_tag "icons/coins.png", {class: "trip-icons"}%>
+        <p>Budget: <%= Trip::BUDGET[@trip.budget] %>
+        </p>
+      </div>
 
-          <div class="map">
-            <div id="floating-panel">
-              <b>Mode of Travel: </b>
-              <select id="mode">
-                <option value="DRIVING">Driving</option>
-                <option value="WALKING">Walking</option>
-                <option value="BICYCLING">Bicycling</option>
-                <option value="TRANSIT">Transit</option>
-              </select>
-            </div>
+      <div class="trip-infos">
+        <%= image_tag "icons/knowledge.png", {class: "trip-icons"}%>
+        <p>Knows The City: <%= Trip::KNOWS_THE_CITY[@trip.knows_the_city] %>
+        </p>
+      </div>
+      <div class="trip-infos">
+        <%= image_tag "icons/solo.png", {class: "trip-icons"}%>
+       <p><%= @trip.status %></p>
+      </div>
+    </div>
+  </div>
 
-            <div class="trip-map" id="ouverture_modal" ></div>
-
-            <div id="map" style="width: 100%; height: 600px;" data-markers="<%= markers.to_json %>"></div>
-          </div>
-
-
-          <div class="trip-summary">
-            <div class="trip-host"><p> This map was created by <%= @trip.host.first_name %> <%= @trip.host.last_name %> for <%= User.find(@trip.tourist_id).first_name %> <%= User.find(@trip.tourist_id).last_name %></p></div>
-            <div class="trip-details">
-                <% @trip.filters.each do |profile| %>
-                  <div class="trip-profiles">
-                  <%= image_tag "icons/history.png", {class: "trip-icons"}%>
-                  <p><%= profile.gsub('_', " ").split.map(&:capitalize).join(' ') %></p>
-                  </div>
-                <% end %>
-              <div class="trip-infos">
-                <%= image_tag "icons/coins.png", {class: "trip-icons"}%>
-                <p>Budget: <%= Trip::BUDGET[@trip.budget] %>
-                </p>
-              </div>
-
-              <div class="trip-infos">
-                <%= image_tag "icons/knowledge.png", {class: "trip-icons"}%>
-                <p>Knows The City: <%= Trip::KNOWS_THE_CITY[@trip.knows_the_city] %>
-                </p>
-              </div>
-              <div class="trip-infos">
-                <%= image_tag "icons/solo.png", {class: "trip-icons"}%>
-               <p><%= @trip.status %></p>
-              </div>
-            </div>
-          </div>
-
-           <div class="show-footer">
-              <%= link_to '<i class="fa fa-plus fa-fw" aria-hidden="true"></i> Send'.html_safe,dashboard_user_path(current_user), class: "btn-small btn-show" %>
-          </div>
-
-    </div> -->
+   <div class="show-footer">
+      <%= link_to '<i class="fa fa-plus fa-fw" aria-hidden="true"></i> Send'.html_safe,dashboard_user_path(current_user), class: "btn-small btn-show" %>
+  </div>
+</div>
 
