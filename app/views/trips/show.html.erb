@@ -1,0 +1,106 @@
+ <div class="show-content">
+      <div class="show-header">
+        <h4 class="show-title text-center" id="ouverture_show"><%= @trip.title %></h4>
+        <h5 class="show-date text-center" ><%= @trip.date.strftime('%A %B %e, %Y') %></h5>
+          <div class="trip-comments">
+            <h6 class="text-center"><i class="fa fa-comment" aria-hidden="true"></i> Comment</h6>
+            <% if @trip.comment %>
+              <p><%= @trip.comment %></p>
+            <% else %>
+              <p class="no-comment-italic-light">No Comments Left</p>
+            <% end %>
+          </div>
+        </div>
+          <div class="trip-photos text-center">
+            <div class="first-activity">
+              <% first_activity = @trip.visits[0].activity %>
+              <%= image_tag first_activity.photo, class:"trip-photo" %>
+              <div class="trip-name"><h5><%= first_activity.name %></h5></div>
+              <div class="trip-title-show"><h6><%= first_activity.title %></h6></div>
+            </div>
+            <div class="second-activity">
+              <% second_activity = @trip.visits[1].activity %>
+              <%= image_tag second_activity.photo, class:"trip-photo" %>
+              <div class="trip-name"><h5><%= second_activity.name %></h5></div>
+              <div class="trip-title-show"><h6><%= second_activity.title %></h6></div>
+            </div>
+            <div class="third-activity">
+              <% third_activity = @trip.visits[2].activity %>
+              <%= image_tag third_activity.photo, class:"trip-photo" %>
+              <div class="trip-name"><h5><%= third_activity.name %></h5></div>
+              <div class="trip-title-show"><h6><%= third_activity.title %></h6></div>
+            </div>
+          </div>
+
+
+          <div class="map">
+            <div id="floating-panel">
+              <b>Mode of Travel: </b>
+              <select id="mode">
+                <option value="DRIVING">Driving</option>
+                <option value="WALKING">Walking</option>
+                <option value="BICYCLING">Bicycling</option>
+                <option value="TRANSIT">Transit</option>
+              </select>
+            </div>
+
+            <div class="trip-map" id="ouverture_show" ></div>
+              <!--  markers for googlemap to be refactored  -->
+              <% markers = [
+                {
+                  lat: @trip.visits[0].activity.latitude,
+                  lng: @trip.visits[0].activity.longitude,
+                                    # icon: "http://res.cloudinary.com/djlkudqpv/image/upload/c_scale,h_30,q_100,r_0,w_30/v1512062487/logo_gcdlo3.png",
+                  # marker1 = @trip.visits[0],
+                  infoWindow: { content: render_to_string(partial: "map_box", locals: { trip: trip })},
+                },
+                {
+                  lat: @trip.visits[1].activity.latitude,
+                  lng: @trip.visits[1].activity.longitude,
+                },
+                {
+                  lat: @trip.visits[2].activity.latitude,
+                  lng: @trip.visits[2].activity.longitude,
+                }
+              ] %>
+                <div
+                id="map"
+                style="width: 100%;
+                height: 600px;"
+                data-markers="<%= markers.to_json %>"
+                ></div>
+          </div>
+
+          <div class="trip-summary">
+            <div class="trip-host"><p> This map was created by <%= @trip.host.first_name %> <%= @trip.host.last_name %> for <%= User.find(@trip.tourist_id).first_name %> <%= User.find(@trip.tourist_id).last_name %></p></div>
+            <div class="trip-details">
+                <% @trip.filters.each do |profile| %>
+                  <div class="trip-profiles">
+                  <%= image_tag "icons/history.png", {class: "trip-icons"}%>
+                  <p><%= profile.gsub('_', " ").split.map(&:capitalize).join(' ') %></p>
+                  </div>
+                <% end %>
+              <div class="trip-infos">
+                <%= image_tag "icons/coins.png", {class: "trip-icons"}%>
+                <p>Budget: <%= Trip::BUDGET[@trip.budget] %>
+                </p>
+              </div>
+
+              <div class="trip-infos">
+                <%= image_tag "icons/knowledge.png", {class: "trip-icons"}%>
+                <p>Knows The City: <%= Trip::KNOWS_THE_CITY[@trip.knows_the_city] %>
+                </p>
+              </div>
+              <div class="trip-infos">
+                <%= image_tag "icons/solo.png", {class: "trip-icons"}%>
+               <p><%= @trip.status %></p>
+              </div>
+            </div>
+          </div>
+
+           <div class="show-footer">
+              <%= link_to '<i class="fa fa-plus fa-fw" aria-hidden="true"></i> Send'.html_safe,dashboard_user_path(current_user), class: "btn-small btn-show" %>
+          </div>
+
+    </div> -->
+

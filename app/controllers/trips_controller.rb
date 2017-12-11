@@ -26,6 +26,11 @@ class TripsController < ApplicationController
     end
   end
 
+  def show
+
+    # //then differentiate trip.host and trip.tourist
+  end
+
   def edit
     # Filter activities by knows_the_city
     @activities = Activity.where(knows_the_city: @trip.knows_the_city)

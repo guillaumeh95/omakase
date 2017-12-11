@@ -22,9 +22,8 @@
         method: :delete,
         data: { confirm: "Are you sure you want to delete this trip?" } %>
     </div>
-  </div>
 
-  <!-- Large modal -->
-  <a  class="card-link" data-toggle="modal" data-target="[data-trip-id='<%= trip.id %>']"></a>
-  <%= render 'shared/modal', trip: trip %>
+  </div>
+  <%= link_to "See", trip_path(trip), class: "card-link btn-small" %>
+
 </div>

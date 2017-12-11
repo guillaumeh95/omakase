@@ -1,28 +1,33 @@
-.modal{
-  background-color: rgba(255, 255, 255, 0.5);
+.show{
+  // background-color: rgba(255, 255, 255, 0.5);
   color : $yellow;
 }
-.modal-header {
+.show-header {
   border-bottom: 2px solid yellow;
+  color : $yellow;
 }
 
-.modal-title {
-  margin: 25px;
+.show-title {
+  margin: 15px;
   font-size: 39px;
+  color : $yellow;
 }
-.modal-date {
+.show-date {
   font-weight: lighter;
+  color : $yellow;
 }
-.modal-content {
-  background-color: rgba(151, 85, 254, 0.6);
-  border: 2px solid $yellow;
+.show-content {
+  //background-color: rgba(0, 0, 0, 0.2);
+  //border: 2px solid $yellow;
+  margin-right: 5%;
+  margin-left: 5%;
 }
 
-.modal-body{
+.show-body{
   margin: 0 20px;
 }
 
-.modal-footer {
+.show-footer {
   padding : 35px;
   border-top: none;
 }
@@ -31,6 +36,7 @@
   text-align:justify;
   border: 2px solid $yellow;
   padding: 10px 30px;
+  margin : 2%;
   //background-color: white;
 }
 .trip-summary {
@@ -160,10 +166,24 @@
   margin-top: 2%;
   //border: 2px solid $yellow;
   //background-color: white;
+  position: relative;
 }
 
-.btn-modal {
-  text-align: left;
+#floating-panel {
+  position: absolute;
+  top: 10px;
+  left: 25%;
+  z-index: 5;
+  background-color: #fff;
+  padding: 5px;
+  border: 1px solid #999;
+  text-align: center;
+  line-height: 30px;
+  padding-left: 10px;
+}
+
+.btn-show {
+  text-align: right;
   margin-top: 2%;
   margin-bottom: 2%;
   text-decoration: none;
@@ -173,3 +193,5 @@
   font-style: italic;
   text-align: center;
 }
+
+

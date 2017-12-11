@@ -19,13 +19,18 @@ import { setAlertsTimeouts } from '../components/alert';
 // Sliders of new trip creation
 initSliders();
 
+//map display
+mapDisplay();
+
+
+
 // Modal hovering titile displays map
-const openmodal = document.getElementById("ouverture_modal")
-if (openmodal) {
-  openmodal.addEventListener ("mouseover", (event) => {
-    mapDisplay();
-  });
-}
+// const openmodal = document.getElementById("ouverture_modal")
+// if (openmodal) {
+//   openmodal.addEventListener ("mouseover", (event) => {
+//     mapDisplay();
+//   });
+// }
 
 // Alerts disappearing automatically
 if (document.querySelector(".alert")) {
