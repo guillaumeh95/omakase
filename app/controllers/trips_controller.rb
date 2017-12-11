@@ -28,9 +28,9 @@ class TripsController < ApplicationController
 
   def edit
     # Filter activities by knows_the_city
-    @activities = Activity.where(knows_the_city: @trip.knows_the_city)
+    @activities = Activity.where("knows_the_city <= ?", @trip.knows_the_city)
     # Filter activities by budget
-    @activities = @activities.where(budget: @trip.budget)
+    @activities = @activities.where("budget <= ?", @trip.budget)
     # Filter activities by status
     @activities = @activities.where(@trip.status => true)
 
