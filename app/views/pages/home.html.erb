@@ -1,22 +1,26 @@
-<div class="main-container" style="background-image: linear-gradient(-220deg, rgba(115, 85, 96, 0.7) 0%, rgba(242, 186, 194,0.4) 50%),url('<%= image_path "background.jpg" %>');">
-  <%= render "shared/navbar" %>
+<div class="main-container" style="background-image: url('<%= image_path "path3.svg" %>')">
   <%= render "shared/banner" %>
 
-  <div class="steps">
-    <div class="title"><h3>You are about to send the perfect daytrip to your friend!</h3></div>
-    <br>
-    <div class="step-container">
+
+  <div class="step-container">
+    <h3>Your are three steps away from sending the perfect daytrip !</h3>
+    <div class="steps">
       <div class="step-description">
-        <p> 1. Describe your friend</p>
-        <%= image_tag "edit_profile.png", {class: "img-home", id: "stepim"}%>
+        <h3> 1</h3>
+        <%= image_tag "icons/step1.svg", {class: "step-images-home"}%>
+        <p> Describe your friend</p>
+
       </div>
       <div class="step-description">
-        <p> 2. Choose the best activities</p>
-        <%= image_tag "edit_trip.png", {class: "img-home", id: "stepim"} %>
+        <h3> 2</h3>
+        <%= image_tag "icons/step2.svg", {class: "step-images-home"} %>
+        <p> Choose the best activities</p>
+
       </div>
       <div class="step-description">
-        <p> 3. Edit and send the trip</p>
-        <%= image_tag "dashboard.png", {class: "img-home", id: "stepim"} %>
+        <h3> 3</h3>
+        <%= image_tag "icons/step3.svg", {class: "step-images-home"} %>
+        <p> Edit and send the trip</p>
       </div>
     </div>
   </div>

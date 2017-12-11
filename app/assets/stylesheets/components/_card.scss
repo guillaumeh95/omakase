@@ -18,7 +18,7 @@
   min-width: 210px;
   margin: 20px;
   border-radius: $border-radius-base;
-  border: 2px solid $dark-pink;
+  border: 3px solid $yellow;
   &:first-child {
     margin-top: 40px;
   }
@@ -27,7 +27,7 @@
   }
 }
 .card-link {
-  background: linear-gradient(-225deg, rgba(0, 0, 0, 0.5) 0%, rgba(30,30,30,0.5) 50%);
+  background: linear-gradient(-225deg, rgba(0, 0, 0, 0.8) 0%, rgba(30,30,30,0.6) 50%);
   position: absolute;
   top: 0;
   bottom: 0;
@@ -37,35 +37,19 @@
   transition: all 2s ease;
   cursor: pointer;
 }
-.dashboard-container {
-  margin: 10px 30px;
-}
-.dashboard {
-  display: flex;
-  max-width: 930px;
-  margin-left: 11.6%;
-}
-.left-dash, .right-dash {
-  background: white;
-  border-radius: $border-radius-base;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  padding: 20px 30px;
-  padding-bottom: 0;
-  margin: 20px;
-  justify-content: space-around;
-}
-.right-dash {
-  flex: 0 0 300px;
-  text-align: center;
-  position: sticky !important;
-  height: 50vh;
-  top: 80px;
-  h3 {
-    font-size: 25px;
-    margin: 0;
-    padding: 10px 15px;
-  }
-}
+
+
+// .right-dash {
+//   flex: 0 0 300px;
+//   position: sticky !important;
+//   height: 50vh;
+//   top: 80px;
+//   h3 {
+//     font-size: 25px;
+//     margin: 0;
+//     padding: 10px 15px;
+//   }
+// }
 .trip-activities {
   display: flex;
   flex-basis: 33.33%;
@@ -82,7 +66,7 @@
   opacity: 0.9;
   margin: 0;
   padding: 0;
-  color: $white;
+  color: $yellow;
 }
 .trip-title-large {
   position: absolute;
@@ -110,7 +94,7 @@
   right: 10px;
   a {
     margin: 0 10px;
-    color: $white;
+    color: $yellow;
     opacity: 0.9;
   }
   a:hover {
@@ -141,6 +125,7 @@
 .status-green {
   color: $green;
 }
+
 .trip-card {
   font-size: 25px;
   color: $dark-pink;

@@ -1,56 +1,65 @@
+.main-container {
+  width: 100%;
+  background-repeat: no-repeat,
+      no-repeat,
+      no-repeat;
+  background-position: top left,
+      left,
+      right;
+}
+
 .step-container {
-  margin-bottom: 20px;
-  background: $dark-pink;
-  color: white;
+  // background: $dark-pink;
+  // padding-top: 20px;
+  // padding-bottom: 20px;
+  //height: 150vh;
+  color: $yellow;
+  margin-top: 20%;
+  width: 80vw;
+  margin-left: 25%;
+  text-align: center;
+}
+
+.steps {
+  //background: $dark-pink;
+  color: $yellow;
   display: flex;
-  margin-left: 30px;
+  margin: 7%;
 }
+
 .step-description {
-  max-width: 380px;
   display: inline-block;
-  justify-content: space-around;
-  background: white;                          /* White background */
-  padding: 10px;                              /* Internal space */
-  border-radius: $border-radius-base;                         /* Small radius */
-  box-shadow: 1px 1px 3px rgba(250, 250, 250, 0.3); /* Subtle shadow */
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  margin-left: 15px;
-  margin-right: 12px;
+  justify-content: space-between;
+  max-width: 380px;
+  //background: white;
+  padding: 20px;                              /* Internal space */
+  //border-radius: $border-radius-base;                         /* Small radius */
+  //box-shadow: 1px 1px 3px rgba(250, 250, 250, 0.3); /* Subtle shadow */
+  //border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-right: 5% ;
+  margin-left: 5% ;
+  font-weight: 100;
 }
+
+.step-description h3 {
+  color: $yellow;
+  font-size: 50px;
+  text-align: center;
+  font-weight: 600;
+}
+
 
 .step-description p {
   text-align: center;
   font-size: 16px;
-  color: $dark-pink;
-}
-.steps {
-  background: $dark-pink;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  height: 60vh;
+  font-weight: 100;
+  color: $yellow;
+  padding-top: 25px;
 }
 
-.main-container {
-  height: 100vh;
-  background-size: cover !important;
-}
 
-.steps h3 {
-  color: white;
-  font-size: 22px;
-  text-align: center;
-}
-
-#number {
-  width: 3%;
-}
-
-#stepim {
-  width: 400px;
-}
-.img-home {
-  border-radius: $border-radius-base;
-  height: 220px;
-  max-width: 360px;
+.step-images-home {
+  height: 150px;
+  padding: 10%;
 }
 

@@ -1,13 +1,63 @@
+.submit-edit-trip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 30px;
+  padding-bottom: 9px;
+  margin-bottom : 5px auto;
+}
+
+.add-container {
+  margin : 10px auto;
+  flex: 1;
+}
+
+.add-item {
+  display: inline-block;
+}
+
+.add-item p {
+  color: transparent;
+}
+
+.add-item:hover p{
+  color: $yellow;
+  font-weight: 100;
+  cursor: hand;
+}
+
+.plus-comment{
+  height: 85px;
+  padding : 10px;
+  padding-right :50px;
+  cursor: hand;
+}
+
+.plus-snacks{
+  height: 90px;
+  padding : 10px;
+  padding-right : 50px;
+  cursor: hand;
+}
+
+.save {
+  flex: 0, 0 ,20%;
+  margin-top: -2%;
+}
+
+.last-btn {
+  //margin-left: 10px;
+}
+
 .activities-container {
-  margin: 30px 15%;
-  padding: 20px 50px;
-  background-color: $white;
+  margin: 5%;
+  // background-color: $white;
   border-radius: $border-radius-base;
 }
 
 #card-activities-all {
   display: flex;
-  height: calc(100vh - 200px);
+  height: calc(100vh - 300px);
 }
 
 .card-activities-filtered-with-title {
@@ -97,13 +147,4 @@
   background-color: $purple;
 }
 
-.submit-edit-trip {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 30px;
-  padding-bottom: 9px;
-}
 
-.last-btn {
-  margin-left: 10px;
-}

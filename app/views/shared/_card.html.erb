@@ -31,9 +31,6 @@
         <%= trip.date.strftime('%A %B %e, %Y') %>
       </div>
     </div>
-  <% end %>
 
-  <!-- Large modal -->
-  <a  class="card-link" data-toggle="modal" data-target="[data-trip-id='<%= trip.id %>']"></a>
-  <%= render 'shared/modal', trip: trip %>
+  <%= link_to "See", trip_path(trip), class: "card-link btn-small" %>
 </div>
