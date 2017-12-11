@@ -4,39 +4,14 @@
   <div id="card-activities-all">
     <%= render "trips/activities", trip: @trip, activities_one: @activities_one, activities_two: @activities_two, activities_three: @activities_three, activity_one: @activity_one, activity_two: @activity_two, activity_three: @activity_three %>
   </div>
-
-
-
   <div class="submit-edit-trip">
-    <div class="add-container">
-      <div class="add-item">
-        <% if @activity_one %>
-        <%= image_tag "icons/comment.svg", {class: "plus-comment"} %>
-        <p> Add a comment</p>
-        <% end %>
-      </div>
-      <div class="add-item">
-        <% if @activity_three %>
-        <%= image_tag "icons/snack.svg", {class: "plus-snacks"}%>
-        <p> Add a snack place</p>
-        <% end %>
-      </div>
-      <div class="add-item">
-        <% if @activity_three %>
-        <%= image_tag "icons/tea.svg", {class: "plus-snacks"} %>
-        <p> Add a coffe place</p>
-        <% end %>
-      </div>
-    </div>
-    <div class="save">
-    <!--   <span>
-      <%= link_to "Save & Send Later", trip_path(@trip), class:"btn-home", method:"patch" %>
-      </span>
-      <span> -->
-        <% if @activity_three %>
-          <%= link_to "Save", trip_path(@trip), class:"btn-small", method:"patch" %>
-        <% end %>
-      </span>
-    </div>
+    <span>
+      <%= link_to "Save & Send Later", trip_path(@trip), class:"btn-primary", method:"patch" %>
+    </span>
+    <span>
+      <% if @activity_three %>
+        <%= link_to "Send to Friend", trip_path(@trip), class:"btn-primary last-btn", method:"patch" %>
+      <% end %>
+    </span>
   </div>
 </div>
