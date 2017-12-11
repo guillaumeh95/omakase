@@ -1,5 +1,10 @@
 <div class="card-activity-unit" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('<%= activity.photo %>');" data-activity-id='<%= activity.id %>'>
-  <%= link_to "", trip_visits_path(@trip, activity_id: activity.id), class:"absolute-link", method:"post" %>
+  <%= link_to "", trip_visits_path(trip, activity_id: activity.id), class:"absolute-link", method:"post" %>
+  <% if trip.visits.last %>
+    <%= link_to(trip_visit_path(trip, trip.visits.last), class: "delete-link", style: "display: none", method: :delete) do %>
+      <i class="fa fa-times" aria-hidden="true"></i>
+    <% end %>
+  <% end %>
   <div class="card-activity-description" >
     <h2><%= activity.title %></h2>
     <p><%= activity.name %></p>
