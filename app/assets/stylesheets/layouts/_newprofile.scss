@@ -46,10 +46,11 @@
   }
 
 .slider-selection.tick-slider-selection {
-  background: $yellow;
+  background: $red;
 }
 .slider-handle {
-  background: $dark-pink;
+  background: $red;
+  cursor:pointer;
 }
 .slider-tick-label-container {
 }
@@ -59,7 +60,7 @@
   padding-left: 5px;
 }
 .slider-tick.round.in-selection, .slider-tick.round {
-  background: $yellow;
+  background: $red;
   display: none;
 }
 .tooltip-main {
@@ -70,14 +71,16 @@
   justify-content: space-between;
   flex-wrap: wrap;
   margin-right: 0;
+  margin-bottom: 20px;
 }
 .select-description  {
-  background: $yellow;
+  background: $red;
   padding: 25px;
   min-width: 300px;
   border-radius: $border-radius-base;
   opacity: 0.8;
   flex: 0 0 48%;
+  color: white;
   text-align: center;
   cursor: pointer;
   margin-bottom: 20px;
@@ -87,17 +90,18 @@
   cursor: pointer;
   }
   &.active {
-  background: $dark-pink;
+  background: $red;
   color: white;
   opacity: 1;
   }
 }
 .select-status {
-  background: $yellow;
+  background: $red;
   padding: 15px;
   width: 100px;
   border-radius: $border-radius-base;
   opacity: 0.8;
+  color: white;
   flex: 0 0 22%;
   text-align: center;
   cursor: pointer;
@@ -108,14 +112,14 @@
   cursor: pointer;
   }
   &.active {
-  background: $dark-pink;
+  background: $red;
   color: white;
   opacity: 1;
   }
 }
 .radio {
   display: inline-block;
-  background: $yellow;
+  background: $red;
   margin: 10px;
   padding: 10px;
   border-radius: $border-radius-base;
@@ -135,10 +139,14 @@
 }
 
 .row {
-  padding-bottom: 30px;
+  padding-bottom: 20px;
 }
 
 #submit-trip {
   position: relative;
   right: -636px;
+}
+h4 {
+  font-weight: 600;
+  color: rgba(75, 75, 75, 1);
 }
