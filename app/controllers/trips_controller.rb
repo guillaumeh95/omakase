@@ -6,7 +6,7 @@ class TripsController < ApplicationController
   end
 
   def create
-    # Instanciate new trip with all the trip params including host
+    # Instanciate new trip with all the trip params (including host)
     @trip = Trip.new(trip_params)
     @trip.host = current_user
 
@@ -28,9 +28,9 @@ class TripsController < ApplicationController
 
   def edit
     # Filter activities by knows_the_city
-    @activities = Activity.where(knows_the_city: @trip.knows_the_city)
+    @activities = Activity.where("knows_the_city <= ?", @trip.knows_the_city)
     # Filter activities by budget
-    @activities = @activities.where(budget: @trip.budget)
+    @activities = @activities.where("budget <= ?", @trip.budget)
     # Filter activities by status
     @activities = @activities.where(@trip.status => true)
 
@@ -63,8 +63,9 @@ class TripsController < ApplicationController
   end
 
   def destroy
+    @trip.destroy
+    redirect_to dashboard_user_path(current_user)
   end
-
 
   private
 

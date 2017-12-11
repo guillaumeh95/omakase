@@ -1,10 +1,10 @@
 <div id="activities-one" class="card-activities-filtered-with-title">
   <div class="card-activities-title text-center pink-bg">
-    <%= "Choose a #{trip.filters[0].split("_").map(&:capitalize).join(' ')} activity" %>
+    <%= "Choose a #{capitalize_each_word(trip.filters[0].gsub('_', " "))} activity" %>
   </div>
   <% if activity_one %>
-    <div id= "activities-one-filtered" class="card-activities-filtered stretch">
-      <%= render "shared/card_activities", activity: activity_one, clicked: true %>
+    <div id= "activities-one-selected" class="card-activities-filtered stretch">
+      <%= render "shared/card_activities", trip: trip, activity: activity_one, clicked: true %>
     </div>
   <% else %>
     <div id= "activities-one-filtered" class="card-activities-filtered">
@@ -18,11 +18,11 @@
 <% if activity_one %>
   <div id="activities-two" class="card-activities-filtered-with-title">
     <div class="card-activities-title text-center yellow-bg">
-      <%= "Choose a #{trip.filters[1].split("_").map(&:capitalize).join(' ')} activity" %>
+      <%= "Choose a #{capitalize_each_word(trip.filters[1].gsub('_', " "))} activity" %>
     </div>
     <% if activity_two %>
-      <div id= "activities-two-filtered" class="card-activities-filtered stretch">
-        <%= render "shared/card_activities", activity: activity_two, clicked: true %>
+      <div id= "activities-two-selected" class="card-activities-filtered stretch">
+        <%= render "shared/card_activities", trip: trip, activity: activity_two, clicked: true %>
       </div>
     <% else %>
       <div id= "activities-two-filtered" class="card-activities-filtered">
@@ -35,11 +35,11 @@
   <% if activity_two %>
     <div id="activities-three" class="card-activities-filtered-with-title">
       <div class="card-activities-title text-center purple-bg">
-        <%= "Choose a #{trip.filters[2].split("_").map(&:capitalize).join(' ')} activity" %>
+        <%= "Choose a #{capitalize_each_word(trip.filters[2].gsub('_', " "))} activity" %>
       </div>
       <% if activity_three %>
-        <div id= "activities-three-filtered" class="card-activities-filtered stretch">
-          <%= render "shared/card_activities", activity: activity_three, clicked: true %>
+        <div id= "activities-three-selected" class="card-activities-filtered stretch">
+          <%= render "shared/card_activities", trip: trip, activity: activity_three, clicked: true %>
       <% else %>
         <div id= "activities-three-filtered" class="card-activities-filtered">
           <% activities_three.each do |activity| %>

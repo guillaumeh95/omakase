@@ -8,27 +8,16 @@ alexia = User.create!(first_name: "Alexia", last_name: "Le Tarnec", email: "alex
 guillaume = User.create!(first_name: "Guillaume", last_name: "Hercot", email: "guillaume@gmail.com", password: "azertyuiop")
 julie = User.create!(first_name: "Julie", last_name: "Simon", email: "julie@gmail.com", password: "azertyuiop")
 mathilde = User.create!(first_name: "Mathilde", last_name: "Ganancia", email: "mathilde@gmail.com", password: "azertyuiop")
+hector = User.create!(first_name: "Hector", last_name: "Louvot", email: "hector@gmail.com", password: "azertyuiop")
+
+julie.remote_photo_url = "https://kitt.lewagon.com/placeholder/users/juliesimon"
+julie.save!
+hector.remote_photo_url = "https://img.discogs.com/a7l_WU-z26_uKxy2bsz_-Um4NQU=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-38204-1498364732-2978.jpeg.jpg"
+hector.save!
 
 puts 'Creating activities...'
 activities_attributes = [
-  {
-    title:" Discovery of the exhibition Météorites, entre ciel et terre",
-    name: "Grande Galerie de l'Evolution",
-    address: "36 rue Geoffroy-Saint-Hilaire 75005 Paris",
-    photo:"https://media.timeout.com/images/104677319/750/422/image.jpg",
-    family: true,
-    couple: true,
-    friends: true,
-    solo: true,
-    budget: 3,
-    knows_the_city: 3,
-    art_lover: true,
-    serial_shopper: false,
-    food_addict: false,
-    history_passionate: true,
-    to_book: false,
-    website: "http://meteorites.grandegaleriedelevolution.fr/",
-  },
+
   {
     title:" Exhibition Sophie Calle : beau doublé monsieur le Marquis",
     name: "Musée de la Chasse et de la Nature",
@@ -353,11 +342,12 @@ activities_attributes = [
     couple: true,
     friends: true,
     to_book: true,
-    relaxed: true,
+    sport_lover: true,
     budget: 3,
     knows_the_city: 3,
     website: "https://www.paris.fr/services-et-infos-pratiques/sports-et-loisirs/ou-faire-du-sport/le-sport-en-plein-air-2016#les-bases-nautiques_6",
   },
+<<<<<<< HEAD
     {
     title:"Shopping at the Galeries Lafayette",
     name: "Galeries Lafayette",
@@ -1612,6 +1602,8 @@ activities_attributes = [
   website: "http://centre.taichichuan.free.fr/",
 },
 
+=======
+>>>>>>> master
 ]
 Activity.create(activities_attributes)
 
@@ -1620,24 +1612,22 @@ trips_attributes = [
   {
     title: "John in Paris",
     date: DateTime.parse("09/01/2017 00:00"),
-    host_id: User.first.id,
+    host_id: julie.id,
     tourist_id: User.last.id,
     art_lover: true,
     food_addict: true,
     status: "solo",
-    tourist_first_name: User.last.first_name,
-    tourist_email: User.last.email
+    tourist_first_name: User.first.first_name,
+    tourist_email: User.first.email
   },
   {
     title: "Mike in Paris",
     date: DateTime.parse("09/01/2018 00:00"),
-    status: "family",
-    host_id: User.first.id,
+    host_id: julie.id,
     status: "solo",
     tourist_id: User.all[2].id,
     tourist_first_name: User.first.first_name,
-    tourist_email: User.first.email,
-    status: "family"
+    tourist_email: User.first.email
   }
 ]
 Trip.create!(trips_attributes)
@@ -1651,9 +1641,9 @@ visit_one.trip = Trip.first
 visit_two.trip = Trip.first
 visit_three.trip = Trip.first
 
-visit_one.activity = Activity.all[1]
-visit_two.activity = Activity.all[3]
-visit_three.activity = Activity.all[5]
+visit_one.activity = Activity.all[4]
+visit_two.activity = Activity.all[7]
+visit_three.activity = Activity.all[8]
 
 visit_one.save!
 visit_two.save!
@@ -1667,9 +1657,9 @@ visit_one_bis.trip = Trip.last
 visit_two_bis.trip = Trip.last
 visit_three_bis.trip = Trip.last
 
-visit_one_bis.activity = Activity.all[2]
-visit_two_bis.activity = Activity.all[4]
-visit_three_bis.activity = Activity.all[3]
+visit_one_bis.activity = Activity.all[12]
+visit_two_bis.activity = Activity.all[1]
+visit_three_bis.activity = Activity.all[9]
 
 visit_one_bis.save!
 visit_two_bis.save!
