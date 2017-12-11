@@ -31,8 +31,4 @@ class VisitsController < ApplicationController
   def find_trip
     @trip = Trip.find(params[:trip_id])
   end
-
-  def visit_params
-
-  end
 end
