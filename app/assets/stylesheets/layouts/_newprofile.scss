@@ -46,7 +46,7 @@
   }
 
 .slider-selection.tick-slider-selection {
-  background: $red;
+  background: rgba(120, 120, 120, 1);
 }
 .slider-handle {
   background: $red;
@@ -74,19 +74,19 @@
   margin-bottom: 20px;
 }
 .select-description  {
-  background: $red;
+  background: rgba(200, 200, 200, 0.5);
   padding: 25px;
   min-width: 300px;
   border-radius: $border-radius-base;
-  opacity: 0.8;
   flex: 0 0 48%;
-  color: white;
+  color: $red;
   text-align: center;
   cursor: pointer;
   margin-bottom: 20px;
   &:hover {
   color: white;
-  opacity: 1;
+  background: $red;
+  opacity: 0.8;
   cursor: pointer;
   }
   &.active {
@@ -96,19 +96,20 @@
   }
 }
 .select-status {
-  background: $red;
+  background: rgba(200, 200, 200, 0.5);
   padding: 15px;
   width: 100px;
   border-radius: $border-radius-base;
   opacity: 0.8;
-  color: white;
+  color: $red;
   flex: 0 0 22%;
   text-align: center;
   cursor: pointer;
   margin-bottom: 20px;
   &:hover {
   color: white;
-  opacity: 1;
+  background: $red;
+  opacity: 0.8;
   cursor: pointer;
   }
   &.active {
@@ -149,4 +150,11 @@
 h4 {
   font-weight: 600;
   color: rgba(75, 75, 75, 1);
+}
+.shadow-separator {
+  height: 5px;
+  box-shadow: 0 10px 10px -10px #8c8b8b inset;
+  width: 800px;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
