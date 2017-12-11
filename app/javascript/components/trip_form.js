@@ -29,6 +29,7 @@ descriptionBoxes.forEach((descriptionBox) => {
       // On disable
       submit.disabled = true;
     }
+    countActivedChoices();
   });
 });
 
@@ -54,3 +55,9 @@ statusBoxes.forEach((statusBox) => {
   });
 });
 
+function countActivedChoices() {
+  const activeChoices = document.getElementById("active-choices")
+  let numberActiveChoices = document.querySelectorAll(".description-checkboxes .active").length
+  activeChoices.innerHTML = numberActiveChoices
+
+}

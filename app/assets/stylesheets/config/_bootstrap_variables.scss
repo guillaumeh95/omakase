@@ -6,14 +6,14 @@
 // General style
 $font-family-sans-serif:  $body-font;
 $headings-font-family:    $headers-font;
-$body-bg:                 $dark-pink;
+$body-bg:                 linear-gradient(-140deg, rgba(217, 223, 255, 150), rgba(0, 0, 0,50));
 $font-size-base: 15px;
 
 // Colors
 $gray-base:       $gray;
 $brand-primary:   $dark-pink;
 $brand-success:   $green;
-$brand-info:      $yellow;
+$brand-info:      $green;
 $brand-danger:    $red;
 $brand-warning:   $orange;
 
@@ -23,3 +23,4 @@ $border-radius-large: 2px;
 $border-radius-small: 2px;
 
 // Override other variables below!
+
