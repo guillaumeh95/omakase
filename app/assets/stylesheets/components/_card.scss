@@ -18,7 +18,7 @@
   min-width: 210px;
   margin: 20px;
   border-radius: $border-radius-base;
-  border: 3px solid $yellow;
+  border: 2px solid $red;
   &:first-child {
     margin-top: 40px;
   }
@@ -27,14 +27,14 @@
   }
 }
 .card-link {
-  background: linear-gradient(-225deg, rgba(0, 0, 0, 0.8) 0%, rgba(30,30,30,0.6) 50%);
+  background: linear-gradient(-225deg, rgba(0, 0, 0, 0.8) 0%, rgba(30,30,30,0.6) 10%);
   position: absolute;
   top: 0;
   bottom: 0;
   right: 0;
   width: 100%;
   z-index: 2;
-  transition: all 2s ease;
+  transition: all 1s ease;
   cursor: pointer;
 }
 
@@ -54,7 +54,7 @@
   opacity: 0.9;
   margin: 0;
   padding: 0;
-  color: $yellow;
+  color: white;
 }
 .trip-title-large {
   position: absolute;
@@ -82,7 +82,7 @@
   right: 10px;
   a {
     margin: 0 10px;
-    color: $yellow;
+    color: $white;
     opacity: 0.9;
   }
   a:hover {
@@ -95,6 +95,7 @@
   right: 10px;
   a {
     text-decoration: none;
+    color: white;
   }
   a:hover {
     opacity: 1;
@@ -111,12 +112,12 @@
   color: $red;
 }
 .status-green {
-  color: $green;
+  color: rgba(80, 80, 80, 1);
 }
 
 .trip-card {
   font-size: 25px;
-  color: $dark-pink;
+  color: $red;
   margin: 0 20px;
 }
 .nav-tabs-justified, .nav-tabs.nav-justified {
