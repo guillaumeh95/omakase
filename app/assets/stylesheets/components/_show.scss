@@ -6,6 +6,11 @@
   border-radius: $border-radius-base;
 }
 
+.show-button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
 .show{
   color : $red;
   background: linear-gradient(-140deg, rgba(217, 223, 255, 150), rgba(0, 0, 0,50));
@@ -43,7 +48,6 @@
 .trip-summary {
   padding: 10px 10px;
   width: 100%;
-  border-bottom: 2px solid $red;
   //background-color: white;
 }
 
@@ -72,18 +76,12 @@
 .trip-infos .fa{
   color: rgba(80, 80, 80, 1);
   font-size : 20px;
-  &:hover {
-  color: $red;
-  }
 }
 
 .trip-infos p{
   color: rgba(80, 80, 80, 1);
   text-align: center;
   padding-top: 10px;
-  &:hover {
-  color: $red;
-  }
 }
 
 

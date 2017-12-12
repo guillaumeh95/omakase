@@ -1,6 +1,14 @@
 <%= render "shared/navbar" %>
 
 <div class="activities-container">
+  <div class="edit-button-container">
+        <% if @trip.visits.length == 3 %>
+        <%= link_to "Add a comment",  "#modal-comment", id:"last-btn", class:"btn btn-secondary", 'data-toggle'=> "modal", 'data-target'=> "#modal-comment"  %>
+        <% else %>
+        <%= link_to "Add a comment",  "#modal-comment", style:"display:none", id:"last-btn", class:"btn btn-primary", 'data-toggle'=> "modal", 'data-target'=> "#modal-comment"  %>
+        <% end %>
+        <%= render 'shared/modal_comment', trip: @trip %>
+  </div>
   <div class="activities-box">
     <div id="card-activities-all">
       <%= render "trips/activities", trip: @trip, activities_one: @activities_one, activities_two: @activities_two, activities_three: @activities_three, activity_one: @activity_one, activity_two: @activity_two, activity_three: @activity_three %>
@@ -11,7 +19,7 @@
     <% if @trip.visits.length == 3 %>
       <%= link_to "Send to Friend",  "#modal-comment",  id:"last-btn", class:"btn-primary", 'data-toggle'=> "modal", 'data-target'=> "#modal-comment"  %>
     <% else %>
-      <%= link_to "Send to Friend",  "#modal-comment", style:"display:none", id:"last-btn", class:"btn-primary", 'data-toggle'=> "modal", 'data-target'=> "#modal-comment"  %>
+      <%= link_to "Send to Friend",  "#modal-comment", style:"display:none", id:"last-btn", class:"btn btn-primary", 'data-toggle'=> "modal", 'data-target'=> "#modal-comment"  %>
     <% end %>
     <%= render 'shared/modal_comment', trip: @trip %>
   </div>
