@@ -1,263 +1,311 @@
-import GMaps from 'gmaps/gmaps.js';
-
-function initMap(){
+function initMap() {
     const mapElement = document.getElementById('map');
-  //if (mapElement) { // don't try to build a map if there's no div#map to inject in
-
     const markers = JSON.parse(mapElement.dataset.markers);
-    const directionsDisplay = new google.maps.DirectionsRenderer;
-    const directionsService = new google.maps.DirectionsService;
-    const directionsDisplay2 = new google.maps.DirectionsRenderer;
-    const directionsService2 = new google.maps.DirectionsService;
-    const map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 14,
-          center: {lat: markers[0].lat, lng: markers[0].lng}
-        });
-    directionsDisplay.setMap(map);
-    directionsDisplay2.setMap(map);
 
-    console.log(map);
+    var marker0 = {lat: markers[0].lat, lng: markers[0].lng};
+    var marker1 = {lat: markers[1].lat, lng: markers[1].lng};
+    var marker2 = {lat: markers[2].lat, lng: markers[2].lng};
+    var markerArray = [marker0, marker1, marker2];
 
-
-
-    if (markers.length === 0) {
-      // map.setZoom(2);
-      console.log("premier if");
-    } else if (markers.length > 1) {
-      console.log("deuxieme if");
-      // let center = map.setCenter(markers[0].lat, markers[0].lng);
-      // map.setZoom(14);
-
-      calculateAndDisplayRoute(directionsService, directionsDisplay);
-      calculateAndDisplayRoute2(directionsService2, directionsDisplay2);
-      document.getElementById('mode').addEventListener('change', function() {
-        calculateAndDisplayRoute(directionsService, directionsDisplay);
-        calculateAndDisplayRoute2(directionsService2, directionsDisplay2);
-      });
+    var styledMapType = new google.maps.StyledMapType(
+            [
+    {
+        "featureType": "all",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.text",
+        "stylers": [
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#000000"
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.text.stroke",
+        "stylers": [
+            {
+                "color": "#ffffff"
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.icon",
+        "stylers": [
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative.neighborhood",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#eaf1ff"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#ffffff"
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "weight": 1
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "weight": 0.8
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "transit",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
     }
+  ],
+    {name: 'Styled Map'});
 
-     else {
-      map.fitLatLngBounds(markers);
-      console.log("else");
-    }
-  //}
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 13,
+      center: marker0,
+      mapTypeControlOptions: {
+      mapTypeIds: ['roadmap', 'satellite', 'hybrid', 'terrain',
+                'styled_map']
+      }
+    });
+
+
+    //Associate the styled map with the MapTypeId and set it to display.
+    map.mapTypes.set('styled_map', styledMapType);
+    map.setMapTypeId('styled_map');
+
+
+    //doesn't work on this marker but work on other ones
+    // var markerimage = "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png";
+    //  else {
+    //   map.fitLatLngBounds(markers);
+    //   console.log("else");
+    // }
+    //}
+
+
+    var place1 = new google.maps.Marker({
+      position: marker0,
+      map: map,
+      icon: markerimage,
+      title: 'Marker0'
+    });
+    console.log("HO");
+    console.log(place1);
+
+    var place2 = new google.maps.Marker({
+      position: marker1,
+      map: map,
+      title: 'Marker1'
+    });
+
+    var place3 = new google.maps.Marker({
+      position: marker2,
+      map: map,
+      title: 'Marker2'
+    });
+
+    var placeArray = [place1, place2, place3];
+
+    // Instantiate a directions service.
+    var directionsService = new google.maps.DirectionsService;
+    var directionsService2 = new google.maps.DirectionsService;
+
+    //check selected mode of transport
+    const selectedMode = document.getElementById('mode').value;
+
+    // Create a renderer for directions and bind it to the map.
+    var directionsDisplay = new google.maps.DirectionsRenderer({map: map});
+    var directionsDisplay2 = new google.maps.DirectionsRenderer({map: map});
+
+    // Instantiate an info window to hold step text.
+    var stepDisplay = new google.maps.InfoWindow;
+
+    // Display the route between the initial start and end selections.
+    calculateAndDisplayRoute(
+        directionsDisplay, directionsDisplay2, directionsService, directionsService2, markerArray, placeArray, stepDisplay, selectedMode, map);
+    // Listen to change events from the start and end lists.
+    var onChangeHandler = function() {
+      calculateAndDisplayRoute(
+         directionsDisplay, directionsDisplay2, directionsService, directionsService2, markerArray, placeArray, stepDisplay, selectedMode, map);
+    };
+
+    document.getElementById('mode').addEventListener('change', onChangeHandler);
+
+    ////////////// trying info window on markers
+
+    // var contentString = 'blablablablablabal';
+
+    // var infowindow = new google.maps.InfoWindow({
+    //   content: contentString
+    // });
+
+    // place2.addListener('mouseovover', function() {
+    //   infowindow.open(map, place2);
+    //   console.log("hey")
+    // });
+
 }
 
-    function calculateAndDisplayRoute(directionsService, directionsDisplay) {
-     const mapElement = document.getElementById('map');
-     console.log("1");
 
-     const markers = JSON.parse(mapElement.dataset.markers);
+  function calculateAndDisplayRoute(directionsDisplay, directionsDisplay2, directionsService, directionsService2,
+      markerArray, placeArray, stepDisplay, selectedMode, map) {
+    // First, remove any existing markers from the map.
+    for (var i = 0; i < placeArray.length; i++) {
+      placeArray[i].setMap(null);
+    }
 
-    const selectedMode = document.getElementById('mode').value;
+    // Retrieve the start and end locations and create a DirectionsRequest using
+    // WALKING directions.
     directionsService.route({
-      origin: {lat: markers[0].lat, lng: markers[0].lng},  // Haight.
-      destination: {lat: markers[1].lat, lng: markers[1].lng},  // Ocean Beach.
-      // Note that Javascript allows us to access the constant
-      // using square brackets and a string value as its
-      // "property."
+      origin: markerArray[0],
+      destination: markerArray[1],
       travelMode: google.maps.TravelMode[selectedMode]
     }, function(response, status) {
-      if (status == 'OK') {
+      if (status === 'OK') {
+        // var inhtml = document.querySelectorAll('gm-iw')
+        // console.log(inhtml)
+        //     '<b>' + response.routes[0].warnings + '</b>';
         directionsDisplay.setDirections(response);
+        // showSteps(response, placeArray, stepDisplay, map);
       } else {
         window.alert('Directions request failed due to ' + status);
       }
     });
-  }
 
-    function calculateAndDisplayRoute2(directionsService2, directionsDisplay2) {
-     const mapElement = document.getElementById('map');
-     console.log("2");
-
-     const markers = JSON.parse(mapElement.dataset.markers);
-
-    const selectedMode = document.getElementById('mode').value;
     directionsService2.route({
-      origin: {lat: markers[1].lat, lng: markers[1].lng},  // Haight.
-      destination: {lat: markers[2].lat, lng: markers[2].lng},  // Ocean Beach.
-      // Note that Javascript allows us to access the constant
-      // using square brackets and a string value as its
-      // "property."
+      origin: markerArray[1],
+      destination: markerArray[2],
       travelMode: google.maps.TravelMode[selectedMode]
-    }, function(response, status) {
-      if (status == 'OK') {
-        directionsDisplay2.setDirections(response);
+    }, function(response2, status) {
+      if (status === 'OK') {
+        // document.getElementById('warnings-panel').innerHTML =
+        //     '<b>' + response.routes[0].warnings + '</b>';
+        directionsDisplay2.setDirections(response2);
+        // showSteps(response, placeArray, stepDisplay, map);
       } else {
         window.alert('Directions request failed due to ' + status);
       }
     });
+      // Route the directions and pass the response to a function to create
+      // markers for each step.
+      attachInstructionText(
+          stepDisplay, placeArray, map);
   }
+
+  function showSteps(directionResult, placeArray, stepDisplay, map) {
+    // For each step, place a marker, and add the text to the marker's infowindow.
+    // Also attach the marker to an array so we can keep track of it and remove it
+    // when calculating new routes.
+    console.log("showsteps")
+    var myRoute = directionResult.routes[0].legs[0];
+    for (var i = 0; i < myRoute.steps.length; i++) {
+      var marker = placeArray[i] = placeArray[i] || new google.maps.Marker;
+      //to show marker instructions
+      //marker.setMap(map);
+      //marker.setPosition(myRoute.steps[i].start_location);
+    }
+  }
+
+  function attachInstructionText(stepDisplay, placeArray, text, map) {
+    console.log("instructionstxt")
+    for (var i = 0; i < placeArray.length; i++) {
+      console.log(placeArray[i]);
+      google.maps.event.addListener(placeArray[i], 'click', function() {
+      // Open an info window when the marker is clicked on, containing the text
+      // of the step.
+      stepDisplay.setContent("HELLO");
+      stepDisplay.open(map, marker);
+    });
+
+    }
+
+    }
+
 
 export { initMap };
-
-//   function calculateAndDisplayRoute(directionsService, directionsDisplay) {
-//     const mapElement = document.getElementById('map');
-//     console.log("hey");
-//     const markers = JSON.parse(mapElement.dataset.markers);
-//     let depart = markers[0];
-//     console.log(depart);
-//     let arrivee = markers[1];
-//   /*test si les variables sont bien initialisés*/
-//   if (depart && arrivee)
-//   {
-//   // mode de transport
-//     const choixMode = document.getElementById('mode').value;
-//     const request = {
-//         origin: depart,
-//         destination:arrivee,
-//         travelMode: map.DirectionsTravelMode[choixMode]
-//     };
-//   /*appel à l'API pour tracer l'itinéraire*/
-//     directionsService.route(request, function(response, status) {
-//     directionsDisplay.setDirections(response);
-//     });
-//   }
-// }
-
-// [
-//     {
-//         "featureType": "all",
-//         "elementType": "labels",
-//         "stylers": [
-//             {
-//                 "visibility": "off"
-//             }
-//         ]
-//     },
-//     {
-//         "featureType": "all",
-//         "elementType": "labels.text",
-//         "stylers": [
-//             {
-//                 "visibility": "on"
-//             }
-//         ]
-//     },
-//     {
-//         "featureType": "all",
-//         "elementType": "labels.text.fill",
-//         "stylers": [
-//             {
-//                 "color": "#000000"
-//             }
-//         ]
-//     },
-//     {
-//         "featureType": "all",
-//         "elementType": "labels.text.stroke",
-//         "stylers": [
-//             {
-//                 "color": "#ffffff"
-//             }
-//         ]
-//     },
-//     {
-//         "featureType": "all",
-//         "elementType": "labels.icon",
-//         "stylers": [
-//             {
-//                 "visibility": "on"
-//             }
-//         ]
-//     },
-//     {
-//         "featureType": "administrative",
-//         "elementType": "all",
-//         "stylers": [
-//             {
-//                 "visibility": "off"
-//             }
-//         ]
-//     },
-//     {
-//         "featureType": "administrative.neighborhood",
-//         "elementType": "geometry.fill",
-//         "stylers": [
-//             {
-//                 "color": "#eaf1ff"
-//             }
-//         ]
-//     },
-//     {
-//         "featureType": "landscape",
-//         "elementType": "all",
-//         "stylers": [
-//             {
-//                 "color": "#ffffff"
-//             }
-//         ]
-//     },
-//     {
-//         "featureType": "poi",
-//         "elementType": "all",
-//         "stylers": [
-//             {
-//                 "visibility": "off"
-//             }
-//         ]
-//     },
-//     {
-//         "featureType": "road",
-//         "elementType": "geometry.fill",
-//         "stylers": [
-//             {
-//                 "color": "#000000"
-//             },
-//             {
-//                 "weight": 1
-//             }
-//         ]
-//     },
-//     {
-//         "featureType": "road",
-//         "elementType": "geometry.stroke",
-//         "stylers": [
-//             {
-//                 "color": "#000000"
-//             },
-//             {
-//                 "weight": 0.8
-//             }
-//         ]
-//     },
-//     {
-//         "featureType": "road",
-//         "elementType": "labels",
-//         "stylers": [
-//             {
-//                 "visibility": "on"
-//             }
-//         ]
-//     },
-//     {
-//         "featureType": "transit",
-//         "elementType": "all",
-//         "stylers": [
-//             {
-//                 "visibility": "off"
-//             }
-//         ]
-//     },
-//     {
-//         "featureType": "water",
-//         "elementType": "all",
-//         "stylers": [
-//             {
-//                 "visibility": "off"
-//             }
-//         ]
-//     }
-//   ];
-
-  // map.addStyle({
-  //   styles: styles,
-  //   mapTypeId: 'map_style'
-  // });
-  // map.setStyle('map_style');
-
-
-//// GET THE ROUTES AND DIRECTIONS
-
-
-
