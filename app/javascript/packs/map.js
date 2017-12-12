@@ -1,6 +1,9 @@
 function initMap() {
     const mapElement = document.getElementById('map');
 
+  //if (mapElement) { // don't try to build a map if there's no div#map to inject in
+
+
     const markers = JSON.parse(mapElement.dataset.markers);
 
     var marker0 = {lat: markers[0].lat, lng: markers[0].lng};
@@ -155,12 +158,20 @@ function initMap() {
       }
     });
 
+
     //Associate the styled map with the MapTypeId and set it to display.
     map.mapTypes.set('styled_map', styledMapType);
     map.setMapTypeId('styled_map');
 
     //doesn't work on this marker but work on other ones
-    var markerimage = "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png";
+    // var markerimage = "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png";
+    //  else {
+    //   map.fitLatLngBounds(markers);
+    //   console.log("else");
+    // }
+  //}
+}
+
 
     var place1 = new google.maps.Marker({
       position: marker0,
@@ -228,7 +239,7 @@ function initMap() {
         map.setMapTypeId('styled_map');
 
 
-}
+
 
       function calculateAndDisplayRoute(directionsDisplay, directionsDisplay2, directionsService, directionsService2,
           markerArray, placeArray, stepDisplay, selectedMode, map) {
