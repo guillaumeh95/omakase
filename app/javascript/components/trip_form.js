@@ -1,3 +1,4 @@
+import swal from 'sweetalert'
 
 // Sélectionner les checkboxes
 const descriptionBoxes = document.querySelectorAll('.select-description');
@@ -12,7 +13,12 @@ descriptionBoxes.forEach((descriptionBox) => {
     } else {
       // Si déjà 3 éléments sélectionnés
       if (activeBoxes.length === 3) {
-        alert('you can select only three profiles');
+        swal({
+          title: 'You can select only three profiles',
+          type: 'warning',
+          icon: "warning",
+          dangerMode: true
+        });
       } else {
         event.currentTarget.classList.add('active');
         // Ajouter la value true au input hidden correspondant
@@ -45,7 +51,12 @@ statusBoxes.forEach((statusBox) => {
     } else {
       // Si déjà 3 éléments sélectionnés
       if (activeBoxes.length === 1) {
-        alert('Please select only one status');
+        swal({
+          title: 'You can only select one status',
+          type: 'warning',
+          icon: "warning",
+          dangerMode: true
+        });
       } else {
         event.currentTarget.classList.add('active');
         // Ajouter la value true au input hidden correspondant
