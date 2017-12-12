@@ -1,3 +1,11 @@
+.container-show {
+  margin: 20px 10%;
+  padding: 20px;
+  height: 100%;
+  background-color: $white;
+  border-radius: $border-radius-base;
+}
+
 .show{
   // background-color: rgba(255, 255, 255, 0.5);
   color : $red;
@@ -6,19 +14,12 @@
 .show-title {
   margin: 15px;
   font-size: 39px;
-  color : $red;
+  color : rgba(80, 80, 80, 0.8);
 }
 
 .show-date {
-  font-weight: lighter;
-  color : $red;
-}
-
-.show-content {
-  //background-color: rgba(0, 0, 0, 0.2);
-  //border: 2px solid $red;
-  margin-right: 5%;
-  margin-left: 5%;
+  font-weight: 400;
+  color : rgba(80, 80, 80, 0.8);
 }
 
 .show-body{
@@ -48,51 +49,40 @@
 
 .trip-host {
   color : $red;
+  font-weight: 400;
+  font-size: 20px;
   padding: 20px 30px;
   text-align: center;
 }
 
 .trip-details {
   min-width: 300px;
-  padding: 10px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 
 .trip-infos{
-  flex: 0 0 20%;
+  flex: 0 0 15%;
   text-align: center;
   padding: 10px;
 }
 
 
 .trip-infos .fa{
-  color : $red;
+  color: rgba(80, 80, 80, 1);
   font-size : 20px;
   &:hover {
-  color: white;
-  opacity: 0.8;
-  cursor: pointer;
-  }
-  &.active {
-  color: white;
-  opacity: 1;
+  color: $red;
   }
 }
 
 .trip-infos p{
-  color: $red;
+  color: rgba(80, 80, 80, 1);
   text-align: center;
   padding-top: 10px;
   &:hover {
-  color: white;
-  opacity: 0.8;
-  cursor: pointer;
-  }
-  &.active {
-  color: white;
-  opacity: 1;
+  color: $red;
   }
 }
 
@@ -108,8 +98,8 @@
   padding: 0;
   display: flex;
   justify-content: space-between;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  border: 2px solid $red;
+  border-radius: 2px;
 }
 .modal-activities {
   display: flex;
@@ -117,6 +107,7 @@
 .modal-activity {
   flex: 0 0 33.33%;
   color: $red;
+
   img {
     object-fit: cover;
     height: 200px;
@@ -160,6 +151,7 @@
   //border: 2px solid $red;
   //background-color: white;
   position: relative;
+  border-radius: 2px;
 }
 
 #floating-panel {
@@ -184,7 +176,7 @@
 .show-footer {
   padding-top : 35px;
   border-top: none;
-  margin-left: 85%;
+  margin-left: 70%;
 }
 
 

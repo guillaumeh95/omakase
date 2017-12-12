@@ -32,10 +32,11 @@
 
 .btn-small:hover {
   background: rgba(250, 250, 250, 0.6);
-  text-shadow: 1px 1px rgba(255, 35, 0, 0.2);
-  border: 4px solid black;
+  text-shadow: 1px 1px rgba(200, 200, 200, 1);
+  border: 4px solid rgba(200, 200, 200, 1);
   font-weight: 400;
-  color: black;
+  color: (80, 80, 80, 1) !important;
+  text-decoration: none;
 }
 
 .btn-primary {
@@ -84,7 +85,7 @@
   text-decoration: none !important;
 }
 .btn-homepage:hover {
-  background: rgb(230,230,230);
+  background: transparent;
   color: $red !important;
 }
 .btn-homepage:before, .btn-homepage:after {
