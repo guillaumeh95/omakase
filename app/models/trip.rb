@@ -1,7 +1,7 @@
 class Trip < ApplicationRecord
   # Define variables associating key and value
-  BUDGET = { 1 => "Poor", 2 => "Average", 3 => "Not Sure", 4 => "Rich", 5 => "Very Rich" }
-  KNOWS_THE_CITY = { 1 => "Not At All", 2 => "Little", 3 => "Not Sure", 4 => "Good", 5 => "Well" }
+  BUDGET = { 1 => "Low", 2 => "Average", 3 => "High", 4 => "Very High", 5 => "Not Sure" }
+  KNOWS_THE_CITY = { 1 => "Not At All", 2 => "Little", 3 => "Good", 4 => "Well", 5 => "Not Sure" }
 
   # Associations
   belongs_to :host, class_name: 'User'
