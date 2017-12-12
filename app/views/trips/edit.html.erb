@@ -1,8 +1,10 @@
 <%= render "shared/navbar" %>
 
 <div class="activities-container">
-  <div id="card-activities-all">
-    <%= render "trips/activities", trip: @trip, activities_one: @activities_one, activities_two: @activities_two, activities_three: @activities_three, activity_one: @activity_one, activity_two: @activity_two, activity_three: @activity_three %>
+  <div class="activities-box">
+    <div id="card-activities-all">
+      <%= render "trips/activities", trip: @trip, activities_one: @activities_one, activities_two: @activities_two, activities_three: @activities_three, activity_one: @activity_one, activity_two: @activity_two, activity_three: @activity_three %>
+    </div>
   </div>
   <div class="submit-edit-trip">
     <%= link_to "Save & Send Later", trip_path(@trip), id:"first-btn", class:"btn-primary", method:"patch" %>

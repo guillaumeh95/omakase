@@ -12,7 +12,7 @@ function initSliders() {
     value: 5,
     orientation: 'horizontal',
     ticks: [1, 2, 3, 4, 5],
-    ticks_labels: ['Free', '€', '€€', '€€€', "Don't know"]
+    ticks_labels: ['Free', '€', '€€', '€€€', 'Not sure']
   });
 $('.sliderknowledge').slider({
     min: 1,

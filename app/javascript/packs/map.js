@@ -170,7 +170,7 @@ function initMap() {
     //   console.log("else");
     // }
   //}
-}
+
 
 
     var place1 = new google.maps.Marker({
@@ -238,7 +238,7 @@ function initMap() {
         map.mapTypes.set('styled_map', styledMapType);
         map.setMapTypeId('styled_map');
 
-
+}
 
 
       function calculateAndDisplayRoute(directionsDisplay, directionsDisplay2, directionsService, directionsService2,
