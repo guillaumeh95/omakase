@@ -102,10 +102,12 @@ class TripsController < ApplicationController
     coordinates = []
     trip.activities.each { |activity| coordinates << {lat: activity.latitude, lng: activity.longitude } }
     size = "640x640"
-    marker_one = "color:blue%7Clabel:A%7C#{coordinates[0][:lat]},#{coordinates[0][:lng]}"
-    marker_two = "color:blue%7Clabel:B%7C#{coordinates[1][:lat]},#{coordinates[1][:lng]}"
-    marker_three = "color:blue%7Clabel:C%7C#{coordinates[2][:lat]},#{coordinates[2][:lng]}"
-    return "https://maps.googleapis.com/maps/api/staticmap?size=#{size}0&maptype=roadmap&markers=#{marker_one}&markers=#{marker_two}&markers=#{marker_three}&key=#{ENV['GOOGLE_API_STATIC_KEY']}"
+    if @trip.visits.count == 3
+      marker_one = "color:blue%7Clabel:A%7C#{coordinates[0][:lat]},#{coordinates[0][:lng]}"
+      marker_two = "color:blue%7Clabel:B%7C#{coordinates[1][:lat]},#{coordinates[1][:lng]}"
+      marker_three = "color:blue%7Clabel:C%7C#{coordinates[2][:lat]},#{coordinates[2][:lng]}"
+      return "https://maps.googleapis.com/maps/api/staticmap?size=#{size}0&maptype=roadmap&markers=#{marker_one}&markers=#{marker_two}&markers=#{marker_three}&key=#{ENV['GOOGLE_API_STATIC_KEY']}"
+    end
   end
 end
 

@@ -44,19 +44,31 @@
   border-radius: $border-radius-base;
   color: white;
   padding: 10px;
+  opacity: 0.9;
 }
 
 .btn-primary:hover {
   background: $red !important;
   color: white;
   text-decoration: none !important;
+  opacity: 1;
+  transition:800ms ease all;
+
 }
 
 .btn-secondary {
   background: $white;
   border-radius: $border-radius-base;
   color: $red;
+  border: 1px solid $red;
   padding: 10px;
+  cursor: pointer;
+}
+.btn-secondary:hover {
+  background: white !important;
+  color: $red;
+  text-decoration: none !important;
+  cursor: pointer
 }
 
 .btn-homepage {

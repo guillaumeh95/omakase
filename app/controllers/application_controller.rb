@@ -54,6 +54,10 @@ class ApplicationController < ActionController::Base
     return all_trips.select {|trip| Time.now > trip.date}
   end
 
+  def default_url_options
+    { host: ENV["HOST"] || "localhost:3000" }
+  end
+
   # def filter_activities(activity, filter)
   #   km_range = 3
   #   activities = []
