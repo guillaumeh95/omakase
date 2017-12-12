@@ -4,6 +4,7 @@ function refreshActivities(innerHTML) {
 }
 
 function refreshCallToActions() {
+  console.log('test 2')
   const firstBtn = document.getElementById("first-btn");
   firstBtn.classList.remove("btn-primary");
   firstBtn.classList.add("btn-secondary");
@@ -35,10 +36,12 @@ refreshActivities("<%=
   trip: @trip
 %>");
 
-
-effects();
+<% unless @visit.destroyed %>
+  effects();
+<% end %>
 
 <% if @trip.visits.length == 3 %>
+  console.log("test");
   refreshCallToActions();
 <% end %>
 
