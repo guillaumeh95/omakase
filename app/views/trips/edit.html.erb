@@ -13,7 +13,7 @@
     <% if @trip.visits.length == 3 %>
       <%= link_to "Send to Friend",  "#modal-comment",  id:"last-btn", class:"btn-primary", 'data-toggle'=> "modal", 'data-target'=> "#modal-comment"  %>
     <% else %>
-      <%= link_to "Send to Friend", send_email_trip_path(trip), style:"display:none", id:"last-btn", class:"btn-primary" %>
+      <%= link_to "Send to Friend", send_email_trip_path(@trip), style:"display:none", id:"last-btn", class:"btn-primary" %>
     <% end %>
   </div>
 </div>
