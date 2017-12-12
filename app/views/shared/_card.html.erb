@@ -7,8 +7,8 @@
       <% end %>
     </div>
     <div class="trip-details hidden">
-      <% if created_trip %>
-        <div class="trip-sent-status">
+      <div class="trip-sent-status">
+        <% if created_trip %>
           <% if trip.visits.count == 3 %>
             <% if trip.sent %>
               <%= link_to '<i class="fa fa-send status-green" aria-hidden="true"></i> Send Again'.html_safe, send_email_trip_path(trip), class: "white" %>
@@ -18,14 +18,19 @@
           <% else %>
             <%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i> Finish Editing Trip'.html_safe, edit_trip_path(trip) %>
           <% end %>
+        <% else %>
+          <%= link_to '<i class="fa fa-file-pdf-o" aria-hidden="true"></i> View PDF'.html_safe, trip_url(trip, format: :pdf), class: "white" %>
+        <% end %>
         </div>
         <div class="trip-actions">
-          <%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>'.html_safe, edit_trip_path(trip) %>
-          <%= link_to '<i class="fa fa-trash" aria-hidden="true"></i>'.html_safe, trip_path(trip),
+          <% if created_trip %>
+          <%= link_to('<i class="fa fa-comment" aria-hidden="true"></i>'.html_safe, "#", data: { toggle: "modal", target: "#modal-comment-#{trip.id}" } ) %>
+            <%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>'.html_safe, edit_trip_path(trip) %>
+          <% end %>
+            <%= link_to '<i class="fa fa-trash" aria-hidden="true"></i>'.html_safe, trip_path(trip),
             method: :delete,
             data: { confirm: "Are you sure you want to delete this trip?" } %>
         </div>
-      <% end %>
       <div class="trip-date">
         <i class="fa fa-calendar" aria-hidden="true"></i>
         <%= trip.date.strftime('%A %B %e, %Y') %>
@@ -34,4 +39,6 @@
 
   <%= link_to "", trip_path(trip), class: "card-link btn-small" %>
   <% end %>
+
+  <%= render 'shared/modal_comment', trip: trip  %>  <!-- Hidden modal until called in trip-actions  -->
 </div>
