@@ -1,9 +1,12 @@
+// refresh activities once a visit is created
 function refreshActivities(innerHTML) {
   const editForm = document.getElementById("card-activities-all");
   editForm.innerHTML = innerHTML;
 }
 
+// add btn "send"
 function refreshCallToActions() {
+  console.log('test 2')
   const firstBtn = document.getElementById("first-btn");
   firstBtn.classList.remove("btn-primary");
   firstBtn.classList.add("btn-secondary");
@@ -11,12 +14,19 @@ function refreshCallToActions() {
   lastBtn.style.display = "block";
 }
 
+// remove btn send
 function rollbackCallToActions() {
   const firstbtn = document.getElementById("first-btn");
   firstbtn.classList.add("btn-primary");
   firstbtn.classList.remove("btn-secondary");
   const lastbtn = document.getElementById("last-btn");
   lastbtn.style.display = "none";
+}
+
+// create effect on activities
+function effects() {
+  const selected = document.querySelectorAll(".stretch");
+  selected[selected.length - 1].classList.add("fadeIn");
 }
 
 refreshActivities("<%=
@@ -30,7 +40,12 @@ refreshActivities("<%=
   trip: @trip
 %>");
 
+<% unless @visit.destroyed %>
+  effects();
+<% end %>
+
 <% if @trip.visits.length == 3 %>
+  console.log("test");
   refreshCallToActions();
 <% end %>
 

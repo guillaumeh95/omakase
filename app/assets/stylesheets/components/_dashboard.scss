@@ -9,43 +9,37 @@
 }
 
 .dash {
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: $border-radius-base;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  margin: 20px;
+  background: white;
+  border-radius: 2px;
+  margin: 20px 10%;
   flex: 1;
   justify-content: space-around;
 }
 
-.left-dash {
-  // height: 400px;
-  margin-right: 1.5%;
-  margin-left: 1.5%;
-}
-.nav {
-  background: rgba(255, 255, 255, 0.5);
-  width: 100%;
-}
 
 .nav-tabs-justified, .nav-tabs.nav-justified {
-  width: auto;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
 }
 .nav-tabs-justified > .active > a, .nav-tabs.nav-justified > .active > a, .nav-tabs-justified > .active > a:hover, .nav-tabs.nav-justified > .active > a:hover, .nav-tabs-justified > .active > a:focus, .nav-tabs.nav-justified > .active > a:focus {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(250, 54, 10, 0.8);
   color: black;
   padding: 30px;
+  cursor: pointer;
 }
-
 .nav-tabs-justified > li > a, .nav-tabs.nav-justified > li > a {
   color: black;
   padding: 30px;
-
+  background: rgba(250, 54, 10, 0.3);
+  border-style: hidden !important;
+  border-radius: 0px;
 }
 
 .incoming-trip-card {
   text-align: center;
   font-size: 18px;
-  color: $yellow;
+  color: $red;
   margin: 20px;
 }
 
@@ -69,4 +63,6 @@
   width: 200px;
   margin-bottom: 3%;
 }
-
+.trip-card {
+  color: $red;
+}

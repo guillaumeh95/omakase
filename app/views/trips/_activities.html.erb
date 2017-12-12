@@ -1,13 +1,13 @@
 <div id="activities-one" class="card-activities-filtered-with-title">
-  <div class="card-activities-title text-center pink-bg">
+  <div class="card-activities-title text-center ">
     <%= "Choose a #{capitalize_each_word(trip.filters[0].gsub('_', " "))} activity" %>
   </div>
   <% if activity_one %>
-    <div id="activities-one-selected" class="card-activities-filtered stretch">
+    <div id="activities-one-selected" class="card-activities-filtered stretch animated">
       <%= render "shared/card_activities", trip: trip, activity: activity_one, clicked: true %>
     </div>
   <% else %>
-    <div id= "activities-one-filtered" class="card-activities-filtered">
+    <div id= "activities-one-filtered" class="card-activities-filtered animated">
       <% activities_one.each do |activity| %>
         <%= render "shared/card_activities", activity: activity, trip: trip, clicked: false %>
       <% end %>
@@ -17,15 +17,15 @@
 
 <% if activity_one %>
   <div id="activities-two" class="card-activities-filtered-with-title">
-    <div class="card-activities-title text-center yellow-bg">
+    <div class="card-activities-title text-center ">
       <%= "Choose a #{capitalize_each_word(trip.filters[1].gsub('_', " "))} activity" %>
     </div>
     <% if activity_two %>
-      <div id= "activities-two-selected" class="card-activities-filtered stretch">
+      <div id= "activities-two-selected" class="card-activities-filtered stretch animated">
         <%= render "shared/card_activities", trip: trip, activity: activity_two, clicked: true %>
       </div>
     <% else %>
-      <div id= "activities-two-filtered" class="card-activities-filtered">
+      <div id= "activities-two-filtered" class="card-activities-filtered animated">
         <% activities_two.each do |activity| %>
           <%= render "shared/card_activities", activity: activity, trip: trip, clicked: false %>
         <% end %>
@@ -34,14 +34,14 @@
   </div>
   <% if activity_two %>
     <div id="activities-three" class="card-activities-filtered-with-title">
-      <div class="card-activities-title text-center purple-bg">
+      <div class="card-activities-title text-center ">
         <%= "Choose a #{capitalize_each_word(trip.filters[2].gsub('_', " "))} activity" %>
       </div>
       <% if activity_three %>
-        <div id= "activities-three-selected" class="card-activities-filtered stretch">
+        <div id= "activities-three-selected" class="card-activities-filtered stretch animated">
           <%= render "shared/card_activities", trip: trip, activity: activity_three, clicked: true %>
       <% else %>
-        <div id= "activities-three-filtered" class="card-activities-filtered">
+        <div id= "activities-three-filtered" class="card-activities-filtered animated">
           <% activities_three.each do |activity| %>
             <%= render "shared/card_activities", activity: activity, trip: trip, clicked: false %>
           <% end %>
