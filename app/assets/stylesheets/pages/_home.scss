@@ -1,5 +1,4 @@
 .main-container {
-  width: 100%;
   background-repeat: no-repeat,
       no-repeat,
       no-repeat;
@@ -13,13 +12,13 @@
   // padding-top: 20px;
   // padding-bottom: 20px;
   color: black;
-  width: 80vw;
   margin-left: 25%;
   text-align: center;
 }
 
 .step-container h2 {
   font-size: 22px;
+  font-weight: 400;
 }
 
 .steps {
