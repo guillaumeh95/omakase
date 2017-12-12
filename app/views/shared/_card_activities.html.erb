@@ -1,4 +1,4 @@
-<div class="card-activity-unit" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('<%= activity.photo %>');" data-activity-id='<%= activity.id %>'>
+<div class="card-activity-unit" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.4)), url('<%= activity.photo %>');" data-activity-id='<%= activity.id %>'>
   <%= link_to "", trip_visits_path(trip, activity_id: activity.id), class:"absolute-link", method:"post", remote: true %>
   <% if trip.visits.last&.activity == activity %>
     <%= link_to(trip_visit_path(trip, trip.visits.last), class: "delete-link", method: :delete, remote: true) do %>
@@ -8,6 +8,9 @@
   <div class="card-activity-description" >
     <h2><%= activity.title %></h2>
     <p><%= activity.name %></p>
+    <% unless trip.visits.length == 0 || clicked %>
+      <p><%=  "#{activity.distance_to(trip.visits.last&.activity).round(2)}km" %></p>
+    <% end %>
     <% if clicked %>
       <div class="card-activity-description-full">
         <p><%= activity.address %></p>

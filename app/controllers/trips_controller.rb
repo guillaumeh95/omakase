@@ -2,7 +2,7 @@ class TripsController < ApplicationController
   before_action :find_trip, only: [:show, :edit, :update, :destroy, :send_email]
 
   def show
-    @static_map = get_static_map(@trip)
+    @static_map = get_static_map(@trip) # Generate static map
     respond_to do |format|
       format.html
       format.pdf do
@@ -19,6 +19,7 @@ class TripsController < ApplicationController
   def create
     # Instanciate new trip with all the trip params (including host)
     @trip = Trip.new(trip_params)
+    @trip.comment = "" #initialize empty comment so that it doesn't crach
     @trip.host = current_user
 
     # Assign corresponding tourist_id to new trip depending on existence of user in database
@@ -42,7 +43,9 @@ class TripsController < ApplicationController
   end
 
   def update
-    @trip.comment = params[:trip][:comment]
+    if params[:trip]
+      @trip.comment = params[:trip][:comment]
+    end
     @trip.save
     redirect_to dashboard_user_path(current_user)
   end
@@ -86,13 +89,12 @@ class TripsController < ApplicationController
   # Create url to generate a static map with inputs defined below
   def get_static_map(trip)
     coordinates = []
-    trip.activities.each do |activity|
-      coordinates << {lat: activity.latitude, lng: activity.longitude}
-    end
-    center = "#{coordinates[0][:lat]},#{coordinates[0][:lng]}"
-    # size
-    # zoom
-    return "https://maps.googleapis.com/maps/api/staticmap?center=#{center}&zoom=13&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318&markers=color:red%7Clabel:C%7C40.718217,-73.998284&key=#{ENV['GOOGLE_API_STATIC_KEY']}"
+    trip.activities.each { |activity| coordinates << {lat: activity.latitude, lng: activity.longitude } }
+    size = "640x640"
+    marker_one = "color:blue%7Clabel:A%7C#{coordinates[0][:lat]},#{coordinates[0][:lng]}"
+    marker_two = "color:blue%7Clabel:B%7C#{coordinates[1][:lat]},#{coordinates[1][:lng]}"
+    marker_three = "color:blue%7Clabel:C%7C#{coordinates[2][:lat]},#{coordinates[2][:lng]}"
+    return "https://maps.googleapis.com/maps/api/staticmap?size=#{size}0&maptype=roadmap&markers=#{marker_one}&markers=#{marker_two}&markers=#{marker_three}&key=#{ENV['GOOGLE_API_STATIC_KEY']}"
   end
 end
 
