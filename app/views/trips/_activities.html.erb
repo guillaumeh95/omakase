@@ -3,7 +3,7 @@
     <%= "Choose a #{capitalize_each_word(trip.filters[0].gsub('_', " "))} activity" %>
   </div>
   <% if activity_one %>
-    <div id= "activities-one-selected" class="card-activities-filtered stretch">
+    <div id="activities-one-selected" class="card-activities-filtered stretch">
       <%= render "shared/card_activities", trip: trip, activity: activity_one, clicked: true %>
     </div>
   <% else %>

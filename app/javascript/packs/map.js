@@ -143,7 +143,7 @@ function initMap() {
         ]
     }
   ],
-            {name: 'Styled Map'});
+    {name: 'Styled Map'});
 
 
     var map = new google.maps.Map(document.getElementById('map'), {

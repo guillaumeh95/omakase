@@ -1,2 +1,39 @@
-const editForm = document.getElementById("card-activities-all")
-editForm.innerHTML = <%= j render "trips/activities", activities_one: @activities_one, activities_two: @activities_two, activities_three: @activities_three, activity_one: @activity_one, activity_two: @activity_two, activity_three: @activities_three %>
+function refreshActivities(innerHTML) {
+  const editForm = document.getElementById("card-activities-all");
+  editForm.innerHTML = innerHTML;
+}
+
+function refreshCallToActions() {
+  const firstBtn = document.getElementById("first-btn");
+  firstBtn.classList.remove("btn-primary");
+  firstBtn.classList.add("btn-secondary");
+  const lastBtn = document.getElementById("last-btn");
+  lastBtn.style.display = "block";
+}
+
+function rollbackCallToActions() {
+  const firstbtn = document.getElementById("first-btn");
+  firstbtn.classList.add("btn-primary");
+  firstbtn.classList.remove("btn-secondary");
+  const lastbtn = document.getElementById("last-btn");
+  lastbtn.style.display = "none";
+}
+
+refreshActivities("<%=
+  j render "trips/activities",
+  activities_one: @activities_one,
+  activities_two: @activities_two,
+  activities_three: @activities_three,
+  activity_one: @activity_one,
+  activity_two: @activity_two,
+  activity_three: @activity_three,
+  trip: @trip
+%>");
+
+<% if @trip.visits.length == 3 %>
+  refreshCallToActions();
+<% end %>
+
+<% if @trip.visits.length == 2 %>
+  rollbackCallToActions();
+<% end %>

@@ -8,16 +8,7 @@ class VisitsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to edit_trip_path(@trip) }
       format.js do
-        # Define all the instance variables needed in `create.js.erb`
-        @activity_one = @trip.visits[0].activity
-        @activity_two = @trip.visits[1].activity
-        @activity_three = @trip.visits[2].activity
-        @activities = Activity.where(knows_the_city: @trip.knows_the_city)
-        @activities = @activities.where(budget: @trip.budget)
-        @activities = @activities.where(@trip.status => true)
-        @activities_one = @activities.where(@trip.filters[0] => true)
-        @activities_two = @activities.where(@trip.filters[1] => true)
-        @activities_three = @activities.where(@trip.filters[2] => true)
+        setup_activities
       end
     end
   end
@@ -29,15 +20,8 @@ class VisitsController < ApplicationController
       format.html { redirect_to edit_trip_path(@trip) }
       format.js do
         # Define all the instance variables needed in `create.js.erb`
-        @activity_one = @trip.visits[0].activity
-        @activity_two = @trip.visits[1].activity
-        @activity_three = @trip.visits[2].activity
-        @activities = Activity.where(knows_the_city: @trip.knows_the_city)
-        @activities = @activities.where(budget: @trip.budget)
-        @activities = @activities.where(@trip.status => true)
-        @activities_one = @activities.where(@trip.filters[0] => true)
-        @activities_two = @activities.where(@trip.filters[1] => true)
-        @activities_three = @activities.where(@trip.filters[2] => true)
+        setup_activities
+        render :create
       end
     end
   end

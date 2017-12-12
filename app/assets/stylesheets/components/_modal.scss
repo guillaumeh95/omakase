@@ -208,4 +208,16 @@
   text-align: center;
 }
 
+.modal-sm {
+  width: 500px;
+}
 
+.comment-body {
+  .simple_form {
+    margin: 0;
+    margin-left: auto;
+  }
+  textarea.form-control {
+    height: 200px;
+  }
+}
