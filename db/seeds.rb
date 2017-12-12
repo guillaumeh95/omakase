@@ -1,3 +1,4 @@
+start = Time.now
 puts 'Cleaning database...'
 Trip.destroy_all
 User.destroy_all
@@ -353,7 +354,6 @@ activities_attributes = [
     to_book: false,
     serial_shopper: true,
     budget: 3,
-    budget: 4,
     knows_the_city: 3,
     website: "https://haussmann.galerieslafayette.com/",
   },
@@ -368,7 +368,6 @@ activities_attributes = [
     to_book: false,
     serial_shopper: true,
     budget: 5,
-    budget: 4,
     knows_the_city: 3,
     website: "https://www.24sevres.com/fr-fr/le-bon-marche",
   },
@@ -425,7 +424,6 @@ activities_attributes = [
     to_book: false,
     serial_shopper: true,
     budget: 1,
-    budget: 2,
     knows_the_city: 3,
     website: "http://paris.croix-rouge.fr/cat/vestiboutique/",
   },
@@ -439,7 +437,6 @@ activities_attributes = [
     friends: true,
     to_book: false,
     serial_shopper: true,
-    budget: 1,
     budget: 2,
     knows_the_city: 3,
     website: "https://www.facebook.com/comptoirsduchineur",
@@ -455,7 +452,6 @@ activities_attributes = [
     to_book: false,
     serial_shopper: true,
     budget: 3,
-    budget: 2,
     knows_the_city: 3,
     website: "https://www.thecoolrepublic.com/",
   },
@@ -470,7 +466,6 @@ activities_attributes = [
     to_book: false,
     serial_shopper: true,
     budget: 3,
-    budget: 2,
     knows_the_city: 3,
     website: "https://www.atelierhautperche.com/showcase/free-move/",
   },
@@ -485,7 +480,6 @@ activities_attributes = [
     to_book: false,
     serial_shopper: true,
     budget: 3,
-    budget: 2,
     knows_the_city: 3,
     website: "https://shakespeareandcompany.com/",
   },
@@ -500,7 +494,6 @@ activities_attributes = [
     to_book: true,
     sport_lover: true,
     budget: 2,
-    budget: 1,
     knows_the_city: 3,
     website: "https://www.parisinfo.com/sortie-paris/182108/patinoire-haut-grande-arche",
   },
@@ -508,7 +501,7 @@ activities_attributes = [
     title:"Free Swedish gym session",
     name: "Gym Suédoise",
     address: "4-12 rue Dénoyez, 75020 Paris",
-    photo:"http://www.unizen.fr/mag/wp-content/uploads/2016/03/La-gym-suéddoise.jpg",
+    photo:"http://static.by-night.fr/uploads/documents/58c/139/93d/58c13993d0a59.jpg?v1.0",
     solo: true,
     couple: true,
     friends: true,
@@ -1656,7 +1649,8 @@ visit_one_bis.save!
 visit_two_bis.save!
 visit_three_bis.save!
 
+fin = Time.now
+puts "Finished seeding in #{(fin - start).round(2)} seconds!"
 
-puts 'Finished seed!'
 
 

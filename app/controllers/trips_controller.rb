@@ -19,6 +19,7 @@ class TripsController < ApplicationController
   def create
     # Instanciate new trip with all the trip params (including host)
     @trip = Trip.new(trip_params)
+    @trip.comment = "" #initialize empty comment so that it doesn't crach
     @trip.host = current_user
 
     # Assign corresponding tourist_id to new trip depending on existence of user in database
@@ -42,7 +43,9 @@ class TripsController < ApplicationController
   end
 
   def update
-    @trip.comment = params[:trip][:comment]
+    if params[:trip]
+      @trip.comment = params[:trip][:comment]
+    end
     @trip.save
     redirect_to dashboard_user_path(current_user)
   end
