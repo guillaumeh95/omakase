@@ -1,5 +1,15 @@
 class TripsController < ApplicationController
-  before_action :find_trip, only: [:show, :edit, :update, :destroy]
+  before_action :find_trip, only: [:show, :edit, :update, :destroy, :send_email]
+
+  def show
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render  pdf:      @trip.tourist_first_name + "_trip_to_paris",   # Excluding ".pdf" extension.
+                layout:   'pdf.html.erb'   # Use different layout
+      end
+    end
+  end
 
   def new
     @trip = Trip.new
@@ -26,10 +36,6 @@ class TripsController < ApplicationController
     end
   end
 
-  def show
-
-  end
-
   def edit
     setup_activities # find me in app/controllers/application_controller.rb :)
   end
@@ -42,6 +48,13 @@ class TripsController < ApplicationController
 
   def destroy
     @trip.destroy
+    redirect_to dashboard_user_path(current_user)
+  end
+
+  def send_email
+    TripMailer.send_trip(@trip).deliver_now # Deliver mail
+    @trip.sent = true # Set sent value to true
+    @trip.save
     redirect_to dashboard_user_path(current_user)
   end
 
