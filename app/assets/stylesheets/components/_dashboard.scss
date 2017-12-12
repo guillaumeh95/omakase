@@ -1,5 +1,6 @@
 .dashboard-container {
   margin: 20px 20px;
+  min-width: 600px;
 }
 .dashboard {
   display: flex;
@@ -58,7 +59,7 @@
   justify-content: space-around;
 }
 
-.btn-new {
+.btn-small {
   width: 200px;
   margin-bottom: 3%;
 }

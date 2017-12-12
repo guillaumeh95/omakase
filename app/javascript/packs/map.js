@@ -142,8 +142,9 @@ function initMap() {
       ]
   }
 ],
-  {name: 'Styled Map'}
-);
+
+  {name: 'Styled Map'});
+
 
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 13,
@@ -161,10 +162,9 @@ function initMap() {
   var place1 = new google.maps.Marker({
     position: marker0,
     map: map,
-    icon: markerimage,
     title: 'Marker0'
   });
-  console.log("HO");
+
   console.log(place1);
 
   var place2 = new google.maps.Marker({
@@ -209,14 +209,6 @@ function initMap() {
   //Associate the styled map with the MapTypeId and set it to display.
   map.mapTypes.set('styled_map', styledMapType);
   map.setMapTypeId('styled_map');
-
-
-
-
-        //Associate the styled map with the MapTypeId and set it to display.
-        map.mapTypes.set('styled_map', styledMapType);
-        map.setMapTypeId('styled_map');
-
 }
 
       function calculateAndDisplayRoute(directionsDisplay, directionsDisplay2, directionsService, directionsService2,
