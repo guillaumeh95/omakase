@@ -50,7 +50,7 @@
             <div class="trip-details">
                 <% @trip.filters.each do |profile| %>
                   <div class="trip-profiles">
-                  <%= image_tag "icons/history.png", {class: "trip-icons"}%>
+                  <i class="fa fa-university" aria-hidden="true"></i>
                   <p><%= profile.gsub('_', " ").split.map(&:capitalize).join(' ') %></p>
                   </div>
                 <% end %>
