@@ -1,5 +1,5 @@
-<%= render "shared/navbar" %>
-
+<%= render 'shared/navbar' %>
+<div class="container-show">
  <div class="show-content">
       <div class="show-header">
         <h4 class="show-title text-center" id="ouverture_show"><%= @trip.title %></h4>
@@ -73,13 +73,11 @@
               </div>
             </div>
           </div>
-
-
        <div class="show-footer">
         <div class="show-button-container">
-           <%= link_to '<i class="fa fa-plus fa-fw" aria-hidden="true"></i> Send'.html_safe,dashboard_user_path(current_user), class: "btn-small btn-show" %>
+           <%= link_to 'Send'.html_safe,dashboard_user_path(current_user), class: "btn-small btn-show" %>
         </div>
       </div>
-
     </div>
+</div>
 

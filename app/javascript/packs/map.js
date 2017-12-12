@@ -209,10 +209,52 @@ function initMap() {
   //Associate the styled map with the MapTypeId and set it to display.
   map.mapTypes.set('styled_map', styledMapType);
   map.setMapTypeId('styled_map');
-
-
 }
 
+      function calculateAndDisplayRoute(directionsDisplay, directionsDisplay2, directionsService, directionsService2,
+          markerArray, placeArray, stepDisplay, selectedMode, map) {
+        // First, remove any existing markers from the map.
+        for (var i = 0; i < placeArray.length; i++) {
+          placeArray[i].setMap(null);
+        }
+
+        // Retrieve the start and end locations and create a DirectionsRequest using
+        // WALKING directions.
+        directionsService.route({
+          origin: markerArray[0],
+          destination: markerArray[1],
+          travelMode: google.maps.TravelMode[selectedMode]
+        }, function(response, status) {
+          if (status === 'OK') {
+            // var inhtml = document.querySelectorAll('gm-iw')
+            // console.log(inhtml)
+            //     '<b>' + response.routes[0].warnings + '</b>';
+            directionsDisplay.setDirections(response);
+            // showSteps(response, placeArray, stepDisplay, map);
+          } else {
+            window.alert('Directions request failed due to ' + status);
+          }
+        });
+
+        directionsService2.route({
+          origin: markerArray[1],
+          destination: markerArray[2],
+          travelMode: google.maps.TravelMode[selectedMode]
+        }, function(response2, status) {
+          if (status === 'OK') {
+            // document.getElementById('warnings-panel').innerHTML =
+            //     '<b>' + response.routes[0].warnings + '</b>';
+            directionsDisplay2.setDirections(response2);
+            // showSteps(response, placeArray, stepDisplay, map);
+          } else {
+            window.alert('Directions request failed due to ' + status);
+          }
+        });
+          // Route the directions and pass the response to a function to create
+          // markers for each step.
+          attachInstructionText(
+              stepDisplay, placeArray, map);
+      }
 
 function calculateAndDisplayRoute(directionsDisplay, directionsDisplay2, directionsService, directionsService2,
     markerArray, placeArray, stepDisplay, selectedMode, map) {
@@ -220,6 +262,7 @@ function calculateAndDisplayRoute(directionsDisplay, directionsDisplay2, directi
   for (var i = 0; i < placeArray.length; i++) {
     placeArray[i].setMap(null);
   }
+
 
   // Retrieve the start and end locations and create a DirectionsRequest using
   // WALKING directions.
