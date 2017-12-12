@@ -1,6 +1,6 @@
 .show{
-  // background-color: rgba(255, 255, 255, 0.5);
   color : $red;
+  background: linear-gradient(-140deg, rgba(217, 223, 255, 150), rgba(0, 0, 0,50));
 }
 
 .show-title {
@@ -132,12 +132,6 @@
   }
 }
 
-.img-link {
-    background: linear-gradient(-225deg, rgba(0, 0, 0, 0.8) 0%, rgba(30,30,30,0.6) 50%);
-    img-link:hover {
-    background: none;
-  }
-}
 
 .first-activity {
   flex: 0 0 33.33%;
@@ -185,6 +179,7 @@
   padding-top : 35px;
   border-top: none;
   margin-left: 85%;
+  margin-bottom: 5%;
 }
 
 
