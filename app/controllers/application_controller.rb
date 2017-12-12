@@ -23,16 +23,16 @@ class ApplicationController < ActionController::Base
     elsif count == 1
       # @activity_one = @trip.visits.find_by(activity: { @trip.filters[0] => true }).activity
       @activity_one = @trip.visits.order(created_at: :asc)[0].activity
-      #@activities_two = @activities.where(@trip.filters[1] => true).near(@activity_one.address, 3, order: 'distance')
-      @activities_two = filter_activities(@activity_one, @trip.filters[1] => true)
+      @activities_two = @activities.where(@trip.filters[1] => true).near(@activity_one.address, 5, order: 'distance')
+      #@activities_two = filter_activities(@activity_one, @trip.filters[1] => true)
       @activities_two = @activities_two.where.not(id: @activity_one.id)
     elsif count == 2
       # @activity_one = @trip.visits.find_by(activity: { @trip.filters[0] => true }).activity
       # @activity_two = @trip.visits.find_by(activity: { @trip.filters[1] => true }).activity
       @activity_one = @trip.visits.order(created_at: :asc)[0].activity
       @activity_two = @trip.visits.order(created_at: :asc)[1].activity
-      #@activities_three = @activities.where(@trip.filters[2] => true).near(@activity_two.address, 3, order: 'distance')
-      @activities_three = filter_activities(@activity_one, @trip.filters[1] => true)
+      @activities_three = @activities.where(@trip.filters[2] => true).near(@activity_two.address, 5, order: 'distance')
+      #@activities_three = filter_activities(@activity_one, @trip.filters[2] => true)
       @activities_three = @activities_three.where.not(id: [ @activity_one.id, @activity_two.id ])
     elsif count == 3
       # @activity_one = @trip.visits.find_by(activity: { @trip.filters[0] => true }).activity
@@ -44,14 +44,14 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def filter_activities(activity, filter)
-    km_range = 3
-    activities = []
-    while activities.length < 5
-      activities = @activities.where(filter).near(activity.address, km_range, order: 'distance')
-      km_range += 1
-    end
-    return activities
-  end
+  # def filter_activities(activity, filter)
+  #   km_range = 3
+  #   activities = []
+  #   while activities.length < 5
+  #     activities = @activities.where(filter).near(activity.address, km_range, order: 'distance')
+  #     km_range += 1
+  #   end
+  #   return activities
+  # end
 end
 

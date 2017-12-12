@@ -5,6 +5,7 @@ class VisitsController < ApplicationController
     @visit.trip = @trip
     @visit.activity = Activity.find(params[:activity_id])
     @visit.save
+    @trip.save
     respond_to do |format|
       format.html { redirect_to edit_trip_path(@trip) }
       format.js do

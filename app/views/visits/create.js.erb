@@ -19,6 +19,11 @@ function rollbackCallToActions() {
   lastbtn.style.display = "none";
 }
 
+function effects() {
+  const selected = document.querySelectorAll(".stretch");
+  selected[selected.length - 1].classList.add("fadeIn");
+}
+
 refreshActivities("<%=
   j render "trips/activities",
   activities_one: @activities_one,
@@ -29,6 +34,9 @@ refreshActivities("<%=
   activity_three: @activity_three,
   trip: @trip
 %>");
+
+
+effects();
 
 <% if @trip.visits.length == 3 %>
   refreshCallToActions();
