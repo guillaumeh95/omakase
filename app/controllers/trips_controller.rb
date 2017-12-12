@@ -2,6 +2,7 @@ class TripsController < ApplicationController
   before_action :find_trip, only: [:show, :edit, :update, :destroy, :send_email]
 
   def show
+    @static_map = get_static_map(@trip)
     respond_to do |format|
       format.html
       format.pdf do
@@ -41,7 +42,7 @@ class TripsController < ApplicationController
   end
 
   def update
-    # @trip.comment = params[:trip][:comment]
+    @trip.comment = params[:trip][:comment]
     @trip.save
     redirect_to dashboard_user_path(current_user)
   end
@@ -80,6 +81,18 @@ class TripsController < ApplicationController
     @trip.tourist_first_name = user.first_name
     @trip.tourist_last_name = user.last_name
     @trip.tourist_email = user.email
+  end
+
+  # Create url to generate a static map with inputs defined below
+  def get_static_map(trip)
+    coordinates = []
+    trip.activities.each do |activity|
+      coordinates << {lat: activity.latitude, lng: activity.longitude}
+    end
+    center = "#{coordinates[0][:lat]},#{coordinates[0][:lng]}"
+    # size
+    # zoom
+    return "https://maps.googleapis.com/maps/api/staticmap?center=#{center}&zoom=13&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318&markers=color:red%7Clabel:C%7C40.718217,-73.998284&key=#{ENV['GOOGLE_API_STATIC_KEY']}"
   end
 end
 
