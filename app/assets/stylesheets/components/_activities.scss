@@ -57,7 +57,7 @@
 .activities-container {
   margin: 20px 10%;
   padding: 20px;
-  height: 83vh;
+  height: 85vh;
   background-color: $white;
   border-radius: $border-radius-base;
 }
@@ -136,10 +136,14 @@
   }
 }
 
+.top-link {
+  z-index: 2;
+}
+
 
 .submit-edit-trip {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding-top: 20px;
 }
 
