@@ -4,3 +4,15 @@
 <br>
 <p>Kind regards,</p>
 <p>The Omakaze Team</p>
+
+
+You can <a href="http://www.google.com/calendar/event?
+action=TEMPLATE
+&text=A+day+in+Paris+made+by+<%= @trip.host.first_name.split(" ").join("+") %>
+&dates=<%= @trip.date.strftime("%Y%m%d") %>/<%= @trip.date.strftime("%Y%m%d") %>
+&details=Cant+wait+to+see+you+here+!+ +In+the+meantime+you+can+check+what+I+have+planned+for+you+at+:+https://omakase-paris.fr/trips/<%= @trip.id %>
+&location=<%= @trip.visits.first&.activity.address.split(/[\s,']/).join("+") %>
+&trp=false
+&sprop=
+&sprop=name:"
+target="_blank" rel="nofollow">add your trip to your Google Agenda :</a>
