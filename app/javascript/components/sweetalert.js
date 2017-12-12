@@ -3,7 +3,6 @@ import swal from 'sweetalert2';
 function sweetAlertDelete() {
   const link = document.getElementById('sweetalert-delete')
   link.addEventListener('click', (event) => {
-    console.log(event);
     event.preventDefault();
     swal({
       title: "Are you sure you want to delete this trip?",
