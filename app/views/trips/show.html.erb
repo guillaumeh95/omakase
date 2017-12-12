@@ -29,6 +29,7 @@
 
           <div class="map">
             <div id="floating-panel">
+            <div id="warnings-panel"></div>
               <b>Mode of Travel: </b>
               <select id="mode">
                 <option value="DRIVING">Driving</option>
@@ -71,9 +72,9 @@
             </div>
           </div>
 
-           <div class="show-footer">
-              <%= link_to '<i class="fa fa-plus fa-fw" aria-hidden="true"></i> Send'.html_safe,dashboard_user_path(current_user), class: "btn-small btn-show" %>
-          </div>
+       <div class="show-footer">
+          <%= link_to '<i class="fa fa-plus fa-fw" aria-hidden="true"></i> Send'.html_safe,dashboard_user_path(current_user), class: "btn-small btn-show" %>
+      </div>
 
     </div>
 
