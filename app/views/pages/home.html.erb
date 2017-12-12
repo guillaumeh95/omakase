@@ -1,26 +1,27 @@
+<%= render "shared/navbar" %>
 <div class="main-container" style="background-image: url('<%= image_path "path3.svg" %>')">
   <%= render "shared/banner" %>
 
 
   <div class="step-container">
-    <h3>Your are three steps away from sending the perfect daytrip !</h3>
+    <h2>Your are three steps away from sending the perfect daytrip !</h2>
     <div class="steps">
       <div class="step-description">
         <h3> 1</h3>
         <%= image_tag "icons/step1.svg", {class: "step-images-home"}%>
-        <p> Describe your friend</p>
+        <h5> Describe your friend</h5>
 
       </div>
       <div class="step-description">
         <h3> 2</h3>
         <%= image_tag "icons/step2.svg", {class: "step-images-home"} %>
-        <p> Choose the best activities</p>
+        <h5> Choose the best activities</h5>
 
       </div>
       <div class="step-description">
         <h3> 3</h3>
         <%= image_tag "icons/step3.svg", {class: "step-images-home"} %>
-        <p> Edit and send the trip</p>
+        <h5> Edit and send the trip</h5>
       </div>
     </div>
   </div>

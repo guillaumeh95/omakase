@@ -1,0 +1,5 @@
+Hi <%= @trip.tourist_first_name %>,
+You just received a new trip from <%= @trip.host.first_name %>.
+<%= link_to "Download your trip in PDF!", trip_url(@trip, format: :pdf) %>
+Kind regards,
+The Omakaze Team

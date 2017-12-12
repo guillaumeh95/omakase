@@ -37,8 +37,9 @@
   width: 112%;
 }
 .control-label {
-  font-weight: 500 !important;
+  font-weight: 450 !important;
   font-size: 15px;
+  margin-bottom: 10px;
 }
 .slider {
   width: 80% !important;
@@ -46,20 +47,22 @@
   }
 
 .slider-selection.tick-slider-selection {
-  background: $yellow;
+  background: rgba(200, 200, 200, 1);
 }
 .slider-handle {
-  background: $dark-pink;
+  background: $red;
+  cursor:pointer;
 }
 .slider-tick-label-container {
 }
 .slider-tick-label {
-  font-size: 10px;
+  font-size: 13px;
+  color: $red;
   padding-right: 5px;
   padding-left: 5px;
 }
 .slider-tick.round.in-selection, .slider-tick.round {
-  background: $yellow;
+  background: $red;
   display: none;
 }
 .tooltip-main {
@@ -70,52 +73,56 @@
   justify-content: space-between;
   flex-wrap: wrap;
   margin-right: 0;
+  margin-bottom: 20px;
 }
 .select-description  {
-  background: $yellow;
+  background: rgba(200, 200, 200, 0.5);
   padding: 25px;
   min-width: 300px;
   border-radius: $border-radius-base;
-  opacity: 0.8;
   flex: 0 0 48%;
+  color: $red;
   text-align: center;
   cursor: pointer;
   margin-bottom: 20px;
   &:hover {
   color: white;
-  opacity: 1;
+  background: $red;
+  opacity: 0.8;
   cursor: pointer;
   }
   &.active {
-  background: $dark-pink;
+  background: $red;
   color: white;
   opacity: 1;
   }
 }
 .select-status {
-  background: $yellow;
+  background: rgba(200, 200, 200, 0.5);
   padding: 15px;
   width: 100px;
   border-radius: $border-radius-base;
   opacity: 0.8;
+  color: $red;
   flex: 0 0 22%;
   text-align: center;
   cursor: pointer;
   margin-bottom: 20px;
   &:hover {
   color: white;
-  opacity: 1;
+  background: $red;
+  opacity: 0.8;
   cursor: pointer;
   }
   &.active {
-  background: $dark-pink;
+  background: $red;
   color: white;
   opacity: 1;
   }
 }
 .radio {
   display: inline-block;
-  background: $yellow;
+  background: $red;
   margin: 10px;
   padding: 10px;
   border-radius: $border-radius-base;
@@ -135,10 +142,22 @@
 }
 
 .row {
-  padding-bottom: 30px;
+  padding-bottom: 20px;
 }
 
 #submit-trip {
   position: relative;
   right: -636px;
+}
+h4 {
+  font-weight: 600;
+  color: rgba(75, 75, 75, 1);
+  margin-bottom: 40px;
+}
+.shadow-separator {
+  height: 2px;
+  box-shadow: 0 10px 10px -10px $red inset;
+  width: 800px;
+  margin-bottom: 30px;
+  margin-top: 30px;
 }

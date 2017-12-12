@@ -12,17 +12,19 @@
   // background: $dark-pink;
   // padding-top: 20px;
   // padding-bottom: 20px;
-  //height: 150vh;
-  color: $yellow;
-  margin-top: 20%;
+  color: black;
   width: 80vw;
   margin-left: 25%;
   text-align: center;
 }
 
+.step-container h2 {
+  font-size: 22px;
+}
+
 .steps {
   //background: $dark-pink;
-  color: $yellow;
+  color: $red;
   display: flex;
   margin: 7%;
 }
@@ -42,7 +44,7 @@
 }
 
 .step-description h3 {
-  color: $yellow;
+  color: $red;
   font-size: 50px;
   text-align: center;
   font-weight: 600;
@@ -52,8 +54,8 @@
 .step-description p {
   text-align: center;
   font-size: 16px;
-  font-weight: 100;
-  color: $yellow;
+  font-weight: 500;
+  color: black;
   padding-top: 25px;
 }
 

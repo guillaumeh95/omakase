@@ -1,33 +1,12 @@
-
 .banner {
-  color: $yellow;
+  color: $red;
   text-align: center;
-  // height: calc(100vh - 60px);
+  height: 150vh;
   display: flex;
   align-items: left;
   justify-content: left;
   position: relative;
 }
-
-.marker-home {
-  position : absolute;
-}
-
-#marker1 {
-  top : 46%;
-  left : 12%;
-}
-
-#marker2 {
-  top : 20%;
-  left : 55%;
-}
-
-#marker3 {
-  top : 2%;
-  left : 58%;
-}
-
 
 .banner-home{
   width: 100%;
@@ -41,17 +20,17 @@
 }
 
 .banner h1 {
-  font-size: 80px;
-  text-shadow: 1px 1px rgba(255, 35, 0, 0.3);
-  color: $yellow;
-  font-weight: 200;
+  font-size: 70px;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
+  color: $red;
+  font-weight: 300;
   //font-family: 'Monoton', cursive;
 }
 
 .banner h2 {
   font-size: 22px;
-  font-weight: 100;
-  color: $yellow;
+  font-weight: 250;
+  color: $red;
   // opacity: 0.8;
 }
 
@@ -59,7 +38,7 @@
   font-size: 18px;
   font-weight: 450;
   margin-bottom: 30px;
-  color:  $yellow;;
+  color:  $red;
 }
 
 .enter {

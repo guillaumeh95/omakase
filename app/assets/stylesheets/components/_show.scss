@@ -1,24 +1,22 @@
 .show{
   // background-color: rgba(255, 255, 255, 0.5);
-  color : $yellow;
-}
-.show-header {
-  border-bottom: 2px solid yellow;
-  color : $yellow;
+  color : $red;
 }
 
 .show-title {
   margin: 15px;
   font-size: 39px;
-  color : $yellow;
+  color : $red;
 }
+
 .show-date {
   font-weight: lighter;
-  color : $yellow;
+  color : $red;
 }
+
 .show-content {
   //background-color: rgba(0, 0, 0, 0.2);
-  //border: 2px solid $yellow;
+  //border: 2px solid $red;
   margin-right: 5%;
   margin-left: 5%;
 }
@@ -27,65 +25,84 @@
   margin: 0 20px;
 }
 
-.show-footer {
-  padding : 35px;
-  border-top: none;
-}
-
 .trip-comments {
   text-align:justify;
-  border: 2px solid $yellow;
+  border: 2px solid $red;
   padding: 10px 30px;
-  margin : 2%;
+  color: $red;
   //background-color: white;
 }
+
+.trip-comments p {
+  font-size: 18px;
+  color: $red;
+}
+
+
 .trip-summary {
   padding: 10px 10px;
   width: 100%;
-  border-bottom: 2px solid $yellow;
+  border-bottom: 2px solid $red;
   //background-color: white;
 }
+
 .trip-host {
-  color : $yellow;
-  padding: 10px 30px;
+  color : $red;
+  padding: 20px 30px;
   text-align: center;
 }
 
 .trip-details {
+  min-width: 300px;
   padding: 10px;
-  align-items: center;
   display: flex;
   justify-content: space-between;
-}
-
-.trip-profiles{
-  display: inline-block;
-  padding: 10px;
+  flex-wrap: wrap;
 }
 
 .trip-infos{
-  display: inline-block;
-  align-items: center;
+  flex: 0 0 20%;
+  text-align: center;
+  padding: 10px;
 }
 
-.trip-icons {
-  height: 50px;
-  display: inline-block;
-  align-items: center;
+
+.trip-infos .fa{
+  color : $red;
+  font-size : 20px;
+  &:hover {
+  color: white;
+  opacity: 0.8;
+  cursor: pointer;
+  }
+  &.active {
+  color: white;
+  opacity: 1;
+  }
 }
 
-.trip-details p{
-  color: transparent;
+.trip-infos p{
+  color: $red;
   text-align: center;
   padding-top: 10px;
-  width: 100px;
+  &:hover {
+  color: white;
+  opacity: 0.8;
+  cursor: pointer;
+  }
+  &.active {
+  color: white;
+  opacity: 1;
+  }
 }
 
-.trip-details:hover p {
-  color : $yellow;
-  font-weight: 100;
-  cursor: hand;
+
+.trip-icons {
+  display: inline-block;
+  align-items: center;
+  text-align : center;
 }
+
 
 .trip-photos {
   padding: 0;
@@ -99,23 +116,26 @@
 }
 .modal-activity {
   flex: 0 0 33.33%;
-  position: relative;
-  color: white;
+  color: $red;
   img {
     object-fit: cover;
     height: 200px;
   }
   h5 {
     font-size: 12px;
-    position: absolute;
-    bottom: 5px;
-    left: 10px;
+    text-align: center;
   }
   h6 {
     font-size: 16px;
-    position: absolute;
-    top: 5px;
-    left: 10px;
+    text-align: center;
+    padding-top: 10px;
+  }
+}
+
+.img-link {
+    background: linear-gradient(-225deg, rgba(0, 0, 0, 0.8) 0%, rgba(30,30,30,0.6) 50%);
+    img-link:hover {
+    background: none;
   }
 }
 
@@ -125,33 +145,9 @@
 
 }
 
-.first-activity h6 {
-  position: absolute;
-  top: 5px;
-  left: 10px;
-}
-
-.first-activity h5 {
-  position: absolute;
-  bottom: 5px;
-  left: 10px;
-}
-
 .second-activity {
   flex: 0 0 33.33%;
   position: relative;
-}
-
-.second-activity h6 {
-  position: absolute;
-  top: 5px;
-  left: 10px;
-}
-
-.second-activity h5 {
-  position: absolute;
-  bottom: 5px;
-  left: 10px;
 }
 
 .third-activity {
@@ -159,20 +155,9 @@
   position: relative;
 }
 
-.third-activity h6 {
-  position: absolute;
-  top: 5px;
-  left: 10px;
-}
-
-.third-activity h5 {
-  position: absolute;
-  bottom: 5px;
-  left: 10px;
-}
 .map {
   margin-top: 2%;
-  //border: 2px solid $yellow;
+  //border: 2px solid $red;
   //background-color: white;
   position: relative;
 }
@@ -190,12 +175,23 @@
   padding-left: 10px;
 }
 
+#warnings-panel {
+  width: 100%;
+  height:10%;
+  text-align: center;
+}
+
+.show-footer {
+  padding-top : 35px;
+  border-top: none;
+  margin-left: 85%;
+}
+
+
 .btn-show {
-  text-align: right;
-  margin-top: 2%;
-  margin-bottom: 2%;
   text-decoration: none;
 }
+
 .no-comment-italic-light {
   opacity: 0.5;
   font-style: italic;

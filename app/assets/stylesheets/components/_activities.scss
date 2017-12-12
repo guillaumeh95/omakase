@@ -21,7 +21,7 @@
 }
 
 .add-item:hover p{
-  color: $yellow;
+  color: $red;
   font-weight: 100;
   cursor: hand;
 }
@@ -49,17 +49,22 @@
   //margin-left: 10px;
 }
 
+.activities-box {
+  background-color: $red;
+  border-radius: 2px;
+}
+
 .activities-container {
-  margin: 30px 15%;
-  padding: 30px;
+  margin: 20px 10%;
+  padding: 20px;
+  height: 600px;
   background-color: $white;
   border-radius: $border-radius-base;
-  border: 2px solid $dark-pink;
 }
 
 #card-activities-all {
   display: flex;
-  height: calc(100vh - 250px);
+  height: calc(100vh - 200px);
   color: $white;
 }
 
@@ -72,7 +77,8 @@
 .card-activities-title {
   padding-top: 10px;
   padding-bottom: 10px;
-  background-color: $dark-pink;
+  background-color: $red;
+  border-radius: 2px;
 }
 
 .card-activities-filtered {
@@ -80,8 +86,8 @@
   flex-direction: column;
   overflow: auto;
   .fa {
-    font-size: 28px;
-    color: $dark-pink;
+    font-size: 26px;
+    color: $red;
   }
 }
 
@@ -99,7 +105,7 @@
   background-size: cover!important;
   background-position: center;
   align-items: center;
-  border: 2px solid $dark-pink;
+  border: 3px solid $red;
 }
 
 .absolute-link {
@@ -113,15 +119,6 @@
   top: 5px; right: 5px;
 }
 
-.one {
-  border: solid 2px $dark-pink;
-}
-.two {
-  border: solid 2px $yellow;
-}
-.three {
-  border: solid 2px $purple;
-}
 .card-activity-description {
   padding-left: 6px;
   h2 {
@@ -148,9 +145,10 @@
 .submit-edit-trip {
   display: flex;
   justify-content: space-between;
-  padding-top: 30px;
+  padding-top: 20px;
 }
 
 #last-btn {
   margin-left: 10px;
 }
+
