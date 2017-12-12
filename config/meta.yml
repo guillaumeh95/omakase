@@ -1,0 +1,6 @@
+# config/meta.yml
+
+meta_product_name: "Omakase"
+meta_title: "Omakase - Offer to best day trip to your friends"
+meta_description: "Omakase is the best web application for Parisians who want to plan a beautiful day in Paris for their visiting friends"
+meta_image: "cover.png"                       # should exist in `app/assets/images/`
