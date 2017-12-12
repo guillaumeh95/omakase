@@ -43,7 +43,9 @@ class ApplicationController < ActionController::Base
       @activity_three = @trip.visits.order(created_at: :asc)[2].activity
     end
   end
-
+    def default_url_options
+      { host: ENV["HOST"] || "localhost:3000" }
+    end
   # def filter_activities(activity, filter)
   #   km_range = 3
   #   activities = []
