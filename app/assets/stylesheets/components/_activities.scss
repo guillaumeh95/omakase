@@ -6,52 +6,6 @@
   padding-bottom: 9px;
   margin-bottom : 5px auto;
 }
-.edit-button-container {
-  margin-bottom: 10px;
-  display: flex;
-  justify-content: space-between;
-}
-.add-container {
-  margin : 10px auto;
-  flex: 1;
-}
-
-.add-item {
-  display: inline-block;
-}
-
-.add-item p {
-  color: transparent;
-}
-
-.add-item:hover p{
-  color: $red;
-  font-weight: 100;
-  cursor: hand;
-}
-
-.plus-comment{
-  height: 85px;
-  padding : 10px;
-  padding-right :50px;
-  cursor: hand;
-}
-
-.plus-snacks{
-  height: 90px;
-  padding : 10px;
-  padding-right : 50px;
-  cursor: hand;
-}
-
-.save {
-  flex: 0, 0 ,20%;
-  margin-top: -2%;
-}
-
-.last-btn {
-  // margin-left: 10px;
-}
 
 .activities-box {
   background-color: $white;
@@ -61,7 +15,6 @@
 .activities-container {
   margin: 20px 10%;
   padding: 20px;
-  height: 100vh;
   background-color: $white;
   border-radius: $border-radius-base;
 }
@@ -90,7 +43,7 @@
   display: flex;
   flex-direction: column;
   overflow: auto;
-  .fa {
+  .fa-times {
     font-size: 20px;
     color: $red;
   }
@@ -138,20 +91,36 @@
     font-size: 14px;
     font-weight: 300;
   }
+  a {
+    color: $red;
+  }
 }
-
-.top-link {
-  z-index: 2;
-}
-
 
 .submit-edit-trip {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   padding-top: 20px;
+  padding-bottom: 0;
+}
+
+#end-buttons {
+  display: flex;
+  justify-content: center;
 }
 
 #last-btn {
-  margin-left: 10px;
+  margin-left: 20px;
 }
 
+#comment-btn {
+  color: $red;
+  text-decoration: none;
+  margin-right: 10px;
+  .fa {
+    font-size: 20px;
+  }
+}
+
+.btn-save {
+  padding: 10px 20px;
+}

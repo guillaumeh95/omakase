@@ -1,18 +1,27 @@
-<p>Hi <%= @trip.tourist_first_name %>,</p>
-<p>You just received a new trip from <%= @trip.host.first_name %>.</p>
-<p><%= link_to "Download your trip in PDF!", trip_url(@trip, format: :pdf) %></p>
-<br>
-<p>Kind regards,</p>
-<p>The Omakaze Team</p>
 
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i|Work+Sans:100,200,300,400,500,600,700,800,900|Monoton" rel="stylesheet">
 
-You can <a href="http://www.google.com/calendar/event?
-action=TEMPLATE
-&text=A+day+in+Paris+made+by+<%= @trip.host.first_name.split(" ").join("+") %>
-&dates=<%= @trip.date.strftime("%Y%m%d") %>/<%= @trip.date.strftime("%Y%m%d") %>
-&details=Cant+wait+to+see+you+here+!+ +In+the+meantime+you+can+check+what+I+have+planned+for+you+at+:+https://omakase-paris.fr/trips/<%= @trip.id %>
-&location=<%= @trip.visits.first&.activity.address.split(/[\s,']/).join("+") %>
-&trp=false
-&sprop=
-&sprop=name:"
-target="_blank" rel="nofollow">add your trip to your Google Agenda :</a>
+<div style="width: 600px; text-align: justify; font-family: Source Sans Pro, sans-serif;">
+  <div class="content-mailer">
+    <p>Hi <%= @trip.tourist_first_name %>,</p>
+    <p>You just received a new trip from <%= @trip.host.first_name %>.</p>
+    <br>
+     <%= link_to "Download your trip in PDF!", trip_url(@trip, format: :pdf), {:style=>'border: 3px solid #FA360A; border-radius: 4px; padding: 10px; background-color: #f7f7f7;cursor: pointer; color: #FA360A; font-family: Source Sans Pro, sans-serif; font-size: 16px; text-decoration: none !important; font-weight:400;'} %>
+    <br>
+    <br>
+    <p>Kind regards,</p>
+    <p>The Omakaze Team</p>
+   </div>
+    <br>
+    <a style="border: 3px solid #FA360A; border-radius: 4px; padding: 10px; cursor: pointer; background-color: #f7f7f7; font-family: Source Sans Pro, sans-serif; font-size: 16px; color: #FA360A; font-weight:400; text-decoration: none !important;" href="http://www.google.com/calendar/event?
+    action=TEMPLATE
+    &text=A+day+in+Paris+made+by+<%= @trip.host.first_name.split(" ").join("+") %>
+    &dates=<%= @trip.date.strftime("%Y%m%d") %>/<%= @trip.date.strftime("%Y%m%d") %>
+    &details=Cant+wait+to+see+you+here+!+ +In+the+meantime+you+can+check+what+I+have+planned+for+you+at+:+https://omakase-paris.fr/trips/<%= @trip.id %>
+    &location=<%= @trip.visits.first&.activity.address.split(/[\s,']/).join("+") %>
+    &trp=false
+    &sprop=
+    &sprop=name:"
+    target="_blank" rel="nofollow">Add your trip to your Google Agenda !</a>
+
+</div>
