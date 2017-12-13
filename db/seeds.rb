@@ -1591,39 +1591,6 @@ activities_attributes = [
 ]
 Activity.create(activities_attributes)
 
-puts 'Creating visits...'
-visit_one = Visit.new
-visit_two = Visit.new
-visit_three = Visit.new
-
-visit_one.trip = Trip.first
-visit_two.trip = Trip.first
-visit_three.trip = Trip.first
-
-visit_one.activity = Activity.all[4]
-visit_two.activity = Activity.all[7]
-visit_three.activity = Activity.all[8]
-
-visit_one.save!
-visit_two.save!
-visit_three.save!
-
-visit_one_bis = Visit.new
-visit_two_bis = Visit.new
-visit_three_bis = Visit.new
-
-visit_one_bis.trip = Trip.last
-visit_two_bis.trip = Trip.last
-visit_three_bis.trip = Trip.last
-
-visit_one_bis.activity = Activity.all[12]
-visit_two_bis.activity = Activity.all[1]
-visit_three_bis.activity = Activity.all[9]
-
-visit_one_bis.save!
-visit_two_bis.save!
-visit_three_bis.save!
-
 fin = Time.now
 puts "Finished seeding in #{(fin - start).round(2)} seconds!"
 
