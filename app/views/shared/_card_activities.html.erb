@@ -8,30 +8,36 @@
     <% end %>
   <% end %>
   <% if clicked %>
-    <div class="card-activity-description-full">
-      <h2><%= activity.title %></h2>
-      <p><%= activity.name %></p>
-      <p>
-        <i class="fa fa-map-marker" aria-hidden="true"></i>
-        <%= activity.address %>
-      </p>
-      <p class="price-range">
-        <% if activity.budget == 1 %>
-          <%= "Free" %>
-        <% else %>
-          <% (activity.budget - 1).times do %>
-            <i class="fa fa-eur" aria-hidden="true"></i>
-          <% end %>
-        <% end %>
-      </p>
-      <%= link_to "More info", activity.website, target: "_blank" %>
-      <% if activity.to-book %>
-      <p class="to-book">
-        <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
-        <%= activity.to_book ? "You might want to book this activity!" : "" %>
-      </p>
-      <% end %>
-    </div>
+
+
+      <div class="desc-header">
+        <div class="wrapper">
+        </div>
+        <div class="activity-desc-content">
+          <h2><%= activity.title %></h2>
+          <p><%= activity.name %></p>
+          <p>
+            <i class="fa fa-map-marker" aria-hidden="true"></i>
+            <%= activity.address %>
+          </p>
+          <p class="price-range">
+            <% if activity.budget == 1 %>
+              <%= "Free" %>
+            <% else %>
+              <% (activity.budget - 1).times do %>
+                <i class="fa fa-eur" aria-hidden="true"></i>
+              <% end %>
+            <% end %>
+          </p>
+          <%= link_to "More info", activity.website, target: "_blank" %>
+          <% if activity.to_book %>
+          <p class="to-book">
+            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+            <%= activity.to_book ? "You might want to book this activity!" : "" %>
+          </p>
+          <% end %></div>
+      </div>
+
   <% else %>
     <div class="card-activity-description" >
       <h2><%= activity.title %></h2>
