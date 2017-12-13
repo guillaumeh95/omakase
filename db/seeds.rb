@@ -88,7 +88,7 @@ activities_attributes = [
     couple: true,
     friends: true,
     solo: true,
-    budget: 3,
+    budget: 2,
     knows_the_city: 3,
     art_lover: true,
     to_book: false,
@@ -339,7 +339,7 @@ activities_attributes = [
     friends: true,
     to_book: true,
     sport_lover: true,
-    budget: 3,
+    budget: 1,
     knows_the_city: 3,
     website: "https://www.paris.fr/services-et-infos-pratiques/sports-et-loisirs/ou-faire-du-sport/le-sport-en-plein-air-2016#les-bases-nautiques_6",
   },
@@ -1200,7 +1200,7 @@ activities_attributes = [
   title:"Journey at the Coulée Verte",
   name: "Coulée verte René-Dumont",
   address: "1 Coulée verte René-Dumont, 75012 Paris",
-  photo:"http://www.parisaddress.com/var/thumbs/items/other/975x450_0b545108904765462ff3256cf3cbc3bd80.jpg",
+  photo:"https://media.timeout.com/images/100013521/image.jpg",
   solo: true,
   couple: true,
   friends: true,
@@ -1590,31 +1590,6 @@ activities_attributes = [
 },
 ]
 Activity.create(activities_attributes)
-
-puts 'Creating trips...'
-trips_attributes = [
-  {
-    title: "John in Paris",
-    date: DateTime.parse("09/01/2017 00:00"),
-    host_id: julie.id,
-    tourist_id: User.last.id,
-    art_lover: true,
-    food_addict: true,
-    status: "solo",
-    tourist_first_name: User.first.first_name,
-    tourist_email: User.first.email
-  },
-  {
-    title: "Mike in Paris",
-    date: DateTime.parse("09/01/2018 00:00"),
-    host_id: julie.id,
-    status: "solo",
-    tourist_id: User.all[2].id,
-    tourist_first_name: User.first.first_name,
-    tourist_email: User.first.email
-  }
-]
-Trip.create!(trips_attributes)
 
 puts 'Creating visits...'
 visit_one = Visit.new

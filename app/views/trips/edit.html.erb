@@ -8,7 +8,10 @@
   </div>
   <div class="submit-edit-trip">
     <span>
-      <%= link_to '<i class="fa fa-plus" aria-hidden="true"></i> Add a comment'.html_safe,  "#modal-comment", id:"comment-btn", class:"", 'data-toggle'=> "modal", 'data-target'=> "#modal-comment" %>
+      <%= link_to "#modal-comment", id:"comment-btn", class:"", 'data-toggle'=> "modal", 'data-target'=> "#modal-comment" do %>
+        <i class="fa fa-plus" aria-hidden="true"></i>
+        <%= @trip.comment == "" ? "Add a comment" : "Edit comment" %>
+      <% end %>
       <%= render 'shared/modal_comment', trip: @trip %>
     </span>
     <span id= "end-buttons">
@@ -21,3 +24,6 @@
     </span>
   </div>
 </div>
+
+
+

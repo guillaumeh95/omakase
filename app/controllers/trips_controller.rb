@@ -51,6 +51,7 @@ class TripsController < ApplicationController
   def update
     if params[:trip]
       @trip.comment = params[:trip][:comment]
+      @trip.save
       setup_activities
       render :edit
     else
