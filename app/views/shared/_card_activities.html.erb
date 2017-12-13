@@ -26,8 +26,10 @@
             <% end %>
           <% end %>
         </p>
+        <p>To book: <%= activity.to_book ? "Yes" : "No" %></p>
         <%= link_to "Website", activity.website, target: "_blank" %>
       </div>
     <% end %>
   </div>
 </div>
+
