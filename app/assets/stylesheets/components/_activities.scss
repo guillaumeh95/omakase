@@ -113,11 +113,14 @@
 }
 
 #comment-btn {
+  display: flex;
+  align-items: center;
   color: $red;
   text-decoration: none;
   margin-right: 10px;
   .fa {
     font-size: 20px;
+    margin-right: 6px;
   }
 }
 

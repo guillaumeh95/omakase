@@ -6,7 +6,7 @@
       </div>
       <div class="modal-body comment-body">
         <%= simple_form_for [trip], url: trip_path(trip), method: :patch do |f| %>
-          <%= f.input :comment, label: 'Comment' %>
+          <%= f.input :comment, label: 'Comment', input_html: {value: trip.comment } %>
           <%= f.submit "Save", class: "btn-primary btn-save" %>
         <% end %>
       </div>

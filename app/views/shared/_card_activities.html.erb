@@ -2,6 +2,7 @@
   <% unless clicked %>
     <%= link_to "", trip_visits_path(trip, activity_id: activity.id), class:"absolute-link", method:"post", remote: true %>
   <% end %>
+
   <% if trip.visits.last&.activity == activity %>
     <%= link_to(trip_visit_path(trip, trip.visits.last), class: "delete-link", method: :delete, remote: true) do %>
       <i class="fa fa-times" aria-hidden="true"></i>
@@ -25,8 +26,10 @@
             <% end %>
           <% end %>
         </p>
+        <p>To book: <%= activity.to_book ? "Yes" : "No" %></p>
         <%= link_to "Website", activity.website, target: "_blank" %>
       </div>
     <% end %>
   </div>
 </div>
+
