@@ -158,13 +158,19 @@ function initMap() {
   map.mapTypes.set('styled_map', styledMapType);
   map.setMapTypeId('styled_map');
 
+
   var place1 = new google.maps.Marker({
     position: marker0,
     map: map,
     title: 'Marker0'
   });
 
-  console.log(place1);
+  var image1 = 'http://res.cloudinary.com/djlkudqpv/image/upload/c_scale,w_35/v1513159364/icon2_ujdmps.png';
+  var imageMarker1 = new google.maps.Marker({
+    position: marker0,
+    map: map,
+    icon: image1
+  });
 
   var place2 = new google.maps.Marker({
     position: marker1,
@@ -176,6 +182,20 @@ function initMap() {
     position: marker2,
     map: map,
     title: 'Marker2'
+  });
+
+  var image2 = 'http://res.cloudinary.com/djlkudqpv/image/upload/c_scale,w_35/v1513159364/icon1_dwczyx.png';
+  var imageMarker2 = new google.maps.Marker({
+    position: marker1,
+    map: map,
+    icon: image2
+  });
+
+  var image3 = 'http://res.cloudinary.com/djlkudqpv/image/upload/c_scale,w_35/v1513159364/icon3_v4x5ig.png';
+  var imageMarker3 = new google.maps.Marker({
+    position: marker2,
+    map: map,
+    icon: image3
   });
 
   var placeArray = [place1, place2, place3];
