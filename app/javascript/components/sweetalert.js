@@ -35,5 +35,4 @@ function sweetAlertDelete() {
   });
 }
 
-
 export { sweetAlertDelete };
