@@ -117,14 +117,15 @@
     height: 200px;
   }
   h5 {
-    font-size: 12px;
+    font-size: 10px;
     font-weight: lighter;
     text-align: center;
     margin-top: -5px;
     margin-bottom: 15px;
   }
   h6 {
-    font-size: 14px;
+    font-size: 12px;
+    font-weight: lighter;
     text-align: center;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -133,7 +134,7 @@
 
 
 .pdf-map {
-  border: 3px solid #FA360A;
+  border: 2px solid #FA360A;
   background: rgba(250, 250, 250, 0.2);
   position: relative;
   margin-top: 20px;

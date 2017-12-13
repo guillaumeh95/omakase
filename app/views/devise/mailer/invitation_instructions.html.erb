@@ -1,26 +1,21 @@
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i|Work+Sans:100,200,300,400,500,600,700,800,900|Monoton" rel="stylesheet">
 
-<div class="container-mailer">
-
+<div style="width: 600px; text-align: justify; font-family: Source Sans Pro, sans-serif;">
   <div class="content-mailer">
      <p><%= image_tag "map-nav.png", {class: "mailer-icon"}%>
         <%= t("devise.mailer.invitation_instructions.hello", first_name: @resource.first_name) %>,</p>
 
       <p><%= t("devise.mailer.invitation_instructions.someone_invited_you", url: root_url) %></p>
 
-      <h3><%= link_to t("devise.mailer.invitation_instructions.accept"), accept_invitation_url(@resource, :invitation_token => @token) %></h3>
+      <%= link_to t("devise.mailer.invitation_instructions.accept"), accept_invitation_url(@resource, :invitation_token => @token),  {:style=>'border: 3px solid #FA360A; border-radius: 4px; padding: 10px; background-color: #f7f7f7;cursor: pointer; color: #FA360A; font-family: Source Sans Pro, sans-serif; font-size: 16px; text-decoration: none !important; font-weight:400;'} %>
 
       <% if @resource.invitation_due_at %>
         <p><%= t("devise.mailer.invitation_instructions.accept_until", due_date: l(@resource.invitation_due_at, format: :'devise.mailer.invitation_instructions.accept_until_format')) %></p>
       <% end %>
 
       <p><%= t("devise.mailer.invitation_instructions.ignore").html_safe %></p>
+
       </div>
-
-    <div class="image-mailer">
-      <%= image_tag "icons/origami.svg", {class: "mailer-end-img"}%>
-    </div>
-
 </div>
 
 
