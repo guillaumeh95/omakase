@@ -96,6 +96,28 @@
   }
 }
 
+.card-activity-description-full {
+  padding-left: 6px;
+  h2 {
+    margin: 0;
+    margin-bottom: 6px;
+    font-size: 18px;
+  }
+  p {
+    margin: 0;
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: 300;
+  }
+  a {
+    color: $red;
+  }
+}
+
+.to-book {
+  color: black;
+  background-color: yellow;
+}
 .submit-edit-trip {
   display: flex;
   justify-content: space-between;
