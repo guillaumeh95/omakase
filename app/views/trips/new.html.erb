@@ -1,5 +1,18 @@
 <%= render 'shared/navbar' %>
 <div class="container">
+  <!-- Tabs -->
+  <ul class="nav nav-tabs nav-justified" role="tablist">
+    <li class="nav-item active">
+      <a class="nav-link" data-toggle="tab" href="#created-trips" role="tab">
+        <i class="fa fa-paper-plane fa-fw" aria-hidden="true"></i> General information
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#received-trips" role="tab">
+        <i class="fa fa-globe fa-fw" aria-hidden="true"></i> Received Trips
+      </a>
+    </li>
+  </ul>
   <div class="form-post">
     <h3> Let's define your friend's profile !</h3>
     <h6> Be as precise as possible so we can provide you with the most suited activities </h6>
