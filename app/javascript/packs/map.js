@@ -165,7 +165,7 @@ function initMap() {
     title: 'Marker0'
   });
 
-  var image1 = 'http://res.cloudinary.com/djlkudqpv/image/upload/c_scale,h_66,w_47/v1513159364/icon1_dwczyx.png';
+  var image1 = 'http://res.cloudinary.com/djlkudqpv/image/upload/c_scale,w_35/v1513159364/icon2_ujdmps.png';
   var imageMarker1 = new google.maps.Marker({
     position: marker0,
     map: map,
@@ -184,14 +184,14 @@ function initMap() {
     title: 'Marker2'
   });
 
-  var image2 = 'http://res.cloudinary.com/djlkudqpv/image/upload/c_scale,w_46/v1513159364/icon2_ujdmps.png';
+  var image2 = 'http://res.cloudinary.com/djlkudqpv/image/upload/c_scale,w_35/v1513159364/icon1_dwczyx.png';
   var imageMarker2 = new google.maps.Marker({
     position: marker1,
     map: map,
     icon: image2
   });
 
-  var image3 = 'http://res.cloudinary.com/djlkudqpv/image/upload/c_scale,h_53,w_50/v1513159364/icon3_v4x5ig.png';
+  var image3 = 'http://res.cloudinary.com/djlkudqpv/image/upload/c_scale,w_35/v1513159364/icon3_v4x5ig.png';
   var imageMarker3 = new google.maps.Marker({
     position: marker2,
     map: map,
