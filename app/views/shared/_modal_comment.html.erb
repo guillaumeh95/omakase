@@ -1,13 +1,13 @@
-<div id="modal-comment-<%= trip.id %>" class="modal fade" tabindex="-1" role="dialog">
+<div id="modal-comment" class="modal fade" tabindex="-1" role= "dialog">
   <div class="modal-dialog modal-sm" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h4 class="modal-title text-center comment-title">Add a comment for <%= trip.title %> (optional)</h4>
       </div>
       <div class="modal-body comment-body">
-        <%= simple_form_for [trip], url: send_email_trip_path(trip), method: :get do |f| %>
+        <%= simple_form_for [trip], url: trip_path(trip), method: :patch do |f| %>
           <%= f.input :comment, label: 'Comment' %>
-          <%= f.submit "Send to Friend", class: "btn btn-primary" %>
+          <%= f.submit "Save", class: "btn-primary btn-save" %>
         <% end %>
       </div>
     </div><!-- /.modal-content -->
