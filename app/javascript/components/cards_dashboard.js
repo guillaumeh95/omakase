@@ -4,7 +4,7 @@ const cards = document.querySelectorAll(".card.full-card");
 if (cards) {
   cards.forEach((card) => {
     card.addEventListener("mouseenter", (event) => {
-      const target = event.currentTarget.querySelector(".trip-details");
+      const target = event.currentTarget.querySelector(".trip-actions");
       target.classList.remove('hidden');
       target.classList.add('fade-card');
       const title = event.currentTarget.querySelector(".trip-title");
@@ -13,7 +13,7 @@ if (cards) {
 
     });
     card.addEventListener("mouseleave", (event) => {
-      const target = event.currentTarget.querySelector(".trip-details");
+      const target = event.currentTarget.querySelector(".trip-actions");
       target.classList.add('hidden');
       target.classList.remove('fade-card');
       const title = event.currentTarget.querySelector(".trip-title-large");
