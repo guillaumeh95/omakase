@@ -3,7 +3,7 @@
     <%= link_to "", trip_visits_path(trip, activity_id: activity.id), class:"absolute-link", method:"post", remote: true %>
   <% end %>
 
-  <% if trip.visits.last&.activity == activity %>
+  <% if trip.visits.order(id: :asc).last&.activity == activity %>
     <%= link_to(trip_visit_path(trip, trip.visits.last), class: "delete-link", method: :delete, remote: true) do %>
       <i class="fa fa-times" aria-hidden="true"></i>
     <% end %>
