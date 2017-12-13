@@ -24,17 +24,12 @@
         </div>
         <div class="trip-actions">
           <% if created_trip %>
-          <%= link_to('<i class="fa fa-comment" aria-hidden="true"></i>'.html_safe, "#", data: { toggle: "modal", target: "#modal-comment-#{trip.id}" } ) %>
+            <%= link_to('<i class="fa fa-comment" aria-hidden="true"></i>'.html_safe, "#", data: { toggle: "modal", target: "#modal-comment-#{trip.id}" } ) %>
             <%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>'.html_safe, edit_trip_path(trip) %>
           <% end %>
-          <!-- One is shown to allow addEventListener, one is hidden to allow method to be deleted -->
-          <!-- <i class="fa fa-trash" id= "sweetalert-delete" aria-hidden="true"></i> -->
           <%= link_to '<i class="fa fa-trash" aria-hidden="true"></i>'.html_safe, "#",
             data: { trip_id: "#{trip.id}"},
             id: "sweetalert-delete" %>
-            <%#= link_to '<i class="fa fa-trash" aria-hidden="true"></i>'.html_safe, trip_path(trip),
-            method: :delete,
-            data: { confirm: "sure" } %>
         </div>
       <div class="trip-date">
         <i class="fa fa-calendar" aria-hidden="true"></i>

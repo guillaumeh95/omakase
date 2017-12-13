@@ -54,7 +54,7 @@ class TripsController < ApplicationController
     @trip.destroy
     respond_to do |format|
       format.html { redirect_to dashboard_user_path(current_user) }
-      format.js do
+      format.json do
         @user = current_user
         @trips_host = Trip.where(host_id: current_user.id).sort.reverse
         @trips_tourist = Trip.where(tourist_id: current_user.id).sort.reverse
@@ -62,6 +62,7 @@ class TripsController < ApplicationController
         @trips_host_past = select_past_trips(@trips_host)
         @trips_tourist_incoming = select_incoming_trips(@trips_tourist)
         @trips_tourist_past = select_past_trips(@trips_tourist)
+        @partial = ApplicationController.renderer.render(partial: "users/dashboard_content", locals: { trips_host: @trips_host, trips_tourist: @trips_tourist, trips_host_incoming: @trips_host_incoming, trips_host_past: @trips_host_past, trips_tourist_incoming: @trips_tourist_incoming, trips_tourist_past: @trips_tourist_past })
       end
     end
   end

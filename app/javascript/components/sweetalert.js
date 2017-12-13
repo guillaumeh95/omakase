@@ -1,4 +1,5 @@
 import swal from 'sweetalert2';
+import $ from 'jquery';
 
 function sweetAlertDelete() {
   const link = document.getElementById('sweetalert-delete')
@@ -18,11 +19,16 @@ function sweetAlertDelete() {
           headers: {
             'X-Requested-With': 'XMLHttpRequest',
             'X-CSRF-Token': csrfToken,
-            'Content-Type': 'application/javascript',
-            'Accept': 'application/javascript'
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
           },
           credentials: 'same-origin'
-        });
+        })
+          .then(res => res.json())
+          .then((data) => {
+            const dashboard = document.querySelector('.dashboard-container');
+            dashboard.innerHTML = data.partial;
+          });
       };
     });
   });
