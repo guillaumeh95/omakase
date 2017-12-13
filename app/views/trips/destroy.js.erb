@@ -1,16 +1,7 @@
-// récupérer le container de ton dashboard
-
 function refreshDashboardContent(innerHTML) {
   const dashboard = document.querySelector('.dashboard-container');
   dashboard.innerHTML = innerHTML;
 }
 
-refreshDashboardContent(`<%= j render "users/dashboard_content",
-  trips_host: @trips_host,
-  trips_tourist: @trips_tourist,
-  trips_host_incoming: @trips_host_incoming,
-  trips_host_past: @trips_host_past,
-  trips_tourist_incoming: @trips_tourist_incoming,
-  trips_tourist_past: @trips_tourist_past
-%>`);
+refreshDashboardContent('<%= j render "users/dashboard_content", trips_host: @trips_host, trips_tourist: @trips_tourist, trips_host_incoming: @trips_host_incoming, trips_host_past: @trips_host_past, trips_tourist_incoming: @trips_tourist_incoming, trips_tourist_past: @trips_tourist_past %>');
 
