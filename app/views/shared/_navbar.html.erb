@@ -20,8 +20,11 @@
         <%= link_to '<i class="fa fa-plus" aria-hidden="true"></i> New Trip'.html_safe, new_trip_path, class: "navbar-wagon-item navbar-wagon-link" %>
         <%= link_to '<i class="fa fa-tachometer" aria-hidden="true"></i> My Dashboard'.html_safe, dashboard_user_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
         <%= link_to '<i class="fa fa-sign-out" aria-hidden="true"></i> Sign Out'.html_safe, destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %>
+        <% if current_user.photo? %>
+          <%= image_tag current_user.photo, {class:"navbar-avatar"} %>
+        <% else %>
         <div class="empty-avatar"><%= image_tag "icons/no-image.svg", {class:"navbar-empty-avatar"} %><p>  <%= current_user.first_name[0] %><%= current_user.last_name[0] %> </p></div>
-
+        <% end %>
       <% else %>
         <!-- Login link (when logged out) -->
 
