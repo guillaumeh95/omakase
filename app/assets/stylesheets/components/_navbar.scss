@@ -66,8 +66,10 @@
 }
 .navbar-avatar {
   border-radius: 50%;
-  height: 30px;
-  width: 30px;
+  height: 50px;
+  width: 50px;
+  border: 2px solid $red;
+  padding: 1px;
 }
 
 .empty-avatar {
@@ -77,8 +79,8 @@
 
 .empty-avatar p{
   position: absolute;
-  top: 15px;
-  left: 15px;
+  top: 14px;
+  left: 16px;
 }
 
 .navbar-empty-avatar {
