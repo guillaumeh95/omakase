@@ -11,7 +11,6 @@ descriptionBoxes.forEach((descriptionBox) => {
       event.currentTarget.classList.remove('active');
       event.currentTarget.querySelector('input[type=hidden]').value = false;
     } else {
-      // Si déjà 3 éléments sélectionnés
       if (activeBoxes.length === 3) {
         swal({
           title: 'You can select only three profiles',
@@ -19,56 +18,53 @@ descriptionBoxes.forEach((descriptionBox) => {
           icon: "warning",
           dangerMode: true
         });
+        submit.disabled = true;
       } else {
         event.currentTarget.classList.add('active');
-        // Ajouter la value true au input hidden correspondant
+        // Add true value to hidden
         event.currentTarget.querySelector('input[type=hidden]').value = true;
       }
     }
+
     const submit = document.getElementById('submit-trip');
-    // Compter le nombre de checkboxes cochées
-    // Si yen a 3
     if (activeBoxes.length === 2) {
-      // On enable le submit
+      // Enable submit
       submit.disabled = false;
     } else {
-      // On disable
+      // Disable submit
       submit.disabled = true;
     }
     countActivedChoices();
   });
 });
 
+// Status selection
 const statusBoxes = document.querySelectorAll('.select-status');
-// Parcourir les checkboxes
+// Run through all checkboxes
 statusBoxes.forEach((statusBox) => {
-  // Ecouter le click sur chacune d'entre elles
+  // Listen the click on each checkbox
   statusBox.addEventListener('click', (event) => {
+    // Active boxes selection
     const activeBoxes = document.querySelectorAll('.select-status.active');
     if (event.currentTarget.classList.contains('active')) {
       event.currentTarget.classList.remove('active');
       event.currentTarget.querySelector('input[type=hidden]').disabled = true;
     } else {
-      // Si déjà 3 éléments sélectionnés
       if (activeBoxes.length === 1) {
-        swal({
-          title: 'You can only select one status',
-          type: 'warning',
-          icon: "warning",
-          dangerMode: true
-        });
+        activeBoxes[0].classList.remove('active');
+        event.currentTarget.classList.add('active');
       } else {
         event.currentTarget.classList.add('active');
-        // Ajouter la value true au input hidden correspondant
+        // Add true value to hidden
         event.currentTarget.querySelector('input[type=hidden]').disabled = false;
       }
     }
   });
 });
 
+// Number of selected profiles count
 function countActivedChoices() {
-  const activeChoices = document.getElementById("active-choices")
-  let numberActiveChoices = document.querySelectorAll(".description-checkboxes .active").length
-  activeChoices.innerHTML = numberActiveChoices
-
+  const activeChoices = document.getElementById("active-choices");
+  let numberActiveChoices = document.querySelectorAll(".description-checkboxes .active").length;
+  activeChoices.innerHTML = numberActiveChoices;
 }
