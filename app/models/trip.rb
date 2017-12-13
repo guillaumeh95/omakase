@@ -9,7 +9,7 @@ class Trip < ApplicationRecord
   has_many :activities, through: :visits
 
   # Validations
-  validates :title, presence: true, length: { maximum: 30, too_long: "%{count} characters is the maximum allowed" }
+  validates :title, presence: true, length: { maximum: 40, too_long: "%{count} characters is the maximum allowed" }
   validates :date, presence: true
   validates :host_id, presence: true
   validates :tourist_id, presence: true
