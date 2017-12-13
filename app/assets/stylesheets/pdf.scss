@@ -50,14 +50,11 @@
   padding: 10px 10px;
   margin-bottom: 10px;
   width: 100%;
-
-  //background-color: white;
 }
 
 .pdf-trip-host {
   color : #FA360A;
   text-align: center;
-
 }
 
 .pdf-trip-details{
@@ -104,6 +101,7 @@
 .pdf-modal-activity {
   color: #FA360A;
 }
+
 .pdf-modal-activity img {
   object-fit: cover;
   height: 200px;
@@ -115,14 +113,15 @@
   text-align: center;
   margin-top: -5px;
   margin-bottom: 15px;
-  }
+}
+
 .pdf-modal-activity h6 {
   font-size: 12px;
   font-weight: lighter;
   text-align: center;
   margin-top: 10px;
   margin-bottom: 10px;
-  }
+}
 
 .pdf-map {
   border: 2px solid #FA360A;
