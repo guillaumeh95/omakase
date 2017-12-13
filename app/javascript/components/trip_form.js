@@ -13,7 +13,8 @@ descriptionBoxes.forEach((descriptionBox) => {
     } else {
       if (activeBoxes.length === 3) {
         swal({
-          title: 'You can select only three profiles',
+          title: 'Warning',
+          text: 'You can select only three profiles',
           type: 'warning',
           icon: "warning",
           dangerMode: true

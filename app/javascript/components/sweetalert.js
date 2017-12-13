@@ -6,7 +6,8 @@ function sweetAlertDelete() {
   link.addEventListener('click', (event) => {
     event.preventDefault();
     swal({
-      title: "Are you sure you want to delete this trip?",
+      title: 'Warning',
+      text: "Are you sure you want to delete this trip?",
       type: 'warning',
       showCancelButton: true,
       confirmButtonText: 'Yes, delete it!',
