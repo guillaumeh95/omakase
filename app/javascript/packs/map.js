@@ -147,7 +147,6 @@ function initMap() {
 
 
   var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 13,
     center: marker0,
     mapTypeControlOptions: {
     mapTypeIds: ['roadmap', 'satellite', 'hybrid', 'terrain',

@@ -24,12 +24,12 @@
         </div>
         <div class="trip-actions">
           <% if created_trip %>
-          <%= link_to('<i class="fa fa-comment" aria-hidden="true"></i>'.html_safe, "#", data: { toggle: "modal", target: "#modal-comment-#{trip.id}" } ) %>
+            <%= link_to('<i class="fa fa-comment" aria-hidden="true"></i>'.html_safe, "#", data: { toggle: "modal", target: "#modal-comment-#{trip.id}" } ) %>
             <%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>'.html_safe, edit_trip_path(trip) %>
           <% end %>
-            <%= link_to '<i class="fa fa-trash" aria-hidden="true"></i>'.html_safe, trip_path(trip),
-            method: :delete,
-            data: { confirm: "Are you sure you want to delete this trip?" } %>
+          <%= link_to '<i class="fa fa-trash" aria-hidden="true"></i>'.html_safe, "#",
+            data: { trip_id: "#{trip.id}"},
+            id: "sweetalert-delete" %>
         </div>
       <div class="trip-date">
         <i class="fa fa-calendar" aria-hidden="true"></i>

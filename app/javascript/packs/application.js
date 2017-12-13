@@ -15,12 +15,20 @@ import {initMap} from "./map";
 import "../components/cards_dashboard";
 import {initSliders} from "../components/slider";
 import { setAlertsTimeouts } from '../components/alert';
+import { sweetAlertDelete } from '../components/sweetalert';
+
+// Sweet alert messages
+if (document.getElementById('sweetalert-delete')) {
+  sweetAlertDelete();
+};
 
 // Sliders of new trip creation
 initSliders();
 
 //map display
-initMap();
+if (document.getElementById('map') ) {
+  initMap();
+};
 
 
 
@@ -35,6 +43,6 @@ initMap();
 // Alerts disappearing automatically
 if (document.querySelector(".alert")) {
   setAlertsTimeouts();
-}
+};
 
 // addDeleteLink();

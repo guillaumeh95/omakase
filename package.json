@@ -9,7 +9,9 @@
     "coffeescript": "1.12.7",
     "flatpickr": "^4.1.4",
     "gmaps": "^0.4.24",
-    "jquery": "^3.2.1"
+    "jquery": "^3.2.1",
+    "sweetalert": "^2.0.8",
+    "sweetalert2": "^7.0.9"
   },
   "devDependencies": {
     "webpack-dev-server": "^2.9.5"

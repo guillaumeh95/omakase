@@ -7,7 +7,13 @@ class TripsController < ApplicationController
       format.html
       format.pdf do
         render  pdf:      @trip.tourist_first_name + "_trip_to_paris",   # Excluding ".pdf" extension.
-                layout:   'pdf.html.erb'   # Use different layout
+                layout:   'pdf.html.erb',   # Use different layout
+                margin:  {  top:              5,                     # default 10 (mm)
+                            bottom:            0,
+                            left:              7,
+                            right:             7 },
+                background:                    true
+                # orientation:                    'Landscape'
       end
     end
   end
@@ -55,7 +61,19 @@ class TripsController < ApplicationController
 
   def destroy
     @trip.destroy
-    redirect_to dashboard_user_path(current_user)
+    respond_to do |format|
+      format.html { redirect_to dashboard_user_path(current_user) }
+      format.json do
+        @user = current_user
+        @trips_host = Trip.where(host_id: current_user.id).sort.reverse
+        @trips_tourist = Trip.where(tourist_id: current_user.id).sort.reverse
+        @trips_host_incoming = select_incoming_trips(@trips_host)
+        @trips_host_past = select_past_trips(@trips_host)
+        @trips_tourist_incoming = select_incoming_trips(@trips_tourist)
+        @trips_tourist_past = select_past_trips(@trips_tourist)
+        @partial = ApplicationController.renderer.render(partial: "users/dashboard_content", locals: { trips_host: @trips_host, trips_tourist: @trips_tourist, trips_host_incoming: @trips_host_incoming, trips_host_past: @trips_host_past, trips_tourist_incoming: @trips_tourist_incoming, trips_tourist_past: @trips_tourist_past })
+      end
+    end
   end
 
   def send_email
