@@ -33,7 +33,7 @@
   bottom: 0;
   right: 0;
   width: 100%;
-  z-index: 2;
+  z-index: 3;
   transition: all 1s ease;
   cursor: pointer;
 }
@@ -46,6 +46,7 @@
   position: absolute;
   width: 100%;
   text-align: center;
+  z-index: 2;
   top: 40%;
   font-size: 40px;
 }
@@ -112,7 +113,7 @@
   color: $red;
 }
 .status-green {
-  color: rgba(80, 80, 80, 1);
+  color: $green;
 }
 
 .trip-card {

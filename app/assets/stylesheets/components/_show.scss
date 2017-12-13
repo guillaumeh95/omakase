@@ -6,6 +6,11 @@
   border-radius: $border-radius-base;
 }
 
+.show-button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
 .show{
   color : $red;
   background: linear-gradient(-140deg, rgba(217, 223, 255, 150), rgba(0, 0, 0,50));
@@ -49,7 +54,6 @@
   flex: 1;
   padding: 10px 10px;
   width: 100%;
-  margin-bottom: 10px;
   //background-color: white;
 }
 

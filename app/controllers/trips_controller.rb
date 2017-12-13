@@ -58,7 +58,18 @@ class TripsController < ApplicationController
 
   def destroy
     @trip.destroy
-    redirect_to dashboard_user_path(current_user)
+    respond_to do |format|
+      format.html { redirect_to dashboard_user_path(current_user) }
+      format.js do
+        @user = current_user
+        @trips_host = Trip.where(host_id: current_user.id).sort.reverse
+        @trips_tourist = Trip.where(tourist_id: current_user.id).sort.reverse
+        @trips_host_incoming = select_incoming_trips(@trips_host)
+        @trips_host_past = select_past_trips(@trips_host)
+        @trips_tourist_incoming = select_incoming_trips(@trips_tourist)
+        @trips_tourist_past = select_past_trips(@trips_tourist)
+      end
+    end
   end
 
   def send_email
@@ -97,10 +108,12 @@ class TripsController < ApplicationController
     coordinates = []
     trip.activities.each { |activity| coordinates << {lat: activity.latitude, lng: activity.longitude } }
     size = "640x640"
-    marker_one = "color:blue%7Clabel:A%7C#{coordinates[0][:lat]},#{coordinates[0][:lng]}"
-    marker_two = "color:blue%7Clabel:B%7C#{coordinates[1][:lat]},#{coordinates[1][:lng]}"
-    marker_three = "color:blue%7Clabel:C%7C#{coordinates[2][:lat]},#{coordinates[2][:lng]}"
-    return "https://maps.googleapis.com/maps/api/staticmap?size=#{size}0&maptype=roadmap&markers=#{marker_one}&markers=#{marker_two}&markers=#{marker_three}&key=#{ENV['GOOGLE_API_STATIC_KEY']}"
+    if @trip.visits.count == 3
+      marker_one = "color:blue%7Clabel:A%7C#{coordinates[0][:lat]},#{coordinates[0][:lng]}"
+      marker_two = "color:blue%7Clabel:B%7C#{coordinates[1][:lat]},#{coordinates[1][:lng]}"
+      marker_three = "color:blue%7Clabel:C%7C#{coordinates[2][:lat]},#{coordinates[2][:lng]}"
+      return "https://maps.googleapis.com/maps/api/staticmap?size=#{size}0&maptype=roadmap&markers=#{marker_one}&markers=#{marker_two}&markers=#{marker_three}&key=#{ENV['GOOGLE_API_STATIC_KEY']}"
+    end
   end
 end
 
