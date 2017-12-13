@@ -178,21 +178,21 @@ function initMap() {
   });
 
 
-  var image1 = 'http://res.cloudinary.com/djlkudqpv/image/upload/c_scale,w_40/v1513163786/1_ljmdmd.png';
+  var image1 = 'http://res.cloudinary.com/djlkudqpv/image/upload/c_scale,w_45/v1513163786/1_ljmdmd.png';
   var imageMarker1 = new google.maps.Marker({
     position: marker0,
     map: map,
     icon: image1
   });
 
-  var image2 = 'http://res.cloudinary.com/djlkudqpv/image/upload/c_scale,w_40/v1513163787/2_c5kne3.png';
+  var image2 = 'http://res.cloudinary.com/djlkudqpv/image/upload/c_scale,w_45/v1513163787/2_c5kne3.png';
   var imageMarker2 = new google.maps.Marker({
     position: marker1,
     map: map,
     icon: image2
   });
 
-  var image3 = 'http://res.cloudinary.com/djlkudqpv/image/upload/c_scale,w_40/v1513163787/3_i4d0wn.png';
+  var image3 = 'http://res.cloudinary.com/djlkudqpv/image/upload/c_scale,w_45/v1513163787/3_i4d0wn.png';
   var imageMarker3 = new google.maps.Marker({
     position: marker2,
     map: map,

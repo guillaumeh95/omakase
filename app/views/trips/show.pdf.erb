@@ -1,11 +1,13 @@
-<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i|Work+Sans:100,200,300,400,500,600,700,800,900|Monoton" rel="stylesheet">
+<!-- <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i|Work+Sans:100,200,300,400,500,600,700,800,900|Monoton" rel="stylesheet">
 
-<%= stylesheet_link_tag wicked_pdf_asset_base64("pdf") %>
-<%= wicked_pdf_stylesheet_link_tag "pdf" %>
+<%#= stylesheet_link_tag wicked_pdf_asset_base64("pdf") %>
+<%#= favicon_link_tag 'favicon.ico'%>
+<%#= wicked_pdf_stylesheet_link_tag "pdf" -%> -->
 
 <div class="pdf-body">
 
-  <div><%= image_tag wicked_pdf_asset_base64('map-nav.png'), class:"pdf-logo" %>
+  <div>
+    <%= image_tag wicked_pdf_asset_base64('map-nav.png'), class:"pdf-logo" %>
     <div class="pdf-content">
       <div class="pdf-header">
         <h4 class="pdf-title text-center" id="ouverture_pdf"><%= @trip.title %></h4>
@@ -22,15 +24,15 @@
       </div>
       <i class="fa fa-leaf" aria-hidden="true"></i>
       <div class="pdf-trip-details">
-        <% @trip.filters.each do |profile| %>
+        <%# @trip.filters.each do |profile| %>
           <div class="pdf-trip-infos">
-           <% fav_icon_names = {sight_seeing_adventurer: "camera-retro", art_lover: "paint-brush", serial_shopper: "shopping-bag", nature_lover: "cutlery", food_addict: "leaf", sport_lover: "futbol-o", history_passionate: "university", tech_fan: "mobile", relaxed: "hand-peace-o", city_wanderer: "eye"} %>
-            <% fav_icon_names.each do |key, value| %>
-              <% if key.to_s == profile %>
-                <% faviconname = fav_icon_names[:"#{profile}"] %>
+           <%# fav_icon_names = {sight_seeing_adventurer: "camera-retro", art_lover: "paint-brush", serial_shopper: "shopping-bag", nature_lover: "cutlery", food_addict: "leaf", sport_lover: "futbol-o", history_passionate: "university", tech_fan: "mobile", relaxed: "hand-peace-o", city_wanderer: "eye"} %>
+            <%# fav_icon_names.each do |key, value| %>
+              <%# if key.to_s == profile %>
+                <%# faviconname = fav_icon_names[:"#{profile}"] %>
                 <i class="fa fa-<%= faviconname %>" aria-hidden="true"></i>
-              <% end %>
-           <% end %>
+              <%# end %>
+           <%# end %>
             <p><%= profile.gsub('_', " ").split.map(&:capitalize).join(' ') %></p>
           </div>
           <% end %>

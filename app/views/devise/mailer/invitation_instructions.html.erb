@@ -8,7 +8,7 @@
       <p><%= t("devise.mailer.invitation_instructions.someone_invited_you", url: root_url) %></p>
 
       <br>
-      <%= link_to t("devise.mailer.invitation_instructions.accept"), accept_invitation_url(@resource, :invitation_token => @token),  {:style=>'border: 3px solid #FA360A; border-radius: 4px; padding: 10px; background-color: #f7f7f7;cursor: pointer; color: #FA360A; font-family: Source Sans Pro, sans-serif; font-size: 16px; text-decoration: none !important; font-weight:400;'} %>
+      <%= link_to t("devise.mailer.invitation_instructions.accept"), accept_invitation_url(@resource, :invitation_token => @token),  {:style=>'border: 3px solid #FA360A; border-radius: 4px; padding: 10px; background-color: #f7f7f7;cursor: pointer; color: #FA360A; font-family: Source Sans Pro, sans-serif; font-size: 14px; text-decoration: none !important; font-weight:400;'} %>
        <br>
 
       <% if @resource.invitation_due_at %>
