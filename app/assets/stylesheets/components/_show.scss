@@ -44,8 +44,14 @@
   color: $red;
 }
 
+.trip-summary-content {
+  display: flex;
+  justify-content: space-between;
+
+}
 
 .trip-summary {
+  flex: 1;
   padding: 10px 10px;
   width: 100%;
   //background-color: white;
@@ -60,30 +66,33 @@
 }
 
 .trip-details {
-  min-width: 300px;
+  flex: 0 0 70%;
+  color : $red;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .trip-infos{
-  flex: 0 0 15%;
+  color : $red;
   text-align: center;
   padding: 10px;
+  max-width: 200px;
+
 }
 
 
 .trip-infos .fa{
-  color: rgba(80, 80, 80, 1);
+  color : $red;
   font-size : 20px;
 }
 
 .trip-infos p{
-  color: rgba(80, 80, 80, 1);
+  color : $red;
   text-align: center;
   padding-top: 10px;
 }
-
 
 .trip-icons {
   display: inline-block;

@@ -7,7 +7,13 @@ class TripsController < ApplicationController
       format.html
       format.pdf do
         render  pdf:      @trip.tourist_first_name + "_trip_to_paris",   # Excluding ".pdf" extension.
-                layout:   'pdf.html.erb'   # Use different layout
+                layout:   'pdf.html.erb',   # Use different layout
+                margin:  {  top:              5,                     # default 10 (mm)
+                            bottom:            0,
+                            left:              7,
+                            right:             7 },
+                background:                    true
+                # orientation:                    'Landscape'
       end
     end
   end
