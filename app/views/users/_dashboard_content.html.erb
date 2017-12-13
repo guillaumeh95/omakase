@@ -26,7 +26,7 @@
           <% if trips_host.count.zero? %>
             <div class="no-trip">You have not created any trips yet</div>
             <div class="btn-new-trip">
-              <%= link_to '<i class="fa fa-plus fa-fw" aria-hidden="true"></i> Create First Trip'.html_safe, new_trip_path, class: "btn btn-small btn-show" %>
+              <%= link_to '<i class="fa fa-plus fa-fw" aria-hidden="true"></i> Create First Trip'.html_safe, new_trip_path, class: "btn btn-primary" %>
             </div>
           <% else %>
             <% if trips_host_incoming.count.zero? %>
