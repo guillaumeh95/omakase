@@ -8,11 +8,32 @@
               <div class="trip-comments">
               <p><%= @trip.comment %></p>
               </div>
-            <% else %>
             <% end %>
         </div>
 
-        <div class="trip-photos text-center">
+      <div class="trip-summary-content">
+        <div class="trip-summary">
+          <div class="trip-host"><p><%= User.find(@trip.tourist_id).first_name %> <%= User.find(@trip.tourist_id).last_name %></p><br><%= User.find(@trip.tourist_id).email%></div>
+        </div>
+
+        <div class="trip-details">
+          <% @trip.filters.each do |profile| %>
+            <div class="trip-infos">
+             <% fav_icon_names = {sight_seeing_adventurer: "camera-retro", art_lover: "paint-brush", serial_shopper: "shopping-bag", nature_lover: "cutlery", food_addict: "leaf", sport_lover: "futbol-o", history_passionate: "university", tech_fan: "mobile", relaxed: "hand-peace-o", city_wanderer: "eye"} %>
+              <% fav_icon_names.each do |key, value| %>
+
+                <% if key.to_s == profile %>
+                  <% faviconname = fav_icon_names[:"#{profile}"] %>
+                  <i class="fa fa-<%= faviconname %>" aria-hidden="true"></i>
+                <% end %>
+             <% end %>
+              <p><%= profile.gsub('_', " ").split.map(&:capitalize).join(' ') %></p>
+            </div>
+            <% end %>
+        </div>
+      </div>
+
+        <div class="trip-photos">
           <% markers = [] %> <!-- Initialize the variable markers outside the each -->
           <div class="modal-activities">
             <% @trip.visits.each do |visit| %>
@@ -45,37 +66,9 @@
 
             <div id="map" style="width: 100%; height: 600px;" data-markers="<%= markers.to_json %>"></div>
           </div>
-
-          <div class="trip-summary">
-            <div class="trip-host"><p> This map was created by <%= @trip.host.first_name %> <%= @trip.host.last_name %> for <%= User.find(@trip.tourist_id).first_name %> <%= User.find(@trip.tourist_id).last_name %></p></div>
-
-            <div class="trip-details">
-                <% @trip.filters.each do |profile| %>
-              <div class="trip-infos">
-                  <i class="fa fa-university" aria-hidden="true"></i>
-                  <p><%= profile.gsub('_', " ").split.map(&:capitalize).join(' ') %></p>
-              </div>
-                <% end %>
-              <div class="trip-infos">
-                <i class="fa fa-credit-card" aria-hidden="true"></i>
-                <p>Budget <%= Trip::BUDGET[@trip.budget] %>
-                </p>
-              </div>
-
-              <div class="trip-infos">
-                <i class="fa fa-user-secret" aria-hidden="true"></i>
-                <p>Knows The City <%= Trip::KNOWS_THE_CITY[@trip.knows_the_city] %>
-                </p>
-              </div>
-              <div class="trip-infos">
-                <i class="fa fa-male" aria-hidden="true"></i>
-                <p><%= @trip.status %></p>
-              </div>
-            </div>
-          </div>
        <div class="show-footer">
         <div class="show-button-container">
-           <%= link_to 'Send'.html_safe,dashboard_user_path(current_user), class: "btn-small btn-show" %>
+           <%= link_to 'Send'.html_safe,dashboard_user_path(current_user), class: "btn-secondary" %>
         </div>
       </div>
     </div>
