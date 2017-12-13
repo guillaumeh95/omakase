@@ -10,9 +10,9 @@
   <div class="show-header">
     <h4 class="show-title text-center" id="ouverture_show"><%= @trip.title %></h4>
     <h5 class="show-date text-center" ><%= @trip.date.strftime('%A %B %e, %Y') %></h5>
-      <% if @trip.comment %>
+      <% unless @trip.comment == "" %>
         <div class="trip-comments">
-          <p><%= @trip.comment %></p>
+          <p><i class="fa fa-comment" aria-hidden="true"></i><%= @trip.comment %></p>
         </div>
       <% end %>
   </div>
