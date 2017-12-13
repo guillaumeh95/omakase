@@ -1,22 +1,37 @@
 <%= render 'shared/navbar' %>
 <div class="container">
+  <div class="form-post">
   <!-- Tabs -->
-  <ul class="nav nav-tabs nav-justified" role="tablist">
+  <ul class="nav nav-tab nav-justified" role="tablist">
     <li class="nav-item active">
-      <a class="nav-link" data-toggle="tab" href="#created-trips" role="tab">
-        <i class="fa fa-paper-plane fa-fw" aria-hidden="true"></i> General information
+      <a class="nav-link" data-toggle="tab" href="#general-info" role="tab">
+        <i class="fa fa-address-book-o" aria-hidden="true"></i>
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#received-trips" role="tab">
-        <i class="fa fa-globe fa-fw" aria-hidden="true"></i> Received Trips
+      <a class="nav-link" data-toggle="tab" href="#more-info" role="tab">
+        <i class="fa fa-info-circle" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#status" role="tab">
+        <i class="fa fa-suitcase" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#profiles" role="tab">
+        <i class="fa fa-users" aria-hidden="true"></i>
       </a>
     </li>
   </ul>
-  <div class="form-post">
+  <div class="row">
+    <div class="col-xs-offset-2 col-xs-8 ">
     <h3> Let's define your friend's profile !</h3>
     <h6> Be as precise as possible so we can provide you with the most suited activities </h6>
+    </div>
+  </div>
     <%= simple_form_for [@trip] do |f| %>
+    <div id="general-info" >
       <div class="row">
         <div class="col-xs-offset-2 col-xs-8 ">
         <h4> <i class="fa fa-address-book-o" aria-hidden="true"></i> First, some general information </h4>
@@ -25,6 +40,7 @@
           </div>
         </div>
       </div>
+    </div>
       <div class="row">
         <div class="col-xs-offset-2 col-xs-8">
           <div class="form-group">
@@ -47,16 +63,18 @@
         </div>
       </div>
       <div class="shadow-separator"></div>
+      <div id="general-info" >
       <div class="row">
-        <div class="col-xs-offset-1 col-xs-10">
+        <div class="col-xs-offset-1 col-xs-10 col-xs-offset-1">
         <h4> <i class="fa fa-info-circle" aria-hidden="true"></i> A bit more information </h4>
-          <div class="form-group">
+          <div class="form-group" id="more-info" >
             <%= f.input :knows_the_city, label: "How well does your friend know the city?", input_html: {class: "sliderknowledge"} %>
           </div>
         </div>
       </div>
+      </div>
       <div class="row">
-        <div class="col-xs-offset-1 col-xs-10">
+        <div class="col-xs-offset-1 col-xs-10 col-xs-offset-1">
           <div class="form-group">
             <%= f.input :budget, label: "What's his/her budget?", input_html: {class: "sliderbudget"} %>
           </div>
@@ -65,7 +83,7 @@
       <div class="shadow-separator"></div>
       <h4> <i class="fa fa-suitcase" aria-hidden="true"></i> Select whether your friend is coming on his own or with company</h4>
       <div class="status-checkboxes">
-        <div class="select-status">
+        <div class="select-status" id="status">
           <i class="fa fa-male" aria-hidden="true"></i><br>
           Solo
           <%= f.input :status, as: :hidden, input_html: { value:"solo", disabled:true } %>
@@ -91,7 +109,7 @@
       <div class="shadow-separator"></div>
 
       <h4> <i class="fa fa-users" aria-hidden="true"></i> Choose 3 profiles to describe your friend (<span id="active-choices">0</span>/3)</h4>
-      <div class="description-checkboxes">
+      <div class="description-checkboxes" id="profiles">
         <div class="select-description" id="sight_seeing_adventurer">
           <i class="fa fa-camera-retro" aria-hidden="true"></i> <br>
           Sightseer Enthusiast
