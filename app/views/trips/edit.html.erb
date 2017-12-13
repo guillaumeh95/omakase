@@ -7,13 +7,17 @@
     </div>
   </div>
   <div class="submit-edit-trip">
-    <%= link_to '<i class="fa fa-plus" aria-hidden="true"></i> Add a comment'.html_safe,  "#modal-comment", id:"comment-btn", class:"", 'data-toggle'=> "modal", 'data-target'=> "#modal-comment" %>
-    <%= render 'shared/modal_comment', trip: @trip %>
-    <%= link_to "Save & Send Later", trip_path(@trip), id:"first-btn", class: @trip.visits.length == 3 ? "btn-secondary" : "btn-primary", method:"patch" %>
-    <% if @trip.visits.length == 3 %>
-      <%= link_to "Send to Friend",  "#modal-comment",  id:"last-btn", class:"btn-primary", 'data-toggle'=> "modal", 'data-target'=> "#modal-comment"  %>
-    <% else %>
-      <%= link_to "Send to Friend", send_email_trip_path(@trip), style:"display:none", id:"last-btn", class:"btn-primary" %>
-    <% end %>
+    <span>
+      <%= link_to '<i class="fa fa-plus" aria-hidden="true"></i> Add a comment'.html_safe,  "#modal-comment", id:"comment-btn", class:"", 'data-toggle'=> "modal", 'data-target'=> "#modal-comment" %>
+      <%= render 'shared/modal_comment', trip: @trip %>
+    </span>
+    <span id= "end-buttons">
+      <%= link_to "Save & Send Later", trip_path(@trip), id:"first-btn", class: @trip.visits.length == 3 ? "btn-secondary" : "btn-primary", method:"patch" %>
+      <% if @trip.visits.length == 3 %>
+        <%= link_to "Send to Friend", send_email_trip_path(@trip), id:"last-btn", class:"btn-primary" %>
+      <% else %>
+        <%= link_to "Send to Friend", send_email_trip_path(@trip), style:"display:none", id:"last-btn", class:"btn-primary" %>
+      <% end %>
+    </span>
   </div>
 </div>
