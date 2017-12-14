@@ -1,6 +1,6 @@
 .btn-home {
   color: $red;
-  padding: 10px;
+  padding: 10px 20px;
   padding-left: 30px;
   padding-right: 30px;
   border: 3px solid $red;
@@ -19,7 +19,7 @@
 
 .btn-small {
   color: $red;
-  padding: 10px;
+  padding: 10px 20px;
   padding-left: 22px;
   padding-right: 22px;
   border: 2px solid $red;
@@ -43,7 +43,7 @@
   background: $red;
   border-radius: $border-radius-base;
   color: white;
-  padding: 10px;
+  padding: 10px 20px;
   opacity: 0.9;
 }
 
@@ -57,11 +57,11 @@
 }
 
 .btn-secondary {
-  background: $white;
+  background: transparent;
   border-radius: $border-radius-base;
   color: $red;
   border: 1px solid $red;
-  padding: 10px;
+  padding: 10px 20px;
   cursor: pointer;
 }
 .btn-secondary:hover {

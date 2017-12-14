@@ -1,48 +1,32 @@
-.submit-edit-trip {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 30px;
-  padding-bottom: 9px;
-  margin-bottom : 5px auto;
-}
-
-.activities-box {
-  background-color: $white;
-  border-radius: 2px;
-}
 
 .activities-container {
-  margin: 20px 10%;
-  padding: 20px;
-  background-color: $white;
-  border-radius: $border-radius-base;
+  margin: 0px 10%;
+  padding: 30px 20px;
+  background-color: transparent;
+  height: calc(100vh - 60px);
 }
-
 #card-activities-all {
   display: flex;
-  height: calc(100vh - 150px);
+  height: 70vh;
+  // should be 65vh when not in full screen
   color: $white;
 }
 
-.card-activities-filtered-with-title {
+.card-activities-column {
   display: flex;
   flex-direction: column;
   width: 33.33%;
-}
-
-.card-activities-title {
-  padding-top: 16px;
-  font-size: 16px;
-  background-color: $red;
-  min-height: 10%;
-  max-height: 10%;
+  overflow: scroll;
+  // box-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+  &:nth-child(2) {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 }
 
 .card-activities-filtered {
   display: flex;
   flex-direction: column;
-  overflow: auto;
   .fa-times {
     font-size: 20px;
     color: $red;
@@ -58,32 +42,59 @@
   box-sizing: border-box;
   position: relative;
   display: flex;
-  flex: 1 0 100px;
+  flex-grow: 1;
+  min-height: 100px;
   width: auto;
   background-size: cover!important;
   background-position: center;
   align-items: center;
-  border: 3px solid $red;
   font-size: 14px;
+  border-top: 2px solid rgba(255,255,255,0.8);
+  &:nth-child(1) {
+    border-top: 0;
+  }
 }
 
 .absolute-link {
   position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
+  top: 0; right: 0; bottom: 0px; left: 0;
 }
 
 .delete-link {
   z-index: 1;
   position: absolute;
-  top: 5px; right: 5px;
+  top: 15px; right: 15px;
+  width: 15px;
+  height: 15px;
+  font-size: 26px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(45deg);
+  padding: 15px;
+  &:hover {
+    text-decoration: none;
+    border-color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 1);
+  }
 }
 
-.card-activity-description {
-  padding-left: 6px;
+.activity-description-small {
+  width: 100%;
+  padding: 10px 20px;
+  text-shadow: 2px 1px 1px rgba(0, 0, 0, 0.7);
   h2 {
     margin: 0;
     margin-bottom: 6px;
-    font-size: 18px;
+    font-size: 16px;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   p {
     margin: 0;
@@ -91,39 +102,106 @@
     font-size: 14px;
     font-weight: 300;
   }
-  a {
-    color: $red;
+}
+
+.activity-description-header {
+  width: 100%;
+  position: relative;
+  padding: 20px;
+  height: 147px;
+}
+.wrapper {
+  position: absolute;
+  bottom: -6px;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 130%;
+  background-color: rgba(255,255,255,0.8);//linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4));
+  transform: skewY(-6deg);
+  transform-origin: bottom right;
+}
+
+.activity-description-full {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  color: #333;
+  bottom: 20px;
+  h2 {
+    font-size: 16px;
+    margin: 0;
+    margin-bottom: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
+  p {
+    font-size: 14px;
+    font-weight: 300;
+  }
+}
+
+.price-range {
+  text-align: right;
+  // font-weight: bold;
+  position: absolute;
+  border-radius: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10px;
+  bottom: 15px;
+  right: 20px;
+  margin: 0;
+  background-color: rgba(51, 51, 51, 0.8);
+  color: rgba(255, 255, 255, 0.8);
+  z-index: 2;
+}
+
+.activity-address {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.to-book {
+  background-color: rgba(255, 255, 0, 0.5);
 }
 
 .submit-edit-trip {
   display: flex;
-  justify-content: space-between;
-  padding-top: 20px;
-  padding-bottom: 0;
+  justify-content: flex-end;
+  align-items: center;
+  padding-top: 30px;
+  padding-bottom: 9px;
+  margin-bottom : 5px auto;
 }
-
-#end-buttons {
-  display: flex;
-  justify-content: center;
+#first-btn {
+  color: $red;
 }
 
 #last-btn {
   margin-left: 20px;
 }
 
-#comment-btn {
-  display: flex;
-  align-items: center;
-  color: $red;
-  text-decoration: none;
-  margin-right: 10px;
-  .fa {
-    font-size: 20px;
-    margin-right: 6px;
+.go-to-link {
+  text-decoration: underline;
+  font-weight: bolder;
+  color: #333;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 2;
+  &:hover {
+    color: #333;
   }
 }
 
-.btn-save {
-  padding: 10px 20px;
+.flex-bottom {
+  display: flex;
+  flex-direction: column-reverse;
+  overflow: hidden;
 }
