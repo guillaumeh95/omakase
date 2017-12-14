@@ -17,9 +17,9 @@
       <% if user_signed_in? %>
 
         <!-- Links when logged in -->
-        <%= link_to '<i class="fa fa-plus" aria-hidden="true"></i> New Trip'.html_safe, new_trip_path, class: "navbar-wagon-item navbar-wagon-link" %>
-        <%= link_to '<i class="fa fa-tachometer" aria-hidden="true"></i> My Dashboard'.html_safe, dashboard_user_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
-        <%= link_to '<i class="fa fa-sign-out" aria-hidden="true"></i> Sign Out'.html_safe, destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %>
+        <%= link_to 'New Trip', new_trip_path, class: "navbar-wagon-item navbar-wagon-link" %>
+        <%= link_to 'My Dashboard', dashboard_user_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
+        <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %>
         <% if current_user.photo? %>
           <%= image_tag current_user.photo, {class:"navbar-avatar"} %>
         <% else %>
