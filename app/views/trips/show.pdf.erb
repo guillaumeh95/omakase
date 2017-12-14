@@ -38,7 +38,7 @@
           <% @trip.visits.each do |visit| %>
             <% activity = visit.activity %>
             <div class="pdf-modal-activity">
-              <%= image_tag activity.photo, class:"pdf-trip-photo" %>
+              <%= wicked_pdf_image_tag activity.photo, class:"pdf-trip-photo" %>
               <div><h6><%= activity.title %></h6></div>
               <div><h5><%= activity.name %></h5></div>
             </div>
