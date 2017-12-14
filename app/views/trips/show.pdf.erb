@@ -3,47 +3,17 @@
     <div class="pdf-header">
       <h4 class="pdf-title text-center" id="ouverture_pdf"><%= @trip.title %></h4>
       <h5 class="pdf-date text-center"><%= @trip.date.strftime('%A %B %e, %Y') %></h5>
-        <% if @trip.comment %>
-          <div class="pdf-trip-comments">
-            <p><%= @trip.comment %></p>
-          </div>
-        <% end %>
+      <% unless @trip.comment == "" %>
+        <div class="pdf-trip-comments">
+          <p><%= @trip.comment %></p>
+        </div>
+      <% end %>
     </div>
+
     <div class="pdf-trip-summary-content">
       <div class="pdf-trip-summary">
         <div class="pdf-trip-host">
           <p><%= User.find(@trip.tourist_id).first_name %> <%= User.find(@trip.tourist_id).last_name %></p>
-        </div>
-      </div>
-      <i class="fa fa-leaf" aria-hidden="true"></i>
-      <div class="pdf-trip-details">
-        <% @trip.filters.each do |profile| %>
-          <div class="pdf-trip-infos">
-            <% fav_icon_names = {sight_seeing_adventurer: "camera-retro", art_lover: "paint-brush", serial_shopper: "shopping-bag", nature_lover: "cutlery", food_addict: "leaf", sport_lover: "futbol-o", history_passionate: "university", tech_fan: "mobile", relaxed: "hand-peace-o", city_wanderer: "eye"} %>
-            <% fav_icon_names.each do |key, value| %>
-              <% if key.to_s == profile %>
-                <% faviconname = fav_icon_names[:"#{profile}"] %>
-                <i class="fa fa-<%= faviconname %>" aria-hidden="true"></i>
-              <% end %>
-            <% end %>
-            <p><%= profile.gsub('_', " ").split.map(&:capitalize).join(' ') %></p>
-          </div>
-        <% end %>
-      </div>
-    </div>
-    <div class="pdf-content-photos">
-      <div class="pdf-trip-photos ">
-        <% markers = [] %> <!-- Initialize the variable markers outside the each -->
-        <div class="pdf-modal-activities">
-          <% @trip.visits.each do |visit| %>
-            <% activity = visit.activity %>
-            <div class="pdf-modal-activity">
-              <%= wicked_pdf_image_tag activity.photo, class:"pdf-trip-photo" %>
-              <div><h6><%= activity.title %></h6></div>
-              <div><h5><%= activity.name %></h5></div>
-            </div>
-            <% markers << { lat: activity.latitude, lng: activity.longitude } %>
-          <% end %>
         </div>
       </div>
     </div>
@@ -52,12 +22,26 @@
       <img src="<%= @static_map %>" alt="" class="pdf-map">
     </div>
 
-    <div class="pdf-trip-host"><p> This map was created by <%= @trip.host.first_name %> <%= @trip.host.last_name %> for <%= User.find(@trip.tourist_id).first_name %> <%= User.find(@trip.tourist_id).last_name %></p>
+    <div class="pdf-content-photos">
+      <% markers = [] %> <!-- Initialize the variable markers outside the each -->
+      <% @trip.visits.each do |visit| %>
+        <% activity = visit.activity %>
+        <div class="pdf-trip-activity">
+          <%= wicked_pdf_image_tag activity.photo, class:"pdf-trip-photo" %>
+          <div><h6><%= activity.title %></h6></div>
+          <div><h5><%= activity.name %></h5></div>
+        </div>
+        <% markers << { lat: activity.latitude, lng: activity.longitude } %>
+      <% end %>
     </div>
 
-  </div>
 
-  <div class="pdf-footer">
-    <p> Omakase-paris.fr </p>
+    <div class="pdf-trip-host">
+      <p> This map was created by
+          <%= @trip.host.first_name %> <%= @trip.host.last_name %>
+          for <%= User.find(@trip.tourist_id).first_name %> <%= User.find(@trip.tourist_id).last_name %>
+          on omakase-paris.fr
+      </p>
+    </div>
   </div>
 </div>
