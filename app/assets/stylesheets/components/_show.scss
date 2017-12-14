@@ -1,6 +1,6 @@
 .container-show {
-  margin: 5%;
-  margin-top: 0;
+  margin-right: 11%;
+  margin-left: 11%;
   height: 100%;
   //background-color: $white;
   border-radius: $border-radius-base;
@@ -64,9 +64,8 @@
 
 .show-avatar {
   border-radius: 50%;
-  height: 100px;
-  width: 100px;
-  border: 1px solid $red;
+  height: 120px;
+  width: 120px;
   padding: 1px;
 }
 
@@ -127,24 +126,24 @@
 .trip-photos {
   display: flex;
   width: 100%;
+  margin-bottom: 2%;
 }
 
 .modal-activities:first-of-type .trip-photo {
-  border: 2px solid $red;
+  border: 3px solid $red;
 }
 
 .modal-activities:nth-of-type(2) .trip-photo {
-  border: 2px solid #6dff85;
+  border: 3px solid #8aff84;
 }
 
 .modal-activities:nth-of-type(3) .trip-photo {
-  border: 2px solid $blue;
+  border: 3px solid $blue;
 }
 
 .modal-activities {
   flex: 0 0 33%;
   color: $red;
-  padding-left: 40px;
   text-align: center;
 
 
@@ -154,14 +153,14 @@ ul {
   img {
     object-fit: cover;
     border-radius: 50%;
-    height: 160px;
-    width: 160px;
+    height: 220px;
+    width: 220px;
     li:last-child {
-    border: 1px solid blue;
+    border: 2px solid blue;
     }
   }
   h5 {
-    font-size: 12px;
+    font-size: 15px;
     text-align: center;
     // transform: rotate(90deg);
     // transform-origin: left top 0;
@@ -170,12 +169,17 @@ ul {
     font-size: 12px;
     margin-top: 12px;
     text-align: center;
+    margin-top: 5px;
   }
 }
 
 .map {
   flex: 1;
   position: relative;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: $border-radius-base;
+
 }
 
 #floating-panel {
@@ -197,15 +201,6 @@ ul {
   text-align: center;
 }
 
-.show-footer {
-  padding-top : 35px;
-  border-top: none;
-  margin-left: 70%;
-}
-
-.btn-show {
-  text-decoration: none;
-}
 
 .no-comment-italic-light {
   opacity: 0.5;
@@ -213,9 +208,6 @@ ul {
   text-align: center;
 }
 
-.modal-sm {
-  width: 500px;
-}
 
 .comment-body {
   .simple_form {

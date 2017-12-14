@@ -227,8 +227,8 @@ function initMap() {
   const selectedMode = document.getElementById('mode').value;
 
   // Create a renderer for directions and bind it to the map.
-  var directionsDisplay = new google.maps.DirectionsRenderer({map: map, polylineOptions:{strokeColor:"#4a4a4a",strokeWeight:4}, suppressMarkers: true});
-  var directionsDisplay2 = new google.maps.DirectionsRenderer({ map: map, polylineOptions:{strokeColor:"#4a4a4a",strokeWeight:4}, suppressMarkers:true})
+  var directionsDisplay = new google.maps.DirectionsRenderer({map: map, polylineOptions:{strokeColor:"#333",strokeWeight:4}, suppressMarkers: true});
+  var directionsDisplay2 = new google.maps.DirectionsRenderer({ map: map, polylineOptions:{strokeColor:"#333",strokeWeight:4}, suppressMarkers:true})
 
   // Instantiate an info window to hold step text.
   var stepDisplay = new google.maps.InfoWindow;

@@ -23,15 +23,15 @@
       <div class="show-header">
         <h4 ><%= @trip.title %></h4>
         <h5 ><%= @trip.date.strftime('%A %B %e, %Y') %></h5>
+        <% unless @trip.comment == "" %>
+        <div class="trip-comments">
+          <p><%= @trip.comment %></p>
+        </div>
+    <% end %>
       </div>
 
   </div>
 
-    <% unless @trip.comment == "" %>
-      <div class="trip-comments">
-        <p><i class="fa fa-comment" aria-hidden="true"></i><%= @trip.comment %></p>
-      </div>
-    <% end %>
 
   <div class="reverse">
 
@@ -42,9 +42,11 @@
         <% @trip.visits.each do |visit| %>
           <% activity = visit.activity %>
           <div class="modal-activities">
-                <div class="img-link"><%= image_tag activity.photo, class:"trip-photo" %></div>
-              <div class="trip-title-modal"><h6><%= activity.title %></h6></div>
-            <!-- <div class="trip-name"><h5><%#= activity.name %></h5></div> -->
+              <div class="img-link"><%= image_tag activity.photo, class:"trip-photo" %></div>
+              <div class="trip-title-modal"><h5><%= activity.title %></h5></div>
+              <div class="trip-title-modal"><h6><%= activity.name %></h6></div>
+              <div class="trip-title-modal"><h6><%= activity.address %></h6></div><br>
+              <div class="trip-title-modal"><h6><%= link_to activity.website, target: "_blank", class: "btn-secondary" do %><%= activity.to_book ? "Book now!" : "More info" %><% end %></h6></div>
           </div>
           <% markers << { lat: activity.latitude, lng: activity.longitude } %>
         <% end %>
