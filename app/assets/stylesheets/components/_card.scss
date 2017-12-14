@@ -8,6 +8,7 @@
   margin-bottom: 10px;
 }
 .card {
+  box-shadow: 1px 1px 1px $black;
   overflow: hidden!important;
   display: flex;
   height: 250px;
@@ -41,7 +42,7 @@
   display: flex;
   flex-basis: 33.33%;
 }
-.trip-title, {
+.trip-title {
   position: absolute;
   width: 100%;
   text-align: center;
@@ -50,8 +51,6 @@
   font-size: 50px;
   font-weight: lighter;
   text-shadow: 1px 1px 1px $black;
-}
-.trip-title {
   opacity: 0.9;
   margin: 0;
   padding: 0;

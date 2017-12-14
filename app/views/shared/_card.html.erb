@@ -9,18 +9,25 @@
     <div class="trip-actions hidden">
       <% if trip.visits.count == 3 %>
         <div class="trip-actions-btn">
-        <% if trip.sent %>
-          <%= link_to "Resend to #{trip.tourist_first_name}", send_email_trip_path(trip) %>
-        <% else %>
-          <%= link_to "Send to #{trip.tourist_first_name}", send_email_trip_path(trip) %>
-        <% end %>
-          <%= link_to "Edit", edit_trip_path(trip) %>
-          <%= link_to "Delete", "#",
-            data: { trip_id: "#{trip.id}"},
-            id: "sweetalert-delete" %>
+          <% if created_trip %>
+            <% if trip.sent %>
+              <%= link_to "Resend to #{trip.tourist_first_name}", send_email_trip_path(trip) %>
+            <% else %>
+              <%= link_to "Send to #{trip.tourist_first_name}", send_email_trip_path(trip) %>
+            <% end %>
+              <%= link_to "Edit", edit_trip_path(trip) %>
+              <%= link_to "Delete", "#",
+                data: { trip_id: "#{trip.id}"},
+                id: "sweetalert-delete" %>
+          <% else %>
+            <%= link_to "Add to Google Calendar", "#" %>
+            <%= link_to "View PDF", trip_url(trip, format: :pdf) %>
+            <%= link_to "Delete", "#",
+                data: { trip_id: "#{trip.id}"},
+                id: "sweetalert-delete" %>
+          <% end %>
         </div>
       <% end %>
-      <%#= link_to '<i class="fa fa-file-pdf-o" aria-hidden="true"></i> View PDF'.html_safe, trip_url(trip, format: :pdf), class: "trip-actions-cta" %>
     <%# end %>
     <div class="trip-date-info">
       <%= trip.date.strftime('%A %B %e, %Y') %>
