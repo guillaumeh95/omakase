@@ -7,62 +7,54 @@
   align-items: center;
   justify-content: space-around;
 }
-
 .dash {
-  background: white;
   border-radius: 2px;
   margin: 20px 10%;
   flex: 1;
   justify-content: space-around;
 }
-
-
-.nav-tabs-justified, .nav-tabs.nav-justified {
-  width: 100%;
-  margin-left: 0;
-  margin-right: 0;
-}
-.nav-tabs-justified > .active > a, .nav-tabs.nav-justified > .active > a, .nav-tabs-justified > .active > a:hover, .nav-tabs.nav-justified > .active > a:hover, .nav-tabs-justified > .active > a:focus, .nav-tabs.nav-justified > .active > a:focus {
-  background: rgba(250, 54, 10, 0.8);
-  color: black;
-  padding: 30px;
-  cursor: pointer;
-}
-.nav-tabs-justified > li > a, .nav-tabs.nav-justified > li > a {
-  color: black;
-  padding: 30px;
-  background: rgba(250, 54, 10, 0.3);
-  border-style: hidden !important;
-  border-radius: 0px;
-}
-
 .incoming-trip-card {
   text-align: center;
   font-size: 18px;
-  color: $red;
+  // color: $red;
   margin: 20px;
-}
-
-.time-now {
-  font-size: 12px;
-}
-
-.dashboard-photo {
-  border-radius: 50%;
-  height: 50px;
-  width: 50px;
-  margin: 20px;
+  color: $blue-emerald;
 }
 .btn-new-trip {
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
-
 .btn-small {
   width: 200px;
   margin-bottom: 3%;
 }
 .trip-card {
   color: $red;
+}
+.nav-tabs {
+  border-bottom: none;
+}
+.nav-link{
+  color: black;
+  border: none !important;
+  margin: 0 0 20px 20px;
+  background: none !important;
+  padding: 0 0 3px 0 !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 1, 1);
+  border-bottom: 2px solid transparent !important;
+  &:hover {
+    background: none !important;
+    border-bottom: 2px solid rgba(250, 54, 10, 0.6) !important;
+    color: black;
+  }
+}
+.nav-tabs > li.active > a {
+  border-bottom: 2px solid $red !important;
+}
+.nav-item.active {
+  // color: $red !important;
+  &:hover {
+
+  }
 }
