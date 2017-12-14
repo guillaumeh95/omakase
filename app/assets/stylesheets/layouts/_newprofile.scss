@@ -8,7 +8,8 @@
 .form-post {
   margin-top: 30px;
   margin-bottom: 30px;
-  background: white;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: $border-radius-base;
   h1 {
     text-align: center;
@@ -36,7 +37,7 @@
 }
 
 .form-post .form-group {
-  width: 105%;
+  width: 110%;
 }
 .control-label {
   font-weight: 450 !important;
@@ -157,6 +158,9 @@ h4 {
   color: rgba(75, 75, 75, 1);
   margin-bottom: 40px;
 }
+input {
+  font-weight: 200;
+}
 .shadow-separator {
   height: 2px;
   box-shadow: 0 10px 10px -10px $red inset;
@@ -196,6 +200,7 @@ h4 {
 .next-btn, .prev-btn {
   margin-bottom: 10px;
 }
+
 .buttons-form {
   display: flex;
   justify-content: center;
