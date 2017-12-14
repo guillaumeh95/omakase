@@ -20,8 +20,17 @@
                 data: { trip_id: "#{trip.id}"},
                 id: "sweetalert-delete" %>
           <% else %>
-            <%= link_to "Add to Google Calendar", "#" %>
-            <%= link_to "View PDF", trip_url(trip, format: :pdf) %>
+            <%= link_to "Add to Google Agenda", "http://www.google.com/calendar/event?" \
+                "action=TEMPLATE" \
+                "&text=A+day+in+Paris+made+by+#{trip.host.first_name.split(' ').join('+')}" \
+                "&dates=#{trip.date.strftime("%Y%m%d")}/#{(trip.date.to_datetime + 1).strftime("%Y%m%d")}" \
+                "&details=Cant+wait+to+see+you+here+!+ +In+the+meantime+you+can+check+what+I+have+planned+for+you+at+:+https://omakase-paris.fr/trips/#{trip.id}" \
+                "&location=#{trip.visits.first&.activity.address.split(/[\s,']/).join("+")}" \
+                "&trp=false" \
+                "&sprop=name:",
+                target: "_blank"
+            %>
+            <%= link_to "View PDF", trip_url(trip, format: :pdf), target: "_blank" %>
             <%= link_to "Delete", "#",
                 data: { trip_id: "#{trip.id}"},
                 id: "sweetalert-delete" %>
