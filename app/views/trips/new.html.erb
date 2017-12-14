@@ -1,37 +1,28 @@
 <%= render 'shared/navbar' %>
 <div class="container">
   <div class="form-post">
-  <!-- Tabs -->
-  <ul class="nav nav-tab nav-justified" role="tablist">
-    <li class="nav-item active">
-      <a class="nav-link" data-toggle="tab" href="#general-info" role="tab">
-        <i class="fa fa-address-book-o" aria-hidden="true"></i>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#more-info" role="tab">
-        <i class="fa fa-info-circle" aria-hidden="true"></i>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#status" role="tab">
-        <i class="fa fa-suitcase" aria-hidden="true"></i>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#profiles" role="tab">
-        <i class="fa fa-users" aria-hidden="true"></i>
-      </a>
-    </li>
-  </ul>
-  <div class="row">
-    <div class="col-xs-offset-2 col-xs-8 ">
-    <h3> Let's define your friend's profile !</h3>
-    <h6> Be as precise as possible so we can provide you with the most suited activities </h6>
+
+<!-- Progress bar -->
+  <div class="progress">
+    <div class="circle done active" id="circle1">
+      <span class="label">1</span>
+      <span class="title">General</span>
+    </div>
+    <span class="bar"></span>
+    <div class="circle" id="circle2">
+      <span class="label">2</span>
+      <span class="title">More</span>
+    </div>
+    <span class="bar"></span>
+    <div class="circle" id="circle3">
+      <span class="label">3</span>
+      <span class="title">Profiles</span>
     </div>
   </div>
+<!-- PROFILE FORM -->
     <%= simple_form_for [@trip] do |f| %>
-    <div id="general-info" >
+<!-- GENERAL INFORMATION -->
+    <div id="step1" class="step active">
       <div class="row">
         <div class="col-xs-offset-2 col-xs-8 ">
         <h4> <i class="fa fa-address-book-o" aria-hidden="true"></i> First, some general information </h4>
@@ -40,7 +31,6 @@
           </div>
         </div>
       </div>
-    </div>
       <div class="row">
         <div class="col-xs-offset-2 col-xs-8">
           <div class="form-group">
@@ -62,8 +52,10 @@
           </div>
         </div>
       </div>
-      <div class="shadow-separator"></div>
-      <div id="general-info" >
+    <button class="next-btn" data-next="step2" data-circle="circle2">Next</button>
+    </div>
+<!--  MORE INFORMATION - KNOWLEDGE + BUDGET -->
+    <div id="step2" class="step">
       <div class="row">
         <div class="col-xs-offset-1 col-xs-10 col-xs-offset-1">
         <h4> <i class="fa fa-info-circle" aria-hidden="true"></i> A bit more information </h4>
@@ -72,7 +64,6 @@
           </div>
         </div>
       </div>
-      </div>
       <div class="row">
         <div class="col-xs-offset-1 col-xs-10 col-xs-offset-1">
           <div class="form-group">
@@ -80,10 +71,10 @@
           </div>
         </div>
       </div>
-      <div class="shadow-separator"></div>
+<!-- STATUS -->
       <h4> <i class="fa fa-suitcase" aria-hidden="true"></i> Select whether your friend is coming on his own or with company</h4>
       <div class="status-checkboxes">
-        <div class="select-status" id="status">
+        <div class="select-status">
           <i class="fa fa-male" aria-hidden="true"></i><br>
           Solo
           <%= f.input :status, as: :hidden, input_html: { value:"solo", disabled:true } %>
@@ -106,10 +97,13 @@
           <%= f.input :status, as: :hidden, input_html: { value:"friends", disabled:true } %>
         </div>
       </div>
-      <div class="shadow-separator"></div>
-
+       <button class="next-btn" data-next="step3" data-set="circle3">Next</button>
+       <button class="prev-btn" data-next="step1" data-set="circle1">Prev</button>
+    </div>
+<!-- PROFILES -->
+    <div id="step3" class="step">
       <h4> <i class="fa fa-users" aria-hidden="true"></i> Choose 3 profiles to describe your friend (<span id="active-choices">0</span>/3)</h4>
-      <div class="description-checkboxes" id="profiles">
+      <div class="description-checkboxes">
         <div class="select-description" id="sight_seeing_adventurer">
           <i class="fa fa-camera-retro" aria-hidden="true"></i> <br>
           Sightseer Enthusiast
@@ -168,8 +162,10 @@
           </div>
         </div>
       </div>
+      <button class="prev-btn" data-set="step2" data-set="circle2">Prev</button>
       <%= f.submit "Choose Activities", id: "submit-trip", class: "btn btn-primary", disabled: true %>
     <% end %>
+    </div>
   </div>
 </div>
 

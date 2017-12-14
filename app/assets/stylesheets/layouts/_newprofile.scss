@@ -53,6 +53,7 @@
   cursor:pointer;
 }
 .slider-tick-label-container {
+  margin-left: 0px;
 }
 .slider-tick-label {
   font-size: 13px;
@@ -176,4 +177,16 @@ h4 {
   color: $white;
   opacity: 0.5;
   height: 50px;
+}
+
+.step {
+  visibility: hidden;
+  position:absolute;
+  top: -1000px;
+}
+
+.step.active {
+  visibility: inherit;
+  position: relative;
+  top: inherit;
 }

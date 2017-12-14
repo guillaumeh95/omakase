@@ -1,5 +1,34 @@
 import swal from 'sweetalert'
 
+const nextButtons = document.querySelectorAll(".next-btn");
+nextButtons.forEach((nextButton) => {
+  nextButton.addEventListener('click', function(event) {
+    event.preventDefault();
+    const nextId = this.dataset.next;
+    this.parentNode.classList.remove('active');
+    const idActive = document.getElementById(nextId);
+    idActive.classList.add('active');
+
+    const nextCircle = this.dataset.next;
+    this.parentNode.classList.remove('active').add('done');
+    const circleActive = document.getElementById(nextCircle);
+    circleActive.classList.add('active');
+
+  })
+});
+const prevButtons = document.querySelectorAll(".prev-btn");
+prevButtons.forEach((prevButton) => {
+  prevButton.addEventListener('click', function(event) {
+    event.preventDefault();
+    const prevId = this.dataset.previous;
+    this.parentNode.classList.remove('active');
+    const idActive = document.getElementById(prevId);
+    idActive.classList.add('active');
+  })
+});
+
+// CHOOSE PROFILES - STEP 3 //
+
 // Sélectionner les checkboxes
 const descriptionBoxes = document.querySelectorAll('.select-description');
 // parcourir les checkboxes

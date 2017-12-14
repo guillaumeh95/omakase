@@ -16,6 +16,7 @@ import "../components/cards_dashboard";
 import {initSliders} from "../components/slider";
 import { setAlertsTimeouts } from '../components/alert';
 import { sweetAlertDelete } from '../components/sweetalert';
+import "../components/progress_bar";
 
 // Sweet alert messages
 if (document.getElementById('sweetalert-delete')) {
