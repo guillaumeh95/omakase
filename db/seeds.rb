@@ -9,11 +9,11 @@ alexia = User.create!(first_name: "Alexia", last_name: "Le Tarnec", email: "alex
 guillaume = User.create!(first_name: "Guillaume", last_name: "Hercot", email: "guillaume@gmail.com", password: "azertyuiop")
 julie = User.create!(first_name: "Julie", last_name: "Simon", email: "julie@gmail.com", password: "azertyuiop")
 mathilde = User.create!(first_name: "Mathilde", last_name: "Ganancia", email: "mathilde@gmail.com", password: "azertyuiop")
-hector = User.create!(first_name: "Hector", last_name: "Louvot", email: "hector@gmail.com", password: "azertyuiop")
+hector = User.create!(first_name: "Hector", last_name: "Louvot", email: "hectorlouvot@gmail.com", password: "azertyuiop")
 
 julie.remote_photo_url = "https://kitt.lewagon.com/placeholder/users/juliesimon"
 julie.save!
-hector.remote_photo_url = "https://img.discogs.com/a7l_WU-z26_uKxy2bsz_-Um4NQU=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-38204-1498364732-2978.jpeg.jpg"
+hector.remote_photo_url = "https://www.commeuncamion.com/wp-content/uploads/2014/05/lunette-visage-diamant.jpg"
 hector.save!
 
 puts 'Creating activities...'

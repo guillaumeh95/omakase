@@ -8,7 +8,6 @@
   margin-top: 30px;
   margin-bottom: 30px;
   background: white;
-  padding: 20px;
   padding-top: 5px;
   border-radius: $border-radius-base;
   h1 {
@@ -34,7 +33,7 @@
 }
 
 .form-group {
-  width: 112%;
+  width: 105%;
 }
 .control-label {
   font-weight: 450 !important;
@@ -42,7 +41,7 @@
   margin-bottom: 10px;
 }
 .slider {
-  width: 80% !important;
+  width: 85% !important;
   background-color: white !important;
   }
 
@@ -160,4 +159,21 @@ h4 {
   width: 800px;
   margin-bottom: 30px;
   margin-top: 30px;
+}
+.nav-justified, .nav-tab.nav-justified {
+  margin: 0;
+  width: 100%;
+  margin-top: -5px;
+}
+.nav-justified > .active > a, .nav-tab.nav-justified > .active > a, .nav-justified > .active > a:hover, .nav-tab.nav-justified > .active > a:hover, .nav-justified > .active > a:focus, .nav-tab.nav-justified > .active > a:focus {
+  background-color: $red;
+  color: $white;
+  opacity: 1 !important;
+  height: 50px;
+}
+.nav-justified > li > a, .nav-tab.nav-justified > li > a {
+  background-color: $red;
+  color: $white;
+  opacity: 0.5;
+  height: 50px;
 }

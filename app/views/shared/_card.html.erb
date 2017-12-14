@@ -18,7 +18,7 @@
         <%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i> Finish Editing Trip'.html_safe, edit_trip_path(trip), class: "trip-actions-cta"  %>
       <% end %>
     <% else %>
-      <%= link_to '<i class="fa fa-file-pdf-o" aria-hidden="true"></i> View PDF'.html_safe, trip_url(trip, format: :pdf), class: "trip-actions-btn" %>
+      <%= link_to '<i class="fa fa-file-pdf-o" aria-hidden="true"></i> View PDF'.html_safe, trip_url(trip, format: :pdf), class: "trip-actions-cta" %>
     <% end %>
     <% if created_trip %>
     <div class="trip-actions-btn">
@@ -28,25 +28,14 @@
         class: "",
         data: { trip_id: "#{trip.id}"},
         id: "sweetalert-delete" %>
-              <%#= link_to '<i class="fa fa-trash" aria-hidden="true"></i>'.html_safe, trip_path(trip),
-              method: :delete,
-              data: { confirm: "sure" } %>
     </div>
     <% end %>
-      <!-- One is shown to allow addEventListener, one is hidden to allow method to be deleted -->
-      <!-- <i class="fa fa-trash" id= "sweetalert-delete" aria-hidden="true"></i> -->
     <div class="trip-date-info">
       <i class="fa fa-calendar" aria-hidden="true"></i>
       <%= trip.date.strftime('%A %B %e, %Y') %>
     </div>
   </div>
-<!--     <div class="trip-details hidden">
-      <div class="trip-sent-status">
-        </div>
-        <div class="trip-actions">
-        </div>
-    </div>
- -->
+
     <%= link_to "", trip_path(trip), class: "card-link" %>
   <% end %>
 </div>
