@@ -6,32 +6,39 @@
         <%= image_tag visit.activity.photo, class: "trip-photo" %>
       <% end %>
     </div>
-    <div class="trip-actions">
-    <% if created_trip %>
+    <div class="trip-actions hidden">
       <% if trip.visits.count == 3 %>
-        <% if trip.sent %>
-          <%= link_to '<i class="fa fa-send status-green" aria-hidden="true"></i> Send Again'.html_safe, send_email_trip_path(trip), class: "trip-actions-cta" %>
-        <% else %>
-          <%= link_to '<i class="fa fa-send status-red" aria-hidden="true"></i> Send Now!'.html_safe, send_email_trip_path(trip), class: "trip-actions-cta" %>
-        <% end %>
-      <% else %>
-        <%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i> Finish Editing Trip'.html_safe, edit_trip_path(trip), class: "trip-actions-cta"  %>
+        <div class="trip-actions-btn">
+          <% if created_trip %>
+            <% if trip.sent %>
+              <%= link_to "Resend to #{trip.tourist_first_name}", send_email_trip_path(trip) %>
+            <% else %>
+              <%= link_to "Send to #{trip.tourist_first_name}", send_email_trip_path(trip) %>
+            <% end %>
+              <%= link_to "Edit", edit_trip_path(trip) %>
+              <%= link_to "Delete", "#",
+                data: { trip_id: "#{trip.id}"},
+                id: "sweetalert-delete" %>
+          <% else %>
+            <%= link_to "Add to Google Agenda", "http://www.google.com/calendar/event?" \
+                "action=TEMPLATE" \
+                "&text=A+day+in+Paris+made+by+#{trip.host.first_name.split(' ').join('+')}" \
+                "&dates=#{trip.date.strftime("%Y%m%d")}/#{(trip.date.to_datetime + 1).strftime("%Y%m%d")}" \
+                "&details=Cant+wait+to+see+you+here+!+ +In+the+meantime+you+can+check+what+I+have+planned+for+you+at+:+https://omakase-paris.fr/trips/#{trip.id}" \
+                "&location=#{trip.visits.first&.activity.address.split(/[\s,']/).join("+")}" \
+                "&trp=false" \
+                "&sprop=name:",
+                target: "_blank"
+            %>
+            <%= link_to "View PDF", trip_url(trip, format: :pdf), target: "_blank" %>
+            <%= link_to "Delete", "#",
+                data: { trip_id: "#{trip.id}"},
+                id: "sweetalert-delete" %>
+          <% end %>
+        </div>
       <% end %>
-    <% else %>
-      <%= link_to '<i class="fa fa-file-pdf-o" aria-hidden="true"></i> View PDF'.html_safe, trip_url(trip, format: :pdf), class: "trip-actions-cta" %>
-    <% end %>
-    <% if created_trip %>
-    <div class="trip-actions-btn">
-      <%= link_to('<i class="fa fa-comment" aria-hidden="true"></i>'.html_safe, "#", class: "", data: { toggle: "modal", target: "#modal-comment-#{trip.id}" } ) %>
-      <%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>'.html_safe, edit_trip_path(trip), class: "" %>
-      <%= link_to '<i class="fa fa-trash" aria-hidden="true"></i>'.html_safe, "#",
-        class: "",
-        data: { trip_id: "#{trip.id}"},
-        id: "sweetalert-delete" %>
-    </div>
-    <% end %>
+    <%# end %>
     <div class="trip-date-info">
-      <i class="fa fa-calendar" aria-hidden="true"></i>
       <%= trip.date.strftime('%A %B %e, %Y') %>
     </div>
   </div>

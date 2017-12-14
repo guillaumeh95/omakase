@@ -40,7 +40,7 @@
   border: none !important;
   margin: 0 0 20px 20px;
   background: none !important;
-  padding: 0 0 3px 0 !important;
+  padding: 0 0 8px 0 !important;
   transition: all 0.4s cubic-bezier(0.4, 0, 1, 1);
   border-bottom: 2px solid transparent !important;
   &:hover {
@@ -51,10 +51,21 @@
 }
 .nav-tabs > li.active > a {
   border-bottom: 2px solid $red !important;
-}
-.nav-item.active {
-  // color: $red !important;
-  &:hover {
-
+  .badge {
+    background-color: $red !important;
   }
+}
+.nav-tabs > li.active > a, .nav-tabs > li > a.nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.nav-tabs > li > a.nav-link {
+  .badge {
+    background-color: $black;
+  }
+}
+.badge {
+  margin-left: 7px;
+  opacity: 0.8;
 }

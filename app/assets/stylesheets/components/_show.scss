@@ -1,34 +1,72 @@
 .container-show {
-  margin: 20px 10%;
-  padding: 20px;
+  margin-right: 11%;
+  margin-left: 11%;
   height: 100%;
-  background-color: $white;
+  //background-color: $white;
   border-radius: $border-radius-base;
 }
 
-.show-button-container {
+.show-header-container {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  height: 200px;
 }
 
-.show{
+.trip-summary {
+  display: flex;
+  flex: 0 20%;
+  align-items: flex-start;
+}
+
+.show-header{
+  flex: 0 auto;
   color : $red;
-  background: linear-gradient(-140deg, rgba(217, 223, 255, 150), rgba(0, 0, 0,50));
-}
-
-.show-title {
+  align-items: flex-start;
   margin: 15px;
-  font-size: 39px;
-  color : rgba(80, 80, 80, 0.8);
+  text-align: left;
+  h4 {
+    font-size: 40px;
+    margin: 0;
+    padding: 0;
+    line-height: 1.1;
+  }
 }
 
 .show-date {
   font-weight: 400;
   color : rgba(80, 80, 80, 0.8);
+  text-align: left;
 }
 
-.show-body{
-  margin: 0 20px;
+.place-btn {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2%;
+}
+
+.show-trip-icons{
+  width: 25%;
+  justify-content: center;
+}
+
+
+.trip-host {
+  color : $red;
+  font-weight: 400;
+  text-align: center;
+  padding: 20px 30px;
+  border-radius: 3px;
+    p{
+    font-size: 12px;
+    margin: 0;
+  }
+}
+
+.show-avatar {
+  border-radius: 50%;
+  height: 120px;
+  width: 120px;
+  padding: 1px;
 }
 
 .trip-comments {
@@ -39,29 +77,17 @@
 }
 
 .trip-comments p {
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: lighter;
+  text-align: center;
   color: $red;
+
 }
 
 .trip-summary-content {
   display: flex;
-  justify-content: space-between;
-
-}
-
-.trip-summary {
-  flex: 1;
-  padding: 10px 10px;
-  width: 100%;
-  //background-color: white;
-}
-
-.trip-host {
-  color : $red;
-  font-weight: 400;
-  font-size: 20px;
-  padding: 20px 30px;
-  text-align: center;
+  justify-content: space-around;
+  flex: 0 0 20%;
 }
 
 .trip-details {
@@ -78,80 +104,82 @@
   text-align: center;
   padding: 10px;
   max-width: 200px;
-
 }
-
 
 .trip-infos .fa{
   color : $red;
-  font-size : 20px;
+  font-size : 15px;
 }
 
-.trip-infos p{
-  color : $red;
-  text-align: center;
-  padding-top: 10px;
+.reverse {
+  display: flex;
+  flex-direction: column-reverse;
 }
 
-.trip-icons {
-  display: inline-block;
-  align-items: center;
-  text-align : center;
-}
-
-
-.trip-photos {
-  padding: 0;
+.main-content-show {
   display: flex;
   justify-content: space-between;
-  border: 2px solid $red;
-  border-radius: 2px;
+  align-items: center;
+  margin-top: 5%;
 }
-.modal-activities {
-  display: flex;
-}
-.modal-activity {
-  flex: 0 0 33.33%;
-  color: $red;
 
+.trip-photos {
+  display: flex;
+  width: 100%;
+  margin-bottom: 2%;
+}
+
+.modal-activities:first-of-type .trip-photo {
+  border: 3px solid $red;
+}
+
+.modal-activities:nth-of-type(2) .trip-photo {
+  border: 3px solid #8aff84;
+}
+
+.modal-activities:nth-of-type(3) .trip-photo {
+  border: 3px solid $blue;
+}
+
+.modal-activities {
+  flex: 0 0 33%;
+  color: $red;
+  text-align: center;
+
+
+ul {
+  list-style-type: none;
+}
   img {
     object-fit: cover;
-    height: 200px;
+    border-radius: 50%;
+    height: 220px;
+    width: 220px;
+    li:last-child {
+    border: 2px solid blue;
+    }
   }
   h5 {
-    font-size: 12px;
+    font-size: 15px;
     text-align: center;
+    // transform: rotate(90deg);
+    // transform-origin: left top 0;
   }
   h6 {
-    font-size: 16px;
+    font-size: 12px;
+    margin-top: 12px;
     text-align: center;
-    padding-top: 10px;
+    margin-top: 5px;
   }
-}
-
-
-.first-activity {
-  flex: 0 0 33.33%;
-  position: relative;
-
-}
-
-.second-activity {
-  flex: 0 0 33.33%;
-  position: relative;
-}
-
-.third-activity {
-  flex: 0 0 33.33%;
-  position: relative;
 }
 
 .map {
-  margin-top: 2%;
-  //border: 2px solid $red;
-  //background-color: white;
+  flex: 1;
   position: relative;
-  border-radius: 2px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: $border-radius-base;
+
 }
 
 #floating-panel {
@@ -173,16 +201,6 @@
   text-align: center;
 }
 
-.show-footer {
-  padding-top : 35px;
-  border-top: none;
-  margin-left: 70%;
-}
-
-
-.btn-show {
-  text-decoration: none;
-}
 
 .no-comment-italic-light {
   opacity: 0.5;
@@ -190,9 +208,6 @@
   text-align: center;
 }
 
-.modal-sm {
-  width: 500px;
-}
 
 .comment-body {
   .simple_form {

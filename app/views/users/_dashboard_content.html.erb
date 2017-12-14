@@ -5,12 +5,18 @@
     <ul class="nav nav-tabs" role="tablist">
       <li class="nav-item active">
         <a class="nav-link" data-toggle="tab" href="#created-trips" role="tab">
-          <i class="fa fa-paper-plane fa-fw" aria-hidden="true"></i> Created Trips (<%= trips_host.count %>)
+          <div class="tab-link-content">
+            <span>Created Trips</span>
+            <span class="badge"><%= trips_host.count %></span>
+          </div>
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" data-toggle="tab" href="#received-trips" role="tab">
-          <i class="fa fa-globe fa-fw" aria-hidden="true"></i> Received Trips (<%= trips_tourist.count %>)
+          <div class="tab-link-content">
+            <span>Received Trips</span>
+            <span class="badge"><%= trips_tourist.count %></span>
+        </div>
         </a>
       </li>
     </ul>
@@ -29,14 +35,12 @@
           <% else %>
             <% if trips_host_incoming.count.zero? %>
             <% else %>
-            <h6 class="trip-card">Incoming Trips (<%= trips_host_incoming.count %>)</h6>
               <% trips_host_incoming.each do |trip| %>
                 <%= render "shared/card", { trip: trip, created_trip: created_trip } %>
               <% end %>
             <% end %>
             <% if trips_host_past.count.zero? %>
             <% else %>
-              <h6 class="trip-card">Past Trips (<%= trips_host_past.count %>)</h6>
               <% trips_host_past.each do |trip| %>
                 <%= render "shared/card", { trip: trip, created_trip: created_trip } %>
               <% end %>
@@ -54,14 +58,12 @@
           <% else %>
             <% if trips_tourist_incoming.count.zero? %>
             <% else %>
-            <h6 class="trip-card">Incoming Trips (<%= trips_tourist_incoming.count %>)</h6>
               <% trips_tourist_incoming.each do |trip| %>
                 <%= render "shared/card", { trip: trip, created_trip: created_trip } %>
               <% end %>
             <% end %>
             <% if trips_tourist_past.count.zero? %>
             <% else %>
-              <h6 class="trip-card">Past Trips (<%= trips_tourist_past.count %>)</h6>
               <% trips_tourist_past.each do |trip| %>
                 <%= render "shared/card", { trip: trip, created_trip: created_trip } %>
               <% end %>
