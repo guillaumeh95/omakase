@@ -1,4 +1,4 @@
-<div id="activities-one" class="card-activities-filtered-with-title">
+<div id="activities-one" class="card-activities-column">
   <% if activity_one %>
     <div id="activities-one-selected" class="card-activities-filtered stretch animated">
       <%= render "shared/card_activities", trip: trip, activity: activity_one, clicked: true %>
@@ -13,7 +13,7 @@
 </div>
 
 <% if activity_one %>
-  <div id="activities-two" class="card-activities-filtered-with-title">
+  <div id="activities-two" class="card-activities-column">
     <% if activity_two %>
       <div id= "activities-two-selected" class="card-activities-filtered stretch animated">
         <%= render "shared/card_activities", trip: trip, activity: activity_two, clicked: true %>
@@ -27,7 +27,7 @@
     <% end %>
   </div>
   <% if activity_two %>
-    <div id="activities-three" class="card-activities-filtered-with-title">
+    <div id="activities-three" class="card-activities-column">
       <% if activity_three %>
         <div id= "activities-three-selected" class="card-activities-filtered stretch animated">
           <%= render "shared/card_activities", trip: trip, activity: activity_three, clicked: true %>

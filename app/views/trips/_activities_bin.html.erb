@@ -1,4 +1,4 @@
-<div id="activities-one" class="card-activities-filtered-with-title">
+<div id="activities-one" class="card-activities-column">
   <div class="card-activities-title text-center ">
     <%= "#{capitalize_each_word(trip.filters[0].gsub('_', " "))} activity" %>
   </div>
@@ -16,7 +16,7 @@
 </div>
 
 <% if activity_one %>
-  <div id="activities-two" class="card-activities-filtered-with-title">
+  <div id="activities-two" class="card-activities-column">
     <div class="card-activities-title text-center ">
       <%= "#{capitalize_each_word(trip.filters[1].gsub('_', " "))} activity" %>
     </div>
@@ -33,7 +33,7 @@
     <% end %>
   </div>
   <% if activity_two %>
-    <div id="activities-three" class="card-activities-filtered-with-title">
+    <div id="activities-three" class="card-activities-column">
       <div class="card-activities-title text-center ">
         <%= "#{capitalize_each_word(trip.filters[2].gsub('_', " "))} activity" %>
       </div>
