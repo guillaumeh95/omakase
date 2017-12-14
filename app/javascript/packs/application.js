@@ -16,7 +16,7 @@ import "../components/cards_dashboard";
 import {initSliders} from "../components/slider";
 import { setAlertsTimeouts } from '../components/alert';
 import { sweetAlertDelete } from '../components/sweetalert';
-import "../components/progress_bar";
+import {arrangeWidth} from "../components/slider";
 
 // Sweet alert messages
 if (document.getElementById('sweetalert-delete')) {
@@ -25,6 +25,7 @@ if (document.getElementById('sweetalert-delete')) {
 
 // Sliders of new trip creation
 initSliders();
+arrangeWidth();
 
 //map display
 if (document.getElementById('map') ) {

@@ -26,5 +26,21 @@ $('.sliderknowledge').slider({
 
 };
 
+function arrangeWidth() {
+  const inputs = document.querySelectorAll('.slider-tick-label')
+  if(inputs) {
+    inputs.forEach(function(input) {
+      input.style.width = '160.5px'
+    });
+  }
+  const labels = document.querySelectorAll('.slider-tick-label-container')
+    if(labels) {
+    labels.forEach(function(label) {
+      label.style.marginLeft = '-80.25px'
+    });
+  }
+}
+
+export {arrangeWidth};
 export {initSliders};
 

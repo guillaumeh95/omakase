@@ -1,5 +1,6 @@
 .container {
   width: 930px;
+  padding: 5px;
 }
 .container p {
   font-weight: 500;
@@ -8,7 +9,6 @@
   margin-top: 30px;
   margin-bottom: 30px;
   background: white;
-  padding-top: 5px;
   border-radius: $border-radius-base;
   h1 {
     text-align: center;
@@ -147,7 +147,7 @@
 
 #submit-trip {
   position: relative;
-  right: -636px;
+  margin-bottom: 10px;
 }
 h4 {
   font-weight: 600;
@@ -181,7 +181,7 @@ h4 {
 
 .step {
   visibility: hidden;
-  position:absolute;
+  position: absolute;
   top: -1000px;
 }
 
@@ -189,4 +189,14 @@ h4 {
   visibility: inherit;
   position: relative;
   top: inherit;
+}
+.next-btn, .prev-btn {
+  margin-bottom: 10px;
+}
+.buttons-form {
+  display: flex;
+  justify-content: center;
+  .btn:last-child {
+    margin-left: 10px;
+  }
 }
