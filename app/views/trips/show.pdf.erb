@@ -18,26 +18,23 @@
       </div>
     </div>
 
-    <div class="pdf-content-photos">
-      <div class="pdf-trip-photos ">
-        <% markers = [] %> <!-- Initialize the variable markers outside the each -->
-        <div class="pdf-modal-activities">
-          <% @trip.visits.each do |visit| %>
-            <% activity = visit.activity %>
-            <div class="pdf-modal-activity">
-              <%= wicked_pdf_image_tag activity.photo, class:"pdf-trip-photo" %>
-              <div><h6><%= activity.title %></h6></div>
-              <div><h5><%= activity.name %></h5></div>
-            </div>
-            <% markers << { lat: activity.latitude, lng: activity.longitude } %>
-          <% end %>
-        </div>
-      </div>
-    </div>
-
     <div class="pdf-map-content ">
       <img src="<%= @static_map %>" alt="" class="pdf-map">
     </div>
+
+    <div class="pdf-content-photos">
+      <% markers = [] %> <!-- Initialize the variable markers outside the each -->
+      <% @trip.visits.each do |visit| %>
+        <% activity = visit.activity %>
+        <div class="pdf-trip-activity">
+          <%= wicked_pdf_image_tag activity.photo, class:"pdf-trip-photo" %>
+          <div><h6><%= activity.title %></h6></div>
+          <div><h5><%= activity.name %></h5></div>
+        </div>
+        <% markers << { lat: activity.latitude, lng: activity.longitude } %>
+      <% end %>
+    </div>
+
 
     <div class="pdf-trip-host">
       <p> This map was created by
