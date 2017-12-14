@@ -2,12 +2,14 @@
   <div class="modal-dialog modal-sm" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title text-center comment-title">Add a comment for <%= trip.title %> (optional)</h4>
+        <p class="modal-title text-center">Add a comment</p>
       </div>
-      <div class="modal-body comment-body">
-        <%= simple_form_for [trip], url: send_email_trip_path(@trip), method: :patch do |f| %>
-          <%= f.input :comment, label: 'Comment', input_html: {value: trip.comment } %>
-          <%= f.submit "Save", class: "btn-primary btn-save" %>
+      <div class="modal-body text-body">
+        <%= simple_form_for [trip], url: send_email_trip_path(trip), method: :get do |f| %>
+          <%= f.input :comment, label: false, input_html: {value: trip.comment, rows: 4 } %>
+          <div class="btn-comment">
+            <%= f.submit "Send to #{trip.tourist_first_name}", class: "btn-secondary btn-save" %>
+          </div>
         <% end %>
       </div>
     </div><!-- /.modal-content -->

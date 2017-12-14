@@ -20,7 +20,10 @@
     margin-top: 0px;
   }
 }
-.simple_form, .new_trip {
+
+
+.form-post .simple_form,
+.new_trip {
   display: block;
   width: 92% !important;
   margin-top: 40px;
@@ -28,12 +31,12 @@
   margin-right: auto;
   margin-left: auto;
 }
-.form-control {
+.form-post .form-control {
   background: white !important;
   width: 80% !important;
 }
 
-.form-group {
+.form-post .form-group {
   width: 110%;
 }
 .control-label {

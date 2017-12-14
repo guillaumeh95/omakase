@@ -7,7 +7,7 @@
 }
 #card-activities-all {
   display: flex;
-  height: 70vh;
+  height: 65vh;
   // should be 65vh when not in full screen
   color: $white;
 }
@@ -204,4 +204,23 @@
   display: flex;
   flex-direction: column-reverse;
   overflow: hidden;
+}
+
+
+
+.btn-comment {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.edit_trip .form-control {
+  resize: none;
+}
+
+.form-control {
+  &:active,
+  &:focus {
+    box-shadow: none;
+    border-color: $red;
+  }
 }
