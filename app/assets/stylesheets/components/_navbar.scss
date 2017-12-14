@@ -2,7 +2,7 @@
 .navbar-container {
   background: transparent;
   width: 100%;
-  color: black;
+  color: $black;
 }
 
 .navbar-wagon {
@@ -13,9 +13,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-right: 5%;
-  margin-left: 5%;
-  border-bottom: 1px solid black;
+  margin-right: 11%;
+  margin-left: 11%;
+  border-bottom: 1px solid $black;
   z-index: 9999;
 }
 
@@ -38,17 +38,30 @@
 }
 
 /* Navbar link */
-.navbar-wagon-link, .navbar-wagon-greet {
-  color: black;
-  font-size: 16px;
-  font-weight: 450;
+.navbar-wagon-link {
+  color: $black;
+  font-size: 14px;
+  font-weight: 500;
+  &:hover {
+    color: $black;
+    text-decoration: underline;
+  }
+  &:first-child {
+    border: 1px solid $black;
+    border-radius: $border-radius-base;
+    background-color: $black;
+    color: white;
+    padding: 5px 20px;
+    &:hover {
+      text-decoration: none;
+      background-color: rgba(52, 52, 52, 0.8)
+    }
+  }
 }
 .navbar-wagon-greet{
   padding: 0 20px;
-}
-.navbar-wagon-link:hover {
-  color: $red;
-  text-decoration: none;
+  font-size: 16px;
+  font-weight: 300;
 }
 
 .navbar-container-dashboard {
@@ -61,14 +74,13 @@
   justify-content: space-between;
   margin-right: 20%;
   margin-left: 20%;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid $black;
   z-index: 9999;
 }
 .navbar-avatar {
   border-radius: 50%;
   height: 50px;
   width: 50px;
-  border: 1px solid $red;
   padding: 1px;
 }
 

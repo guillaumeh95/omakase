@@ -1,32 +1,43 @@
-<div class="card-activity-unit" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.4)), url('<%= activity.photo %>');" data-activity-id='<%= activity.id %>'>
+<div class="card-activity-unit <%= "flex-bottom" if clicked %>" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('<%= activity.photo %>');" data-activity-id='<%= activity.id %>'>
   <% unless clicked %>
     <%= link_to "", trip_visits_path(trip, activity_id: activity.id), class:"absolute-link", method:"post", remote: true %>
   <% end %>
-  <% if trip.visits.last&.activity == activity %>
-    <%= link_to(trip_visit_path(trip, trip.visits.last), class: "delete-link", method: :delete, remote: true) do %>
-      <i class="fa fa-times" aria-hidden="true"></i>
-    <% end %>
+  <% if trip.visits.order(id: :asc).last&.activity == activity %>
+    <%= link_to "+", trip_visit_path((trip), trip.visits.order(id: :asc).last), class: "delete-link", method: :delete, remote: true %>
   <% end %>
-  <div class="card-activity-description" >
-    <h2><%= activity.title %></h2>
-    <p><%= activity.name %></p>
-    <% unless trip.visits.length == 0 || clicked %>
-      <p><%=  "#{activity.distance_to(trip.visits.last&.activity).round(2)}km" %></p>
-    <% end %>
-    <% if clicked %>
-      <div class="card-activity-description-full">
-        <p><%= activity.address %></p>
-        <p>
-          <% if activity.budget == 1 %>
-            <%= "Free" %>
-          <% else %>
-            <% (activity.budget - 1).times do %>
-              <i class="fa fa-eur" aria-hidden="true"></i>
-            <% end %>
-          <% end %>
+  <% if clicked %>
+    <div class="activity-description-header">
+      <div class="activity-description-full">
+        <h2><%= activity.title %></h2>
+        <p><%= activity.name %></p>
+        <p class="activity-address">
+          <%= activity.address %>
         </p>
-        <%= link_to "Website", activity.website, target: "_blank" %>
       </div>
-    <% end %>
-  </div>
+      <%= link_to activity.website, target: "_blank", class: "go-to-link" do %>
+        <%= activity.to_book ? "Book now!" : "More info" %>
+      <% end %>
+      <p class="price-range">
+        <% if activity.budget == 1 %>
+          <%= "Free" %>
+        <% else %>
+          <% (activity.budget - 1).times do %>
+            <i class="fa fa-eur" aria-hidden="true"></i>
+          <% end %>
+        <% end %>
+      </p>
+      <div class="wrapper"></div>
+    </div>
+  <% else %>
+    <div class="activity-description-small" >
+      <h2><%= activity.title %></h2>
+      <p>
+        <%= activity.name %> -
+        <% unless trip.visits.length == 0 %>
+            <%=  "#{activity.distance_to(trip.visits.last&.activity).round(2)}km" %>
+          </p>
+        <% end %>
+    </div>
+  <% end %>
 </div>
+

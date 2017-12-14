@@ -2,14 +2,162 @@
 <html>
   <head>
     <meta charset='utf-8' />
-    <%= wicked_pdf_stylesheet_link_tag "pdf" -%>
-    <%# wicked_pdf_javascript_include_tag "application" %>
+    <style>
+      .pdf-logo {
+        max-width: 40px;
+        padding-top: 20px;
+      }
+
+      .pdf-content {
+        color : #FA360A;
+        font-family: "Source Sans Pro", "sans-serif";
+        text-align: center;
+        margin-right: 20px;
+        margin-left: 20px;
+      }
+
+      .pdf-title {
+        margin: 15px;
+        font-size: 39px;
+        color : #FA360A;
+      }
+
+      .pdf-date {
+        font-weight: lighter;
+        color : #FA360A;
+      }
+
+      .pdf-body{
+        margin: 0 20px;
+      }
+
+      .pdf-trip-comments {
+        text-align:justify;
+        border: 2px solid #FA360A;
+        padding: 10px 30px;
+        color: #FA360A;
+        background: rgba(250, 250, 250, 0.2);
+      }
+
+      .pdf-trip-comments p {
+        font-size: 18px;
+        color: #FA360A;
+      }
+
+      .pdf-trip-summary-content {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .pdf-trip-summary {
+        flex: 1;
+        padding: 10px 10px;
+        margin-bottom: 10px;
+        width: 100%;
+      }
+
+      .pdf-trip-host {
+        color : #FA360A;
+        text-align: center;
+      }
+
+      .pdf-trip-details{
+        padding: 10px;
+        color : #FA360A;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        align-items: center;
+        flex: 0 0 60%;
+      }
+
+      .pdf-trip-infos{
+        color : #FA360A;
+        text-align: center;
+        padding: 10px;
+        width: 200px;
+      }
+
+      .pdf-trip-infos .fa{
+        color : #FA360A;
+        font-size : 20px;
+        display: inline-block;
+        align-items: center;
+        text-align : center;
+      }
+
+      .pdf-trip-infos p{
+        color: #FA360A;
+        text-align: center;
+        padding-top: 10px;
+      }
+
+      .pdf-content-photos {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .pdf-modal-activities {
+        display: flex;
+        margin-left: -100px;
+      }
+
+      .pdf-modal-activity {
+        color: #FA360A;
+      }
+
+      .pdf-modal-activity img {
+        object-fit: cover;
+        height: 200px;
+      }
+
+      .pdf-modal-activity h5 {
+        font-size: 10px;
+        font-weight: lighter;
+        text-align: center;
+        margin-top: -5px;
+        margin-bottom: 15px;
+      }
+
+      .pdf-modal-activity h6 {
+        font-size: 12px;
+        font-weight: lighter;
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      .pdf-map {
+        border: 2px solid #FA360A;
+        background: rgba(250, 250, 250, 0.2);
+        position: relative;
+        margin-top: 20px;
+      }
+
+      .pdf-footer {
+        color : #FA360A;
+        font-style: "Source Sans Pro", "sans-serif";
+        text-align: center;
+      }
+
+      .no-comment-italic-light {
+        opacity: 0.5;
+        font-style: italic;
+        text-align: center;
+      }
+
+      .pdf-comment-body textarea.form-control {
+        height: 200px;
+      }
+      .pdf-comment-body .simple_form {
+        margin: 0;
+        margin-left: auto;
+      }
+    </style>
   </head>
   <body>
     <div id="content">
       <%= yield %>
     </div>
-  <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
-    <%= javascript_pack_tag "application" %>
   </body>
 </html>
