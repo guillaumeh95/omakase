@@ -8,7 +8,8 @@ function refreshActivities(innerHTML) {
 function refreshCallToActions() {
   console.log('test 2')
   const firstBtn = document.getElementById("first-btn");
-  firstBtn.classList.remove("btn-secondary");
+  firstBtn.classList.remove("btn-primary");
+  firstBtn.classList.add("btn-secondary");
   const lastBtn = document.getElementById("last-btn");
   lastBtn.style.display = "block";
 }
@@ -16,7 +17,8 @@ function refreshCallToActions() {
 // remove btn send
 function rollbackCallToActions() {
   const firstbtn = document.getElementById("first-btn");
-  firstbtn.classList.add("btn-secondary");
+  firstbtn.classList.add("btn-primary");
+  firstbtn.classList.remove("btn-secondary");
   const lastbtn = document.getElementById("last-btn");
   lastbtn.style.display = "none";
 }
@@ -43,7 +45,6 @@ refreshActivities("<%=
 <% end %>
 
 <% if @trip.visits.length == 3 %>
-  console.log("test");
   refreshCallToActions();
 <% end %>
 

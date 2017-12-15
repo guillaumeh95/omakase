@@ -42,7 +42,7 @@
 .btn-primary {
   background: $red;
   border-radius: $border-radius-base;
-  color: white;
+  color: white !important;
   padding: 10px 20px;
   opacity: 0.9;
 }
