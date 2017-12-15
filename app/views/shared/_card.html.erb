@@ -7,8 +7,8 @@
       <% end %>
     </div>
     <div class="trip-actions hidden">
-      <% if trip.visits.count == 3 %>
-        <div class="trip-actions-btn">
+      <div class="trip-actions-btn">
+        <% if trip.visits.count == 3 %>
           <% if created_trip %>
             <% if trip.sent %>
               <%= link_to "Resend to #{trip.tourist_first_name}", send_email_trip_path(trip) %>
@@ -35,9 +35,15 @@
                 data: { trip_id: "#{trip.id}"},
                 id: "sweetalert-delete" %>
           <% end %>
-        </div>
-      <% end %>
-    <%# end %>
+        <% else %>
+          <% if created_trip %>
+            <%= link_to "Finish Editing", edit_trip_path(trip) %>
+            <%= link_to "Delete", "#",
+              data: { trip_id: "#{trip.id}"},
+              id: "sweetalert-delete" %>
+          <% end %>
+        <% end %>
+      </div>
     <div class="trip-date-info">
       <%= trip.date.strftime('%A %B %e, %Y') %>
     </div>
