@@ -1,9 +1,31 @@
 <%= render 'shared/navbar' %>
 <div class="container-show">
+    <div class="show-buttons">
+      <div class="show-arrow">
+        <%= link_to dashboard_user_path(current_user), class: "btn-first" do %>
+          <i class="fa fa-long-arrow-left"></i>
+        <% end %>
+      </div>
 
-  <div class="place-btn">
-  <%= link_to "send", dashboard_user_path(current_user), {class:"btn-secondary"} %>
-  </div>
+
+      <div class="all-btns-right">
+          <div class="place-btn-right">
+        <%= link_to "Add to Google Agenda", "http://www.google.com/calendar/event? \
+          action=TEMPLATE \
+          &text=A+day+in+Paris+made+by+#{@trip.host.first_name.split(' ').join('+')} \
+          &dates=#{@date_from}/#{@date_to} \
+          &details=Cant+wait+to+see+you+here+!+ +In+the+meantime+you+can+check+what+I+have+planned+for+you+at+:+https://omakase-paris.fr/trips/#{@trip.id} \
+          &location=#{@trip.visits.first&.activity.address.split(/[\s,']/).join("+")} \
+          &trp=false \
+          &sprop=name:",
+          {target: :_blank, rel: :nofollow, class:"btn-first"}
+        %>
+      </div>
+      <div class="place-btn-right">
+       <%= link_to "View in PDF", trip_url(@trip, format: :pdf), {target: :_blank, class:"btn-secondary"} %>
+      </div>
+      </div>
+    </div>
 
     <div class="show-header-container">
       <%#= link_to dashboard_user_path(current_user), class: "btn btn-secondary" do %>
@@ -12,7 +34,7 @@
       <div class="trip-summary">
         <div class="trip-host">
           <% if current_user.photo? %>
-            <%= image_tag current_user.photo, {class:"show-avatar"} %>
+            <%= image_tag User.find_by(email: @trip.tourist_email).photo_url, {class:"show-avatar"} %>
           <% else %>
             <div class="empty-avatar"><%= image_tag "icons/no-image.svg", {class:"show-empty-avatar"} %></div>
           <% end %>
@@ -23,11 +45,11 @@
       <div class="show-header">
         <h4 ><%= @trip.title %></h4>
         <h5 ><%= @trip.date.strftime('%A %B %e, %Y') %></h5>
-        <% unless @trip.comment == "" %>
+
         <div class="trip-comments">
           <p><%= @trip.comment %></p>
         </div>
-    <% end %>
+
       </div>
 
   </div>

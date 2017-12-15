@@ -10,6 +10,27 @@
   display: flex;
   flex-wrap: wrap;
   height: 200px;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  // box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  // border: 1px solid rgba(0, 0, 0, 0.1);
+  // border-radius: $border-radius-base;
+}
+
+.btn-first {
+  color: $red;
+  padding : 5px;
+}
+
+.show-arrow{
+  color: $red;
+  font-size: 16px;
+
+}
+
+.place-btn-right {
+  display: flex;
+  align-items: flex-end;
 }
 
 .trip-summary {
@@ -32,16 +53,38 @@
   }
 }
 
+
 .show-date {
   font-weight: 400;
   color : rgba(80, 80, 80, 0.8);
   text-align: left;
 }
 
-.place-btn {
+.show-buttons{
+  display: flex;
+  justify-content: space-between;
+}
+
+.all-btns-right{
+  display: flex;
+  justify-content: flex-end;
+  padding-left: 5px;
+}
+
+.place-btn-right {
   display: flex;
   justify-content: flex-end;
   margin-top: 2%;
+}
+
+.place-btn-left {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 2%;
+}
+
+.place-btn-left fa {
+  width: 300px;
 }
 
 .show-trip-icons{
@@ -118,7 +161,7 @@
 
 .main-content-show {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   margin-top: 5%;
 }
@@ -130,15 +173,15 @@
 }
 
 .modal-activities:first-of-type .trip-photo {
-  border: 3px solid $red;
+  border: 5px solid $red;
 }
 
 .modal-activities:nth-of-type(2) .trip-photo {
-  border: 3px solid #8aff84;
+  border: 5px solid #8aff84;
 }
 
 .modal-activities:nth-of-type(3) .trip-photo {
-  border: 3px solid $blue;
+  border: 5px solid $blue;
 }
 
 .modal-activities {
