@@ -51,13 +51,9 @@ class TripsController < ApplicationController
   def update
     if params[:trip]
       @trip.comment = params[:trip][:comment]
-      @trip.save
-      setup_activities
-      render :edit
-    else
-      @trip.save
-      redirect_to dashboard_user_path(current_user)
     end
+    @trip.save
+    redirect_to send_email_trip_path(@trip)
   end
 
   def destroy

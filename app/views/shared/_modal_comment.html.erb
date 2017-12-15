@@ -5,7 +5,7 @@
         <p class="modal-title text-center">Add a comment</p>
       </div>
       <div class="modal-body text-body">
-        <%= simple_form_for [trip], url: send_email_trip_path(trip), method: :get do |f| %>
+        <%= simple_form_for [trip], url: trip_path(trip), method: :patch do |f| %>
           <%= f.input :comment, label: false, input_html: {value: trip.comment, rows: 4 } %>
           <div class="btn-comment">
             <%= f.submit "Send to #{trip.tourist_first_name}", class: "btn-secondary btn-save" %>

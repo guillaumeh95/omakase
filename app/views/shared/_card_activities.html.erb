@@ -32,9 +32,9 @@
     <div class="activity-description-small" >
       <h2><%= activity.title %></h2>
       <p>
-        <%= activity.name %> -
+        <%= activity.name %>
         <% unless trip.visits.length == 0 %>
-            <%=  "#{activity.distance_to(trip.visits.last&.activity).round(2)}km" %>
+            <%=  "- #{activity.distance_to(trip.visits.last&.activity).round(2)}km" %>
           </p>
         <% end %>
     </div>
