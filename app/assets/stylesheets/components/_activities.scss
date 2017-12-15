@@ -4,6 +4,9 @@
   padding: 30px 20px;
   background-color: transparent;
   height: calc(100vh - 60px);
+  h3 {
+    font-size: 22px;
+  }
 }
 #card-activities-all {
   display: flex;

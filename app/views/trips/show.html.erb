@@ -38,18 +38,16 @@
           <% else %>
             <div class="empty-avatar"><%= image_tag "icons/no-image.svg", {class:"show-empty-avatar"} %></div>
           <% end %>
-          <p><%= User.find(@trip.tourist_id).first_name %></p> <p><%= User.find(@trip.tourist_id).last_name%></p>
         </div>
       </div>
 
       <div class="show-header">
         <h4 ><%= @trip.title %></h4>
         <h5 ><%= @trip.date.strftime('%A %B %e, %Y') %></h5>
-
-        <div class="trip-comments">
-          <p><%= @trip.comment %></p>
-        </div>
-
+        <% if @trip.comment %>
+          <p class='comment-host'> <%="A nice word from #{@trip.host.first_name}:"%></p>
+          <p> <%= @trip.comment %></p>
+        <% end %>
       </div>
 
   </div>
@@ -67,8 +65,8 @@
               <div class="img-link"><%= image_tag activity.photo, class:"trip-photo" %></div>
               <div class="trip-title-modal"><h5><%= activity.title %></h5></div>
               <div class="trip-title-modal"><h6><%= activity.name %></h6></div>
-              <div class="trip-title-modal"><h6><%= activity.address %></h6></div><br>
-              <div class="trip-title-modal"><h6><%= link_to activity.website, target: "_blank", class: "btn-secondary" do %><%= activity.to_book ? "Book now!" : "More info" %><% end %></h6></div>
+              <div class="trip-title-modal"><h6><%= activity.address %></h6></div>
+              <div class="trip-title-modal"><h6><%= link_to activity.website, target: "_blank" do %><%= activity.to_book ? "Book now!" : "More info" %><% end %></h6></div>
           </div>
           <% markers << { lat: activity.latitude, lng: activity.longitude } %>
         <% end %>
