@@ -44,7 +44,7 @@
       <div class="show-header">
         <h4 ><%= @trip.title %></h4>
         <h5 ><%= @trip.date.strftime('%A %B %e, %Y') %></h5>
-        <% if @trip.comment %>
+        <% unless @trip.comment == "" %>
           <p class='comment-host'> <%="A nice word from #{@trip.host.first_name}:"%></p>
           <p> <%= @trip.comment %></p>
         <% end %>
