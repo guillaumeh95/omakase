@@ -77,24 +77,24 @@
         <div class="col-xs-offset-1 col-xs-10">
           <div class="status-checkboxes">
             <div class="select-status">
-              <i class="fa fa-male" aria-hidden="true"></i><br>
+              <%= image_tag "girl.svg", class:"svg-icons" %><br>
               Solo
               <%= f.input :status, as: :hidden, input_html: { value:"solo", disabled:true } %>
             </div>
             <div class="select-status">
-              <i class="fa fa-male" aria-hidden="true"></i><i class="fa fa-child" aria-hidden="true"></i><i class="fa fa-child" aria-hidden="true"></i> <br>
+              <%= image_tag "family.svg", class:"svg-icons" %><br>
               Family
               <%= f.input :status, as: :hidden, input_html: { value:"family", disabled:true } %>
             </div>
 
             <div class="select-status">
-              <i class="fa fa-heart" aria-hidden="true"></i> <br>
+              <%= image_tag "couple.svg", class:"svg-icons" %> <br>
               Couple
               <%= f.input :status, as: :hidden, input_html: { value:"couple", disabled:true } %>
             </div>
 
             <div class="select-status">
-              <i class="fa fa-users" aria-hidden="true"></i> <br>
+              <%= image_tag "conversation.svg", class:"svg-icons" %><br>
               Friends
               <%= f.input :status, as: :hidden, input_html: { value:"friends", disabled:true } %>
             </div>
@@ -113,52 +113,52 @@
         <div class="col-xs-offset-1 col-xs-10">
           <div class="description-checkboxes">
             <div class="select-description" id="sight_seeing_adventurer">
-              <i class="fa fa-camera-retro" aria-hidden="true"></i> <br>
+              <%= image_tag "camera.svg", class:"svg-icons" %> <br>
               Sightseer Enthusiast
               <%= f.input :sight_seeing_adventurer, as: :hidden %>
             </div>
             <div class="select-description" id="art_lover">
-              <i class="fa fa-paint-brush" aria-hidden="true"></i> <br>
+              <%= image_tag "canvas.svg", class:"svg-icons" %> <br>
               Art Lover
               <%= f.input :art_lover, as: :hidden %>
             </div>
             <div class="select-description" id="serial_shopper">
-              <i class="fa fa-shopping-bag" aria-hidden="true"></i> <br>
+              <%= image_tag "shopping-bag.svg", class:"svg-icons" %> <br>
               Serial Shopper
               <%= f.input :serial_shopper, as: :hidden %>
             </div>
             <div class="select-description" id="nature_lover">
-              <i class="fa fa-leaf" aria-hidden="true"></i> <br>
+              <%= image_tag "tent.svg", class:"svg-icons" %> <br>
               Nature Lover
               <%= f.input :nature_lover, as: :hidden %>
             </div>
             <div class="select-description" id="food_addict">
-              <i class="fa fa-cutlery" aria-hidden="true"></i> <br>
+              <%= image_tag "food.svg", class:"svg-icons" %> <br>
               Food Addict
               <%= f.input :food_addict, as: :hidden %>
             </div>
             <div class="select-description" id="sport_lover">
-              <i class="fa fa-futbol-o" aria-hidden="true"></i> <br>
+              <%= image_tag "weightlifting.svg", class:"svg-icons" %><br>
               Sport Lover
               <%= f.input :sport_lover, as: :hidden %>
             </div>
             <div class="select-description" id="history_passionate">
-              <i class="fa fa-university" aria-hidden="true"></i> <br>
+              <%= image_tag "coin.svg", class:"svg-icons" %> <br>
               History Passionate
               <%= f.input :history_passionate, as: :hidden %>
             </div>
             <div class="select-description" id="tech_fan">
-              <i class="fa fa-mobile" aria-hidden="true"></i> <br>
+              <%= image_tag "social-media.svg", class:"svg-icons" %><br>
               Tech Fan
               <%= f.input :tech_fan, as: :hidden %>
             </div>
             <div class="select-description" id="relaxed">
-              <i class="fa fa-hand-peace-o" aria-hidden="true"></i> <br>
+              <%= image_tag "yoga.svg", class:"svg-icons" %> <br>
               Relaxed
               <%= f.input :relaxed, as: :hidden %>
             </div>
             <div class="select-description" id="city_wanderer">
-              <i class="fa fa-eye" aria-hidden="true"></i> <br>
+              <%= image_tag "scooter.svg", class:"svg-icons" %> <br>
               City Wanderer
               <%= f.input :city_wanderer, as: :hidden %>
             </div>
